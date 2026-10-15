@@ -21,8 +21,18 @@ Abra **http://127.0.0.1:5173/**. Salvar uma alteração nos arquivos atualiza a 
 ## O que está funcionando
 
 - Menu com navegação para as seções e versão para celular.
-- Apresentação de soluções e processo de trabalho.
+- Botão Descobrir meu caminho: orientação em duas perguntas, com 12 combinações, acesso ao exemplo e à etapa correspondentes e preenchimento inicial do briefing.
+- Jornada interativa de idealização, construção e evolução, com exemplos de sistemas, sites e automações.
+- Painel com objetivos, passos práticos e entregas por etapa, conectado ao briefing do projeto.
+- Nove demonstrações visuais: planejamento, uso e evolução de um sistema de gestão, site e automação.
+- Percurso de luz em sequência: o sonho acende, a Newthing intensifica a luz e o caminho ilumina plano, projeto e realização. Inclui pausa e retomada locais.
+- A sequência luminosa foi solicitada explicitamente e funciona nesta seção mesmo com redução de movimento do sistema; as demais animações continuam respeitando essa preferência.
+- Abas dos exemplos com navegação por setas, Home e End; automação apresentada em um fluxo claro com ramificações e exemplo de atendimento.
 - Seleção interativa de exemplos de projetos.
+- Interfaces próprias para Dashboard, SaaS e Website, com navegação por clique ou setas do teclado.
+- Seção Quem somos sobre desenvolvimento de software, automação, atendimento e acompanhamento.
+- Painel de intenções em Quem somos: três objetivos mostram abordagens diferentes de escuta e planejamento, levando a escolha para o briefing.
+- Equipe apresentada na ordem: Yuri Gabriel, Maksuel Silva, Manoel Neto e Ronan Severo, organizada por área.
 - Perguntas frequentes que abrem e fecham.
 - Formulário com validação, revisão e download de briefing em texto.
 - Janela com foco contido, fechamento por Escape e retorno do foco ao botão.
@@ -32,17 +42,21 @@ Abra **http://127.0.0.1:5173/**. Salvar uma alteração nos arquivos atualiza a 
 
 ## Onde fazer alterações
 
-| Arquivo                         | Papel                                                        | Primeiro exercício                     |
-| ------------------------------- | ------------------------------------------------------------ | -------------------------------------- |
-| `src/App.tsx`                   | Monta a landing page e contém os textos e listas de conteúdo | Trocar o título principal              |
-| `src/components/BriefModal.tsx` | Formulário, validação e download                             | Adicionar uma pergunta ao briefing     |
-| `src/components/ui.tsx`         | Peças reutilizáveis, como botão, campo e janela              | Ajustar o visual de um botão           |
-| `src/index.css`                 | Cores, tamanhos e adaptação ao celular                       | Trocar a variável `--blue`             |
-| `src/main.tsx`                  | Entrada do React e carregamento da fonte                     | Entender como o app começa             |
-| `index.html`                    | Título, descrição e metadados da página                      | Atualizar a descrição da empresa       |
-| `public/favicon.svg`            | Ícone da aba do navegador                                    | Personalizar o símbolo da marca        |
-| `vite.config.ts`                | Configuração de Vite, React e Tailwind                       | Entender o endereço local              |
-| `wrangler.jsonc`                | Configuração futura de Cloudflare Pages                      | Escolher o nome do projeto ao publicar |
+| Arquivo                               | Papel                                                              | Primeiro exercício                          |
+| ------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------- |
+| `src/App.tsx`                         | Monta a landing page e contém os textos e listas de conteúdo       | Trocar o título principal                   |
+| `src/components/BriefModal.tsx`       | Formulário, validação e download                                   | Adicionar uma pergunta ao briefing          |
+| `src/components/SolutionsJourney.tsx` | Jornada de soluções, exemplos práticos e contexto do briefing      | Personalizar os objetivos e as entregas     |
+| `src/components/ProjectShowcase.tsx`  | Abas e três interfaces conceituais distintas                       | Personalizar o exemplo de Website           |
+| `src/components/WhoWeAre.tsx`         | Apresentação da empresa e suas especialidades                      | Revisar a descrição dos serviços            |
+| `src/components/ClientVision.tsx`     | Intenções do visitante, abordagem da equipe e contexto do briefing | Personalizar a conversa sobre cada objetivo |
+| `src/components/ui.tsx`               | Peças reutilizáveis, como botão, campo e janela                    | Ajustar o visual de um botão                |
+| `src/index.css`                       | Cores, tamanhos e adaptação ao celular                             | Trocar a variável `--blue`                  |
+| `src/main.tsx`                        | Entrada do React e carregamento da fonte                           | Entender como o app começa                  |
+| `index.html`                          | Título, descrição e metadados da página                            | Atualizar a descrição da empresa            |
+| `public/favicon.svg`                  | Ícone da aba do navegador                                          | Personalizar o símbolo da marca             |
+| `vite.config.ts`                      | Configuração de Vite, React e Tailwind                             | Entender o endereço local                   |
+| `wrangler.jsonc`                      | Configuração futura de Cloudflare Pages                            | Escolher o nome do projeto ao publicar      |
 
 React funciona como peças de montar. Vite é a oficina que liga e empacota a página. TypeScript confere os formatos dos dados. Tailwind fornece utilitários visuais, junto do CSS específico da página. ESLint revisa padrões problemáticos.
 

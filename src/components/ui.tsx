@@ -50,7 +50,7 @@ export function Modal({
     return () => {
       element?.close()
       queueMicrotask(() => {
-        if (opener?.isConnected) opener.focus()
+        if (opener?.isConnected && !document.querySelector('dialog[open]')) opener.focus()
       })
     }
   }, [])

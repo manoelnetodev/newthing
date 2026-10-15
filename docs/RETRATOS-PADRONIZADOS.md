@@ -1,0 +1,42 @@
+# Retratos padronizados da equipe — versão 2
+
+Os quatro arquivos foram editados com a ferramenta integrada ImageGen a partir dos retratos anteriores. O objetivo é manter a aparência realista, as características individuais e as roupas, refinando a iluminação e os detalhes fotográficos.
+
+## Fundo preto uniforme
+
+Os PNGs usam transparência real. A classe `.team-portrait` aplica o mesmo preto neutro `#101010` (RGB 16, 16, 16) aos quatro retratos. Não há gradientes, vinhetas ou filtros de cor aplicados sobre as imagens. Assim o fundo visível na página é exatamente a mesma cor em todos os cartões.
+
+As versões anteriores e as fotografias originalmente enviadas foram preservadas.
+
+## Arquivos finais
+
+- Manoel Neto: `public/team/manoel-neto-estudio-v2.png`.
+- Ronan Severo: `public/team/ronan-severo-estudio-v2.png`.
+- Yuri Gabriel: `public/team/yuri-gabriel-estudio-v2.png`.
+- Macsuel Silva: `public/team/macsuel-silva-estudio-v2.png`.
+
+## Prompts utilizados
+
+### Manoel Neto
+
+```text
+Use case: identity-preserve, subtle professional photographic restoration and precise background extraction. The attached image is the EDIT TARGET, a portrait of Manoel Neto, a real person. Improve the photographic finish very subtly while keeping the exact identity and realistic appearance. Do not generate a different face. Lock face shape, eyes, eyelids, eyebrows, nose, lips, ears, jaw, hairline, hairstyle, beard, skin tone, apparent age, body shape, expression, and gaze. Preserve natural pores, facial texture and asymmetry; no beauty retouching, smooth plastic skin, face slimming, exaggerated sharpness, new smile or facial reshaping. Keep his black tailored blazer, black waistcoat and white open-collar shirt; preserve short dark hair and trimmed full beard. Unify the subject lighting with a soft neutral studio key light from camera-left and a restrained fill, natural contrast and rich but detailed dark clothing, no blue or warm cast. Maintain a credible real camera photograph, sharp eyes and believable fabric, no halos or artificial glow. Compose an elegant eye-level 4:5 vertical portrait with consistent head-and-torso framing: entire head visible, about 7 percent clear space above the hair, natural shoulder width, upper body down to lower torso. Single person, hands outside the image if possible, no extra props. CRITICAL OUTPUT: a genuinely transparent PNG cutout; remove ALL existing grey/charcoal backdrop and its halo, with clean accurate hair edges. Subject and clothes fully opaque, background fully alpha transparent. It will be displayed on the EXACT SAME flat neutral black #101010 background as three other team members on a website. Do not bake any backdrop, gradient, vignette, shadow, checkerboard pattern, white fringe or black rectangle into the PNG. No text, watermarks or logos.
+```
+
+### Ronan Severo
+
+```text
+Use case: identity-preserve, subtle professional photographic restoration and precise background extraction. The attached image is the EDIT TARGET, a portrait of Ronan Severo, a real person. Improve the photographic finish very subtly while keeping the exact identity and realistic appearance. Do not generate a different face. Lock face shape, eyes, eyelids, eyebrows, nose, lips, ears, jaw, hairline, hairstyle, beard, skin tone, apparent age, body shape, expression, and gaze. Preserve natural pores, facial texture and asymmetry; no beauty retouching, smooth plastic skin, face slimming, exaggerated sharpness, new smile or facial reshaping. Keep his charcoal blazer and white open-collar shirt; preserve his exact youthful facial features, distinctive eyes, hair and sparse facial hair. Unify the subject lighting with a soft neutral studio key light from camera-left and a restrained fill, natural contrast and rich but detailed dark clothing, no blue or warm cast. Maintain a credible real camera photograph, sharp eyes and believable fabric, no halos or artificial glow. Compose an elegant eye-level 4:5 vertical portrait with consistent head-and-torso framing: entire head visible, about 7 percent clear space above the hair, natural shoulder width, upper body down to lower torso. Single person, hands outside the image if possible, no extra props. CRITICAL OUTPUT: a genuinely transparent PNG cutout; remove ALL existing grey/charcoal backdrop and its halo, with clean accurate hair edges. Subject and clothes fully opaque, background fully alpha transparent. It will be displayed on the EXACT SAME flat neutral black #101010 background as three other team members on a website. Do not bake any backdrop, gradient, vignette, shadow, checkerboard pattern, white fringe or black rectangle into the PNG. No text, watermarks or logos.
+```
+
+### Yuri Gabriel
+
+```text
+Use case: identity-preserve, subtle professional photographic restoration and precise background extraction. The attached image is the EDIT TARGET, a portrait of Yuri Gabriel, a real person. Improve the photographic finish very subtly while keeping the exact identity and realistic appearance. Do not generate a different face. Lock face shape, eyes, eyelids, eyebrows, nose, lips, ears, jaw, hairline, hairstyle, beard, skin tone, apparent age, body shape, expression, and gaze. Preserve natural pores, facial texture and asymmetry; no beauty retouching, smooth plastic skin, face slimming, exaggerated sharpness, new smile or facial reshaping. Keep his rectangular dark glasses with clear natural lenses, dark suit jacket and white shirt; preserve facial hair, facial texture and original slight three-quarter angle. Unify the subject lighting with a soft neutral studio key light from camera-left and a restrained fill, natural contrast and rich but detailed dark clothing, no blue or warm cast. Maintain a credible real camera photograph, sharp eyes and believable fabric, no halos or artificial glow. Compose an elegant eye-level 4:5 vertical portrait with consistent head-and-torso framing: entire head visible, about 7 percent clear space above the hair, natural shoulder width, upper body down to lower torso. Single person, hands outside the image if possible, no extra props. CRITICAL OUTPUT: a genuinely transparent PNG cutout; remove ALL existing grey/charcoal backdrop and its halo, with clean accurate hair edges. Subject and clothes fully opaque, background fully alpha transparent. It will be displayed on the EXACT SAME flat neutral black #101010 background as three other team members on a website. Do not bake any backdrop, gradient, vignette, shadow, checkerboard pattern, white fringe or black rectangle into the PNG. No text, watermarks or logos.
+```
+
+### Macsuel Silva
+
+```text
+Use case: identity-preserve, subtle professional photographic restoration and precise background extraction. The attached image is the EDIT TARGET, a portrait of Macsuel Silva, a real person. Improve the photographic finish very subtly while keeping the exact identity and realistic appearance. Do not generate a different face. Lock face shape, eyes, eyelids, eyebrows, nose, lips, ears, jaw, hairline, hairstyle, beard, skin tone, apparent age, body shape, expression, and gaze. Preserve natural pores, facial texture and asymmetry; no beauty retouching, smooth plastic skin, face slimming, exaggerated sharpness, new smile or facial reshaping. Keep his dark navy button-up shirt, full thick beard, short hair, stocky build and natural slight three-quarter angle; do not slim his face or body. Unify the subject lighting with a soft neutral studio key light from camera-left and a restrained fill, natural contrast and rich but detailed dark clothing, no blue or warm cast. Maintain a credible real camera photograph, sharp eyes and believable fabric, no halos or artificial glow. Compose an elegant eye-level 4:5 vertical portrait with consistent head-and-torso framing: entire head visible, about 7 percent clear space above the hair, natural shoulder width, upper body down to lower torso. Single person, hands outside the image if possible, no extra props. CRITICAL OUTPUT: a genuinely transparent PNG cutout; remove ALL existing grey/charcoal backdrop and its halo, with clean accurate hair edges. Subject and clothes fully opaque, background fully alpha transparent. It will be displayed on the EXACT SAME flat neutral black #101010 background as three other team members on a website. Do not bake any backdrop, gradient, vignette, shadow, checkerboard pattern, white fringe or black rectangle into the PNG. No text, watermarks or logos.
+```

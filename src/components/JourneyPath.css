@@ -1,0 +1,189 @@
+.journey-path {
+  position: relative;
+  margin-top: 23px;
+  padding: 12px 8px 11px;
+  border: 1px solid #31405c70;
+  border-radius: 9px;
+  background:
+    radial-gradient(ellipse at 50% 45%, #3467ef12, transparent 70%),
+    radial-gradient(#6889c51c 0.6px, transparent 0.6px) 0 0/12px 12px,
+    #111622;
+  overflow: hidden;
+  transition:
+    border-color 0.3s,
+    background-color 0.3s;
+}
+.journey-path-context {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  color: #7d90b3;
+  font-size: 8px;
+  letter-spacing: 0.5px;
+}
+.journey-path-map {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 108px;
+}
+.journey-path-map > svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+.journey-path-track {
+  stroke: #334769;
+  fill: none;
+  stroke-width: 1;
+}
+.journey-path-map ellipse {
+  stroke: #4166ab40;
+  stroke-width: 0.6;
+  stroke-dasharray: 2 5;
+  fill: none;
+}
+.journey-path-node {
+  position: absolute;
+  top: 33px;
+  width: 72px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  color: #8da8da;
+  z-index: 1;
+}
+.journey-path-node > svg:first-child {
+  box-sizing: content-box;
+  padding: 10px;
+  background: #171f2f;
+  border: 1px solid #34486c;
+  border-radius: 9px;
+  transition:
+    color 0.25s,
+    border-color 0.25s,
+    box-shadow 0.25s;
+}
+.journey-path-node > span {
+  font-size: 9px;
+  color: #9faec7;
+  white-space: nowrap;
+}
+.journey-path-node.start {
+  left: 0;
+}
+.journey-path-node.end {
+  right: 0;
+}
+.journey-path-hub {
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #a6bfff;
+}
+.journey-path-hub > span {
+  display: grid;
+  place-items: center;
+  width: 49px;
+  height: 49px;
+  border: 1px solid #5685ff;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #437aff, #2451ce);
+  box-shadow: 0 0 25px #2f63f12b;
+  color: #fff;
+  font-size: 31px;
+  letter-spacing: -3px;
+  padding-right: 4px;
+  font-weight: 650;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
+}
+.journey-path-hub small {
+  font-size: 6px;
+  letter-spacing: 1.2px;
+  color: #728bb8;
+}
+.journey-path-caption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #7d93ba;
+  font-size: 8px;
+}
+.journey-path-complete {
+  position: absolute;
+  right: 10px;
+  top: -3px;
+  color: #a1dfc5;
+  background: #172d2b;
+  border-radius: 50%;
+}
+.journey-path-accessible,
+.journey-announcement {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.journey-card:hover .journey-path,
+.journey-path:focus-within,
+.journey-path.is-active {
+  border-color: #4a6caa;
+  background-color: #111b30;
+}
+.journey-card:hover .journey-path-hub > span,
+.journey-path-hub:focus-visible > span {
+  transform: translateY(-3px);
+  box-shadow: 0 0 32px #437bff65;
+}
+.journey-card:hover .journey-path-node > svg:first-child,
+.journey-path.is-active .journey-path-node > svg:first-child {
+  border-color: #5d7fb7;
+  color: #b0c8f5;
+  box-shadow: 0 0 15px #3d67b421;
+}
+.journey-path-hub:hover small {
+  color: #bed2fa;
+}
+@media (max-width: 1100px) and (min-width: 801px) {
+  .journey-path-node {
+    width: 58px;
+  }
+  .journey-path-node > span {
+    font-size: 8px;
+  }
+  .journey-path-hub > span {
+    width: 43px;
+    height: 43px;
+    font-size: 28px;
+  }
+  .journey-path-node > svg:first-child {
+    padding: 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .journey-path,
+  .journey-path-hub > span,
+  .journey-path-node > svg:first-child {
+    transition: none;
+  }
+}

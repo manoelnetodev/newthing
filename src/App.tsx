@@ -1,20 +1,18 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import {
-  ArrowDown,
   ArrowRight,
   ArrowUpRight,
   Check,
   CheckCircle2,
-  ChevronDown,
   Code2,
   Compass,
-  GitBranch,
   Globe,
   Layers,
   Lightbulb,
   Menu,
-  Monitor,
   MousePointer2,
+  Pause,
+  Play,
   Rocket,
   ShieldCheck,
   Sparkles,
@@ -23,8 +21,12 @@ import {
   X,
   Zap,
 } from 'lucide-react'
-import type { LucideIcon } from 'lucide-react'
+import { SolutionsJourney } from './components/SolutionsJourney'
 import { BriefModal } from './components/BriefModal'
+import { ProjectShowcase } from './components/ProjectShowcase'
+import { WhoWeAre } from './components/WhoWeAre'
+import { SolutionFinder } from './components/SolutionFinder'
+import './components/FlowComparisonMotion.css'
 
 function Brand({ small = false }: { small?: boolean }) {
   return (
@@ -67,6 +69,7 @@ function SectionHeading({
 }
 
 function FlowComparison() {
+  const [energyPlaying, setEnergyPlaying] = useState(true)
   const nodes = [
     { label: 'Estratégia', icon: Compass, className: 'node-strategy' },
     { label: 'Design', icon: MousePointer2, className: 'node-design' },
@@ -74,7 +77,7 @@ function FlowComparison() {
     { label: 'Integrações', icon: Workflow, className: 'node-integrations' },
   ]
   return (
-    <div className="comparison-grid">
+    <div className="comparison-grid" data-energy-motion={energyPlaying ? 'running' : 'paused'}>
       <div className="flow-card scattered-card">
         <div className="flow-card-top">
           <span>Quando as peças não se conectam</span>
@@ -88,8 +91,23 @@ function FlowComparison() {
           role="img"
           aria-label="Estratégia, design, código e integrações separados, sem uma direção comum"
         >
-          <svg className="flow-lines" viewBox="0 0 500 215" preserveAspectRatio="none">
+          <svg
+            className="flow-lines"
+            viewBox="0 0 500 215"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
             <path d="M100 55 Q220 170 395 65 M130 160 Q280 20 380 165 M100 55 L130 160 M395 65 L380 165" />
+            <path
+              className="comparison-noise-energy"
+              pathLength={100}
+              d="M100 55 Q220 170 395 65"
+            />
+            <path
+              className="comparison-noise-energy alternate"
+              pathLength={100}
+              d="M130 160 Q280 20 380 165"
+            />
           </svg>
           {nodes.map(({ label, icon: Icon, className }) => (
             <span className={`diagram-node ${className}`} key={label}>
@@ -113,19 +131,57 @@ function FlowComparison() {
       <div className="flow-card connected-card">
         <div className="flow-card-top">
           <span>Com a Newthing</span>
-          <span className="flow-badge blue-badge">
-            <i />
-            Uma direção
-          </span>
+          <div className="flow-card-actions">
+            <span className="flow-badge blue-badge">
+              <i />
+              Uma direção
+            </span>
+            <button
+              type="button"
+              className="comparison-motion-toggle"
+              aria-label={
+                energyPlaying ? 'Pausar energia do diagrama' : 'Continuar energia do diagrama'
+              }
+              aria-pressed={!energyPlaying}
+              onClick={() => setEnergyPlaying((playing) => !playing)}
+            >
+              {energyPlaying ? <Pause size={11} /> : <Play size={11} />}
+            </button>
+          </div>
         </div>
         <div
           className="flow-diagram connected-diagram"
           role="img"
           aria-label="Newthing conecta estratégia, design, código e integrações em um único projeto"
         >
-          <svg className="flow-lines" viewBox="0 0 500 215" preserveAspectRatio="none">
+          <svg
+            className="flow-lines"
+            viewBox="0 0 500 215"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
             <path d="M115 60 L250 107 L385 60 M125 165 L250 107 L375 165" />
             <circle cx="250" cy="107" r="70" />
+            <path
+              className="comparison-energy energy-strategy"
+              pathLength={100}
+              d="M115 60 L250 107"
+            />
+            <path
+              className="comparison-energy energy-design"
+              pathLength={100}
+              d="M250 107 L385 60"
+            />
+            <path
+              className="comparison-energy energy-code"
+              pathLength={100}
+              d="M125 165 L250 107"
+            />
+            <path
+              className="comparison-energy energy-integrations"
+              pathLength={100}
+              d="M250 107 L375 165"
+            />
           </svg>
           {nodes.map(({ label, icon: Icon, className }) => (
             <span className={`diagram-node ${className}`} key={label}>
@@ -136,8 +192,6 @@ function FlowComparison() {
           <span className="diagram-center connected-center">
             <span className="mini-brand-symbol">n.</span>
           </span>
-          <span className="line-point point-one" />
-          <span className="line-point point-two" />
         </div>
         <div className="diagram-caption">
           <span>
@@ -158,43 +212,6 @@ function FlowComparison() {
   )
 }
 
-const solutions: {
-  id: string
-  title: string
-  tag: string
-  text: string
-  icon: LucideIcon
-  items: string[]
-}[] = [
-  {
-    id: '01',
-    title: 'Da ideia ao plano.',
-    tag: 'ESTRATÉGIA',
-    text: 'Transforme uma ideia aberta em prioridades, jornadas e um caminho de construção.',
-    icon: Compass,
-    items: ['Discovery e diagnóstico', 'Escopo e prioridades', 'Protótipo e validação'],
-  },
-  {
-    id: '02',
-    title: 'Do plano ao produto.',
-    tag: 'DESENVOLVIMENTO',
-    text: 'Sites, sistemas e produtos digitais desenhados para resolver o problema certo.',
-    icon: Code2,
-    items: ['Landing pages e sites', 'Aplicações web e MVPs', 'Integrações e automações'],
-  },
-  {
-    id: '03',
-    title: 'Do produto ao próximo nível.',
-    tag: 'EVOLUÇÃO',
-    text: 'Dê continuidade ao que funciona e encontre espaço para melhorar a experiência.',
-    icon: Rocket,
-    items: [
-      'Evolução de funcionalidades',
-      'Experiência e performance',
-      'Operação e infraestrutura',
-    ],
-  },
-]
 const steps = [
   {
     id: '01',
@@ -229,35 +246,6 @@ const steps = [
     deliverable: 'Novas possibilidades',
   },
 ]
-const showcases = [
-  {
-    name: 'Workspace',
-    category: 'SISTEMA DE GESTÃO',
-    title: 'Menos planilhas. Mais clareza.',
-    description:
-      'Um conceito de painel para reunir projetos, prioridades e o trabalho da equipe em um só lugar.',
-    type: 'Dashboard',
-    tags: ['Aplicação web', 'Design de produto'],
-  },
-  {
-    name: 'Orbit',
-    category: 'PRODUTO DIGITAL',
-    title: 'Uma ideia que vira experiência.',
-    description:
-      'Um conceito de produto SaaS com uma jornada simples, do primeiro acesso ao uso diário.',
-    type: 'SaaS',
-    tags: ['Produto digital', 'Experiência do usuário'],
-  },
-  {
-    name: 'Studio',
-    category: 'PRESENÇA DIGITAL',
-    title: 'Sua marca no lugar certo.',
-    description:
-      'Um conceito de site que conecta posicionamento, apresentação de serviços e uma próxima ação clara.',
-    type: 'Website',
-    tags: ['Landing page', 'Desenvolvimento web'],
-  },
-]
 const faqs = [
   {
     question: 'Tenho apenas uma ideia. Por onde começo?',
@@ -286,160 +274,47 @@ const faqs = [
   },
 ]
 
-function ProjectShowcase() {
-  const [selected, setSelected] = useState(0)
-  const showcase = showcases[selected]
-  return (
-    <section id="projetos" className="section section-showcase">
-      <div className="container">
-        <SectionHeading
-          label="POSSIBILIDADES"
-          title={
-            <>
-              Ideias diferentes.
-              <br />
-              <span>O mesmo cuidado ao construir.</span>
-            </>
-          }
-          text="Explore algumas direções que um projeto digital pode tomar."
-        />
-        <div className="showcase-tabs" role="group" aria-label="Escolher exemplo de projeto">
-          {showcases.map((item, index) => (
-            <button
-              key={item.name}
-              aria-pressed={selected === index}
-              className={selected === index ? 'selected' : ''}
-              onClick={() => setSelected(index)}
-            >
-              {item.type}
-              <ArrowUpRight size={14} />
-            </button>
-          ))}
-        </div>
-        <div className={`showcase-card showcase-${selected}`}>
-          <div className="product-preview">
-            <div className="preview-window-top">
-              <span className="window-dots">
-                <i />
-                <i />
-                <i />
-              </span>
-              <span>{showcase.name.toLowerCase()}.app / overview</span>
-              <ShieldCheck size={13} />
-            </div>
-            <div className="preview-app">
-              <aside className="preview-sidebar">
-                <span className="preview-logo">
-                  <Layers size={17} />
-                  {showcase.name.toLowerCase()}
-                  <b>.</b>
-                </span>
-                <span className="preview-nav active">
-                  <Monitor size={13} />
-                  Visão geral
-                </span>
-                <span className="preview-nav">
-                  <Layers size={13} />
-                  Projetos
-                </span>
-                <span className="preview-nav">
-                  <Workflow size={13} />
-                  Atividades
-                </span>
-                <span className="preview-nav">
-                  <GitBranch size={13} />
-                  Equipe
-                </span>
-                <span className="preview-avatar">
-                  JD{' '}
-                  <span>
-                    João Demo<small>Meu espaço</small>
-                  </span>
-                </span>
-              </aside>
-              <div className="preview-content">
-                <div className="preview-title">
-                  <div>
-                    <span>SEU ESPAÇO, ORGANIZADO</span>
-                    <h4>{selected === 2 ? 'Sua próxima experiência.' : 'Tudo sob controle.'}</h4>
-                  </div>
-                  <span className="preview-user">JD</span>
-                </div>
-                <div className="preview-stats">
-                  {[
-                    { value: '12', label: 'Projetos' },
-                    { value: '08', label: 'Em andamento' },
-                    { value: '04', label: 'Concluídos' },
-                  ].map((item) => (
-                    <div key={item.label}>
-                      <span>{item.label}</span>
-                      <strong>
-                        {item.value}
-                        <span>↗</span>
-                      </strong>
-                      <small>Dados ilustrativos</small>
-                    </div>
-                  ))}
-                </div>
-                <div className="preview-chart">
-                  <div>
-                    <strong>Visão do projeto</strong>
-                    <span>
-                      Esta semana <ChevronDown size={10} />
-                    </span>
-                  </div>
-                  <div className="chart-bars">
-                    {[35, 52, 42, 68, 57, 83, 74, 95, 86, 100, 91, 110].map((height, index) => (
-                      <span key={index} style={{ height: `${height}px` }} />
-                    ))}
-                  </div>
-                  <div className="chart-labels">
-                    <span>SEG</span>
-                    <span>TER</span>
-                    <span>QUA</span>
-                    <span>QUI</span>
-                    <span>SEX</span>
-                    <span>SÁB</span>
-                  </div>
-                </div>
-                <div className="preview-task">
-                  <span>
-                    <CheckCircle2 size={14} />
-                    Primeira entrega
-                  </span>
-                  <span className="task-status">Concluída</span>
-                </div>
-              </div>
-            </div>
-            <span className="concept-label">Interface conceitual · dados fictícios</span>
-          </div>
-          <div className="showcase-copy">
-            <span className="eyebrow">{showcase.category}</span>
-            <h3>{showcase.title}</h3>
-            <p>{showcase.description}</p>
-            <div className="showcase-tags">
-              {showcase.tags.map((tag) => (
-                <span key={tag}>{tag}</span>
-              ))}
-            </div>
-            <span className="showcase-index">
-              0{selected + 1}
-              <span> / 03</span>
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [briefOpen, setBriefOpen] = useState(false)
+  const [finderOpen, setFinderOpen] = useState(false)
+  const [journeyRequest, setJourneyRequest] = useState({ exampleIndex: 0, phase: 0, id: 0 })
+  const finderTrigger = useRef<HTMLButtonElement>(null)
+  const returnBriefToFinder = useRef(false)
+  const [briefContext, setBriefContext] = useState<{ stage?: string; project?: string }>({})
   const [openFaq, setOpenFaq] = useState<number | null>(0)
   const openBrief = () => {
+    returnBriefToFinder.current = false
     setMenuOpen(false)
+    setBriefContext({})
     setBriefOpen(true)
+  }
+  const openBriefForGoal = (goal: string, stage: string) => {
+    returnBriefToFinder.current = finderOpen
+    setFinderOpen(false)
+    setMenuOpen(false)
+    setBriefContext({ stage, project: `Meu objetivo: ${goal}\n\nHoje, meu maior desafio é: ` })
+    setBriefOpen(true)
+  }
+  const closeBrief = () => {
+    setBriefOpen(false)
+    if (returnBriefToFinder.current) {
+      requestAnimationFrame(() => finderTrigger.current?.focus({ preventScroll: true }))
+    }
+  }
+  const viewRecommendedExample = (exampleIndex: number, phase: number) => {
+    setFinderOpen(false)
+    setJourneyRequest((previous) => ({ exampleIndex, phase, id: previous.id + 1 }))
+    window.history.pushState(null, '', '#solucoes')
+    requestAnimationFrame(() => {
+      document.getElementById('journey-detail-content')?.focus({ preventScroll: true })
+      document.getElementById('journey-practice')?.scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+          ? 'instant'
+          : 'smooth',
+        block: 'start',
+      })
+    })
   }
   return (
     <>
@@ -470,6 +345,9 @@ export default function App() {
             </a>
             <a href="#projetos" onClick={() => setMenuOpen(false)}>
               Projetos
+            </a>
+            <a href="#quem-somos" onClick={() => setMenuOpen(false)}>
+              Quem somos
             </a>
             <a href="#sobre" onClick={() => setMenuOpen(false)}>
               Sobre
@@ -513,9 +391,20 @@ export default function App() {
               <button className="button button-primary" onClick={openBrief}>
                 Começar meu projeto <ArrowUpRight size={17} />
               </button>
-              <a className="button button-secondary" href="#solucoes">
-                Encontrar minha solução <ArrowDown size={15} />
-              </a>
+              <button
+                type="button"
+                className="button button-secondary hero-finder"
+                ref={finderTrigger}
+                onClick={() => setFinderOpen(true)}
+                aria-haspopup="dialog"
+              >
+                <Compass size={18} />
+                <span>
+                  <strong>Descobrir meu caminho</strong>
+                  <small>2 perguntas para orientar seu projeto</small>
+                </span>
+                <ArrowRight size={15} />
+              </button>
             </div>
             <div className="hero-reassurance">
               <span>
@@ -549,56 +438,11 @@ export default function App() {
             </div>
           </div>
         </section>
-        <section id="solucoes" className="section solutions-section">
-          <div className="container">
-            <SectionHeading
-              label="O QUE PODEMOS CONSTRUIR"
-              title={
-                <>
-                  Sua visão ganha forma.
-                  <br />
-                  <span>A tecnologia conecta as peças.</span>
-                </>
-              }
-              text="Cada projeto tem um ponto de partida. Encontre a solução que faz sentido para o seu momento."
-            />
-            <div className="solutions-grid">
-              {solutions.map(({ id, title, tag, text, icon: Icon, items }) => (
-                <article className="solution-card" key={id}>
-                  <div className="solution-card-top">
-                    <span className="service-icon">
-                      <Icon size={24} strokeWidth={1.5} />
-                    </span>
-                    <span className="solution-number">{id}</span>
-                  </div>
-                  <span className="service-tag">{tag}</span>
-                  <h3>{title}</h3>
-                  <p>{text}</p>
-                  <ul>
-                    {items.map((item) => (
-                      <li key={item}>
-                        <Check size={14} />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <button onClick={openBrief}>
-                    Explorar esta solução <ArrowUpRight size={16} />
-                  </button>
-                </article>
-              ))}
-            </div>
-            <div className="solution-help">
-              <span>
-                <Lightbulb size={18} />
-                Ainda não sabe por onde começar? Organize a sua ideia com a gente.
-              </span>
-              <button onClick={openBrief}>
-                Encontrar meu próximo passo <ArrowRight size={16} />
-              </button>
-            </div>
-          </div>
-        </section>
+        <SolutionsJourney
+          key={journeyRequest.id}
+          initialExample={journeyRequest.exampleIndex}
+          initialPhase={journeyRequest.phase}
+        />
         <section id="processo" className="section process-section">
           <div className="container">
             <div className="split-heading">
@@ -637,6 +481,7 @@ export default function App() {
           </div>
         </section>
         <ProjectShowcase />
+        <WhoWeAre onContact={openBrief} onStartProject={openBriefForGoal} />
         <section id="sobre" className="section about-section">
           <div className="container about-grid">
             <div>
@@ -757,6 +602,7 @@ export default function App() {
               <a href="#solucoes">Soluções</a>
               <a href="#processo">Como fazemos</a>
               <a href="#projetos">Projetos</a>
+              <a href="#quem-somos">Quem somos</a>
               <a href="#duvidas">Dúvidas</a>
             </div>
             <a className="back-top" href="#inicio">
@@ -769,7 +615,20 @@ export default function App() {
           </div>
         </div>
       </footer>
-      {briefOpen && <BriefModal onClose={() => setBriefOpen(false)} />}
+      {finderOpen && (
+        <SolutionFinder
+          onClose={() => setFinderOpen(false)}
+          onViewExample={viewRecommendedExample}
+          onStartProject={openBriefForGoal}
+        />
+      )}
+      {briefOpen && (
+        <BriefModal
+          onClose={closeBrief}
+          initialStage={briefContext.stage}
+          initialProject={briefContext.project}
+        />
+      )}
     </>
   )
 }

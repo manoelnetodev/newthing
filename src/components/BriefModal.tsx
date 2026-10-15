@@ -2,12 +2,20 @@ import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { ArrowRight, CheckCircle2, Download, RotateCcw } from 'lucide-react'
 import { Button, ErrorMessage, Field, Modal } from './ui'
-export function BriefModal({ onClose }: { onClose: () => void }) {
+export function BriefModal({
+  onClose,
+  initialStage = 'Tenho uma ideia',
+  initialProject = '',
+}: {
+  onClose: () => void
+  initialStage?: string
+  initialProject?: string
+}) {
   const [values, setValues] = useState({
     name: '',
     email: '',
-    stage: 'Tenho uma ideia',
-    project: '',
+    stage: initialStage,
+    project: initialProject,
   })
   const [ready, setReady] = useState(false)
   const [error, setError] = useState<string | null>(null)

@@ -1,0 +1,323 @@
+/* The client explicitly requested this light sequence. Its local pause control remains available when the system reduces other motion. */
+.journey-path {
+  --journey-cycle: 15s;
+  --origin-light: #c5d8ff;
+  --origin-glow: #6593ff;
+  --result-light: #cbe6ff;
+  --result-glow: #6da4ff;
+}
+.journey-path-phase-0 {
+  --origin-light: #ffe6a0;
+  --origin-glow: #ffcc65;
+}
+.journey-path-phase-2 {
+  --result-light: #b8ffe2;
+  --result-glow: #6bddb0;
+}
+.journey-path::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 48%, #477fff35, transparent 72%);
+  opacity: 0;
+  animation: journey-light-atmosphere var(--journey-cycle) linear var(--journey-delay) infinite both !important;
+}
+.journey-path-track {
+  stroke: #47618d;
+  stroke-width: 1.1;
+}
+.journey-path-charge,
+.journey-path-packet,
+.journey-path-halo {
+  fill: none;
+  stroke-linecap: round;
+}
+.journey-path-charge {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+}
+.journey-path-charge.incoming {
+  stroke: #96b9ff;
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 3px #638fff);
+  animation: journey-light-incoming var(--journey-cycle) linear var(--journey-delay) infinite both !important;
+}
+.journey-path-charge.outgoing {
+  stroke: #e0edff;
+  stroke-width: 1.8;
+  filter: drop-shadow(0 0 4px #77a6ff);
+  animation: journey-light-outgoing var(--journey-cycle) linear var(--journey-delay) infinite both !important;
+}
+.journey-path-packet.incoming {
+  stroke: #d7e7ff;
+  stroke-width: 2.1;
+  stroke-dasharray: 5 95;
+  filter: drop-shadow(0 0 3px #8bb5ff);
+  animation: journey-light-arrival var(--journey-cycle) linear var(--journey-delay) infinite both !important;
+}
+.journey-path-packet.outgoing {
+  stroke: #fff;
+  stroke-width: 2.9;
+  stroke-dasharray: 10 90;
+  filter: drop-shadow(0 0 3px #d8e7ff) drop-shadow(0 0 6px #5a8aff);
+  animation: journey-light-departure var(--journey-cycle) linear var(--journey-delay) infinite both !important;
+}
+.journey-path-halo.outgoing {
+  stroke: #6f9eff;
+  stroke-width: 5;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  filter: blur(3px);
+  animation: journey-light-outgoing var(--journey-cycle) linear var(--journey-delay) infinite both !important;
+}
+.journey-path .start > svg:first-child {
+  animation: journey-light-origin var(--journey-cycle) linear var(--journey-delay) infinite both !important;
+}
+.journey-path-phase-0 .start > svg:first-child {
+  fill: #ffd4770d;
+}
+.journey-path .end > svg:first-child {
+  animation: journey-light-result var(--journey-cycle) linear var(--journey-delay) infinite both !important;
+}
+.journey-path .end > span {
+  animation: journey-light-label var(--journey-cycle) linear var(--journey-delay) infinite both !important;
+}
+.journey-path-hub > span {
+  position: relative;
+  animation: journey-light-hub var(--journey-cycle) linear var(--journey-delay) infinite both !important;
+}
+.journey-path-hub > span::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border: 1px solid #8db4ff;
+  border-radius: 18px;
+  pointer-events: none;
+  opacity: 0;
+  animation: journey-light-emission var(--journey-cycle) linear var(--journey-delay) infinite both !important;
+}
+.journey-path-complete {
+  animation: journey-light-complete var(--journey-cycle) linear var(--journey-delay) infinite both !important;
+}
+.journey-path:hover .journey-path-map,
+.journey-path:focus-within .journey-path-map {
+  filter: brightness(1.16);
+}
+@keyframes journey-light-origin {
+  0%,
+  1%,
+  3%,
+  45%,
+  100% {
+    color: #99afd4;
+    border-color: #42587f;
+    box-shadow: 0 0 8px #4776cd14;
+    filter: none;
+  }
+  2%,
+  5% {
+    color: var(--origin-light);
+    border-color: var(--origin-glow);
+    box-shadow: 0 0 10px color-mix(in srgb, var(--origin-glow) 28%, transparent);
+  }
+  8%,
+  33% {
+    color: var(--origin-light);
+    border-color: var(--origin-glow);
+    background: #202a3e;
+    box-shadow:
+      0 0 20px color-mix(in srgb, var(--origin-glow) 35%, transparent),
+      inset 0 0 12px color-mix(in srgb, var(--origin-glow) 12%, transparent);
+    filter: drop-shadow(0 0 3px color-mix(in srgb, var(--origin-glow) 50%, transparent));
+  }
+}
+@keyframes journey-light-incoming {
+  0%,
+  6% {
+    stroke-dashoffset: 100;
+    opacity: 0;
+  }
+  7% {
+    opacity: 0.7;
+  }
+  13%,
+  35% {
+    stroke-dashoffset: 0;
+    opacity: 0.9;
+  }
+  45%,
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.18;
+  }
+}
+@keyframes journey-light-arrival {
+  0%,
+  6% {
+    stroke-dashoffset: 100;
+    opacity: 0;
+  }
+  7% {
+    stroke-dashoffset: 100;
+    opacity: 1;
+  }
+  14% {
+    stroke-dashoffset: -5;
+    opacity: 1;
+  }
+  15%,
+  100% {
+    stroke-dashoffset: -5;
+    opacity: 0;
+  }
+}
+@keyframes journey-light-hub {
+  0%,
+  10%,
+  40%,
+  100% {
+    box-shadow: 0 0 20px #2f63f12b;
+    border-color: #5685ff;
+    filter: brightness(1);
+  }
+  14% {
+    box-shadow:
+      0 0 30px #699bff99,
+      0 0 55px #326eff55,
+      inset 0 0 15px #bcd5ff35;
+    border-color: #bfd7ff;
+    filter: brightness(1.35);
+  }
+  21%,
+  27% {
+    box-shadow:
+      0 0 24px #588cff88,
+      0 0 40px #326eff33;
+    border-color: #a3c1ff;
+    filter: brightness(1.18);
+  }
+}
+@keyframes journey-light-emission {
+  0%,
+  12% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  15% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  23%,
+  100% {
+    opacity: 0;
+    transform: scale(1.6);
+  }
+}
+@keyframes journey-light-outgoing {
+  0%,
+  16% {
+    stroke-dashoffset: 100;
+    opacity: 0;
+  }
+  17% {
+    opacity: 0.9;
+  }
+  26%,
+  37% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  46%,
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.16;
+  }
+}
+@keyframes journey-light-departure {
+  0%,
+  16% {
+    stroke-dashoffset: 100;
+    opacity: 0;
+  }
+  17% {
+    stroke-dashoffset: 100;
+    opacity: 1;
+  }
+  27% {
+    stroke-dashoffset: -10;
+    opacity: 1;
+  }
+  28%,
+  100% {
+    stroke-dashoffset: -10;
+    opacity: 0;
+  }
+}
+@keyframes journey-light-result {
+  0%,
+  23%,
+  48%,
+  100% {
+    color: #99afd4;
+    border-color: #42587f;
+    box-shadow: 0 0 8px #4776cd14;
+    filter: none;
+  }
+  27%,
+  40% {
+    color: var(--result-light);
+    border-color: var(--result-glow);
+    background: #202d43;
+    box-shadow:
+      0 0 24px color-mix(in srgb, var(--result-glow) 40%, transparent),
+      inset 0 0 12px color-mix(in srgb, var(--result-glow) 12%, transparent);
+    filter: drop-shadow(0 0 3px color-mix(in srgb, var(--result-glow) 40%, transparent));
+  }
+}
+@keyframes journey-light-label {
+  0%,
+  24%,
+  48%,
+  100% {
+    color: #9faec7;
+    text-shadow: none;
+  }
+  28%,
+  40% {
+    color: var(--result-light);
+    text-shadow: 0 0 10px var(--result-glow);
+  }
+}
+@keyframes journey-light-atmosphere {
+  0%,
+  9%,
+  45%,
+  100% {
+    opacity: 0;
+  }
+  15%,
+  30% {
+    opacity: 1;
+  }
+}
+@keyframes journey-light-complete {
+  0%,
+  24%,
+  50%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  29%,
+  40% {
+    opacity: 1;
+    transform: scale(1.25);
+    box-shadow: 0 0 12px #8cf4c9;
+  }
+}
+.journey-cards[data-light-motion='paused'] .journey-path *,
+.journey-cards[data-light-motion='paused'] .journey-path::before,
+.journey-cards[data-light-motion='paused'] .journey-path-hub > span::after {
+  animation-play-state: paused !important;
+}

@@ -1,0 +1,264 @@
+/* Explicitly requested ambient energy. The local control pauses both diagrams, including when system motion is reduced. */
+.comparison-grid {
+  --comparison-motion: running;
+}
+.comparison-grid[data-energy-motion='paused'] {
+  --comparison-motion: paused;
+}
+.flow-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.comparison-motion-toggle {
+  display: grid;
+  place-items: center;
+  padding: 4px;
+  border: 1px solid #4264a04d;
+  border-radius: 4px;
+  background: #3267ff0d;
+  color: #9cbbff;
+}
+.comparison-motion-toggle:hover {
+  background: #3267ff25;
+  color: #dce8ff;
+}
+.comparison-motion-toggle:focus-visible {
+  outline: 2px solid #9bb8ff;
+  outline-offset: 3px;
+}
+.comparison-grid .node-strategy {
+  --float-delay: -1s;
+  --energy-delay: 0s;
+}
+.comparison-grid .node-design {
+  --float-delay: -2.6s;
+  --energy-delay: 1.25s;
+}
+.comparison-grid .node-code {
+  --float-delay: -0.4s;
+  --energy-delay: 3.4s;
+}
+.comparison-grid .node-integrations {
+  --float-delay: -4s;
+  --energy-delay: 4.65s;
+}
+.comparison-grid .scattered-diagram .diagram-node {
+  animation: comparison-drift 7s ease-in-out var(--float-delay) infinite !important;
+  animation-play-state: var(--comparison-motion) !important;
+  will-change: translate;
+}
+.comparison-grid .connected-diagram .diagram-node {
+  animation:
+    comparison-float 5.5s ease-in-out var(--float-delay) infinite,
+    comparison-node-energy 6.8s ease-in-out var(--energy-delay) infinite !important;
+  animation-play-state: var(--comparison-motion) !important;
+  will-change: translate;
+}
+.comparison-grid .scattered-diagram .flow-lines > path:first-child {
+  animation: comparison-dashed-lines 9s linear infinite !important;
+  animation-play-state: var(--comparison-motion) !important;
+}
+.comparison-grid .scattered-diagram .flow-lines .comparison-noise-energy {
+  stroke: #a1a6b2;
+  stroke-width: 1.3;
+  stroke-dasharray: 4 96;
+  stroke-linecap: round;
+  opacity: 0;
+  animation: comparison-noise-travel 7s linear infinite !important;
+  animation-play-state: var(--comparison-motion) !important;
+}
+.comparison-grid .scattered-diagram .flow-lines .comparison-noise-energy.alternate {
+  animation-delay: 3.2s !important;
+}
+.comparison-grid .scattered-center {
+  animation: comparison-idea-breathe 5s ease-in-out infinite !important;
+  animation-play-state: var(--comparison-motion) !important;
+}
+.comparison-grid .small-cross {
+  animation: comparison-noise-breathe 4.5s ease-in-out infinite !important;
+  animation-play-state: var(--comparison-motion) !important;
+}
+.comparison-grid .cross-two {
+  animation-delay: -2.2s !important;
+}
+.comparison-grid .connected-diagram .flow-lines .comparison-energy {
+  stroke: #e2edff;
+  stroke-width: 2;
+  stroke-dasharray: 9 91;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 3px #91b6ff) drop-shadow(0 0 6px #386fff);
+  opacity: 0;
+  animation: comparison-energy-travel 6.8s linear var(--packet-delay, 0s) infinite !important;
+  animation-play-state: var(--comparison-motion) !important;
+}
+.comparison-grid .energy-design {
+  --packet-delay: 1.25s;
+}
+.comparison-grid .energy-code {
+  --packet-delay: 3.4s;
+}
+.comparison-grid .energy-integrations {
+  --packet-delay: 4.65s;
+}
+.comparison-grid .connected-center {
+  animation: comparison-hub-charge 6.8s ease-in-out infinite !important;
+  animation-play-state: var(--comparison-motion) !important;
+}
+.comparison-grid .connected-center::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border: 1px solid #85adff;
+  border-radius: 21px;
+  opacity: 0;
+  pointer-events: none;
+  animation: comparison-energy-ring 6.8s ease-out infinite !important;
+  animation-play-state: var(--comparison-motion) !important;
+}
+.comparison-grid .connected-diagram .flow-lines circle {
+  transform-origin: 250px 107px;
+  animation: comparison-orbit 32s linear infinite !important;
+  animation-play-state: var(--comparison-motion) !important;
+}
+@keyframes comparison-drift {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  35% {
+    translate: 2px -3px;
+  }
+  70% {
+    translate: -1px 2px;
+  }
+}
+@keyframes comparison-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -3px;
+  }
+}
+@keyframes comparison-dashed-lines {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+@keyframes comparison-noise-travel {
+  0%,
+  8% {
+    stroke-dashoffset: 100;
+    opacity: 0;
+  }
+  14% {
+    opacity: 0.5;
+  }
+  48% {
+    stroke-dashoffset: 35;
+    opacity: 0.35;
+  }
+  55%,
+  100% {
+    stroke-dashoffset: 20;
+    opacity: 0;
+  }
+}
+@keyframes comparison-idea-breathe {
+  0%,
+  100% {
+    color: #7d818c;
+    filter: none;
+  }
+  50% {
+    color: #b5b8c3;
+    filter: drop-shadow(0 0 5px #9aa4be25);
+  }
+}
+@keyframes comparison-noise-breathe {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+@keyframes comparison-energy-travel {
+  0% {
+    stroke-dashoffset: 100;
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+  20% {
+    stroke-dashoffset: -9;
+    opacity: 1;
+  }
+  22%,
+  100% {
+    stroke-dashoffset: -9;
+    opacity: 0;
+  }
+}
+@keyframes comparison-node-energy {
+  0%,
+  35%,
+  100% {
+    border-color: #3267ff32;
+    box-shadow: 0 3px 10px #0003;
+  }
+  16%,
+  25% {
+    border-color: #779eff;
+    box-shadow:
+      0 0 15px #4c80ff35,
+      inset 0 0 12px #3e72ff0d;
+  }
+}
+@keyframes comparison-hub-charge {
+  0%,
+  40%,
+  90%,
+  100% {
+    box-shadow: 0 0 25px #3267ff40;
+    filter: brightness(1);
+  }
+  18%,
+  26%,
+  68%,
+  76% {
+    box-shadow:
+      0 0 28px #6497ff99,
+      0 0 48px #3267ff40;
+    filter: brightness(1.22);
+  }
+}
+@keyframes comparison-energy-ring {
+  0%,
+  15%,
+  50%,
+  65% {
+    opacity: 0;
+    scale: 0.95;
+  }
+  20%,
+  70% {
+    opacity: 0.65;
+    scale: 1;
+  }
+  37%,
+  87%,
+  100% {
+    opacity: 0;
+    scale: 1.55;
+  }
+}
+@keyframes comparison-orbit {
+  to {
+    rotate: 360deg;
+  }
+}
