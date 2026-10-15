@@ -22,12 +22,11 @@ import {
   Settings2,
   ShieldCheck,
   ShoppingBag,
-  Sparkles,
   Target,
   Users,
   Workflow,
-  Zap,
 } from 'lucide-react'
+import { FluxoMonitor, NexoEvolution } from './OperationalPreviews'
 import './JourneyDemo.css'
 import './JourneyAutomation.css'
 
@@ -70,7 +69,7 @@ function Window({
     <figure className={`journey-demo journey-demo--${kind}`}>
       <div
         className="journey-mock-window"
-        role="img"
+        role={phase === 2 && kind !== 'website' ? 'group' : 'img'}
         aria-label={`${names[kind]}. ${stages[phase]}. ${descriptions[kind][phase]}`}
       >
         <div className="journey-mock-window-bar">
@@ -613,81 +612,16 @@ function AutomationBuild() {
   )
 }
 
-function AutomationEvolve() {
-  return (
-    <div className="journey-mock-automation-monitor">
-      <div className="journey-mock-flow-heading">
-        <strong>
-          <Zap size={16} />
-          fluxo<span>.</span>
-        </strong>
-        <span>Visão da operação</span>
-        <b>
-          <i />
-          Monitoramento
-        </b>
-      </div>
-      <div className="journey-mock-monitor-body">
-        <div className="journey-mock-monitor-title">
-          <span>ACOMPANHAMENTO DO FLUXO</span>
-          <h4>Cada ação tem um histórico.</h4>
-          <p>Visibilidade para acompanhar, revisar e melhorar.</p>
-        </div>
-        <div className="journey-mock-monitor-stats">
-          <div>
-            <CheckCircle2 size={15} />
-            <strong>18</strong>
-            <small>Concluídas</small>
-          </div>
-          <div>
-            <Users size={15} />
-            <strong>02</strong>
-            <small>Em revisão</small>
-          </div>
-          <div>
-            <Workflow size={15} />
-            <strong>04</strong>
-            <small>Etapas conectadas</small>
-          </div>
-        </div>
-        <div className="journey-mock-run-history">
-          <header>
-            <strong>Últimas execuções</strong>
-            <span>Histórico ilustrativo</span>
-          </header>
-          {[
-            ['09:42', 'Solicitação direcionada', 'Concluída'],
-            ['09:38', 'Informação incompleta', 'Revisar'],
-            ['09:31', 'Confirmação enviada', 'Concluída'],
-          ].map(([time, title, state]) => (
-            <div key={time}>
-              <span>{time}</span>
-              <strong>{title}</strong>
-              <b className={state === 'Revisar' ? 'review' : ''}>{state}</b>
-            </div>
-          ))}
-        </div>
-        <div className="journey-mock-next-flow">
-          <Sparkles size={15} />
-          <div>
-            <strong>Próxima melhoria</strong>
-            <span>Adicionar uma regra de prioridade ao atendimento.</span>
-          </div>
-          <ArrowUpRight size={14} />
-        </div>
-      </div>
-    </div>
-  )
-}
-
 export function JourneyDemo({ kind, phase }: { kind: JourneyDemoKind; phase: number }) {
   return (
     <Window kind={kind} phase={phase}>
       {kind === 'system' ? (
         phase === 0 ? (
           <SystemPlan />
+        ) : phase === 2 ? (
+          <NexoEvolution />
         ) : (
-          <SystemBuild evolve={phase === 2} />
+          <SystemBuild />
         )
       ) : kind === 'website' ? (
         phase === 0 ? (
@@ -700,7 +634,7 @@ export function JourneyDemo({ kind, phase }: { kind: JourneyDemoKind; phase: num
       ) : phase === 1 ? (
         <AutomationBuild />
       ) : (
-        <AutomationEvolve />
+        <FluxoMonitor />
       )}
     </Window>
   )
