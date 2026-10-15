@@ -114,10 +114,3 @@ Entender o contexto → validar prioridades → definir a proposta.
 Plano preliminar gerado a partir das opções do briefing; ainda não foi analisado pela equipe. Escopo, tecnologia, prazo e investimento serão definidos após entender o contexto.
 `
 }
-
-export function createWhatsAppLink(number: string | undefined, message: string) {
-  const digits = (number ?? '').replace(/\D/g, '')
-  // International format, without assuming or adding a Brazilian ninth digit.
-  if (!/^[1-9]\d{7,14}$/.test(digits)) return null
-  return `https://wa.me/${digits}?text=${encodeURIComponent(message)}`
-}

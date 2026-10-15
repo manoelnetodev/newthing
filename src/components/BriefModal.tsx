@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import type { FormEvent } from 'react'
 import { ArrowRight, CheckCircle2, Copy, Download, MessageCircle, RotateCcw } from 'lucide-react'
 import { Button, ErrorMessage, Field, Modal } from './ui'
-import { createBlueprint, createWhatsAppLink, formatBlueprint } from '../lib/projectBlueprint'
+import { createBlueprint, formatBlueprint } from '../lib/projectBlueprint'
 import './BriefModal.css'
 export function BriefModal({
   onClose,
@@ -25,7 +25,7 @@ export function BriefModal({
   const summaryHeading = useRef<HTMLHeadingElement>(null)
   const plan = createBlueprint(values)
   const summary = formatBlueprint(values)
-  const whatsappLink = createWhatsAppLink(import.meta.env.VITE_WHATSAPP_NUMBER, summary)
+  const whatsappLink = `https://wa.me/556293022434?text=${encodeURIComponent(summary)}`
   useEffect(() => {
     if (ready) {
       summaryHeading.current?.focus()
@@ -115,23 +115,19 @@ export function BriefModal({
             Escopo, tecnologia, prazo e investimento serão definidos com você.
           </p>
           <div className="blueprint-actions">
-            {whatsappLink && (
-              <a
-                className="button button-primary blueprint-whatsapp"
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <MessageCircle size={18} />
-                Conversar no WhatsApp
-                <ArrowRight size={16} />
-              </a>
-            )}
+            <a
+              className="button button-primary blueprint-whatsapp"
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MessageCircle size={18} />
+              Conversar no WhatsApp
+              <ArrowRight size={16} />
+            </a>
             <p className="blueprint-share-note">
-              {whatsappLink
-                ? 'Abre o WhatsApp com este resumo preenchido. Você revisa e toca em Enviar.'
-                : 'Você pode copiar ou baixar o resumo para compartilhar com a equipe.'}{' '}
-              Nada é enviado automaticamente.
+              Abre o WhatsApp com este resumo preenchido. Você revisa e toca em Enviar. Nada é
+              enviado automaticamente.
             </p>
             <div className="blueprint-secondary-actions">
               <Button variant="secondary" onClick={copy}>

@@ -83,7 +83,7 @@ Testes de uso: confira o menu em 390px, os links entre seções, todos os exempl
 
 ### Briefing e WhatsApp comercial
 
-Copie `.env.example` para `.env.local` e preencha `VITE_WHATSAPP_NUMBER` com DDI, DDD e número, apenas dígitos. Reinicie o Vite após alterar. Essa variável é pública na aplicação; use somente o contato comercial. Na hospedagem, configure-a antes do build.
+O botão usa um link direto `wa.me` para o WhatsApp comercial informado, com o resumo do projeto preenchido. Funciona no site local e na versão publicada, sem variável de ambiente, API ou configuração na hospedagem. Para trocar o contato, altere o número no link em `src/components/BriefModal.tsx`.
 
 O cliente preenche o briefing, revisa um plano preliminar e escolhe copiar, baixar ou abrir o WhatsApp com o resumo preenchido. O envio é confirmado pelo próprio cliente no WhatsApp. Não há envio automático, análise de IA nem armazenamento em servidor. A equipe valida escopo, tecnologia, prazo e investimento na conversa.
 
