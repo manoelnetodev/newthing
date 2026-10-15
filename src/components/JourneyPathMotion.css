@@ -21,7 +21,7 @@
   pointer-events: none;
   background: radial-gradient(ellipse at 50% 48%, #477fff35, transparent 72%);
   opacity: 0;
-  animation: journey-light-atmosphere var(--journey-cycle) linear var(--journey-delay) infinite both !important;
+  animation: journey-light-atmosphere var(--journey-cycle) linear var(--journey-delay) infinite both;
 }
 .journey-path-track {
   stroke: #47618d;
@@ -41,27 +41,27 @@
   stroke: #96b9ff;
   stroke-width: 1.5;
   filter: drop-shadow(0 0 3px #638fff);
-  animation: journey-light-incoming var(--journey-cycle) linear var(--journey-delay) infinite both !important;
+  animation: journey-light-incoming var(--journey-cycle) linear var(--journey-delay) infinite both;
 }
 .journey-path-charge.outgoing {
   stroke: #e0edff;
   stroke-width: 1.8;
   filter: drop-shadow(0 0 4px #77a6ff);
-  animation: journey-light-outgoing var(--journey-cycle) linear var(--journey-delay) infinite both !important;
+  animation: journey-light-outgoing var(--journey-cycle) linear var(--journey-delay) infinite both;
 }
 .journey-path-packet.incoming {
   stroke: #d7e7ff;
   stroke-width: 2.1;
   stroke-dasharray: 5 95;
   filter: drop-shadow(0 0 3px #8bb5ff);
-  animation: journey-light-arrival var(--journey-cycle) linear var(--journey-delay) infinite both !important;
+  animation: journey-light-arrival var(--journey-cycle) linear var(--journey-delay) infinite both;
 }
 .journey-path-packet.outgoing {
   stroke: #fff;
   stroke-width: 2.9;
   stroke-dasharray: 10 90;
   filter: drop-shadow(0 0 3px #d8e7ff) drop-shadow(0 0 6px #5a8aff);
-  animation: journey-light-departure var(--journey-cycle) linear var(--journey-delay) infinite both !important;
+  animation: journey-light-departure var(--journey-cycle) linear var(--journey-delay) infinite both;
 }
 .journey-path-halo.outgoing {
   stroke: #6f9eff;
@@ -69,23 +69,23 @@
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
   filter: blur(3px);
-  animation: journey-light-outgoing var(--journey-cycle) linear var(--journey-delay) infinite both !important;
+  animation: journey-light-outgoing var(--journey-cycle) linear var(--journey-delay) infinite both;
 }
 .journey-path .start > svg:first-child {
-  animation: journey-light-origin var(--journey-cycle) linear var(--journey-delay) infinite both !important;
+  animation: journey-light-origin var(--journey-cycle) linear var(--journey-delay) infinite both;
 }
 .journey-path-phase-0 .start > svg:first-child {
   fill: #ffd4770d;
 }
 .journey-path .end > svg:first-child {
-  animation: journey-light-result var(--journey-cycle) linear var(--journey-delay) infinite both !important;
+  animation: journey-light-result var(--journey-cycle) linear var(--journey-delay) infinite both;
 }
 .journey-path .end > span {
-  animation: journey-light-label var(--journey-cycle) linear var(--journey-delay) infinite both !important;
+  animation: journey-light-label var(--journey-cycle) linear var(--journey-delay) infinite both;
 }
 .journey-path-hub > span {
   position: relative;
-  animation: journey-light-hub var(--journey-cycle) linear var(--journey-delay) infinite both !important;
+  animation: journey-light-hub var(--journey-cycle) linear var(--journey-delay) infinite both;
 }
 .journey-path-hub > span::after {
   content: '';
@@ -95,10 +95,10 @@
   border-radius: 18px;
   pointer-events: none;
   opacity: 0;
-  animation: journey-light-emission var(--journey-cycle) linear var(--journey-delay) infinite both !important;
+  animation: journey-light-emission var(--journey-cycle) linear var(--journey-delay) infinite both;
 }
 .journey-path-complete {
-  animation: journey-light-complete var(--journey-cycle) linear var(--journey-delay) infinite both !important;
+  animation: journey-light-complete var(--journey-cycle) linear var(--journey-delay) infinite both;
 }
 .journey-path:hover .journey-path-map,
 .journey-path:focus-within .journey-path-map {
@@ -319,5 +319,5 @@
 .journey-cards[data-light-motion='paused'] .journey-path *,
 .journey-cards[data-light-motion='paused'] .journey-path::before,
 .journey-cards[data-light-motion='paused'] .journey-path-hub > span::after {
-  animation-play-state: paused !important;
+  animation-play-state: paused;
 }

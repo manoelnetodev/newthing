@@ -156,7 +156,7 @@ a:focus-visible {
   align-items: center;
 }
 .main-nav > a {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   color: #a7a8ae;
   transition: color 0.2s;
@@ -173,7 +173,7 @@ a:focus-visible {
   padding: 12px 20px;
   border: 1px solid transparent;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.25;
   transition:
@@ -215,7 +215,7 @@ a:focus-visible {
   color: #fff;
 }
 .header-cta {
-  font-size: 11px;
+  font-size: 13px;
   min-height: 39px;
   padding: 10px 16px;
 }
@@ -248,7 +248,7 @@ a:focus-visible {
   align-items: center;
   justify-content: center;
   color: #a9b6d4;
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 2px;
   font-weight: 600;
 }
@@ -291,7 +291,7 @@ h1 > span {
   justify-content: center;
   gap: 12px;
   color: #777c89;
-  font-size: 10px;
+  font-size: 11px;
   margin-top: 20px;
 }
 .hero-reassurance span {
@@ -341,7 +341,7 @@ h1 > span {
   gap: 5px;
   padding: 4px 7px;
   border-radius: 4px;
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 400;
   white-space: nowrap;
 }
@@ -403,7 +403,7 @@ h1 > span {
   align-items: center;
   justify-content: center;
   gap: 7px;
-  font-size: 10px;
+  font-size: 11px;
   color: #a6a8b1;
   box-shadow: 0 3px 10px #0003;
   min-width: 105px;
@@ -452,7 +452,7 @@ h1 > span {
   color: #8c8d95;
 }
 .diagram-center small {
-  font-size: 9px;
+  font-size: 11px;
 }
 .connected-center {
   height: 59px;
@@ -504,7 +504,7 @@ h1 > span {
   justify-content: center;
   gap: 18px;
   color: #646870;
-  font-size: 8px;
+  font-size: 11px;
   padding: 13px 0 0;
 }
 .diagram-caption > span {
@@ -524,7 +524,7 @@ h1 > span {
   border-bottom: 1px solid var(--line);
 }
 .capabilities-strip > span {
-  font-size: 8px;
+  font-size: 11px;
   color: #62666f;
   letter-spacing: 1.5px;
 }
@@ -556,7 +556,7 @@ h1 > span {
   align-items: center;
   gap: 8px;
   color: #7f9dda;
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 1.7px;
   font-weight: 600;
 }
@@ -578,7 +578,7 @@ h1 > span {
   color: #858995;
 }
 .section-heading p {
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.8;
   color: #81858f;
   max-width: 510px;
@@ -599,7 +599,7 @@ h1 > span {
   display: flex;
   align-items: center;
   gap: 9px;
-  font-size: 8px;
+  font-size: 11px;
   color: #727c92;
   letter-spacing: 1.4px;
   border: 1px solid #272c38;
@@ -641,7 +641,7 @@ h1 > span {
 }
 .step-top > span {
   font-family: monospace;
-  font-size: 10px;
+  font-size: 11px;
 }
 .step-top svg {
   color: #8c9bb9;
@@ -653,7 +653,7 @@ h1 > span {
   margin: 21px 0 12px;
 }
 .process-step p {
-  font-size: 11px;
+  font-size: 15px;
   color: #818794;
   line-height: 1.8;
   margin: 0;
@@ -662,7 +662,7 @@ h1 > span {
   display: flex;
   gap: 6px;
   align-items: center;
-  font-size: 9px;
+  font-size: 13px;
   color: #94a8d2;
   margin-top: 24px;
 }
@@ -713,9 +713,65 @@ h1 > span {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 70px;
+  align-items: start;
+}
+.faq-intro {
+  min-width: 0;
+}
+.faq-support {
+  margin-top: 30px;
+  padding: 23px;
+  border: 1px solid #2a354b;
+  border-radius: 10px;
+  background: radial-gradient(ellipse at top left, #2e4b7e20, transparent 75%), #10151e;
+  max-width: 370px;
+}
+.faq-support-icon {
+  display: grid;
+  place-items: center;
+  width: 39px;
+  height: 39px;
+  color: #96b7f3;
+  background: #20335155;
+  border: 1px solid #354866;
+  border-radius: 9px;
+  margin-bottom: 17px;
+}
+.faq-support h3 {
+  color: #dce5f5;
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: -0.35px;
+  margin: 0 0 10px;
+}
+.faq-support p {
+  font-size: 12px;
+  line-height: 1.85;
+  color: #95a5bf;
+  margin: 0 0 21px;
+}
+.faq-support .button {
+  font-size: 11px;
+  padding: 12px 15px;
+  gap: 12px;
+  background: #1b2a4355;
+  border-color: #3d5274;
+  color: #c1d4f7;
+}
+.faq-support > small {
+  display: block;
+  margin-top: 11px;
+  color: #8193b0;
+  font-size: 11px;
+  line-height: 1.6;
 }
 .faq-item {
   border-bottom: 1px solid #262b35;
+  padding-inline: 18px;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
 }
 .faq-item:first-child {
   border-top: 1px solid #262b35;
@@ -740,15 +796,60 @@ h1 > span {
 .faq-item button span {
   color: #6b7c9e;
   font-size: 18px;
+  flex-shrink: 0;
+}
+.faq-item button:focus-visible {
+  outline: 2px solid #8aa9ef;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+.faq-item button:hover {
+  color: #e1e9f9;
+}
+.faq-open {
+  border-radius: 9px;
+  border-color: #34496d;
+  background: linear-gradient(120deg, #1b2a414d, #10172266);
 }
 .faq-open button {
   color: #d4dff8;
 }
 .faq-item p {
-  margin: 0 0 20px;
+  margin: 0 0 15px;
   font-size: 12px;
+  line-height: 1.95;
+  color: #99a7be;
+}
+.faq-answer > p:first-child {
+  color: #bac6da;
+}
+.faq-takeaway {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 15px;
+  margin: 19px 0 22px;
+  background: #263b5c38;
+  border: 1px solid #3a52794d;
+  border-radius: 7px;
+}
+.faq-takeaway > svg {
+  flex-shrink: 0;
+  color: #90b4f5;
+  margin-top: 1px;
+}
+.faq-takeaway strong {
+  display: block;
+  color: #d0dffa;
+  font-size: 11px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.faq-takeaway p {
+  margin: 0;
+  font-size: 11px;
   line-height: 1.8;
-  color: #798394;
+  color: #9fb4d6;
 }
 .final-cta {
   position: relative;
@@ -768,7 +869,7 @@ h1 > span {
   position: relative;
 }
 .final-cta .eyebrow {
-  font-size: 8px;
+  font-size: 11px;
   color: #7f9dde;
 }
 .final-cta h2 {
@@ -782,7 +883,7 @@ h1 > span {
   color: #83a5fb;
 }
 .final-cta p {
-  font-size: 12px;
+  font-size: 15px;
   color: #8795ae;
   margin-bottom: 27px;
 }
@@ -791,7 +892,7 @@ h1 > span {
   justify-content: center;
   align-items: center;
   gap: 6px;
-  font-size: 9px;
+  font-size: 11px;
   color: #566c96;
   margin-top: 17px;
 }
@@ -810,14 +911,14 @@ h1 > span {
 }
 .footer-top p {
   color: #626b7b;
-  font-size: 10px;
+  font-size: 14px;
   line-height: 1.8;
   margin-top: 16px;
 }
 .footer-links {
   display: flex;
   gap: 27px;
-  font-size: 10px;
+  font-size: 13px;
   color: #838b9b;
   padding-top: 11px;
 }
@@ -827,7 +928,7 @@ h1 > span {
 .back-top {
   display: flex;
   gap: 7px;
-  font-size: 10px;
+  font-size: 11px;
   color: #7384a7;
   padding-top: 10px;
 }
@@ -835,7 +936,7 @@ h1 > span {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  font-size: 8px;
+  font-size: 12px;
   color: #4b5567;
   border-top: 1px solid #20242d;
   margin-top: 33px;
@@ -871,15 +972,15 @@ h1 > span {
   font-weight: 500;
 }
 .modal-head p {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.7;
   color: #8c98ae;
   margin: 10px 0 0;
 }
 .icon-button {
-  height: 32px;
-  min-height: 32px;
-  width: 32px;
+  height: 44px;
+  min-height: 44px;
+  width: 44px;
   padding: 5px;
   flex-shrink: 0;
 }
@@ -897,11 +998,11 @@ h1 > span {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 11px;
+  font-size: 13px;
   color: #b0bdd3;
 }
 .field label span {
-  font-size: 10px;
+  font-size: 11px;
   color: #738199;
 }
 .field input,
@@ -914,7 +1015,7 @@ h1 > span {
   border-radius: 7px;
   padding: 12px;
   outline: none;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.5;
 }
 .field textarea {
@@ -932,7 +1033,7 @@ h1 > span {
   box-shadow: 0 0 0 3px #3267ff20;
 }
 .local-note {
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.7;
   color: #75859e;
   margin: 0;
@@ -979,7 +1080,7 @@ h1 > span {
   overflow-wrap: anywhere;
 }
 .brief-summary > span {
-  font-size: 8px;
+  font-size: 11px;
   color: #7395d9;
   letter-spacing: 1.3px;
 }
@@ -989,7 +1090,7 @@ h1 > span {
   margin: 13px 0;
 }
 .brief-summary p {
-  font-size: 12px;
+  font-size: 14px;
   color: #94a3bc;
   line-height: 1.8;
   white-space: pre-wrap;
@@ -997,7 +1098,7 @@ h1 > span {
 .brief-summary small {
   display: block;
   color: #667898;
-  font-size: 10px;
+  font-size: 12px;
   margin-top: 16px;
 }
 .brief-success .modal-footer {
@@ -1019,7 +1120,7 @@ h1 > span {
     gap: 18px;
   }
   .main-nav > a {
-    font-size: 11px;
+    font-size: 14px;
   }
   .brand {
     font-size: 24px;
@@ -1027,14 +1128,14 @@ h1 > span {
   .diagram-node {
     min-width: 88px;
     padding: 8px;
-    font-size: 9px;
+    font-size: 11px;
   }
   .flow-card-top {
-    font-size: 10px;
+    font-size: 11px;
   }
   .diagram-caption {
     gap: 10px;
-    font-size: 7px;
+    font-size: 11px;
   }
   .capabilities-strip > div {
     gap: 32px;
@@ -1112,10 +1213,10 @@ h1 > span {
     padding: 13px 11px 10px;
   }
   .flow-card-top {
-    font-size: 9px;
+    font-size: 11px;
   }
   .flow-badge {
-    font-size: 8px;
+    font-size: 11px;
     padding: 4px;
   }
   .flow-diagram {
@@ -1123,7 +1224,7 @@ h1 > span {
   }
   .diagram-node {
     min-width: auto;
-    font-size: 7px;
+    font-size: 11px;
     padding: 7px 8px;
     gap: 4px;
   }
@@ -1140,7 +1241,7 @@ h1 > span {
     line-height: 40px;
   }
   .diagram-caption {
-    font-size: 6px;
+    font-size: 11px;
     gap: 7px;
   }
   .capabilities-strip > div {
@@ -1181,12 +1282,12 @@ h1 > span {
   }
   .announcement {
     gap: 6px;
-    font-size: 8px;
+    font-size: 11px;
     padding: 9px 10px;
   }
   .announcement a {
     gap: 3px;
-    font-size: 8px;
+    font-size: 11px;
   }
   .announcement a svg {
     width: 11px;
@@ -1201,11 +1302,11 @@ h1 > span {
   }
   .header-inner {
     height: 66px;
-    gap: 12px;
+    gap: 8px;
   }
   .header-cta {
     padding: 9px 10px;
-    font-size: 9px;
+    font-size: 13px;
     gap: 6px;
     min-height: 35px;
   }
@@ -1213,8 +1314,9 @@ h1 > span {
     width: 12px;
   }
   .menu-button {
-    height: 33px;
-    width: 33px;
+    height: 44px;
+    width: 44px;
+    flex-shrink: 0;
   }
   .main-nav {
     top: 66px;
@@ -1223,7 +1325,7 @@ h1 > span {
     padding-top: 46px;
   }
   .hero-eyebrow {
-    font-size: 7px;
+    font-size: 11px;
     letter-spacing: 1.4px;
   }
   h1 {
@@ -1245,7 +1347,7 @@ h1 > span {
   }
   .hero-buttons .button {
     padding: 12px 11px;
-    font-size: 10px;
+    font-size: 11px;
     gap: 6px;
     min-height: 42px;
   }
@@ -1253,7 +1355,7 @@ h1 > span {
     width: 13px;
   }
   .hero-reassurance {
-    font-size: 8px;
+    font-size: 11px;
     gap: 7px;
     flex-wrap: wrap;
     row-gap: 8px;
@@ -1270,17 +1372,17 @@ h1 > span {
     padding: 15px 15px 11px;
   }
   .flow-card-top {
-    font-size: 10px;
+    font-size: 11px;
   }
   .flow-badge {
-    font-size: 8px;
+    font-size: 11px;
     padding: 4px 6px;
   }
   .flow-diagram {
     height: 180px;
   }
   .diagram-node {
-    font-size: 9px;
+    font-size: 11px;
     padding: 8px 10px;
     min-width: 92px;
   }
@@ -1296,14 +1398,14 @@ h1 > span {
     line-height: 44px;
   }
   .diagram-caption {
-    font-size: 7px;
+    font-size: 11px;
     gap: 12px;
   }
   .capabilities-strip {
     padding: 28px 0;
   }
   .capabilities-strip > span {
-    font-size: 7px;
+    font-size: 11px;
   }
   .capabilities-strip > div {
     display: grid;
@@ -1313,7 +1415,7 @@ h1 > span {
     margin-top: 23px;
   }
   .capabilities-strip > div > span {
-    font-size: 10px;
+    font-size: 11px;
     gap: 7px;
   }
   .capabilities-strip svg {
@@ -1323,7 +1425,7 @@ h1 > span {
     padding: 55px 0;
   }
   .eyebrow {
-    font-size: 8px;
+    font-size: 11px;
     letter-spacing: 1.2px;
   }
   .section-heading h2 {
@@ -1332,7 +1434,7 @@ h1 > span {
     margin: 17px 0 15px;
   }
   .section-heading p {
-    font-size: 12px;
+    font-size: 16px;
   }
   .process-stamp {
     display: none;
@@ -1346,10 +1448,10 @@ h1 > span {
     font-size: 19px;
   }
   .process-step p {
-    font-size: 10px;
+    font-size: 15px;
   }
   .step-deliverable {
-    font-size: 8px;
+    font-size: 13px;
     align-items: flex-start;
     line-height: 1.5;
   }
@@ -1376,6 +1478,17 @@ h1 > span {
   .faq-item p {
     font-size: 11px;
   }
+  .faq-item {
+    padding-inline: 13px;
+  }
+  .faq-support {
+    max-width: none;
+    padding: 20px;
+    margin-top: 24px;
+  }
+  .faq-takeaway {
+    padding: 12px;
+  }
   .final-cta {
     padding: 60px 0;
   }
@@ -1384,7 +1497,7 @@ h1 > span {
     letter-spacing: -1px;
   }
   .final-cta p {
-    font-size: 11px;
+    font-size: 15px;
   }
   .footer-top {
     gap: 25px;
@@ -1410,8 +1523,16 @@ h1 > span {
   }
   .modal-footer .button {
     padding: 12px 13px;
-    font-size: 10px;
+    font-size: 14px;
     gap: 6px;
+  }
+}
+@media (max-width: 360px) {
+  .header-cta {
+    display: none;
+  }
+  .menu-button {
+    margin-left: auto;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1422,6 +1543,17 @@ h1 > span {
   *:before,
   *:after {
     transition: none !important;
+  }
+  /* Only explicitly playing energy diagrams may move after the visitor opts in. */
+  *:not(.comparison-grid[data-energy-motion='running'] *):not(
+      .journey-cards[data-light-motion='running'] *
+    ),
+  *:not(.comparison-grid[data-energy-motion='running'] *):not(
+      .journey-cards[data-light-motion='running'] *
+    )::before,
+  *:not(.comparison-grid[data-energy-motion='running'] *):not(
+      .journey-cards[data-light-motion='running'] *
+    )::after {
     animation: none !important;
   }
 }

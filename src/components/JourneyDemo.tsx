@@ -37,7 +37,7 @@ const names = {
   website: 'Aurora · presença digital',
   automation: 'Fluxo · operação conectada',
 }
-const stages = ['Plano do projeto', 'Solução em uso', 'Próxima evolução']
+const stages = ['Plano do projeto', 'Solução em uso', 'Realização e continuidade']
 const descriptions = {
   system: [
     'Mapa do sistema com pedidos, estoque e financeiro conectados e escopo da primeira versão.',

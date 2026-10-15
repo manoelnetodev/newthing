@@ -13,8 +13,8 @@ import './JourneyPathMotion.css'
 
 const paths = [
   {
-    start: 'Seu sonho',
-    end: 'Um plano claro',
+    start: 'Visão inicial',
+    end: 'Plano definido',
     startIcon: Lightbulb,
     endIcon: Route,
     top: 'Escuta & direção',
@@ -23,8 +23,8 @@ const paths = [
     action: 'Entenda o caminho do seu sonho ao plano',
   },
   {
-    start: 'Seu plano',
-    end: 'Projeto real',
+    start: 'Planejamento',
+    end: 'Solução em uso',
     startIcon: Compass,
     endIcon: Code2,
     top: 'Design & tecnologia',
@@ -34,12 +34,12 @@ const paths = [
     action: 'Veja o caminho do plano ao projeto real',
   },
   {
-    start: 'Seu projeto',
-    end: 'Sua realização',
+    start: 'Entrega validada',
+    end: 'Objetivo realizado',
     startIcon: Code2,
     endIcon: HeartHandshake,
-    top: 'Cuidado & evolução',
-    bottom: 'Seu objetivo no centro',
+    top: 'Uso, conquista & continuidade',
+    bottom: 'Uma conquista que faz parte da rotina',
     summary:
       'A Newthing acompanha o uso e a evolução do projeto para aproximar você da realização dos seus objetivos.',
     action: 'Explore o caminho do projeto à realização',

@@ -150,7 +150,9 @@ export function SolutionFinder({
         ? 'Tenho uma ideia'
         : goal === 'site'
           ? 'Preciso de um site ou landing page'
-          : 'Quero construir um sistema'
+          : goal === 'automation'
+            ? 'Quero automatizar processos'
+            : 'Quero construir um sistema'
 
   useEffect(() => {
     panel.current?.focus()

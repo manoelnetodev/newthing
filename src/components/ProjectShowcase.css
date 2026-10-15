@@ -41,7 +41,7 @@
   box-shadow: 0 2px 8px #0003;
 }
 .showroom-tab-index {
-  font-size: 9px;
+  font-size: 11px;
   font-variant-numeric: tabular-nums;
   color: #667590;
   padding-left: 8px;
@@ -53,7 +53,7 @@
   display: flex;
   align-items: center;
   gap: 7px;
-  font-size: 10px;
+  font-size: 11px;
   color: #8190aa;
 }
 .showroom-hint > span {
@@ -151,7 +151,7 @@
   gap: 6px;
   color: #9aabc4;
   margin-top: 15px;
-  font-size: 8px;
+  font-size: 11px;
   letter-spacing: 0.1px;
 }
 .concept-indicator {
@@ -168,7 +168,7 @@
 }
 .showroom-category {
   color: var(--showroom-accent);
-  font-size: 8px;
+  font-size: 11px;
   letter-spacing: 1.6px;
   line-height: 1.8;
   font-weight: 550;
@@ -182,7 +182,7 @@
   text-wrap: balance;
 }
 .showroom-copy > p {
-  font-size: 12px;
+  font-size: 15px;
   color: #9ca8bd;
   line-height: 1.85;
   margin: 0;
@@ -198,8 +198,8 @@
 .showroom-copy li {
   display: flex;
   gap: 8px;
-  font-size: 10px;
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.65;
   color: #b0bcd0;
 }
 .showroom-copy li svg {
@@ -219,7 +219,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 9px;
+  font-size: 11px;
   color: #8b9ab2;
 }
 .showroom-copy-footer > span:first-child svg {
@@ -1359,7 +1359,7 @@
     margin: 22px 0;
   }
   .showroom-copy li {
-    font-size: 9px;
+    font-size: 11px;
   }
   .showroom-copy > p {
     font-size: 11px;
@@ -1391,14 +1391,14 @@
     gap: 15px;
   }
   .showroom-copy li {
-    font-size: 10px;
+    font-size: 11px;
     align-items: flex-start;
   }
   .showroom-copy-footer {
     margin-top: 2px;
   }
   .showroom-caption {
-    font-size: 9px;
+    font-size: 11px;
   }
 }
 @media (max-width: 560px) {
@@ -1437,7 +1437,7 @@
     border-radius: 6px;
   }
   .showroom-caption {
-    font-size: 7px;
+    font-size: 11px;
     margin-top: 12px;
     gap: 5px;
   }
@@ -1445,7 +1445,7 @@
     padding: 25px 23px;
   }
   .showroom-category {
-    font-size: 7px;
+    font-size: 11px;
     letter-spacing: 1.3px;
   }
   .showroom-copy h3 {
@@ -1461,17 +1461,17 @@
     margin: 23px 0;
   }
   .showroom-copy li {
-    font-size: 10px;
+    font-size: 11px;
   }
   .showroom-copy-footer {
     padding-top: 18px;
   }
   .showroom-copy-footer > span:first-child {
-    font-size: 8px;
+    font-size: 11px;
     gap: 6px;
   }
   .showroom-counter {
-    font-size: 10px;
+    font-size: 11px;
   }
   .concept-canvas {
     font-size: 1.4cqw;

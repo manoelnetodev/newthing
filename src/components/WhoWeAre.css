@@ -85,7 +85,7 @@
 }
 .identity-signature small {
   display: block;
-  font-size: 6px;
+  font-size: 11px;
   color: #8295b5;
   letter-spacing: 1px;
   margin-top: 8px;
@@ -122,7 +122,7 @@
   padding-top: 6px;
 }
 .identity-team-intro .eyebrow {
-  font-size: 7px;
+  font-size: 11px;
   letter-spacing: 1.35px;
 }
 .identity-team-intro h3 {
@@ -172,11 +172,11 @@
 .team-area-number > span {
   font-family: monospace;
   color: #7589a9;
-  font-size: 10px;
+  font-size: 11px;
 }
 .team-area-label {
   display: block;
-  font-size: 7px;
+  font-size: 11px;
   color: #8ca0c3;
   letter-spacing: 1.5px;
   line-height: 1.7;
@@ -195,6 +195,50 @@
   font-size: 12px;
   line-height: 1.95;
   margin: 0;
+}
+.team-area-roles {
+  display: grid;
+  gap: 19px;
+  padding: 24px 0 0;
+  margin: 25px 0 0;
+  border-top: 1px solid #2c3850;
+  list-style: none;
+}
+.team-area-roles li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.team-area-roles li > span {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 34px;
+  flex-shrink: 0;
+  border: 1px solid #3b5075;
+  background: linear-gradient(135deg, #24375270, #1b273b40);
+  border-radius: 6px;
+  color: #b1caf2;
+  font: 11px monospace;
+  letter-spacing: 0.6px;
+}
+.team-area-roles strong {
+  display: block;
+  margin-top: 1px;
+  color: #d4dff0;
+  font-size: 11px;
+  font-weight: 500;
+}
+.team-area-roles p {
+  color: #8d9fbb;
+  font-size: 11px;
+  line-height: 1.7;
+  margin: 5px 0 0;
+}
+.team-area-parcerias .team-area-roles li > span {
+  border-color: #405850;
+  color: #bad5c8;
+  background: linear-gradient(135deg, #2a423b60, #1d2c2940);
 }
 .team-area + .team-area {
   margin-top: 43px;
@@ -218,7 +262,7 @@
   margin-top: 23px;
   border-top: 1px solid #2a354a;
   color: #8faddc;
-  font-size: 9px;
+  font-size: 11px;
   line-height: 1.8;
 }
 .identity-team-note > span:first-child {
@@ -256,7 +300,7 @@
   gap: 6px;
   z-index: 1;
   color: #dde7f8;
-  font-size: 6px;
+  font-size: 11px;
   letter-spacing: 1.1px;
 }
 .team-photo-mark {
@@ -268,7 +312,7 @@
 .team-photo-caption > span:last-child {
   margin-left: auto;
   color: #bbc7dc;
-  font-size: 5px;
+  font-size: 11px;
   letter-spacing: 0.9px;
 }
 .team-profile-details {
@@ -284,9 +328,36 @@
 .team-role {
   margin: 0;
   color: #9ebced;
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.6;
   min-height: 32px;
+}
+.team-role > span {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #3b5075;
+  border-radius: 5px;
+  padding: 5px 9px;
+  background: #23375450;
+  font: 11px monospace;
+  letter-spacing: 0.35px;
+}
+.team-role > small {
+  display: block;
+  color: #8fa3c3;
+  font-size: 11px;
+  line-height: 1.6;
+  margin-top: 8px;
+}
+.team-area-parcerias .team-role > span {
+  border-color: #405850;
+  background: #29463b40;
+}
+.team-responsibility {
+  color: #b7c7de;
+  margin: 10px 0 0;
+  font-size: 11px;
+  line-height: 1.7;
 }
 .team-description {
   margin: 14px 0 0;
@@ -308,7 +379,7 @@
   padding: 6px 8px;
   border: 1px solid #34465f;
   border-radius: 5px;
-  font-size: 8px;
+  font-size: 11px;
   line-height: 1.5;
   color: #a9bedf;
   background: #1b2a4140;
@@ -325,7 +396,7 @@
   margin-top: 17px;
   padding-block: 5px;
   color: #afc9f2;
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.5;
   text-decoration: none;
 }
@@ -364,7 +435,7 @@
 }
 .identity-expertise-top > span {
   font-family: monospace;
-  font-size: 10px;
+  font-size: 11px;
   color: #7e91af;
 }
 .identity-expertise h3 {
@@ -515,7 +586,7 @@
     gap: 20px;
   }
   .identity-promise .button {
-    font-size: 10px;
+    font-size: 11px;
     padding-inline: 15px;
   }
 }
@@ -566,10 +637,10 @@
     left: 18px;
     right: 18px;
     bottom: 17px;
-    font-size: 7px;
+    font-size: 11px;
   }
   .team-photo-caption > span:last-child {
-    font-size: 6px;
+    font-size: 11px;
   }
   .identity-heading h2 {
     font-size: 31px;
@@ -586,7 +657,7 @@
     font-size: 12px;
   }
   .identity-signature small {
-    font-size: 5.5px;
+    font-size: 11px;
     letter-spacing: 0.75px;
   }
   .identity-expertise {

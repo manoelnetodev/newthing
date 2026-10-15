@@ -1,0 +1,233 @@
+/* Interface Newthing: blue guides actions; green marks confirmation. Demo artwork keeps its own identity. */
+:root {
+  --nt-bg: #0b1018;
+  --nt-surface: #111a28;
+  --nt-surface-raised: #162237;
+  --nt-surface-active: #1c3051;
+  --nt-border: #2b3c56;
+  --nt-border-active: #729cf5;
+  --nt-text: #edf3ff;
+  --nt-text-secondary: #b2c1d7;
+  --nt-text-muted: #8b9ebc;
+  --nt-accent: #3267ff;
+  --nt-accent-hover: #487bff;
+  --nt-accent-soft: #9abaff;
+  --nt-positive: #8ec5b1;
+  --nt-focus: #b3cdff;
+  --blue: var(--nt-accent);
+  --muted: var(--nt-text-muted);
+  --line: var(--nt-border);
+  color: var(--nt-text);
+  background: var(--nt-bg);
+}
+body {
+  color: var(--nt-text);
+  background: var(--nt-bg);
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline-color: var(--nt-focus);
+}
+.announcement {
+  background: #15326a;
+  border-bottom: 1px solid #476bb544;
+}
+.site-header {
+  background: #0b1018f2;
+  border-bottom-color: var(--nt-border);
+}
+.main-nav > a {
+  color: var(--nt-text-secondary);
+}
+.main-nav > a:hover {
+  color: var(--nt-accent-soft);
+}
+.button-primary,
+.mobile-nav-cta,
+.client-vision-cta,
+.journey-result > button {
+  background: var(--nt-accent);
+  color: #fff;
+  border-color: #648eff70;
+  box-shadow: 0 5px 22px #3267ff1c;
+}
+.button-primary:hover,
+.client-vision-cta:hover,
+.journey-result > button:hover {
+  background: var(--nt-accent-hover);
+}
+.button-secondary,
+.identity-promise .button {
+  background: var(--nt-surface-raised);
+  border-color: var(--nt-border);
+  color: var(--nt-text-secondary);
+}
+.button-secondary:hover,
+.identity-promise .button:hover {
+  background: var(--nt-surface-active);
+  border-color: var(--nt-border-active);
+  color: var(--nt-text);
+}
+.eyebrow,
+.journey-label,
+.journey-detail-stage,
+.team-area-label,
+.team-area-number,
+.team-area-parcerias .team-area-label,
+.team-area-parcerias .team-area-number {
+  color: var(--nt-accent-soft);
+}
+.eyebrow > span,
+.pulse-dot,
+.stamp-dot,
+.concept-indicator {
+  background: var(--nt-accent-soft);
+}
+.section-heading h2,
+.identity-heading h2,
+.identity-team-intro h3,
+.team-area-intro h4,
+.team-profile-details h5,
+.pillars-heading h3 {
+  color: var(--nt-text);
+}
+.section-heading h2 > span,
+.identity-heading h2 > span,
+.identity-team-intro h3 > span,
+.pillars-heading h3 > span {
+  color: var(--nt-text-muted);
+}
+.section-heading p,
+.identity-story > p,
+.identity-team-story > p,
+.team-area-intro > p,
+.team-description,
+.principle p {
+  color: var(--nt-text-secondary);
+}
+.process-section,
+.identity-section {
+  background: #0e1725;
+  border-block-color: var(--nt-border);
+}
+.about-section {
+  background: var(--nt-bg);
+}
+.faq-section {
+  background: radial-gradient(ellipse at 5% 35%, #3267ff09, transparent 55%), var(--nt-bg);
+  border-top-color: var(--nt-border);
+}
+.final-cta {
+  background: #101d33;
+  border-top-color: var(--nt-border);
+}
+.site-footer {
+  border-top-color: var(--nt-border);
+  background: #090f18;
+}
+.final-cta h2 > span,
+.process-step > svg,
+.principle > span,
+.identity-care li > svg,
+.identity-expertise-top {
+  color: var(--nt-accent-soft);
+}
+.final-cta p,
+.process-step p,
+.showroom-copy > p,
+.journey-detail-intro > p,
+.journey-deliverables p,
+.pillars-heading > p {
+  color: var(--nt-text-secondary);
+}
+.flow-card {
+  background: linear-gradient(140deg, var(--nt-surface), #101824);
+  border-color: var(--nt-border);
+}
+.connected-card {
+  background: linear-gradient(140deg, #182a48, var(--nt-surface));
+  border-color: #638feb99;
+}
+.journey-card {
+  background: linear-gradient(145deg, var(--nt-surface-raised), var(--nt-surface));
+  border-color: var(--nt-border);
+}
+.journey-card.is-selected {
+  background: linear-gradient(145deg, var(--nt-surface-active), #111c2e 75%);
+  border-color: var(--nt-border-active);
+  box-shadow:
+    inset 0 2px #88adff,
+    0 12px 35px #0001;
+}
+.journey-card > p {
+  color: var(--nt-text-secondary);
+}
+.journey-card h3 {
+  min-height: 2.7em;
+  text-wrap: balance;
+}
+.journey-icon {
+  background: #3267ff0f;
+  border-color: #729cf533;
+  color: var(--nt-accent-soft);
+}
+.journey-card li svg,
+.journey-card > button,
+.journey-dream > svg,
+.journey-benefit > svg {
+  color: var(--nt-accent-soft);
+}
+.journey-practice,
+.client-vision,
+.quick-faq-console,
+.pillar-panel {
+  border-color: var(--nt-border);
+  background-color: var(--nt-surface);
+}
+.journey-examples button,
+.showroom-tabs,
+.client-vision-tabs button {
+  background: var(--nt-surface);
+  border-color: var(--nt-border);
+  color: var(--nt-text-secondary);
+}
+.journey-examples button[aria-selected='true'],
+.showroom-tabs button[aria-selected='true'],
+.client-vision-tabs button[aria-selected='true'],
+.quick-faq-tabs button[aria-selected='true'] {
+  background: var(--nt-surface-active);
+  border-color: var(--nt-border-active);
+  color: var(--nt-text);
+}
+.journey-phase-nav button[aria-pressed='true'] {
+  border-bottom-color: var(--nt-accent-soft);
+  color: var(--nt-text);
+}
+.showroom-copy {
+  background: var(--nt-surface);
+}
+.team-area-parcerias .team-portrait {
+  border-color: #354158;
+}
+.team-area-parcerias .team-profile-link:hover,
+.team-profile-link:hover {
+  color: #d5e6ff;
+}
+.pillar-example-result > svg,
+.client-vision-commitment > svg {
+  color: var(--nt-accent-soft);
+}
+.quick-faq-tabs > button[aria-selected='true'],
+.pillars-tabs > button[aria-selected='true'] {
+  border-color: var(--nt-border-active);
+  background-color: var(--nt-surface-active);
+}
+.footer-top p,
+.footer-links,
+.footer-bottom,
+.back-top {
+  color: var(--nt-text-muted);
+}

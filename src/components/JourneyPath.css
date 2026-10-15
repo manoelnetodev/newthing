@@ -19,7 +19,7 @@
   align-items: center;
   gap: 6px;
   color: #7d90b3;
-  font-size: 8px;
+  font-size: 11px;
   letter-spacing: 0.5px;
 }
 .journey-path-map {
@@ -71,7 +71,7 @@
     box-shadow 0.25s;
 }
 .journey-path-node > span {
-  font-size: 9px;
+  font-size: 11px;
   color: #9faec7;
   white-space: nowrap;
 }
@@ -114,7 +114,7 @@
     box-shadow 0.25s;
 }
 .journey-path-hub small {
-  font-size: 6px;
+  font-size: 11px;
   letter-spacing: 1.2px;
   color: #728bb8;
 }
@@ -124,7 +124,7 @@
   justify-content: center;
   gap: 5px;
   color: #7d93ba;
-  font-size: 8px;
+  font-size: 11px;
 }
 .journey-path-complete {
   position: absolute;
@@ -169,7 +169,7 @@
     width: 58px;
   }
   .journey-path-node > span {
-    font-size: 8px;
+    font-size: 11px;
   }
   .journey-path-hub > span {
     width: 43px;

@@ -22,9 +22,9 @@ import './SolutionsJourney.css'
 const phases = [
   {
     label: 'IDEALIZAÇÃO',
-    title: 'Do seu sonho a um plano.',
+    title: 'Um caminho claro para começar.',
     icon: Compass,
-    text: 'Seu sonho tem uma razão de existir. Entendemos sua visão e transformamos seus objetivos em um plano de projeto.',
+    text: 'Escutamos o que você deseja conquistar, entendemos os desafios e organizamos prioridades. A ideia ganha direção, escopo e próximos passos.',
     items: [
       'Objetivos e desafios do seu negócio',
       'Escopo, prioridades e próximos passos',
@@ -40,7 +40,7 @@ const phases = [
   },
   {
     label: 'CONSTRUÇÃO',
-    title: 'Do plano ao projeto real.',
+    title: 'Uma solução pronta para usar.',
     icon: Code2,
     text: 'Sites, sistemas e automações feitos para a sua realidade. O planejamento ganha forma em uma solução que você acompanha construir.',
     items: [
@@ -57,21 +57,21 @@ const phases = [
     stage: 'Quero construir um sistema',
   },
   {
-    label: 'EVOLUÇÃO & REALIZAÇÃO',
-    title: 'Do projeto ao próximo nível.',
+    label: 'REALIZAÇÃO & CONTINUIDADE',
+    title: 'Sua visão realizada na prática.',
     icon: Rocket,
-    text: 'Sua realização orienta a evolução. Acompanhamos sua experiência, ouvimos você e aprimoramos o projeto para avançar nas suas metas.',
+    text: 'A conquista aparece quando a tecnologia faz sentido na rotina. Validamos a solução com você, orientamos o uso e planejamos o acompanhamento para apoiar os objetivos que deram início à ideia.',
     items: [
-      'Novas funcionalidades com propósito',
-      'Experiência, segurança e desempenho',
-      'Escuta, suporte e satisfação do cliente',
+      'Validação com quem vai usar a solução',
+      'Orientações para começar com confiança',
+      'Acompanhamento e melhorias planejados',
     ],
-    action: 'Explorar a evolução',
-    detail: 'O próximo passo nasce do uso real.',
+    action: 'Explorar a realização',
+    detail: 'A conquista se revela no dia a dia.',
     description:
-      'Feedbacks, indicadores e novas necessidades orientam as melhorias. Cada avanço tem uma prioridade e uma relação clara com o seu objetivo.',
-    delivery: 'Plano de evolução com melhorias priorizadas e acompanhamento.',
-    cta: 'Evoluir meu projeto',
+      'Conferimos a experiência com quem vai usar, orientamos a entrada em operação e alinhamos a continuidade. O retorno da equipe mostra o que já funciona e onde uma melhoria pode aproximar a empresa dos seus objetivos.',
+    delivery: 'Solução validada em uso, orientações e próximos passos de acompanhamento definidos.',
+    cta: 'Planejar entrega e continuidade',
     stage: 'Quero evoluir um produto',
   },
 ]
@@ -96,8 +96,8 @@ const examples = [
         benefit: 'Mais clareza para a equipe acompanhar o trabalho e tomar decisões.',
       },
       {
-        title: 'Seu sistema acompanha o próximo passo da empresa.',
-        text: 'Quando surgem novas equipes, unidades ou necessidades, a solução pode evoluir. Priorizamos relatórios, integrações e recursos com base no uso real.',
+        title: 'Controle para decidir e crescer.',
+        text: 'Pedidos, unidades e responsabilidades ficam visíveis para a equipe. Os relatórios apoiam as decisões, e a experiência de uso orienta os próximos ajustes e integrações.',
         delivery: 'Plano de melhorias, visão por unidade e controle de acesso por equipe.',
         benefit: 'Uma base organizada para crescer com continuidade e controle.',
       },
@@ -155,7 +155,7 @@ const examples = [
         benefit: 'Uma experiência profissional para apresentar sua marca com confiança.',
       },
       {
-        title: 'Do interesse à conversa que faz sentido.',
+        title: 'Uma presença que abre caminho para novas conversas.',
         text: 'O site ganha páginas de serviço e uma jornada de diagnóstico mais direta. Acompanhamos como as pessoas navegam para aprimorar a experiência e os pontos de contato.',
         delivery: 'Novas páginas, formulário de diagnóstico e plano de acompanhamento.',
         benefit: 'Um caminho mais claro para transformar interesse em oportunidade.',
@@ -211,7 +211,7 @@ const examples = [
         benefit: 'Menos repasses manuais e mais continuidade no atendimento ao cliente.',
       },
       {
-        title: 'Uma automação que você consegue acompanhar.',
+        title: 'Mais fluidez, com a equipe no controle.',
         text: 'O histórico mostra o que foi concluído e o que precisa da equipe. Usamos essa visibilidade para ajustar regras e planejar novas automações com segurança.',
         delivery: 'Monitoramento, tratamento de exceções e prioridades de melhoria.',
         benefit: 'Mais visibilidade para manter a operação confiável e evoluir o processo.',
@@ -263,7 +263,9 @@ export function SolutionsJourney({
   const [selected, setSelected] = useState(initialPhase)
   const [exampleIndex, setExampleIndex] = useState(initialExample)
   const [briefOpen, setBriefOpen] = useState(false)
-  const [lightsPlaying, setLightsPlaying] = useState(true)
+  const [lightsPlaying, setLightsPlaying] = useState(
+    () => !window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+  )
   const practiceRef = useRef<HTMLDivElement>(null)
   const phase = phases[selected]
   const example = examples[exampleIndex]
@@ -286,12 +288,12 @@ export function SolutionsJourney({
         <div className="section-heading">
           <span className="eyebrow">
             <span />
-            DO SEU OBJETIVO À REALIZAÇÃO
+            VISÃO, EXECUÇÃO E CONQUISTA
           </span>
           <h2>
-            Seu sonho é o ponto de partida.
+            O que você imagina merece acontecer.
             <br />
-            <span>O seu objetivo é a nossa meta.</span>
+            <span>Vamos construir esse caminho juntos.</span>
           </h2>
           <p>
             Unimos visão, planejamento e tecnologia para transformar o que você imagina em um
@@ -301,8 +303,8 @@ export function SolutionsJourney({
 
         <div className="journey-motion-controls">
           <span>
-            SEU SONHO <ArrowRight size={11} /> UM PLANO <ArrowRight size={11} /> UM PROJETO{' '}
-            <ArrowRight size={11} /> SUA REALIZAÇÃO
+            VISÃO <ArrowRight size={11} /> PLANO <ArrowRight size={11} /> SOLUÇÃO{' '}
+            <ArrowRight size={11} /> REALIZAÇÃO
           </span>
           <button
             type="button"
@@ -368,7 +370,7 @@ export function SolutionsJourney({
         <div id="journey-practice" className="journey-practice" ref={practiceRef}>
           <div className="journey-example-heading">
             <span className="journey-label">VEJA COMO ACONTECE NA PRÁTICA</span>
-            <span>Troque o projeto e veja o plano, a solução e a evolução.</span>
+            <span>Explore o planejamento, a construção e a conquista na prática.</span>
           </div>
           <div className="journey-examples" role="tablist" aria-label="Exemplo de projeto">
             {examples.map(({ kind, label, icon: Icon }, index) => (
@@ -408,7 +410,7 @@ export function SolutionsJourney({
             ))}
           </div>
           <div className="journey-phase-nav" role="group" aria-label="Etapa do exemplo">
-            {['Idealizar', 'Construir', 'Evoluir'].map((label, index) => (
+            {['Idealizar', 'Construir', 'Realizar'].map((label, index) => (
               <button
                 type="button"
                 key={label}
@@ -480,7 +482,7 @@ export function SolutionsJourney({
         </div>
         <p className="journey-announcement" role="status">
           Exibindo {example.label}:{' '}
-          {['idealização e plano', 'solução em uso', 'evolução do projeto'][selected]}.
+          {['idealização e plano', 'solução em uso', 'realização e continuidade'][selected]}.
         </p>
         <p className="journey-footnote">
           <span className="journey-footnote-dot" />
@@ -494,7 +496,9 @@ export function SolutionsJourney({
           initialStage={
             selected === 1 && exampleIndex === 1
               ? 'Preciso de um site ou landing page'
-              : phase.stage
+              : selected === 1 && exampleIndex === 2
+                ? 'Quero automatizar processos'
+                : phase.stage
           }
           initialProject={`Meu objetivo: ${example.dream}\nProjeto: ${example.label}.\nEtapa que quero explorar: ${phase.label.toLowerCase()}.\n\nSobre o meu negócio: `}
         />

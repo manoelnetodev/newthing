@@ -12,7 +12,7 @@
 }
 .hero-finder small {
   color: #939eb3;
-  font-size: 8px;
+  font-size: 11px;
   font-weight: 400;
 }
 .hero-finder > svg:first-child {
@@ -29,7 +29,7 @@
   margin: 22px 0;
 }
 .finder-progress > span {
-  font-size: 8px;
+  font-size: 11px;
   letter-spacing: 1.1px;
   color: #93afd9;
 }
@@ -106,14 +106,14 @@
 .finder-option strong {
   display: block;
   color: #e4ecfa;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.5;
   font-weight: 500;
 }
 .finder-option small {
   display: block;
   color: #9aaecb;
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.7;
   margin-top: 5px;
 }
@@ -137,7 +137,7 @@
   align-items: center;
   gap: 6px;
   color: #90a6c7;
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.7;
   margin: 0 0 18px;
 }
@@ -155,7 +155,7 @@
   border-top: 1px solid #293a55;
 }
 .finder-footer .button {
-  font-size: 11px;
+  font-size: 14px;
 }
 .finder-footer .button:disabled {
   opacity: 0.4;
@@ -172,7 +172,7 @@
   align-items: center;
   gap: 7px;
   color: #9dbffb;
-  font-size: 10px;
+  font-size: 11px;
 }
 .finder-result-heading h3 {
   margin: 14px 0 12px;
@@ -185,7 +185,7 @@
 .finder-result-heading p {
   margin: 0;
   color: #a9bbd6;
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.85;
 }
 .finder-answers {
@@ -196,13 +196,13 @@
 }
 .finder-answers dt {
   color: #7e97be;
-  font-size: 7px;
+  font-size: 11px;
   letter-spacing: 1px;
 }
 .finder-answers dd {
   margin: 8px 0 0;
   color: #bbcce6;
-  font-size: 10px;
+  font-size: 14px;
   line-height: 1.7;
 }
 .finder-next {
@@ -211,7 +211,7 @@
 }
 .finder-next h4 {
   margin: 0 0 16px;
-  font-size: 12px;
+  font-size: 15px;
   color: #d3e1f8;
   font-weight: 500;
 }
@@ -227,12 +227,12 @@
   align-items: flex-start;
   gap: 12px;
   color: #a2b7d7;
-  font-size: 10px;
+  font-size: 14px;
   line-height: 1.7;
 }
 .finder-next li > span {
   color: #7ca4ec;
-  font: 10px monospace;
+  font: 11px monospace;
   margin-top: 2px;
 }
 .finder-care {
@@ -242,7 +242,7 @@
   padding: 14px 0;
   margin: 18px 0 0;
   color: #8fa9cc;
-  font-size: 9px;
+  font-size: 11px;
   line-height: 1.7;
 }
 .finder-care svg {
@@ -272,7 +272,7 @@
   margin: 16px auto 0;
   border: 0;
   background: none;
-  font-size: 10px;
+  font-size: 11px;
   color: #9eb7df;
 }
 .finder-edit:hover {
@@ -288,10 +288,10 @@
     gap: 11px;
   }
   .finder-option strong {
-    font-size: 12px;
+    font-size: 15px;
   }
   .finder-option small {
-    font-size: 11px;
+    font-size: 13px;
   }
   .finder-option > svg {
     width: 18px;
@@ -314,7 +314,7 @@
     gap: 10px;
   }
   .finder-footer .button {
-    font-size: 10px;
+    font-size: 14px;
     padding-inline: 12px;
   }
   .finder-result-actions .button {

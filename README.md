@@ -31,14 +31,14 @@ Abra **http://127.0.0.1:5173/**. Salvar uma alteração nos arquivos atualiza a 
 - Seleção interativa de exemplos de projetos.
 - Interfaces próprias para Dashboard, SaaS e Website, com navegação por clique ou setas do teclado.
 - Seção Quem somos sobre desenvolvimento de software, automação, atendimento e acompanhamento.
-- Painel de intenções em Quem somos: três objetivos mostram abordagens diferentes de escuta e planejamento, levando a escolha para o briefing.
+- Equipe em duas frentes: estratégia e operações (Yuri e Maksuel), tecnologia e desenvolvimento (Manoel e Ronan), com perfis compactos e fotografias reais.
 - Equipe apresentada na ordem: Yuri Gabriel, Maksuel Silva, Manoel Neto e Ronan Severo, organizada por área.
 - Perguntas frequentes que abrem e fecham.
-- Formulário com validação, revisão e download de briefing em texto.
+- Formulário com validação, plano preliminar por objetivo, revisão, cópia, download e abertura do WhatsApp com o resumo preenchido.
 - Janela com foco contido, fechamento por Escape e retorno do foco ao botão.
 - Layout responsivo, fonte local e respeito à preferência de movimento reduzido.
 
-**O briefing não envia mensagens nem salva informações em servidor.** Os campos ficam na memória da janela enquanto ela está aberta e o download é gerado no navegador. Fechar a janela descarta o preenchimento. Não há autenticação, banco de dados ou integração de contato nesta versão.
+**O briefing não envia mensagens automaticamente nem salva informações em servidor.** Os campos ficam na memória da janela enquanto ela está aberta. O plano é baseado nas opções escolhidas e precisa ser validado com a equipe. Copiar e baixar são ações locais; abrir o WhatsApp leva o resumo ao serviço, onde o cliente confirma o envio. Fechar o formulário descarta o preenchimento.
 
 ## Onde fazer alterações
 
@@ -80,6 +80,12 @@ npm run format
 Testes de uso: confira o menu em 390px, os links entre seções, todos os exemplos de projeto e perguntas frequentes. Abra o briefing, teste campos inválidos, prepare um exemplo, edite novamente e baixe o arquivo. Confira Escape e navegação por teclado.
 
 ## Salvar no Git e GitHub
+
+### Briefing e WhatsApp comercial
+
+Copie `.env.example` para `.env.local` e preencha `VITE_WHATSAPP_NUMBER` com DDI, DDD e número, apenas dígitos. Reinicie o Vite após alterar. Essa variável é pública na aplicação; use somente o contato comercial. Na hospedagem, configure-a antes do build.
+
+O cliente preenche o briefing, revisa um plano preliminar e escolhe copiar, baixar ou abrir o WhatsApp com o resumo preenchido. O envio é confirmado pelo próprio cliente no WhatsApp. Não há envio automático, análise de IA nem armazenamento em servidor. A equipe valida escopo, tecnologia, prazo e investimento na conversa.
 
 O Git guarda o histórico local. O GitHub guarda uma cópia online. A pasta está preparada com `.gitignore` para excluir dependências, build e arquivos secretos. Nenhum remoto foi criado ou configurado nesta entrega.
 

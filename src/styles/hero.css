@@ -1,0 +1,210 @@
+.hero {
+  background:
+    radial-gradient(ellipse at 50% 22%, #254d9620, transparent 58%), var(--nt-bg, #0b1018);
+}
+.hero-glow {
+  width: min(1300px, 120vw);
+  height: 700px;
+  background: radial-gradient(ellipse at 50% 28%, #3267ff18, transparent 65%);
+}
+.hero-opening {
+  position: relative;
+  padding-top: 57px;
+}
+.hero-opening .hero-content {
+  padding-top: 0;
+}
+.hero-opening .hero-eyebrow {
+  color: var(--nt-accent-soft, #9abaff);
+  letter-spacing: 0.12em;
+  font-size: 11px;
+}
+.hero-opening h1 {
+  font-size: clamp(37px, 4.6vw, 62px);
+  line-height: 1.1;
+  letter-spacing: -2.3px;
+  text-align: center;
+  margin: 25px auto 23px;
+  max-width: 1000px;
+}
+.hero-opening h1 > span {
+  display: block;
+  background: linear-gradient(105deg, #c4d6f7 15%, #8aaffb 85%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-opening .hero-content > p {
+  max-width: 610px;
+  color: var(--nt-text-secondary, #b2c1d7);
+  font-size: clamp(16px, 1.35vw, 19px);
+  line-height: 1.65;
+  margin-inline: auto;
+}
+.hero-opening .hero-buttons {
+  justify-content: center;
+  margin-top: 28px;
+}
+.hero-opening .hero-buttons .button {
+  min-height: 49px;
+  font-size: 14px;
+}
+.hero-opening .hero-reassurance {
+  justify-content: center;
+  gap: 18px;
+  color: var(--nt-text-muted, #8b9ebc);
+  font-size: 11px;
+  margin-top: 19px;
+}
+.hero-opening .hero-reassurance svg {
+  color: var(--nt-accent-soft, #9abaff);
+}
+.hero-scroll-invitation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: fit-content;
+  margin: 23px auto 0;
+  padding: 8px 5px;
+  color: #93b0dd;
+  font-size: 11px;
+}
+.hero-scroll-invitation > span {
+  display: grid;
+  place-items: center;
+  width: 21px;
+  height: 27px;
+  border: 1px solid #3c5882;
+  border-radius: 12px;
+  background: #1b2d4855;
+}
+.hero-scroll-invitation:hover {
+  color: #d1e2ff;
+}
+.hero-connection-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding-top: 23px;
+  margin-top: 19px;
+  border-top: 1px solid #2b3c5666;
+}
+.hero-connection-intro > span {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #8faddb;
+}
+.hero-connection-intro > p {
+  color: #8298ba;
+  font-size: 11px;
+  line-height: 1.7;
+  margin: 0;
+}
+.hero .comparison-grid {
+  margin-top: 18px;
+}
+.hero .connected-card {
+  box-shadow:
+    0 0 0 1px #91b6ff09,
+    0 15px 50px #3267ff0c;
+}
+.hero .flow-diagram {
+  height: 240px;
+}
+.hero .diagram-node {
+  width: 43%;
+  max-width: 205px;
+  min-width: 0;
+  min-height: 42px;
+  padding: 9px;
+  line-height: 1.5;
+  text-align: center;
+}
+.hero .diagram-node svg {
+  flex-shrink: 0;
+}
+.hero .node-strategy,
+.hero .node-code {
+  left: 3%;
+}
+.hero .node-design,
+.hero .node-integrations {
+  right: 3%;
+}
+.hero .diagram-caption {
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  line-height: 1.6;
+}
+.comparison-motion-toggle {
+  min-width: 36px;
+  min-height: 36px;
+}
+@media (max-width: 800px) {
+  .hero-opening {
+    padding-top: 42px;
+  }
+  .hero-opening h1 {
+    font-size: 46px;
+    letter-spacing: -1.8px;
+  }
+  .hero-connection-intro {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+}
+@media (max-width: 560px) {
+  .hero .connected-card {
+    order: -1;
+  }
+  .hero-opening {
+    padding-top: 33px;
+  }
+  .hero-opening .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+  .hero-opening h1 {
+    font-size: clamp(31px, 9vw, 43px);
+    letter-spacing: -1.3px;
+    margin-block: 23px 19px;
+  }
+  .hero-opening .hero-content > p {
+    font-size: 16px;
+    line-height: 1.9;
+  }
+  .hero-opening .hero-buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+  .hero-opening .hero-buttons .button {
+    justify-content: space-between;
+    min-height: 47px;
+    padding-inline: 16px;
+  }
+  .hero-opening .hero-finder > span {
+    flex: 1;
+  }
+  .hero-opening .hero-reassurance {
+    gap: 10px 13px;
+    flex-wrap: wrap;
+    font-size: 11px;
+  }
+  .hero-scroll-invitation {
+    font-size: 11px;
+    margin-top: 18px;
+  }
+  .hero-connection-intro {
+    padding-top: 20px;
+  }
+  .hero-connection-intro > span {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+  .hero-connection-intro > p {
+    font-size: 11px;
+  }
+}

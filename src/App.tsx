@@ -14,9 +14,7 @@ import {
   Pause,
   Play,
   Rocket,
-  ShieldCheck,
   Sparkles,
-  Target,
   Workflow,
   X,
   Zap,
@@ -26,6 +24,7 @@ import { BriefModal } from './components/BriefModal'
 import { ProjectShowcase } from './components/ProjectShowcase'
 import { WhoWeAre } from './components/WhoWeAre'
 import { SolutionFinder } from './components/SolutionFinder'
+import { QuickFaq } from './components/QuickFaq'
 import './components/FlowComparisonMotion.css'
 
 function Brand({ small = false }: { small?: boolean }) {
@@ -69,18 +68,40 @@ function SectionHeading({
 }
 
 function FlowComparison() {
-  const [energyPlaying, setEnergyPlaying] = useState(true)
+  const [energyPlaying, setEnergyPlaying] = useState(
+    () => !window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+  )
   const nodes = [
-    { label: 'Estratégia', icon: Compass, className: 'node-strategy' },
-    { label: 'Design', icon: MousePointer2, className: 'node-design' },
-    { label: 'Código', icon: Code2, className: 'node-code' },
-    { label: 'Integrações', icon: Workflow, className: 'node-integrations' },
+    {
+      label: 'Estratégia & finanças',
+      pain: 'Planilhas soltas',
+      icon: Compass,
+      className: 'node-strategy',
+    },
+    {
+      label: 'Experiência & design',
+      pain: 'Retrabalho manual',
+      icon: MousePointer2,
+      className: 'node-design',
+    },
+    {
+      label: 'Sistemas sob medida',
+      pain: 'Sistemas desconectados',
+      icon: Code2,
+      className: 'node-code',
+    },
+    {
+      label: 'Automação & IA',
+      pain: 'Decisões no escuro',
+      icon: Workflow,
+      className: 'node-integrations',
+    },
   ]
   return (
     <div className="comparison-grid" data-energy-motion={energyPlaying ? 'running' : 'paused'}>
       <div className="flow-card scattered-card">
         <div className="flow-card-top">
-          <span>Quando as peças não se conectam</span>
+          <span>Quando a operação fica fragmentada</span>
           <span className="flow-badge muted-red">
             <i />
             Mais ruído
@@ -89,7 +110,7 @@ function FlowComparison() {
         <div
           className="flow-diagram scattered-diagram"
           role="img"
-          aria-label="Estratégia, design, código e integrações separados, sem uma direção comum"
+          aria-label="Planilhas soltas, retrabalho manual, sistemas desconectados e decisões sem contexto"
         >
           <svg
             className="flow-lines"
@@ -109,10 +130,10 @@ function FlowComparison() {
               d="M130 160 Q280 20 380 165"
             />
           </svg>
-          {nodes.map(({ label, icon: Icon, className }) => (
+          {nodes.map(({ label, pain, icon: Icon, className }) => (
             <span className={`diagram-node ${className}`} key={label}>
               <Icon size={15} />
-              {label}
+              {pain}
             </span>
           ))}
           <span className="diagram-center scattered-center">
@@ -152,7 +173,7 @@ function FlowComparison() {
         <div
           className="flow-diagram connected-diagram"
           role="img"
-          aria-label="Newthing conecta estratégia, design, código e integrações em um único projeto"
+          aria-label="A Newthing conecta estratégia e finanças, experiência e design, sistemas sob medida e automação"
         >
           <svg
             className="flow-lines"
@@ -215,62 +236,117 @@ function FlowComparison() {
 const steps = [
   {
     id: '01',
-    title: 'Entender',
+    title: 'Escopo antes da execução',
     description:
-      'Primeiro, o seu contexto. Conversamos sobre a ideia, o problema e o que você quer alcançar.',
+      'Objetivo, funcionalidades, integrações e critérios de entrega são alinhados antes de começar. Você entende o que será construído e o que precisa fornecer.',
     icon: Compass,
-    deliverable: 'Direção compartilhada',
+    deliverable: 'Entregas e prioridades definidas',
   },
   {
     id: '02',
-    title: 'Desenhar',
+    title: 'Entregas para você validar',
     description:
-      'Organizamos o que importa, desenhamos os fluxos e definimos um escopo que faz sentido.',
+      'Protótipos e demonstrações tornam a construção visível. Os pontos de acompanhamento são combinados conforme o projeto, com espaço para seu retorno.',
     icon: Layers,
-    deliverable: 'Plano de construção',
+    deliverable: 'Validação nas etapas combinadas',
   },
   {
     id: '03',
-    title: 'Construir',
+    title: 'Decisões com contexto',
     description:
-      'Design e desenvolvimento trabalham juntos, com entregas visíveis e espaço para ajustar.',
+      'Explicamos alternativas e registramos prioridades. Quando surge uma nova demanda, alinhamos seu impacto no escopo, no prazo e no investimento antes de avançar.',
     icon: Code2,
-    deliverable: 'Produto para experimentar',
+    deliverable: 'Mudanças avaliadas em conjunto',
   },
   {
     id: '04',
-    title: 'Evoluir',
+    title: 'Continuidade definida',
     description:
-      'Depois do lançamento, observamos o uso e organizamos os próximos passos do produto.',
+      'A entrega inclui o que foi combinado para começar a usar a solução. Suporte, manutenção e novas funcionalidades têm responsabilidades e condições alinhadas.',
     icon: Rocket,
-    deliverable: 'Novas possibilidades',
+    deliverable: 'Orientações e próximos passos claros',
   },
 ]
 const faqs = [
   {
     question: 'Tenho apenas uma ideia. Por onde começo?',
-    answer:
-      'Comece organizando o problema que você quer resolver, quem vai usar a solução e qual seria a primeira função essencial. O briefing desta página ajuda a colocar essas informações no papel.',
+    phase: 0,
+    answer: [
+      'Você não precisa chegar com um projeto pronto ou saber qual tecnologia usar. Conte o que deseja conquistar, o que dificulta sua rotina hoje e quem será beneficiado. Nosso trabalho começa pela escuta: entender o seu contexto antes de propor uma solução.',
+      'A partir disso, organizamos os objetivos, identificamos o que precisa ser construído primeiro e desenhamos um caminho de projeto. Se a ideia ainda estiver aberta, podemos usar exemplos de telas e fluxos para tornar as possibilidades mais concretas.',
+    ],
+    outcome:
+      'Sua ideia ganha uma direção: problema definido, prioridades e um primeiro escopo para avaliar com clareza.',
   },
   {
     question: 'É possível começar com uma versão pequena?',
-    answer:
-      'Sim. Uma primeira versão pode focar em uma jornada principal. Isso permite testar a experiência antes de investir em mais funcionalidades.',
+    phase: 1,
+    answer: [
+      'Sim. Começar com o essencial pode ser uma decisão estratégica. Definimos uma primeira versão que resolva uma necessidade real, com uma experiência completa para essa finalidade e espaço para evoluir.',
+      'Por exemplo: um sistema pode começar com cadastro de clientes e controle de pedidos; um site, com apresentação dos serviços e um caminho claro até o contato. Depois de observar o uso e ouvir você, priorizamos as próximas funcionalidades.',
+    ],
+    outcome:
+      'Você investe primeiro no que tem mais importância para o seu momento e decide os próximos passos com base na experiência real.',
   },
   {
     question: 'Vocês criam sites ou também sistemas?',
-    answer:
-      'Esta proposta reúne presença digital, aplicações web e produtos SaaS. O escopo deve ser definido a partir da necessidade de cada projeto.',
+    phase: 1,
+    answer: [
+      'Criamos sites, landing pages, sistemas de gestão, portais e aplicações web sob medida. Também desenvolvemos automações e integrações para conectar ferramentas e organizar processos da empresa.',
+      'A escolha depende do que você precisa alcançar. Apresentar seus serviços pode pedir um site; acompanhar pedidos e equipes pode pedir um sistema; reduzir tarefas repetitivas pode pedir uma automação. Explicamos as alternativas e definimos a solução com você.',
+    ],
+    outcome:
+      'O ponto de partida é o seu objetivo. A tecnologia e as funcionalidades são escolhidas para atender a ele.',
   },
   {
     question: 'Como são definidos prazo e investimento?',
-    answer:
-      'Prazo e investimento dependem das funcionalidades, integrações e complexidade. O primeiro passo é definir o que a versão inicial precisa entregar.',
+    phase: 1,
+    answer: [
+      'Primeiro, entendemos o objetivo e detalhamos as entregas: telas, funcionalidades, integrações, conteúdos e necessidades de implantação. Esse levantamento permite estimar o esforço e propor um cronograma coerente com o escopo.',
+      'Antes de iniciar a construção, alinhamos o que está incluído, as etapas, o investimento e as responsabilidades de cada lado. Hospedagem, serviços externos e acompanhamento também precisam ficar claros. Se surgir uma nova necessidade, avaliamos juntos o impacto antes de ampliar o projeto.',
+    ],
+    outcome:
+      'Você decide com uma visão clara do que está contratando, do que precisa fornecer e de como cada etapa será acompanhada.',
   },
   {
-    question: 'Como funciona o próximo passo?',
-    answer:
-      'Clique em “Começar meu projeto”, preencha um briefing e baixe o arquivo. Nesta versão local, nenhum dado é enviado para uma equipe ou serviço externo.',
+    question: 'Como participo do projeto sem entender de tecnologia?',
+    phase: 2,
+    answer: [
+      'Você conhece o seu negócio; nós cuidamos de traduzir essa realidade em uma solução digital. Explicamos as decisões em uma linguagem clara e usamos referências, protótipos e demonstrações para que você consiga visualizar o que está sendo construído.',
+      'Nos momentos de validação, você confere os fluxos, experimenta as funcionalidades e compartilha o que precisa de ajuste. As prioridades e os pontos de acompanhamento são combinados no planejamento, para que a participação seja organizada e as decisões tenham contexto.',
+    ],
+    outcome:
+      'Você participa com a sua experiência, entende o andamento e valida a solução antes de avançarmos para as próximas entregas.',
+  },
+  {
+    question: 'E depois da entrega? Vocês continuam acompanhando?',
+    phase: 3,
+    answer: [
+      'A entrega precisa preparar você para usar a solução. Por isso, o projeto deve prever a validação final, as orientações de uso e os cuidados necessários para colocar o site ou sistema em operação.',
+      'O acompanhamento após o lançamento é definido conforme a necessidade e o escopo contratado: suporte, manutenção, monitoramento ou evolução de funcionalidades. Alinhamos os canais, o período e o que está coberto, distinguindo correções de novas demandas. Assim, você sabe como pedir ajuda e como planejar melhorias.',
+    ],
+    outcome:
+      'A continuidade é planejada com transparência, com responsabilidades claras para o cuidado e a evolução da solução.',
+  },
+  {
+    question: 'Já uso ferramentas na empresa. Preciso trocar tudo?',
+    phase: 2,
+    answer: [
+      'Nem sempre. Antes de propor uma mudança, entendemos o que já funciona, onde há retrabalho e quais informações precisam circular entre as ferramentas. Muitas vezes, conectar etapas ou automatizar uma tarefa é mais adequado do que substituir toda a operação.',
+      'Avaliamos as possibilidades de integração, as permissões de acesso, a qualidade dos dados e as limitações dos serviços envolvidos. Quando uma integração não for viável, explicamos o motivo e discutimos alternativas, incluindo uma transição por etapas quando fizer sentido.',
+    ],
+    outcome:
+      'A proposta considera a sua estrutura atual e o impacto na rotina da equipe, com mudanças que tenham uma razão clara para existir.',
+  },
+  {
+    question: 'Como dou o primeiro passo por aqui?',
+    phase: 0,
+    answer: [
+      'Use “Preparar meu briefing” para registrar seu objetivo, o momento do projeto e o que você gostaria de melhorar. Pode escrever com suas próprias palavras; não é necessário usar termos técnicos.',
+      'Você recebe um plano preliminar com uma estrutura a avaliar e prioridades para a primeira versão. Revise, copie ou baixe o resumo. Se quiser conversar com a equipe, abra o WhatsApp com a mensagem preenchida e confirme o envio por lá. O plano ainda será validado com você; preencher não gera contratação.',
+    ],
+    outcome:
+      'Você sai com o ponto de partida organizado e um resumo do que deseja construir, pronto para uma conversa mais objetiva.',
   },
 ]
 
@@ -282,7 +358,6 @@ export default function App() {
   const finderTrigger = useRef<HTMLButtonElement>(null)
   const returnBriefToFinder = useRef(false)
   const [briefContext, setBriefContext] = useState<{ stage?: string; project?: string }>({})
-  const [openFaq, setOpenFaq] = useState<number | null>(0)
   const openBrief = () => {
     returnBriefToFinder.current = false
     setMenuOpen(false)
@@ -349,9 +424,6 @@ export default function App() {
             <a href="#quem-somos" onClick={() => setMenuOpen(false)}>
               Quem somos
             </a>
-            <a href="#sobre" onClick={() => setMenuOpen(false)}>
-              Sobre
-            </a>
             <button className="mobile-nav-cta" onClick={openBrief}>
               Começar meu projeto <ArrowUpRight size={15} />
             </button>
@@ -372,47 +444,66 @@ export default function App() {
       <main id="conteudo">
         <section id="inicio" className="hero">
           <div className="hero-glow" />
-          <div className="container hero-content">
-            <div className="hero-eyebrow">
-              <span className="pulse-dot" />
-              ESTRATÉGIA, DESIGN E TECNOLOGIA.
+          <div className="container">
+            <div className="hero-opening">
+              <div className="hero-content">
+                <div className="hero-eyebrow">
+                  <span className="pulse-dot" />
+                  SITES, SISTEMAS E AUTOMAÇÕES.
+                </div>
+                <h1>
+                  Sua ideia merece
+                  <span>acontecer de verdade.</span>
+                </h1>
+                <p>
+                  Menos planilhas espalhadas, atendimento sem contexto e ferramentas desconectadas.
+                  Criamos sites, sistemas e automações para organizar a rotina e dar forma ao que
+                  você quer realizar.
+                </p>
+                <div className="hero-buttons">
+                  <button className="button button-primary" onClick={openBrief}>
+                    Começar meu projeto <ArrowUpRight size={17} />
+                  </button>
+                  <button
+                    type="button"
+                    className="button button-secondary hero-finder"
+                    ref={finderTrigger}
+                    onClick={() => setFinderOpen(true)}
+                    aria-haspopup="dialog"
+                  >
+                    <Compass size={18} />
+                    <span>
+                      <strong>Descobrir meu caminho</strong>
+                      <small>2 perguntas para orientar seu projeto</small>
+                    </span>
+                    <ArrowRight size={15} />
+                  </button>
+                </div>
+                <div className="hero-reassurance">
+                  <span>
+                    <CheckCircle2 size={14} />
+                    Escopo claro
+                  </span>
+                  <span>
+                    <CheckCircle2 size={14} />
+                    Você acompanha
+                  </span>
+                  <span>
+                    <CheckCircle2 size={14} />
+                    Evolução planejada
+                  </span>
+                </div>
+                <a className="hero-scroll-invitation" href="#solucoes">
+                  <span>
+                    <ArrowRight size={12} style={{ transform: 'rotate(90deg)' }} />
+                  </span>
+                  Veja como uma ideia se transforma em solução
+                </a>
+              </div>
             </div>
-            <h1>
-              Da sua próxima ideia
-              <br />
-              <span>ao próximo grande passo.</span>
-            </h1>
-            <p>
-              Conectamos visão de negócio, design e desenvolvimento
-              <br className="desktop-break" /> para transformar o que você imagina em uma
-              experiência real.
-            </p>
-            <div className="hero-buttons">
-              <button className="button button-primary" onClick={openBrief}>
-                Começar meu projeto <ArrowUpRight size={17} />
-              </button>
-              <button
-                type="button"
-                className="button button-secondary hero-finder"
-                ref={finderTrigger}
-                onClick={() => setFinderOpen(true)}
-                aria-haspopup="dialog"
-              >
-                <Compass size={18} />
-                <span>
-                  <strong>Descobrir meu caminho</strong>
-                  <small>2 perguntas para orientar seu projeto</small>
-                </span>
-                <ArrowRight size={15} />
-              </button>
-            </div>
-            <div className="hero-reassurance">
-              <span>
-                <CheckCircle2 size={14} />
-                Clareza em cada etapa.
-              </span>
-              <i />
-              <span>Da primeira conversa à próxima entrega.</span>
+            <div className="hero-connection-intro">
+              <span>ESTRATÉGIA, DESIGN E CÓDIGO NA MESMA DIREÇÃO.</span>
+              <p>Quando as partes se conectam, o caminho fica mais claro.</p>
             </div>
             <FlowComparison />
             <div className="capabilities-strip">
@@ -438,6 +529,7 @@ export default function App() {
             </div>
           </div>
         </section>
+        <ProjectShowcase />
         <SolutionsJourney
           key={journeyRequest.id}
           initialExample={journeyRequest.exampleIndex}
@@ -447,19 +539,19 @@ export default function App() {
           <div className="container">
             <div className="split-heading">
               <SectionHeading
-                label="DO CONTEXTO À CONSTRUÇÃO"
+                label="COMO TRABALHAMOS NA PRÁTICA"
                 title={
                   <>
-                    Um caminho claro.
+                    Você acompanha a construção.
                     <br />
-                    <span>Sem pular etapas.</span>
+                    <span>As decisões ficam claras.</span>
                   </>
                 }
-                text="Você acompanha o que está sendo construído, entende as decisões e participa do próximo passo."
+                text="Quatro compromissos que organizam o trabalho e tornam a parceria mais previsível, da definição do escopo à continuidade."
               />
               <span className="process-stamp">
                 <span className="stamp-dot" />
-                VISÃO + EXECUÇÃO
+                CLAREZA + RESPONSABILIDADE
               </span>
             </div>
             <div className="process-grid">
@@ -480,93 +572,8 @@ export default function App() {
             </div>
           </div>
         </section>
-        <ProjectShowcase />
-        <WhoWeAre onContact={openBrief} onStartProject={openBriefForGoal} />
-        <section id="sobre" className="section about-section">
-          <div className="container about-grid">
-            <div>
-              <SectionHeading
-                label="POR QUE NEWTHING"
-                title={
-                  <>
-                    O próximo passo
-                    <br />é melhor <span>em parceria.</span>
-                  </>
-                }
-                text="Um projeto digital vai além do código. Ele precisa de boas perguntas, decisões claras e pessoas que cuidam do caminho inteiro."
-              />
-              <button className="button button-secondary" onClick={openBrief}>
-                Conte a sua ideia <ArrowUpRight size={16} />
-              </button>
-            </div>
-            <div className="principles">
-              {[
-                {
-                  icon: Target,
-                  title: 'O problema vem primeiro.',
-                  text: 'A tecnologia é escolhida para a sua necessidade. A construção começa pelo que realmente importa.',
-                },
-                {
-                  icon: Workflow,
-                  title: 'As peças trabalham juntas.',
-                  text: 'Estratégia, experiência e engenharia caminham na mesma direção, desde o início.',
-                },
-                {
-                  icon: ShieldCheck,
-                  title: 'Clareza para seguir em frente.',
-                  text: 'Etapas definidas, decisões compartilhadas e espaço para evoluir conforme o projeto aprende.',
-                },
-              ].map(({ icon: Icon, title, text }) => (
-                <div className="principle" key={title}>
-                  <span>
-                    <Icon size={20} />
-                  </span>
-                  <div>
-                    <h3>{title}</h3>
-                    <p>{text}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-        <section id="duvidas" className="section faq-section">
-          <div className="container faq-grid">
-            <SectionHeading
-              label="PERGUNTAS FREQUENTES"
-              title={
-                <>
-                  Antes de começar,
-                  <br />
-                  <span>vamos esclarecer.</span>
-                </>
-              }
-              text="Algumas respostas para tirar a primeira ideia do papel com mais confiança."
-            />
-            <div className="faq-list">
-              {faqs.map((faq, index) => (
-                <div
-                  className={`faq-item ${openFaq === index ? 'faq-open' : ''}`}
-                  key={faq.question}
-                >
-                  <h3>
-                    <button
-                      aria-expanded={openFaq === index}
-                      aria-controls={`faq-answer-${index}`}
-                      onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                    >
-                      {faq.question}
-                      <span>{openFaq === index ? '−' : '+'}</span>
-                    </button>
-                  </h3>
-                  <div id={`faq-answer-${index}`} hidden={openFaq !== index}>
-                    <p>{faq.answer}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <WhoWeAre onContact={openBrief} />
+        <QuickFaq faqs={faqs} onBrief={openBrief} />
         <section className="final-cta">
           <div className="cta-glow" />
           <div className="container">
@@ -610,7 +617,9 @@ export default function App() {
             </a>
           </div>
           <div className="footer-bottom">
-            <span>© {new Date().getFullYear()} Newthing. Projeto de demonstração.</span>
+            <span>
+              © {new Date().getFullYear()} Newthing. Tecnologia, estratégia e sistemas sob medida.
+            </span>
             <span>Feito para transformar ideias.</span>
           </div>
         </div>
