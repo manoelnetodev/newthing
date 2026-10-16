@@ -14,17 +14,17 @@
   display: grid;
   place-items: center;
   padding: 4px;
-  border: 1px solid #4264a04d;
+  border: 1px solid #426fa04d;
   border-radius: 4px;
-  background: #3267ff0d;
-  color: #9cbbff;
+  background: #087cff0d;
+  color: #9cccff;
 }
 .comparison-motion-toggle:hover {
-  background: #3267ff25;
-  color: #dce8ff;
+  background: #087cff25;
+  color: #e7edf5;
 }
 .comparison-motion-toggle:focus-visible {
-  outline: 2px solid #9bb8ff;
+  outline: 2px solid #9bcbff;
   outline-offset: 3px;
 }
 .comparison-grid .node-strategy {
@@ -60,7 +60,7 @@
   animation-play-state: var(--comparison-motion);
 }
 .comparison-grid .scattered-diagram .flow-lines .comparison-noise-energy {
-  stroke: #a1a6b2;
+  stroke: #a1a9b2;
   stroke-width: 1.3;
   stroke-dasharray: 4 96;
   stroke-linecap: round;
@@ -83,11 +83,11 @@
   animation-delay: -2.2s;
 }
 .comparison-grid .connected-diagram .flow-lines .comparison-energy {
-  stroke: #e2edff;
+  stroke: #ebf0f6;
   stroke-width: 2;
   stroke-dasharray: 9 91;
   stroke-linecap: round;
-  filter: drop-shadow(0 0 3px #91b6ff) drop-shadow(0 0 6px #386fff);
+  filter: drop-shadow(0 0 3px #91c6ff) drop-shadow(0 0 6px #3898ff);
   opacity: 0;
   animation: comparison-energy-travel 6.8s linear var(--packet-delay, 0s) infinite;
   animation-play-state: var(--comparison-motion);
@@ -109,7 +109,7 @@
   content: '';
   position: absolute;
   inset: -6px;
-  border: 1px solid #85adff;
+  border: 1px solid #85c0ff;
   border-radius: 21px;
   opacity: 0;
   pointer-events: none;
@@ -173,8 +173,8 @@
     filter: none;
   }
   50% {
-    color: #b5b8c3;
-    filter: drop-shadow(0 0 5px #9aa4be25);
+    color: #b5bcc3;
+    filter: drop-shadow(0 0 5px #9aabbe25);
   }
 }
 @keyframes comparison-noise-breathe {
@@ -208,15 +208,15 @@
   0%,
   35%,
   100% {
-    border-color: #3267ff32;
+    border-color: #087cff32;
     box-shadow: 0 3px 10px #0003;
   }
   16%,
   25% {
-    border-color: #779eff;
+    border-color: #77b9ff;
     box-shadow:
-      0 0 15px #4c80ff35,
-      inset 0 0 12px #3e72ff0d;
+      0 0 15px #4ca3ff35,
+      inset 0 0 12px #3e9bff0d;
   }
 }
 @keyframes comparison-hub-charge {
@@ -224,7 +224,7 @@
   40%,
   90%,
   100% {
-    box-shadow: 0 0 25px #3267ff40;
+    box-shadow: 0 0 25px #087cff40;
     filter: brightness(1);
   }
   18%,
@@ -232,8 +232,8 @@
   68%,
   76% {
     box-shadow:
-      0 0 28px #6497ff99,
-      0 0 48px #3267ff40;
+      0 0 28px #64afff99,
+      0 0 48px #087cff40;
     filter: brightness(1.22);
   }
 }

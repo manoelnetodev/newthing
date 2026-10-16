@@ -1,7 +1,7 @@
 .partnership-pillars {
   margin-top: 55px;
   padding-top: 38px;
-  border-top: 1px solid #2c3c56;
+  border-top: 1px solid #2c4056;
 }
 .pillars-heading {
   display: grid;
@@ -16,18 +16,18 @@
 .pillars-heading h3 {
   font-size: 30px;
   font-weight: 500;
-  color: #e3ecfa;
+  color: #e8eef5;
   letter-spacing: -1px;
   line-height: 1.25;
   margin: 18px 0 0;
 }
 .pillars-heading h3 > span {
-  color: #93a9cf;
+  color: #93b0cf;
 }
 .pillars-heading > p {
   font-size: 12px;
   line-height: 1.9;
-  color: #96aac8;
+  color: #96aec8;
   margin: 0 0 3px;
   max-width: 450px;
 }
@@ -41,10 +41,10 @@
   flex-direction: column;
   text-align: left;
   padding: 21px 17px 17px;
-  border: 1px solid #2d3c54;
+  border: 1px solid #2d4054;
   border-radius: 9px;
-  background: linear-gradient(135deg, #1a263b55, #111b2955);
-  color: #9eb7df;
+  background: linear-gradient(135deg, #212a3455, #171d2355);
+  color: #9ebddf;
   font: inherit;
   cursor: pointer;
   min-width: 0;
@@ -53,14 +53,14 @@
     background 0.2s;
 }
 .pillars-tabs > button:hover {
-  border-color: #5574a8;
+  border-color: #557da8;
 }
 .pillars-tabs > button[aria-selected='true'] {
-  border-color: #759be8;
-  background: radial-gradient(ellipse at top left, #3e64ab24, transparent 75%), #172238;
+  border-color: #75ade8;
+  background: radial-gradient(ellipse at top left, #3e73ab24, transparent 75%), #1f2730;
   box-shadow:
-    inset 0 2px #7298e8,
-    0 0 22px #4069bd0a;
+    inset 0 2px #72abe8,
+    0 0 22px #407cbd0a;
 }
 .pillar-tab-top {
   display: flex;
@@ -71,11 +71,11 @@
 }
 .pillar-tab-top > small {
   font: 11px monospace;
-  color: #6a86b3;
+  color: #6a8db3;
 }
 .pillars-tabs strong {
   display: block;
-  color: #d8e5f8;
+  color: #dfe8f1;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.5;
@@ -83,7 +83,7 @@
   margin-bottom: 9px;
 }
 .pillar-tab-teaser {
-  color: #8ea4c5;
+  color: #8ea9c5;
   font-size: 11px;
   line-height: 1.8;
 }
@@ -93,22 +93,22 @@
   justify-content: space-between;
   gap: 8px;
   width: 100%;
-  color: #7897c6;
+  color: #789ec6;
   font-size: 11px;
   padding-top: 17px;
   margin-top: auto;
 }
 .pillars-tabs > button[aria-selected='true'] .pillar-tab-action {
-  color: #b2cefc;
+  color: #b2d6fc;
 }
 .partnership-pillars button:focus-visible,
 .pillar-panel:focus-visible {
-  outline: 2px solid #b4d0ff;
+  outline: 2px solid #b4d8ff;
   outline-offset: 4px;
 }
 .pillar-panel {
-  border: 1px solid #344b71;
-  background: linear-gradient(140deg, #152035, #101925 70%);
+  border: 1px solid #345171;
+  background: linear-gradient(140deg, #1d252d, #151a20 70%);
   border-radius: 10px;
   margin-top: 18px;
   overflow: hidden;
@@ -119,14 +119,14 @@
   align-items: center;
   gap: 12px;
   padding: 16px 25px;
-  background: #19294355;
-  border-bottom: 1px solid #304562;
+  background: #192d4355;
+  border-bottom: 1px solid #304862;
 }
 .pillar-panel-top > span:first-child {
   display: flex;
   align-items: center;
   gap: 9px;
-  color: #b0cafa;
+  color: #b0d4fa;
   text-transform: uppercase;
   font: 11px monospace;
   letter-spacing: 0.7px;
@@ -134,7 +134,7 @@
 .pillar-panel-top > span:last-child {
   font: 11px monospace;
   letter-spacing: 1px;
-  color: #708db7;
+  color: #7092b7;
 }
 .pillar-panel-main {
   display: grid;
@@ -144,7 +144,7 @@
   align-items: start;
 }
 .pillar-explanation > h4 {
-  color: #e0ebfc;
+  color: #e7eef5;
   font-size: 25px;
   line-height: 1.35;
   font-weight: 500;
@@ -152,7 +152,7 @@
   margin: 0 0 15px;
 }
 .pillar-explanation > p {
-  color: #a3b6d3;
+  color: #a3bad3;
   font-size: 12px;
   line-height: 1.95;
   margin: 0;
@@ -175,21 +175,21 @@
   width: 27px;
   height: 27px;
   flex-shrink: 0;
-  border: 1px solid #3b5277;
+  border: 1px solid #3b5877;
   border-radius: 7px;
-  background: #21345260;
-  color: #90b2ed;
+  background: #21395260;
+  color: #90bded;
   font: 11px monospace;
 }
 .pillar-explanation h5 {
-  color: #c9dcf8;
+  color: #d4e0ed;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.6;
   margin: 1px 0 5px;
 }
 .pillar-explanation li p {
-  color: #8ca3c6;
+  color: #8ca8c6;
   font-size: 11px;
   line-height: 1.85;
   margin: 0;
@@ -197,19 +197,19 @@
 .pillar-example {
   min-width: 0;
   padding: 21px;
-  border: 1px solid #344866;
+  border: 1px solid #344c66;
   border-radius: 9px;
-  background: radial-gradient(ellipse at top right, #4678cc0c, transparent 60%), #0d1624;
+  background: radial-gradient(ellipse at top right, #4687cc0c, transparent 60%), #13181e;
 }
 .pillar-example-label {
   font: 11px monospace;
   letter-spacing: 0.7px;
-  color: #7599cb;
+  color: #759fcb;
   line-height: 1.6;
   display: block;
 }
 .pillar-example > h5 {
-  color: #d2e2fa;
+  color: #dce6f0;
   font-size: 17px;
   font-weight: 500;
   line-height: 1.5;
@@ -219,12 +219,12 @@
 .pillar-example > p {
   font-size: 11px;
   line-height: 1.9;
-  color: #8da5c8;
+  color: #8daac8;
   margin: 0 0 20px;
 }
 .pillar-example figure {
   margin: 0;
-  border: 1px solid #3e5270;
+  border: 1px solid #3e5670;
   border-radius: 7px;
   overflow: hidden;
 }
@@ -234,9 +234,9 @@
   justify-content: space-between;
   gap: 8px;
   padding: 9px 10px;
-  border-bottom: 1px solid #364c6a;
-  background: #1e2d43;
-  color: #7f9bc0;
+  border-bottom: 1px solid #364f6a;
+  background: #1e3043;
+  color: #7f9ec0;
   font-size: 11px;
 }
 .pillar-example-browser > span:first-child {
@@ -247,14 +247,14 @@
   width: 3px;
   height: 3px;
   border-radius: 50%;
-  background: #6c87ac;
+  background: #6c8bac;
 }
 .pillar-example figcaption {
   font-size: 11px;
-  color: #6c85ac;
+  color: #6c8bac;
   padding: 9px 12px;
-  background: #101a2a;
-  border-top: 1px solid #314562;
+  background: #171d23;
+  border-top: 1px solid #314962;
   line-height: 1.6;
 }
 .pillar-example-result {
@@ -264,7 +264,7 @@
   margin-top: 17px;
 }
 .pillar-example-result > svg {
-  color: #8eb9dd;
+  color: #8eb4dd;
   flex-shrink: 0;
   margin-top: 2px;
 }
@@ -272,12 +272,12 @@
   font-size: 11px;
   line-height: 1.85;
   margin: 0;
-  color: #a9c1e4;
+  color: #a9c6e4;
 }
 .pillar-system {
   padding: 16px 13px 11px;
-  background: #f1f5fc;
-  color: #304566;
+  background: #f3f6fa;
+  color: #304a66;
 }
 .pillar-system-header,
 .pillar-connections-head,
@@ -287,16 +287,16 @@
   gap: 7px;
 }
 .pillar-system-header svg {
-  color: #577dda;
+  color: #5796da;
 }
 .pillar-system-header strong {
-  color: #2e4266;
+  color: #2e4966;
   font-size: 12px;
   font-weight: 600;
 }
 .pillar-system-header > span {
   font: 11px monospace;
-  color: #8a9cb7;
+  color: #8aa0b7;
   margin-left: auto;
   letter-spacing: 0.5px;
 }
@@ -313,34 +313,34 @@
   justify-content: center;
   padding: 10px 5px;
   background: #fff;
-  border: 1px solid #d6e1f2;
+  border: 1px solid #d9e4ef;
   border-radius: 5px;
-  color: #667fa6;
+  color: #6685a6;
   font-size: 11px;
 }
 .pillar-system-labels {
   display: flex;
   justify-content: space-between;
   padding-bottom: 8px;
-  border-bottom: 1px solid #d6e1f0;
+  border-bottom: 1px solid #d8e3ee;
   font: 11px monospace;
-  color: #92a2bb;
+  color: #92a6bb;
 }
 .pillar-order {
   display: flex;
   align-items: center;
   gap: 7px;
   padding: 12px 0;
-  border-bottom: 1px solid #e0e7f2;
+  border-bottom: 1px solid #e0e9f2;
 }
 .pillar-order-symbol {
   display: grid;
   place-items: center;
   width: 23px;
   height: 24px;
-  background: #e0e9fa;
+  background: #e6edf4;
   border-radius: 5px;
-  color: #6c8ab9;
+  color: #6c91b9;
   font: 11px monospace;
 }
 .pillar-order strong {
@@ -351,7 +351,7 @@
 .pillar-order small {
   display: block;
   font-size: 11px;
-  color: #8f9eb6;
+  color: #8fa2b6;
   margin-top: 4px;
 }
 .pillar-order b {
@@ -360,40 +360,40 @@
   font-weight: 500;
   padding: 4px 5px;
   border-radius: 3px;
-  color: #5b7ec7;
-  background: #e4ebfa;
+  color: #5b8fc7;
+  background: #e9eff5;
 }
 .pillar-order .status-1 {
-  background: #f4eddf;
+  background: #e1e9f2;
   color: #a08a52;
 }
 .pillar-order .status-2 {
-  background: #e0f0eb;
-  color: #558e80;
+  background: #e0e8f0;
+  color: #55718e;
 }
 .pillar-system > footer {
   display: flex;
   align-items: center;
   gap: 5px;
   font-size: 11px;
-  color: #7e94b4;
+  color: #7e98b4;
   padding-top: 12px;
 }
 .pillar-connections {
   padding: 17px 13px;
-  background: #1c192e;
-  color: #bca2e7;
+  background: #1c232b;
+  color: #a2c3e7;
 }
 .pillar-connections-head strong {
   font-size: 11px;
-  color: #d3c2ef;
+  color: #c2d8ef;
   font-weight: 500;
 }
 .pillar-connections-head > span {
   margin-left: auto;
   font-size: 11px;
   letter-spacing: 0.5px;
-  color: #806b9f;
+  color: #6b849f;
 }
 .pillar-flow-step {
   position: relative;
@@ -401,9 +401,9 @@
   align-items: center;
   gap: 9px;
   padding: 12px 10px;
-  border: 1px solid #69508670;
+  border: 1px solid #506a8670;
   border-radius: 6px;
-  background: #30233c88;
+  background: #232f3c88;
   margin-top: 15px;
 }
 .pillar-flow-step + .pillar-flow-step::before {
@@ -411,7 +411,7 @@
   content: '';
   width: 1px;
   height: 15px;
-  background: #b493d370;
+  background: #93b2d370;
   top: -16px;
   left: 24px;
 }
@@ -420,14 +420,14 @@
   place-items: center;
   width: 30px;
   height: 32px;
-  border: 1px solid #8a65b255;
-  background: #74518b2b;
+  border: 1px solid #658ab255;
+  background: #516d8b2b;
   border-radius: 6px;
   flex-shrink: 0;
 }
 .pillar-flow-step small {
   display: block;
-  color: #9f7fc5;
+  color: #7fa1c5;
   font: 11px monospace;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -435,18 +435,18 @@
 .pillar-flow-step strong {
   display: block;
   font-size: 11px;
-  color: #d7c3ec;
+  color: #c3d7ec;
   font-weight: 500;
   margin-top: 5px;
 }
 .pillar-flow-step p {
   margin: 5px 0 0;
-  color: #9f88b7;
+  color: #889fb7;
   font-size: 11px;
 }
 .pillar-flow-step > svg {
   margin-left: auto;
-  color: #9dc3b3;
+  color: #9dafc3;
 }
 .pillar-connections > footer {
   display: flex;
@@ -455,11 +455,11 @@
   padding: 12px 8px 0;
   font-size: 11px;
   line-height: 1.6;
-  color: #a091b7;
+  color: #91a3b7;
 }
 .pillar-connections > footer strong {
   display: block;
-  color: #c7b4df;
+  color: #b4c9df;
   font-size: 11px;
   font-weight: 500;
 }
@@ -468,66 +468,66 @@
 }
 .pillar-conversation {
   padding: 16px 13px;
-  background: #172338;
+  background: #1f2730;
 }
 .pillar-conversation > header {
   display: flex;
   align-items: center;
   gap: 8px;
   padding-bottom: 15px;
-  border-bottom: 1px solid #354965;
+  border-bottom: 1px solid #354c65;
 }
 .pillar-conversation > header > span:first-child {
   display: grid;
   place-items: center;
   width: 30px;
   height: 30px;
-  background: #2b4468;
-  border: 1px solid #4c6994;
+  background: #2b4868;
+  border: 1px solid #4c6f94;
   border-radius: 8px;
-  color: #a5c3f2;
+  color: #a5caf2;
 }
 .pillar-conversation header strong {
   display: block;
   font-size: 11px;
   font-weight: 500;
-  color: #c4d8f6;
+  color: #c4dcf6;
 }
 .pillar-conversation header small {
   display: block;
   font-size: 11px;
   letter-spacing: 0.6px;
-  color: #7b97bf;
+  color: #7b9cbf;
   margin-top: 5px;
 }
 .pillar-conversation-status {
   margin-left: auto;
   font-size: 11px;
-  color: #8eafd7;
+  color: #8eb1d7;
 }
 .pillar-chat {
   max-width: 90%;
   padding: 13px 12px;
-  background: #213650;
-  border: 1px solid #3d587c;
+  background: #213850;
+  border: 1px solid #3d5b7c;
   border-radius: 7px;
   margin-top: 16px;
 }
 .pillar-chat > small {
   font: 11px monospace;
-  color: #88b0e4;
+  color: #88b4e4;
   letter-spacing: 0.8px;
 }
 .pillar-chat p {
   font-size: 11px;
   line-height: 1.8;
-  color: #c1d2ec;
+  color: #c1d6ec;
   margin: 7px 0 0;
 }
 .pillar-chat.client {
   margin-left: auto;
-  background: #2d3f62;
-  border-color: #4d6691;
+  background: #2d4762;
+  border-color: #4d6e91;
 }
 .pillar-feedback {
   display: flex;
@@ -535,19 +535,19 @@
   gap: 8px;
   padding: 13px 0;
   margin-top: 16px;
-  border-top: 1px solid #375070;
+  border-top: 1px solid #375370;
 }
 .pillar-feedback > svg {
-  color: #8ab8b1;
+  color: #8aa0b8;
   flex-shrink: 0;
 }
 .pillar-feedback strong {
   font-size: 11px;
   font-weight: 500;
-  color: #bbd9d6;
+  color: #bbcad9;
 }
 .pillar-feedback p {
-  color: #8da9bf;
+  color: #8da5bf;
   font-size: 11px;
   line-height: 1.7;
   margin: 5px 0 0;
@@ -558,13 +558,13 @@
   justify-content: space-between;
   gap: 5px;
   font-size: 11px;
-  color: #7f9bc2;
+  color: #7f9fc2;
   padding-top: 8px;
 }
 .pillar-roadmap {
   padding: 17px 15px 14px;
-  background: #17242b;
-  color: #8db9b4;
+  background: #1a2128;
+  color: #8da2b9;
 }
 .pillar-roadmap > header {
   padding-bottom: 9px;
@@ -572,13 +572,13 @@
 .pillar-roadmap header strong {
   font-size: 11px;
   font-weight: 500;
-  color: #b9d8d3;
+  color: #b9c8d8;
 }
 .pillar-roadmap header > span {
   margin-left: auto;
   font-size: 11px;
   letter-spacing: 0.4px;
-  color: #73928d;
+  color: #738292;
 }
 .pillar-roadmap-step {
   position: relative;
@@ -591,7 +591,7 @@
   position: absolute;
   content: '';
   width: 1px;
-  background: #4c726c;
+  background: #4c5e72;
   left: 12px;
   top: 45px;
   bottom: -16px;
@@ -601,17 +601,17 @@
   place-items: center;
   width: 25px;
   height: 26px;
-  background: #213e3e;
-  border: 1px solid #4e817b;
+  background: #212f3e;
+  border: 1px solid #4e6781;
   border-radius: 7px;
-  color: #acd2c8;
+  color: #acbed2;
   font: 11px monospace;
   flex-shrink: 0;
   z-index: 1;
 }
 .pillar-roadmap-step small {
   display: block;
-  color: #79a19a;
+  color: #798ca1;
   font: 11px monospace;
   text-transform: uppercase;
   letter-spacing: 0.7px;
@@ -620,30 +620,30 @@
 .pillar-roadmap-step strong {
   font-size: 11px;
   font-weight: 500;
-  color: #bad3cf;
+  color: #bac6d3;
 }
 .pillar-roadmap-step p {
   font-size: 11px;
-  color: #799b98;
+  color: #79899b;
   margin: 5px 0 0;
   line-height: 1.8;
 }
 .pillar-roadmap-step.next > span {
-  background: #1b2b30;
+  background: #1d252e;
   border-style: dashed;
-  color: #7da9a4;
+  color: #7d92a9;
 }
 .pillar-roadmap-step.current > span {
-  box-shadow: 0 0 0 4px #83b7a80c;
+  box-shadow: 0 0 0 4px #839cb70c;
 }
 .pillar-roadmap > footer {
   display: flex;
   gap: 5px;
   align-items: center;
-  border-top: 1px solid #34524f;
+  border-top: 1px solid #344352;
   padding-top: 14px;
   margin-top: 21px;
-  color: #71968f;
+  color: #718396;
   font-size: 11px;
 }
 .pillar-outcomes {
@@ -651,11 +651,11 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
   padding: 21px 27px;
-  border-block: 1px solid #304562;
-  background: #17263d55;
+  border-block: 1px solid #304862;
+  background: #212a3355;
 }
 .pillar-outcomes > div + div {
-  border-left: 1px solid #314563;
+  border-left: 1px solid #314963;
   padding-left: 22px;
 }
 .pillar-outcomes span {
@@ -664,15 +664,15 @@
   gap: 6px;
   font-size: 11px;
   font-weight: 500;
-  color: #b9d0f2;
+  color: #b9d5f2;
 }
 .pillar-outcomes svg {
-  color: #8caede;
+  color: #8cb4de;
   flex-shrink: 0;
 }
 .pillar-outcomes p {
   margin: 8px 0 0;
-  color: #8fa6c6;
+  color: #8faac6;
   font-size: 11px;
   line-height: 1.8;
 }
@@ -685,12 +685,12 @@
 }
 .pillar-panel-footer > p {
   margin: 0;
-  color: #bdd0ed;
+  color: #bdd4ed;
   font-size: 11px;
   line-height: 1.8;
 }
 .pillar-panel-footer > p > span {
-  color: #768fb5;
+  color: #7694b5;
   font-size: 11px;
 }
 .pillar-panel-footer button {
@@ -698,19 +698,19 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  border: 1px solid #557cb9;
+  border: 1px solid #5585b9;
   padding: 12px 16px;
-  background: #24467455;
+  background: #244b7455;
   border-radius: 6px;
-  color: #d1e1fc;
+  color: #dde6f0;
   font: inherit;
   font-size: 11px;
   cursor: pointer;
   flex-shrink: 0;
 }
 .pillar-panel-footer button:hover {
-  background: #31588a66;
-  border-color: #8db4f4;
+  background: #315c8a66;
+  border-color: #8dbff4;
 }
 @media (max-width: 1000px) {
   .pillars-tabs {
@@ -865,7 +865,7 @@
   .pillar-outcomes > div + div {
     padding-left: 0;
     border-left: 0;
-    border-top: 1px solid #314563;
+    border-top: 1px solid #314963;
     padding-top: 15px;
   }
   .pillar-panel-footer {

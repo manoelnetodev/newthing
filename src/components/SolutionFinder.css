@@ -11,15 +11,15 @@
   font-weight: 550;
 }
 .hero-finder small {
-  color: #939eb3;
+  color: #93a2b3;
   font-size: 11px;
   font-weight: 400;
 }
 .hero-finder > svg:first-child {
-  color: #9ab9f8;
+  color: #9ac7f8;
 }
 .hero-finder:hover small {
-  color: #becce5;
+  color: #bed1e5;
 }
 .finder-progress {
   display: flex;
@@ -31,7 +31,7 @@
 .finder-progress > span {
   font-size: 11px;
   letter-spacing: 1.1px;
-  color: #93afd9;
+  color: #93b5d9;
 }
 .finder-progress > div {
   display: flex;
@@ -41,11 +41,11 @@
 .finder-progress i {
   flex: 1;
   height: 3px;
-  background: #2d3b53;
+  background: #2d3f53;
   border-radius: 3px;
 }
 .finder-progress i.complete {
-  background: #7da5ff;
+  background: #7dbcff;
 }
 .finder-panel:focus {
   outline: none;
@@ -71,20 +71,20 @@
   gap: 13px;
   position: relative;
   padding: 16px;
-  border: 1px solid #33435e;
+  border: 1px solid #33485e;
   border-radius: 9px;
-  background: #172033;
+  background: #1d252d;
   cursor: pointer;
   transition:
     border-color 0.2s,
     background 0.2s;
 }
 .finder-option:hover {
-  border-color: #6c8fc8;
+  border-color: #6c98c8;
 }
 .finder-option.selected {
-  border-color: #80a8f7;
-  background: #22375a;
+  border-color: #80baf7;
+  background: #223d5a;
 }
 .finder-option input {
   position: absolute;
@@ -93,26 +93,26 @@
   opacity: 0;
 }
 .finder-option:has(input:focus-visible) {
-  outline: 2px solid #b1ccff;
+  outline: 2px solid #b1d7ff;
   outline-offset: 3px;
 }
 .finder-option > svg {
   flex-shrink: 0;
-  color: #97b7ed;
+  color: #97c1ed;
 }
 .finder-option > span:not(.finder-radio) {
   flex: 1;
 }
 .finder-option strong {
   display: block;
-  color: #e4ecfa;
+  color: #e9eff5;
   font-size: 15px;
   line-height: 1.5;
   font-weight: 500;
 }
 .finder-option small {
   display: block;
-  color: #9aaecb;
+  color: #9ab2cb;
   font-size: 13px;
   line-height: 1.7;
   margin-top: 5px;
@@ -123,27 +123,27 @@
   flex-shrink: 0;
   display: grid;
   place-items: center;
-  border: 1px solid #6883ad;
+  border: 1px solid #6889ad;
   border-radius: 50%;
-  color: #e2edff;
+  color: #ebf0f6;
 }
 .finder-option.selected .finder-radio {
-  background: #4778d8;
-  border-color: #96b9ff;
+  background: #478dd8;
+  border-color: #96c9ff;
 }
 .finder-selection {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 6px;
-  color: #90a6c7;
+  color: #90abc7;
   font-size: 11px;
   line-height: 1.7;
   margin: 0 0 18px;
 }
 .finder-selection strong {
   font-weight: 400;
-  color: #c6d7f1;
+  color: #c6dbf1;
 }
 .finder-footer {
   display: flex;
@@ -152,7 +152,7 @@
   gap: 15px;
   padding-top: 22px;
   margin-top: 22px;
-  border-top: 1px solid #293a55;
+  border-top: 1px solid #293e55;
 }
 .finder-footer .button {
   font-size: 14px;
@@ -163,20 +163,20 @@
 }
 .finder-result-heading {
   padding: 21px;
-  border: 1px solid #456398;
+  border: 1px solid #456d98;
   border-radius: 10px;
-  background: radial-gradient(ellipse at top right, #3d6bc42b, transparent 75%), #17263e;
+  background: radial-gradient(ellipse at top right, #3d7ec42b, transparent 75%), #212a34;
 }
 .finder-result-heading > span {
   display: flex;
   align-items: center;
   gap: 7px;
-  color: #9dbffb;
+  color: #9dcafb;
   font-size: 11px;
 }
 .finder-result-heading h3 {
   margin: 14px 0 12px;
-  color: #eaf1ff;
+  color: #f0f4f9;
   font-size: 23px;
   font-weight: 500;
   letter-spacing: -0.6px;
@@ -184,7 +184,7 @@
 }
 .finder-result-heading p {
   margin: 0;
-  color: #a9bbd6;
+  color: #a9bfd6;
   font-size: 14px;
   line-height: 1.85;
 }
@@ -195,24 +195,24 @@
   margin: 22px 0;
 }
 .finder-answers dt {
-  color: #7e97be;
+  color: #7e9dbe;
   font-size: 11px;
   letter-spacing: 1px;
 }
 .finder-answers dd {
   margin: 8px 0 0;
-  color: #bbcce6;
+  color: #bbd0e6;
   font-size: 14px;
   line-height: 1.7;
 }
 .finder-next {
-  border-top: 1px solid #2a3c59;
+  border-top: 1px solid #2a4159;
   padding-top: 19px;
 }
 .finder-next h4 {
   margin: 0 0 16px;
   font-size: 15px;
-  color: #d3e1f8;
+  color: #dbe5f0;
   font-weight: 500;
 }
 .finder-next ol {
@@ -226,12 +226,12 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  color: #a2b7d7;
+  color: #a2bcd7;
   font-size: 14px;
   line-height: 1.7;
 }
 .finder-next li > span {
-  color: #7ca4ec;
+  color: #7cb2ec;
   font: 11px monospace;
   margin-top: 2px;
 }
@@ -241,13 +241,13 @@
   gap: 8px;
   padding: 14px 0;
   margin: 18px 0 0;
-  color: #8fa9cc;
+  color: #8faccc;
   font-size: 11px;
   line-height: 1.7;
 }
 .finder-care svg {
   flex-shrink: 0;
-  color: #91b4ee;
+  color: #91beee;
   margin-top: 1px;
 }
 .finder-result-actions {
@@ -273,13 +273,13 @@
   border: 0;
   background: none;
   font-size: 11px;
-  color: #9eb7df;
+  color: #9ebddf;
 }
 .finder-edit:hover {
-  color: #e0ecff;
+  color: #e9eff6;
 }
 .finder-edit:focus-visible {
-  outline: 2px solid #b1ccff;
+  outline: 2px solid #b1d7ff;
   outline-offset: 3px;
 }
 @media (max-width: 560px) {

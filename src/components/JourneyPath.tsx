@@ -10,6 +10,7 @@ import {
 import type { CSSProperties } from 'react'
 import './JourneyPath.css'
 import './JourneyPathMotion.css'
+import { BrandMark } from './BrandMark'
 
 const paths = [
   {
@@ -113,7 +114,9 @@ export function JourneyPath({
           aria-label={path.action}
           onClick={onExplore}
         >
-          <span>n.</span>
+          <span>
+            <BrandMark />
+          </span>
           <small>NEWTHING</small>
         </button>
         <span className="journey-path-node end">

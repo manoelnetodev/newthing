@@ -88,7 +88,7 @@ function DashboardPreview() {
     <div
       className="concept-dashboard concept-canvas"
       role="img"
-      aria-label="Dashboard Workspace: painel claro com menu lateral azul, indicadores de receita e conversão, gráfico de evolução e lista de projetos. Dados ilustrativos."
+      aria-label="Dashboard Workspace: painel grafite e azul com indicadores de receita e conversão, gráfico de evolução e lista de projetos. Dados ilustrativos."
     >
       <div className="dash-sidebar" aria-hidden="true">
         <div className="dash-brand">
@@ -205,8 +205,8 @@ function DashboardPreview() {
                   <svg viewBox="0 0 340 100" preserveAspectRatio="none">
                     <defs>
                       <linearGradient id="dashboard-area" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="#5385ed" stopOpacity=".24" />
-                        <stop offset="100%" stopColor="#5385ed" stopOpacity="0" />
+                        <stop offset="0%" stopColor="#2d8cff" stopOpacity=".24" />
+                        <stop offset="100%" stopColor="#2d8cff" stopOpacity="0" />
                       </linearGradient>
                     </defs>
                     <path
@@ -216,7 +216,7 @@ function DashboardPreview() {
                     <path
                       d="M0 80 C20 80 22 66 42 68 S70 83 90 57 S125 68 145 40 S180 55 202 32 S239 47 260 22 S300 30 340 7"
                       fill="none"
-                      stroke="#4e7fea"
+                      stroke="#287ce1"
                       strokeWidth="2.4"
                     />
                   </svg>
@@ -292,7 +292,7 @@ function SaasPreview() {
     <div
       className="concept-saas concept-canvas"
       role="img"
-      aria-label="SaaS Orbit: plataforma escura com detalhes violeta, editor de automação conectando novo lead, inteligência artificial e CRM, com histórico de execuções. Dados ilustrativos."
+      aria-label="SaaS Orbit: plataforma escura com detalhes azuis, editor de automação conectando novo lead, inteligência artificial e CRM, com histórico de execuções. Dados ilustrativos."
     >
       <div className="orbit-nav" aria-hidden="true">
         <span className="orbit-brand">
@@ -444,7 +444,7 @@ function WebsitePreview() {
     <div
       className="concept-website concept-canvas"
       role="img"
-      aria-label="Website Forma: site editorial em tons de marfim e verde, tipografia marcante, escultura geométrica, chamada de contato e portfólio de um estúdio criativo. Conceito ilustrativo."
+      aria-label="Website Forma: site editorial preto e azul, tipografia marcante, escultura geométrica, chamada de contato e portfólio de um estúdio criativo. Conceito ilustrativo."
     >
       <div className="forma-nav" aria-hidden="true">
         <span className="forma-brand">

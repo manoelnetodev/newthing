@@ -1,19 +1,20 @@
-/* Interface Newthing: blue guides actions; green marks confirmation. Demo artwork keeps its own identity. */
+/* Newthing identity: blue, black and white; functional status colors stay semantic. */
 :root {
-  --nt-bg: #0b1018;
-  --nt-surface: #111a28;
-  --nt-surface-raised: #162237;
-  --nt-surface-active: #1c3051;
-  --nt-border: #2b3c56;
-  --nt-border-active: #729cf5;
-  --nt-text: #edf3ff;
-  --nt-text-secondary: #b2c1d7;
-  --nt-text-muted: #8b9ebc;
-  --nt-accent: #3267ff;
-  --nt-accent-hover: #487bff;
-  --nt-accent-soft: #9abaff;
+  --nt-logo-blue: #087cff;
+  --nt-bg: #0a0d12;
+  --nt-surface: #11171f;
+  --nt-surface-raised: #17212d;
+  --nt-surface-active: #142e4c;
+  --nt-border: #2b3848;
+  --nt-border-active: #62aaff;
+  --nt-text: #f4f7fb;
+  --nt-text-secondary: #b8c5d6;
+  --nt-text-muted: #94a6bd;
+  --nt-accent: #0868e2;
+  --nt-accent-hover: #075bc7;
+  --nt-accent-soft: #8cc0ff;
   --nt-positive: #8ec5b1;
-  --nt-focus: #b3cdff;
+  --nt-focus: #b3d6ff;
   --blue: var(--nt-accent);
   --muted: var(--nt-text-muted);
   --line: var(--nt-border);
@@ -32,11 +33,11 @@ textarea:focus-visible {
   outline-color: var(--nt-focus);
 }
 .announcement {
-  background: #15326a;
-  border-bottom: 1px solid #476bb544;
+  background: #153e6a;
+  border-bottom: 1px solid #477cb544;
 }
 .site-header {
-  background: #0b1018f2;
+  background: #0e1115f2;
   border-bottom-color: var(--nt-border);
 }
 .main-nav > a {
@@ -51,8 +52,8 @@ textarea:focus-visible {
 .journey-result > button {
   background: var(--nt-accent);
   color: #fff;
-  border-color: #648eff70;
-  box-shadow: 0 5px 22px #3267ff1c;
+  border-color: #64afff70;
+  box-shadow: 0 5px 22px #087cff1c;
 }
 .button-primary:hover,
 .client-vision-cta:hover,
@@ -110,23 +111,23 @@ textarea:focus-visible {
 }
 .process-section,
 .identity-section {
-  background: #0e1725;
+  background: #14191f;
   border-block-color: var(--nt-border);
 }
 .about-section {
   background: var(--nt-bg);
 }
 .faq-section {
-  background: radial-gradient(ellipse at 5% 35%, #3267ff09, transparent 55%), var(--nt-bg);
+  background: radial-gradient(ellipse at 5% 35%, #087cff09, transparent 55%), var(--nt-bg);
   border-top-color: var(--nt-border);
 }
 .final-cta {
-  background: #101d33;
+  background: #1a2129;
   border-top-color: var(--nt-border);
 }
 .site-footer {
   border-top-color: var(--nt-border);
-  background: #090f18;
+  background: #0d1014;
 }
 .final-cta h2 > span,
 .process-step > svg,
@@ -144,22 +145,22 @@ textarea:focus-visible {
   color: var(--nt-text-secondary);
 }
 .flow-card {
-  background: linear-gradient(140deg, var(--nt-surface), #101824);
+  background: linear-gradient(140deg, var(--nt-surface), #141a20);
   border-color: var(--nt-border);
 }
 .connected-card {
-  background: linear-gradient(140deg, #182a48, var(--nt-surface));
-  border-color: #638feb99;
+  background: linear-gradient(140deg, #182f48, var(--nt-surface));
+  border-color: #63a5eb99;
 }
 .journey-card {
   background: linear-gradient(145deg, var(--nt-surface-raised), var(--nt-surface));
   border-color: var(--nt-border);
 }
 .journey-card.is-selected {
-  background: linear-gradient(145deg, var(--nt-surface-active), #111c2e 75%);
+  background: linear-gradient(145deg, var(--nt-surface-active), #191f26 75%);
   border-color: var(--nt-border-active);
   box-shadow:
-    inset 0 2px #88adff,
+    inset 0 2px #88c2ff,
     0 12px 35px #0001;
 }
 .journey-card > p {
@@ -170,8 +171,8 @@ textarea:focus-visible {
   text-wrap: balance;
 }
 .journey-icon {
-  background: #3267ff0f;
-  border-color: #729cf533;
+  background: #087cff0f;
+  border-color: #72b1f533;
   color: var(--nt-accent-soft);
 }
 .journey-card li svg,
@@ -210,11 +211,11 @@ textarea:focus-visible {
   background: var(--nt-surface);
 }
 .team-area-parcerias .team-portrait {
-  border-color: #354158;
+  border-color: #354658;
 }
 .team-area-parcerias .team-profile-link:hover,
 .team-profile-link:hover {
-  color: #d5e6ff;
+  color: #e2eaf2;
 }
 .pillar-example-result > svg,
 .client-vision-commitment > svg {
@@ -230,4 +231,86 @@ textarea:focus-visible {
 .footer-bottom,
 .back-top {
   color: var(--nt-text-muted);
+}
+
+/* The actual company mark replaces both the old slash logo and the n. monogram. */
+.brand {
+  gap: 0;
+  flex-shrink: 0;
+}
+.brand .brand-lockup {
+  display: block;
+  width: 194px;
+  height: auto;
+}
+.brand-small .brand-lockup {
+  width: 184px;
+}
+.newthing-mark {
+  display: block;
+  width: 32px;
+  height: 40px;
+  color: #f4f7fb;
+  flex-shrink: 0;
+}
+.connected-center,
+.journey-path-hub > span,
+.quick-faq-brand strong,
+.client-vision-connection > div > strong {
+  background: linear-gradient(145deg, #182330, #0c1118);
+  border-color: #448bdf;
+  padding-right: 0;
+}
+.connected-center > .newthing-mark {
+  width: 40px;
+  height: 50px;
+}
+.journey-path-hub .newthing-mark {
+  width: 34px;
+  height: 43px;
+}
+.quick-faq-brand .newthing-mark {
+  width: 29px;
+  height: 36px;
+}
+.client-vision-connection .newthing-mark {
+  width: 25px;
+  height: 31px;
+}
+.site-header {
+  background: #0a0d12f5;
+}
+.process-section,
+.identity-section {
+  background: #0e141c;
+}
+.site-footer {
+  background: #080b10;
+}
+.announcement {
+  background: #12325b;
+}
+.journey-demo figcaption {
+  font-size: 11px;
+}
+.team-editorial-area,
+.team-editorial-area.team-area-parcerias {
+  --team-accent: #9acbff;
+  --team-border: #365c87;
+}
+@media (max-width: 1100px) {
+  .brand .brand-lockup {
+    width: 176px;
+  }
+}
+@media (max-width: 560px) {
+  .brand .brand-lockup {
+    width: 164px;
+  }
+  .header-cta {
+    display: none;
+  }
+  .header-inner .menu-button {
+    margin-left: auto;
+  }
 }

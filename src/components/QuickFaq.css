@@ -17,9 +17,9 @@
   gap: 9px;
   padding: 27px 20px 20px;
   margin-top: 24px;
-  border: 1px solid var(--nt-border, #2b3c56);
+  border: 1px solid var(--nt-border, #2b4056);
   border-radius: 9px;
-  background: radial-gradient(ellipse at center, #3267ff12, transparent 70%), #111a28;
+  background: radial-gradient(ellipse at center, #087cff12, transparent 70%), #161c23;
 }
 .quick-faq-bridge > div {
   display: flex;
@@ -33,13 +33,13 @@
   place-items: center;
   width: 34px;
   height: 35px;
-  border: 1px solid #44618d;
+  border: 1px solid #44678d;
   border-radius: 8px;
-  background: #1b2b44;
-  color: #9abaff;
+  background: #1b2f44;
+  color: #9acbff;
 }
 .quick-faq-bridge small {
-  color: #90a9cc;
+  color: #90adcc;
   font-size: 11px;
   white-space: nowrap;
 }
@@ -48,7 +48,7 @@
   min-width: 8px;
   height: 1px;
   margin-top: -19px;
-  background: linear-gradient(90deg, #3d5d9066, #93baff, #3d5d9066);
+  background: linear-gradient(90deg, #3d659066, #93c7ff, #3d659066);
 }
 .quick-faq-brand strong {
   display: grid;
@@ -56,30 +56,30 @@
   width: 42px;
   height: 42px;
   border-radius: 11px;
-  border: 1px solid #7197ff;
-  background: linear-gradient(145deg, #4d7cff, #2851da);
+  border: 1px solid #71b6ff;
+  background: linear-gradient(145deg, #4da3ff, #287eda);
   color: white;
   font-size: 29px;
   font-weight: 600;
   letter-spacing: -2px;
   padding-right: 2px;
-  box-shadow: 0 0 22px #3267ff30;
+  box-shadow: 0 0 22px #087cff30;
 }
 .quick-faq-brand > small {
   font: 11px monospace;
   letter-spacing: 1px;
-  color: #829fd0;
+  color: #82a8d0;
 }
 .quick-faq-caption {
   font-size: 11px;
-  color: var(--nt-text-muted, #8b9ebc);
+  color: var(--nt-text-muted, #8ba3bc);
   line-height: 1.7;
   margin: 12px 1px 0;
 }
 .quick-faq-console {
-  border: 1px solid #3a5277;
+  border: 1px solid #3a5777;
   border-radius: 11px;
-  background: linear-gradient(135deg, #162239, #111a28 70%);
+  background: linear-gradient(135deg, #1f2730, #161c23 70%);
   overflow: hidden;
 }
 .quick-faq-console > header {
@@ -88,7 +88,7 @@
   justify-content: space-between;
   gap: 10px;
   padding: 17px 20px 0;
-  color: #91add7;
+  color: #91b3d7;
 }
 .quick-faq-console > header > span {
   display: flex;
@@ -101,13 +101,13 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #9abaff;
-  box-shadow: 0 0 8px #8eb7ff88;
+  background: #9acbff;
+  box-shadow: 0 0 8px #8ec5ff88;
 }
 .quick-faq-console > header > small {
   font: 11px monospace;
   letter-spacing: 0.7px;
-  color: #6985af;
+  color: #698baf;
 }
 .quick-faq-tabs {
   display: grid;
@@ -119,10 +119,10 @@
   display: flex;
   align-items: center;
   gap: 7px;
-  background: #101b2d;
-  border: 1px solid #314565;
+  background: #181e25;
+  border: 1px solid #314a65;
   border-radius: 6px;
-  color: #95aecf;
+  color: #95b1cf;
   padding: 10px 9px;
   font: inherit;
   font-size: 12px;
@@ -136,24 +136,24 @@
 }
 .quick-faq-tabs button > svg {
   flex-shrink: 0;
-  color: #7394c3;
+  color: #739ac3;
 }
 .quick-faq-tabs button:hover {
-  border-color: #6d91ca;
-  color: #d0dffa;
+  border-color: #6d9aca;
+  color: #dbe5ef;
 }
 .quick-faq-tabs button[aria-selected='true'] {
-  background: #25457766;
-  border-color: #8caef0;
-  color: #dceaff;
+  background: #254d7766;
+  border-color: #8cbcf0;
+  color: #e7edf5;
 }
 .quick-faq-tabs button[aria-selected='true'] > svg {
-  color: #aecaff;
+  color: #aed5ff;
 }
 .quick-faq-answer {
-  border-top: 1px solid #304764;
+  border-top: 1px solid #304964;
   padding: 22px 23px;
-  background: #0d172633;
+  background: #14191f33;
 }
 .quick-faq-answer-copy {
   animation: quick-faq-reveal 0.25s ease-out both;
@@ -164,18 +164,18 @@
   gap: 8px;
   font: 11px monospace;
   letter-spacing: 1px;
-  color: #7f9fce;
+  color: #7fa5ce;
 }
 .quick-faq-answer h3 {
   margin: 12px 0 12px;
-  color: #e3edfc;
+  color: #e9eff6;
   font-size: 19px;
   line-height: 1.4;
   font-weight: 500;
   letter-spacing: -0.4px;
 }
 .quick-faq-answer-copy > p {
-  color: #b0c1db;
+  color: #b0c5db;
   font-size: 14px;
   line-height: 1.9;
   margin: 0;
@@ -186,18 +186,18 @@
   gap: 8px;
   padding: 13px 0 0;
   margin-top: 15px;
-  border-top: 1px solid #2c405e;
+  border-top: 1px solid #2c445e;
 }
 .quick-faq-next > span {
   width: 4px;
   height: 4px;
-  background: #9abaff;
+  background: #9acbff;
   border-radius: 50%;
   flex-shrink: 0;
   margin-top: 7px;
 }
 .quick-faq-next p {
-  color: #94b4e1;
+  color: #94b9e1;
   font-size: 13px;
   line-height: 1.8;
   margin: 0;
@@ -221,7 +221,7 @@
   border: 0;
   background: none;
   padding: 8px 0;
-  color: #8eabd6;
+  color: #8eb1d6;
   font-size: 12px;
 }
 .quick-faq-expand[aria-expanded='true'] > svg {
@@ -229,37 +229,37 @@
 }
 .quick-faq-actions .quick-faq-start {
   padding: 10px 12px;
-  background: #25467866;
-  border: 1px solid #6189c8;
+  background: #254d7866;
+  border: 1px solid #6193c8;
   border-radius: 6px;
   font-size: 13px;
-  color: #d1e3ff;
+  color: #dfe8f1;
 }
 .quick-faq-start:hover {
-  background: #325b9766;
-  border-color: #91b5ec;
+  background: #32639766;
+  border-color: #91bdec;
 }
 .quick-faq-note {
   display: block;
   margin-top: 12px;
-  color: #6e88ae;
+  color: #6e8dae;
   font-size: 11px;
   line-height: 1.7;
 }
 .quick-faq-details {
   margin-top: 20px;
   padding: 17px 0 0;
-  border-top: 1px dashed #3c5579;
+  border-top: 1px dashed #3c5979;
 }
 .quick-faq-details > p {
-  color: #94a9c7;
+  color: #94adc7;
   font-size: 14px;
   line-height: 1.9;
   margin: 0 0 12px;
 }
 .quick-faq-console button:focus-visible,
 .quick-faq-console [role='tabpanel']:focus-visible {
-  outline: 2px solid #b3cdff;
+  outline: 2px solid #b3d8ff;
   outline-offset: 3px;
 }
 @keyframes quick-faq-reveal {

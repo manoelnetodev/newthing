@@ -1,7 +1,7 @@
 .identity-section {
   position: relative;
-  background: linear-gradient(135deg, #111723, #0e121b 60%, #0e141c);
-  border-block: 1px solid #2a354b;
+  background: linear-gradient(135deg, #141a20, #101419 60%, #10151a);
+  border-block: 1px solid #2a3a4b;
   overflow: hidden;
 }
 .identity-section:before {
@@ -12,7 +12,7 @@
   width: 650px;
   height: 650px;
   border-radius: 50%;
-  background: radial-gradient(ellipse, #315caf10, transparent 65%);
+  background: radial-gradient(ellipse, #316eaf10, transparent 65%);
   pointer-events: none;
 }
 .identity-section > .container {
@@ -32,7 +32,7 @@
   list-style: none;
   padding: 24px 0 0;
   margin: 25px 0 0;
-  border-top: 1px solid #2d405d;
+  border-top: 1px solid #2d445d;
 }
 .identity-care li {
   display: flex;
@@ -42,15 +42,15 @@
 .identity-care li > svg {
   flex-shrink: 0;
   margin-top: 2px;
-  color: #8daee7;
+  color: #8db9e7;
 }
 .identity-care strong {
-  color: #d7e3f7;
+  color: #dde7f1;
   font-size: 13px;
   font-weight: 500;
 }
 .identity-care p {
-  color: #92a7c6;
+  color: #92abc6;
   font-size: 11px;
   line-height: 1.8;
   margin: 5px 0 0;
@@ -64,7 +64,7 @@
   text-wrap: balance;
 }
 .identity-heading h2 > span {
-  color: #899cbf;
+  color: #89a3bf;
 }
 .identity-signature {
   display: flex;
@@ -76,17 +76,17 @@
   transform: skew(-18deg) scale(0.9);
 }
 .identity-signature .brand-symbol > span {
-  background: #9cb9ef;
+  background: #9cc4ef;
 }
 .identity-signature > div {
   font-size: 13px;
-  color: #d2dced;
+  color: #d2dfed;
   font-weight: 500;
 }
 .identity-signature small {
   display: block;
   font-size: 11px;
-  color: #8295b5;
+  color: #829bb5;
   letter-spacing: 1px;
   margin-top: 8px;
   font-weight: 400;
@@ -94,25 +94,25 @@
 .identity-story > p {
   font-size: 12px;
   line-height: 1.95;
-  color: #9daac0;
+  color: #9daec0;
   margin: 0 0 15px;
 }
 .identity-story > p:first-child {
   font-size: 19px;
   line-height: 1.6;
-  color: #d7dfec;
+  color: #d7e1ec;
   letter-spacing: -0.3px;
   margin-bottom: 22px;
 }
 .identity-story strong {
-  color: #ccd7e9;
+  color: #ccdae9;
   font-weight: 500;
 }
 .identity-team {
   display: block;
   margin-top: 57px;
   padding-top: 43px;
-  border-top: 1px solid #2b3850;
+  border-top: 1px solid #2b3d50;
   scroll-margin-top: 110px;
 }
 .identity-team-intro {
@@ -131,16 +131,16 @@
   line-height: 1.2;
   letter-spacing: -1px;
   margin: 22px 0;
-  color: #e3eaf5;
+  color: #e4ecf4;
   text-wrap: balance;
 }
 .identity-team-intro h3 > span {
-  color: #91a4c5;
+  color: #91aac5;
 }
 .identity-team-story > p {
   font-size: 12px;
   line-height: 1.9;
-  color: #9dacc3;
+  color: #9dafc3;
   margin: 0 0 14px;
 }
 .identity-team-story {
@@ -157,7 +157,7 @@
   gap: 30px;
   padding-top: 34px;
   margin-top: 30px;
-  border-top: 1px solid #2c3850;
+  border-top: 1px solid #2c3d50;
 }
 .team-area-intro {
   padding-top: 5px;
@@ -166,23 +166,23 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #a1bbeb;
+  color: #a1c5eb;
   margin-bottom: 25px;
 }
 .team-area-number > span {
   font-family: monospace;
-  color: #7589a9;
+  color: #758ea9;
   font-size: 11px;
 }
 .team-area-label {
   display: block;
   font-size: 11px;
-  color: #8ca0c3;
+  color: #8ca7c3;
   letter-spacing: 1.5px;
   line-height: 1.7;
 }
 .team-area-intro h4 {
-  color: #e2eaf7;
+  color: #e5ecf4;
   font-size: 26px;
   font-weight: 500;
   letter-spacing: -0.7px;
@@ -191,7 +191,7 @@
   text-wrap: balance;
 }
 .team-area-intro > p {
-  color: #9aaac2;
+  color: #9aadc2;
   font-size: 12px;
   line-height: 1.95;
   margin: 0;
@@ -201,7 +201,7 @@
   gap: 19px;
   padding: 24px 0 0;
   margin: 25px 0 0;
-  border-top: 1px solid #2c3850;
+  border-top: 1px solid #2c3d50;
   list-style: none;
 }
 .team-area-roles li {
@@ -215,30 +215,30 @@
   width: 43px;
   height: 34px;
   flex-shrink: 0;
-  border: 1px solid #3b5075;
-  background: linear-gradient(135deg, #24375270, #1b273b40);
+  border: 1px solid #3b5775;
+  background: linear-gradient(135deg, #243a5270, #222b3440);
   border-radius: 6px;
-  color: #b1caf2;
+  color: #b1d0f2;
   font: 11px monospace;
   letter-spacing: 0.6px;
 }
 .team-area-roles strong {
   display: block;
   margin-top: 1px;
-  color: #d4dff0;
+  color: #d6e2ee;
   font-size: 11px;
   font-weight: 500;
 }
 .team-area-roles p {
-  color: #8d9fbb;
+  color: #8da3bb;
   font-size: 11px;
   line-height: 1.7;
   margin: 5px 0 0;
 }
 .team-area-parcerias .team-area-roles li > span {
-  border-color: #405850;
-  color: #bad5c8;
-  background: linear-gradient(135deg, #2a423b60, #1d2c2940);
+  border-color: #404c58;
+  color: #bac7d5;
+  background: linear-gradient(135deg, #2a364260, #1d242c40);
 }
 .team-area + .team-area {
   margin-top: 43px;
@@ -246,13 +246,13 @@
 }
 .team-area-parcerias .team-area-number,
 .team-area-parcerias .team-area-label {
-  color: #afc4bc;
+  color: #afb9c4;
 }
 .team-area-parcerias .team-role {
-  color: #b0c8be;
+  color: #b0bcc8;
 }
 .team-area-parcerias .team-portrait {
-  border-color: #3b4b49;
+  border-color: #3b434b;
 }
 .identity-team-note {
   display: flex;
@@ -260,8 +260,8 @@
   align-items: center;
   padding-top: 18px;
   margin-top: 23px;
-  border-top: 1px solid #2a354a;
-  color: #8faddc;
+  border-top: 1px solid #2a394a;
+  color: #8fb4dc;
   font-size: 11px;
   line-height: 1.8;
 }
@@ -269,7 +269,7 @@
   height: 5px;
   width: 5px;
   border-radius: 50%;
-  background: #99b5e8;
+  background: #99bfe8;
   flex-shrink: 0;
 }
 .team-profile {
@@ -280,7 +280,7 @@
   aspect-ratio: 4 / 5;
   border-radius: 10px;
   overflow: hidden;
-  border: 1px solid #354158;
+  border: 1px solid #354658;
   background: #101010;
 }
 .team-portrait img {
@@ -299,19 +299,19 @@
   align-items: center;
   gap: 6px;
   z-index: 1;
-  color: #dde7f8;
+  color: #e2eaf3;
   font-size: 11px;
   letter-spacing: 1.1px;
 }
 .team-photo-mark {
   width: 3px;
   height: 3px;
-  background: #a5bee9;
+  background: #a5c6e9;
   border-radius: 50%;
 }
 .team-photo-caption > span:last-child {
   margin-left: auto;
-  color: #bbc7dc;
+  color: #bbcbdc;
   font-size: 11px;
   letter-spacing: 0.9px;
 }
@@ -323,11 +323,11 @@
   font-size: 22px;
   font-weight: 500;
   letter-spacing: -0.6px;
-  color: #e7edf8;
+  color: #e9eff6;
 }
 .team-role {
   margin: 0;
-  color: #9ebced;
+  color: #9ec4ed;
   font-size: 11px;
   line-height: 1.6;
   min-height: 32px;
@@ -335,35 +335,35 @@
 .team-role > span {
   display: inline-flex;
   align-items: center;
-  border: 1px solid #3b5075;
+  border: 1px solid #3b5775;
   border-radius: 5px;
   padding: 5px 9px;
-  background: #23375450;
+  background: #233b5450;
   font: 11px monospace;
   letter-spacing: 0.35px;
 }
 .team-role > small {
   display: block;
-  color: #8fa3c3;
+  color: #8fa8c3;
   font-size: 11px;
   line-height: 1.6;
   margin-top: 8px;
 }
 .team-area-parcerias .team-role > span {
-  border-color: #405850;
-  background: #29463b40;
+  border-color: #404c58;
+  background: #29374640;
 }
 .team-responsibility {
-  color: #b7c7de;
+  color: #b7cade;
   margin: 10px 0 0;
   font-size: 11px;
   line-height: 1.7;
 }
 .team-description {
   margin: 14px 0 0;
-  border-top: 1px solid #2a354a;
+  border-top: 1px solid #2a394a;
   padding-top: 14px;
-  color: #92a2bc;
+  color: #92a6bc;
   font-size: 11px;
   line-height: 1.85;
 }
@@ -377,17 +377,17 @@
 }
 .team-focus li {
   padding: 6px 8px;
-  border: 1px solid #34465f;
+  border: 1px solid #34495f;
   border-radius: 5px;
   font-size: 11px;
   line-height: 1.5;
-  color: #a9bedf;
-  background: #1b2a4140;
+  color: #a9c3df;
+  background: #1b2d4140;
 }
 .team-area-parcerias .team-focus li {
-  color: #b8cec6;
-  border-color: #354e49;
-  background: #243b3430;
+  color: #b8c3ce;
+  border-color: #35414e;
+  background: #242f3b30;
 }
 .team-profile-link {
   display: inline-flex;
@@ -395,7 +395,7 @@
   gap: 7px;
   margin-top: 17px;
   padding-block: 5px;
-  color: #afc9f2;
+  color: #afcff2;
   font-size: 11px;
   line-height: 1.5;
   text-decoration: none;
@@ -404,18 +404,18 @@
   margin-left: 4px;
 }
 .team-profile-link:hover {
-  color: #e0ecff;
+  color: #e9eff6;
 }
 .team-profile-link:focus-visible {
-  outline: 2px solid #b5ceff;
+  outline: 2px solid #b5d9ff;
   outline-offset: 4px;
   border-radius: 3px;
 }
 .team-area-parcerias .team-profile-link {
-  color: #bfd9cc;
+  color: #bfccd9;
 }
 .team-area-parcerias .team-profile-link:hover {
-  color: #e0f7ec;
+  color: #e4ebf3;
 }
 .identity-expertise {
   display: grid;
@@ -424,22 +424,22 @@
   margin-top: 53px;
 }
 .identity-expertise article {
-  border-top: 1px solid #344157;
+  border-top: 1px solid #344557;
   padding-top: 22px;
 }
 .identity-expertise-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #9db8eb;
+  color: #9dc3eb;
 }
 .identity-expertise-top > span {
   font-family: monospace;
   font-size: 11px;
-  color: #7e91af;
+  color: #7e96af;
 }
 .identity-expertise h3 {
-  color: #dbe3f2;
+  color: #dde6f0;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.4;
@@ -449,7 +449,7 @@
 .identity-expertise p {
   font-size: 11px;
   line-height: 1.95;
-  color: #96a5bd;
+  color: #96a9bd;
   margin: 0;
 }
 .identity-promise {
@@ -459,7 +459,7 @@
   gap: 30px;
   margin-top: 43px;
   padding-top: 29px;
-  border-top: 1px solid #28334a;
+  border-top: 1px solid #28384a;
 }
 .identity-promise > div {
   display: flex;
@@ -470,22 +470,22 @@
   width: 3px;
   height: 35px;
   border-radius: 3px;
-  background: linear-gradient(#91b5fb, #3c62a8);
+  background: linear-gradient(#91c4fb, #3c70a8);
 }
 .identity-promise p {
   margin: 0;
   font-size: 12px;
   line-height: 1.8;
-  color: #899dbc;
+  color: #89a2bc;
 }
 .identity-promise strong {
   font-weight: 500;
-  color: #d5e0f3;
+  color: #d9e4ef;
 }
 .identity-promise .button {
-  background: #1c2a4255;
-  border-color: #44597a80;
-  color: #c4d8fc;
+  background: #1c2e4255;
+  border-color: #445e7a80;
+  color: #c4dffc;
   font-size: 11px;
 }
 @media (max-width: 1024px) {

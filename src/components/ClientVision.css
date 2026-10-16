@@ -1,12 +1,12 @@
 .client-vision {
   min-width: 0;
   align-self: start;
-  border: 1px solid #3a506f;
+  border: 1px solid #3a546f;
   border-radius: 14px;
   overflow: hidden;
-  background: linear-gradient(145deg, #172235, #111a2a 70%);
+  background: linear-gradient(145deg, #1e262e, #171d24 70%);
   box-shadow:
-    0 20px 60px #02071325,
+    0 20px 60px #080a0d25,
     inset 0 1px #ffffff04;
 }
 .client-vision-top {
@@ -15,9 +15,9 @@
   justify-content: space-between;
   gap: 15px;
   padding: 18px 24px;
-  border-bottom: 1px solid #2e405d;
-  background: #152036;
-  color: #8faee3;
+  border-bottom: 1px solid #2e455d;
+  background: #1d252e;
+  color: #8fb8e3;
 }
 .client-vision-top > span {
   display: flex;
@@ -30,8 +30,8 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #8db6ff;
-  box-shadow: 0 0 9px #6496ff88;
+  background: #8dc4ff;
+  box-shadow: 0 0 9px #64afff88;
 }
 .client-vision-question {
   padding: 24px 24px 0;
@@ -42,10 +42,10 @@
   line-height: 1.3;
   font-weight: 500;
   letter-spacing: -0.6px;
-  color: #edf3ff;
+  color: #f2f6fa;
 }
 .client-vision-question p {
-  color: #9eafca;
+  color: #9eb3ca;
   font-size: 11px;
   line-height: 1.7;
   margin: 10px 0 0;
@@ -62,43 +62,43 @@
   align-items: center;
   gap: 7px;
   padding: 9px 10px;
-  border: 1px solid #394c6b;
+  border: 1px solid #39516b;
   border-radius: 6px;
-  background: #172238;
-  color: #a6b8d5;
+  background: #1f2730;
+  color: #a6bdd5;
   font-size: 11px;
   line-height: 1.4;
   text-align: left;
 }
 .client-vision-tabs button[aria-selected='true'] {
-  background: #27467b;
-  border-color: #739ce6;
-  color: #eef4ff;
+  background: #27507b;
+  border-color: #73abe6;
+  color: #f3f6fa;
 }
 .client-vision-tabs button:hover {
-  border-color: #739ce6;
-  color: #e5eeff;
+  border-color: #73abe6;
+  color: #edf2f7;
 }
 .client-vision-content {
   padding: 0 24px;
   animation: client-vision-reveal 0.3s ease both;
 }
 .client-vision-quote {
-  border-left: 2px solid #729eeb;
+  border-left: 2px solid #72aceb;
   padding: 14px 17px;
   border-radius: 0 7px 7px 0;
-  background: #1c2a43;
+  background: #1c2f43;
 }
 .client-vision-quote > span {
   display: flex;
   align-items: center;
   gap: 6px;
-  color: #8ba5cf;
+  color: #8baccf;
   font-size: 11px;
   letter-spacing: 1px;
 }
 .client-vision-quote p {
-  color: #d9e6fb;
+  color: #e2eaf2;
   font-size: 13px;
   line-height: 1.7;
   margin: 9px 0 0;
@@ -111,8 +111,8 @@
   min-height: 88px;
   padding: 9px 7px;
   background:
-    radial-gradient(ellipse at center, #3e70d71a, transparent 70%),
-    radial-gradient(#6b91ca20 0.6px, transparent 0.6px) 0 0/12px 12px;
+    radial-gradient(ellipse at center, #3e88d71a, transparent 70%),
+    radial-gradient(#6b99ca20 0.6px, transparent 0.6px) 0 0/12px 12px;
   border-radius: 8px;
 }
 .client-vision-connection > span {
@@ -122,11 +122,11 @@
   gap: 9px;
   width: 85px;
   flex-shrink: 0;
-  color: #9db7e4;
+  color: #9dbfe4;
 }
 .client-vision-connection small {
   display: block;
-  color: #92a8cb;
+  color: #92aecb;
   font-size: 11px;
   line-height: 1.5;
   text-align: center;
@@ -135,7 +135,7 @@
   flex: 1;
   max-width: 65px;
   height: 1px;
-  background: linear-gradient(90deg, #355489, #95b8fa, #355489);
+  background: linear-gradient(90deg, #355e89, #95c6fa, #355e89);
   margin-top: -14px;
 }
 .client-vision-connection > div {
@@ -151,9 +151,9 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  border: 1px solid #82adff;
-  background: linear-gradient(145deg, #568aff, #2859d6);
-  box-shadow: 0 0 23px #4a80ec3d;
+  border: 1px solid #82beff;
+  background: linear-gradient(145deg, #56a8ff, #287cd6);
+  box-shadow: 0 0 23px #4a98ec3d;
   color: #fff;
   font-size: 30px;
   font-weight: 600;
@@ -168,12 +168,12 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  color: #8dabdd;
+  color: #8db4dd;
   font-size: 11px;
   letter-spacing: 1px;
 }
 .client-vision-answer h4 {
-  color: #e5edfc;
+  color: #ebf0f6;
   font-size: 19px;
   font-weight: 500;
   line-height: 1.4;
@@ -183,7 +183,7 @@
 .client-vision-answer > p {
   font-size: 11px;
   line-height: 1.85;
-  color: #a7b8d2;
+  color: #a7bcd2;
   margin: 0;
 }
 .client-vision-answer ul {
@@ -198,27 +198,27 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #bed0ee;
+  color: #bed5ee;
   font-size: 11px;
 }
 .client-vision-answer li svg {
-  color: #92b8f9;
+  color: #92c4f9;
 }
 .client-vision-commitment {
   display: flex;
   align-items: flex-start;
   gap: 8px;
-  border-top: 1px solid #2c405d;
+  border-top: 1px solid #2c445d;
   padding: 15px 0 0;
   margin: 18px 0 0;
   font-size: 11px;
   line-height: 1.7;
-  color: #b2c8e9;
+  color: #b2cde9;
 }
 .client-vision-commitment svg {
   flex-shrink: 0;
   margin-top: 1px;
-  color: #90b2ea;
+  color: #90bcea;
 }
 .client-vision-cta {
   display: flex;
@@ -228,16 +228,16 @@
   width: calc(100% - 48px);
   margin: 20px 24px 0;
   padding: 13px 15px;
-  border: 1px solid #5f86db;
+  border: 1px solid #5f9bdb;
   border-radius: 7px;
-  background: #2e56a6;
+  background: #2e68a6;
   color: #fff;
   font-size: 11px;
   line-height: 1.5;
   text-align: left;
 }
 .client-vision-cta:hover {
-  background: #3968c6;
+  background: #397dc6;
 }
 .client-vision-cta svg {
   flex-shrink: 0;
@@ -248,7 +248,7 @@
   gap: 6px;
   padding: 0 24px;
   margin: 13px 0 20px;
-  color: #8ca1c0;
+  color: #8ca5c0;
   font-size: 11px;
   line-height: 1.7;
 }
@@ -258,7 +258,7 @@
 }
 .client-vision button:focus-visible,
 .client-vision [role='tabpanel']:focus-visible {
-  outline: 2px solid #b5ceff;
+  outline: 2px solid #b5d9ff;
   outline-offset: 3px;
 }
 .client-vision-announcement {

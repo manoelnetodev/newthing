@@ -15,6 +15,7 @@ import {
   Layers,
 } from 'lucide-react'
 import './QuickFaq.css'
+import { BrandMark } from './BrandMark'
 
 const topics = [
   {
@@ -139,7 +140,9 @@ export function QuickFaq({ faqs, onBrief }: { faqs: Faq[]; onBrief: () => void }
             </div>
             <i />
             <div className="quick-faq-brand">
-              <strong>n.</strong>
+              <strong>
+                <BrandMark />
+              </strong>
               <small>NEWTHING</small>
             </div>
             <i />

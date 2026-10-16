@@ -1,30 +1,30 @@
 /* The client explicitly requested this light sequence. Its local pause control remains available when the system reduces other motion. */
 .journey-path {
   --journey-cycle: 15s;
-  --origin-light: #c5d8ff;
-  --origin-glow: #6593ff;
-  --result-light: #cbe6ff;
-  --result-glow: #6da4ff;
+  --origin-light: #d6e2ee;
+  --origin-glow: #65afff;
+  --result-light: #dbe5ef;
+  --result-glow: #6db4ff;
 }
 .journey-path-phase-0 {
   --origin-light: #ffe6a0;
   --origin-glow: #ffcc65;
 }
 .journey-path-phase-2 {
-  --result-light: #b8ffe2;
-  --result-glow: #6bddb0;
+  --result-light: #b8daff;
+  --result-glow: #6ba2dd;
 }
 .journey-path::before {
   content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(ellipse at 50% 48%, #477fff35, transparent 72%);
+  background: radial-gradient(ellipse at 50% 48%, #47a0ff35, transparent 72%);
   opacity: 0;
   animation: journey-light-atmosphere var(--journey-cycle) linear var(--journey-delay) infinite both;
 }
 .journey-path-track {
-  stroke: #47618d;
+  stroke: #47698d;
   stroke-width: 1.1;
 }
 .journey-path-charge,
@@ -38,33 +38,33 @@
   stroke-dashoffset: 100;
 }
 .journey-path-charge.incoming {
-  stroke: #96b9ff;
+  stroke: #96c9ff;
   stroke-width: 1.5;
-  filter: drop-shadow(0 0 3px #638fff);
+  filter: drop-shadow(0 0 3px #63aeff);
   animation: journey-light-incoming var(--journey-cycle) linear var(--journey-delay) infinite both;
 }
 .journey-path-charge.outgoing {
-  stroke: #e0edff;
+  stroke: #e9eff6;
   stroke-width: 1.8;
-  filter: drop-shadow(0 0 4px #77a6ff);
+  filter: drop-shadow(0 0 4px #77b9ff);
   animation: journey-light-outgoing var(--journey-cycle) linear var(--journey-delay) infinite both;
 }
 .journey-path-packet.incoming {
-  stroke: #d7e7ff;
+  stroke: #e3ebf3;
   stroke-width: 2.1;
   stroke-dasharray: 5 95;
-  filter: drop-shadow(0 0 3px #8bb5ff);
+  filter: drop-shadow(0 0 3px #8bc3ff);
   animation: journey-light-arrival var(--journey-cycle) linear var(--journey-delay) infinite both;
 }
 .journey-path-packet.outgoing {
   stroke: #fff;
   stroke-width: 2.9;
   stroke-dasharray: 10 90;
-  filter: drop-shadow(0 0 3px #d8e7ff) drop-shadow(0 0 6px #5a8aff);
+  filter: drop-shadow(0 0 3px #e4ebf3) drop-shadow(0 0 6px #5aaaff);
   animation: journey-light-departure var(--journey-cycle) linear var(--journey-delay) infinite both;
 }
 .journey-path-halo.outgoing {
-  stroke: #6f9eff;
+  stroke: #6fb5ff;
   stroke-width: 5;
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
@@ -91,7 +91,7 @@
   content: '';
   position: absolute;
   inset: -5px;
-  border: 1px solid #8db4ff;
+  border: 1px solid #8dc4ff;
   border-radius: 18px;
   pointer-events: none;
   opacity: 0;
@@ -110,9 +110,9 @@
   3%,
   45%,
   100% {
-    color: #99afd4;
-    border-color: #42587f;
-    box-shadow: 0 0 8px #4776cd14;
+    color: #99b6d4;
+    border-color: #425f7f;
+    box-shadow: 0 0 8px #4788cd14;
     filter: none;
   }
   2%,
@@ -125,7 +125,7 @@
   33% {
     color: var(--origin-light);
     border-color: var(--origin-glow);
-    background: #202a3e;
+    background: #202f3e;
     box-shadow:
       0 0 20px color-mix(in srgb, var(--origin-glow) 35%, transparent),
       inset 0 0 12px color-mix(in srgb, var(--origin-glow) 12%, transparent);
@@ -177,24 +177,24 @@
   10%,
   40%,
   100% {
-    box-shadow: 0 0 20px #2f63f12b;
-    border-color: #5685ff;
+    box-shadow: 0 0 20px #2f8df12b;
+    border-color: #56a8ff;
     filter: brightness(1);
   }
   14% {
     box-shadow:
-      0 0 30px #699bff99,
-      0 0 55px #326eff55,
-      inset 0 0 15px #bcd5ff35;
-    border-color: #bfd7ff;
+      0 0 30px #69b2ff99,
+      0 0 55px #3295ff55,
+      inset 0 0 15px #bcdcff35;
+    border-color: #bfdeff;
     filter: brightness(1.35);
   }
   21%,
   27% {
     box-shadow:
-      0 0 24px #588cff88,
-      0 0 40px #326eff33;
-    border-color: #a3c1ff;
+      0 0 24px #58a9ff88,
+      0 0 40px #3295ff33;
+    border-color: #a3cfff;
     filter: brightness(1.18);
   }
 }
@@ -259,16 +259,16 @@
   23%,
   48%,
   100% {
-    color: #99afd4;
-    border-color: #42587f;
-    box-shadow: 0 0 8px #4776cd14;
+    color: #99b6d4;
+    border-color: #425f7f;
+    box-shadow: 0 0 8px #4788cd14;
     filter: none;
   }
   27%,
   40% {
     color: var(--result-light);
     border-color: var(--result-glow);
-    background: #202d43;
+    background: #203143;
     box-shadow:
       0 0 24px color-mix(in srgb, var(--result-glow) 40%, transparent),
       inset 0 0 12px color-mix(in srgb, var(--result-glow) 12%, transparent);
@@ -280,7 +280,7 @@
   24%,
   48%,
   100% {
-    color: #9faec7;
+    color: #9fb2c7;
     text-shadow: none;
   }
   28%,
@@ -313,7 +313,7 @@
   40% {
     opacity: 1;
     transform: scale(1.25);
-    box-shadow: 0 0 12px #8cf4c9;
+    box-shadow: 0 0 12px #8cbef4;
   }
 }
 .journey-cards[data-light-motion='paused'] .journey-path *,

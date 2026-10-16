@@ -12,6 +12,7 @@ import {
   Workflow,
 } from 'lucide-react'
 import './ClientVision.css'
+import { BrandMark } from './BrandMark'
 
 const intentions = [
   {
@@ -134,7 +135,9 @@ export function ClientVision({
             </span>
             <i />
             <div>
-              <strong>n.</strong>
+              <strong>
+                <BrandMark />
+              </strong>
               <small>NEWTHING</small>
             </div>
             <i />

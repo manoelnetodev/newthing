@@ -1,11 +1,11 @@
 .hero {
   background:
-    radial-gradient(ellipse at 50% 22%, #254d9620, transparent 58%), var(--nt-bg, #0b1018);
+    radial-gradient(ellipse at 50% 22%, #255c9620, transparent 58%), var(--nt-bg, #0e1115);
 }
 .hero-glow {
   width: min(1300px, 120vw);
   height: 700px;
-  background: radial-gradient(ellipse at 50% 28%, #3267ff18, transparent 65%);
+  background: radial-gradient(ellipse at 50% 28%, #087cff18, transparent 65%);
 }
 .hero-opening {
   position: relative;
@@ -15,7 +15,7 @@
   padding-top: 0;
 }
 .hero-opening .hero-eyebrow {
-  color: var(--nt-accent-soft, #9abaff);
+  color: var(--nt-accent-soft, #9acbff);
   letter-spacing: 0.12em;
   font-size: 11px;
 }
@@ -29,13 +29,13 @@
 }
 .hero-opening h1 > span {
   display: block;
-  background: linear-gradient(105deg, #c4d6f7 15%, #8aaffb 85%);
+  background: linear-gradient(105deg, #c4ddf7 15%, #8ac1fb 85%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .hero-opening .hero-content > p {
   max-width: 610px;
-  color: var(--nt-text-secondary, #b2c1d7);
+  color: var(--nt-text-secondary, #b2c4d7);
   font-size: clamp(16px, 1.35vw, 19px);
   line-height: 1.65;
   margin-inline: auto;
@@ -51,12 +51,12 @@
 .hero-opening .hero-reassurance {
   justify-content: center;
   gap: 18px;
-  color: var(--nt-text-muted, #8b9ebc);
+  color: var(--nt-text-muted, #8ba3bc);
   font-size: 11px;
   margin-top: 19px;
 }
 .hero-opening .hero-reassurance svg {
-  color: var(--nt-accent-soft, #9abaff);
+  color: var(--nt-accent-soft, #9acbff);
 }
 .hero-scroll-invitation {
   display: flex;
@@ -66,7 +66,7 @@
   width: fit-content;
   margin: 23px auto 0;
   padding: 8px 5px;
-  color: #93b0dd;
+  color: #93b7dd;
   font-size: 11px;
 }
 .hero-scroll-invitation > span {
@@ -74,12 +74,12 @@
   place-items: center;
   width: 21px;
   height: 27px;
-  border: 1px solid #3c5882;
+  border: 1px solid #3c5e82;
   border-radius: 12px;
-  background: #1b2d4855;
+  background: #1b314855;
 }
 .hero-scroll-invitation:hover {
-  color: #d1e2ff;
+  color: #dfe8f1;
 }
 .hero-connection-intro {
   display: flex;
@@ -88,15 +88,15 @@
   gap: 15px;
   padding-top: 23px;
   margin-top: 19px;
-  border-top: 1px solid #2b3c5666;
+  border-top: 1px solid #2b405666;
 }
 .hero-connection-intro > span {
   font-size: 11px;
   letter-spacing: 1px;
-  color: #8faddb;
+  color: #8fb4db;
 }
 .hero-connection-intro > p {
-  color: #8298ba;
+  color: #829dba;
   font-size: 11px;
   line-height: 1.7;
   margin: 0;
@@ -106,8 +106,8 @@
 }
 .hero .connected-card {
   box-shadow:
-    0 0 0 1px #91b6ff09,
-    0 15px 50px #3267ff0c;
+    0 0 0 1px #91c6ff09,
+    0 15px 50px #087cff0c;
 }
 .hero .flow-diagram {
   height: 240px;

@@ -25,6 +25,7 @@ import { ProjectShowcase } from './components/ProjectShowcase'
 import { WhoWeAre } from './components/WhoWeAre'
 import { SolutionFinder } from './components/SolutionFinder'
 import { QuickFaq } from './components/QuickFaq'
+import { BrandMark } from './components/BrandMark'
 import './components/FlowComparisonMotion.css'
 
 function Brand({ small = false }: { small?: boolean }) {
@@ -34,14 +35,16 @@ function Brand({ small = false }: { small?: boolean }) {
       href="#inicio"
       aria-label="Newthing — início"
     >
-      <span className="brand-symbol">
-        <span />
-        <span />
-        <span />
+      <span className="brand-emblem">
+        <BrandMark />
       </span>
-      <span>
-        newthing<span className="brand-period">.</span>
-      </span>
+      <img
+        className="brand-lockup"
+        src="/brand/newthing-wordmark-dark.svg"
+        alt="Newthing Apps"
+        width={250}
+        height={70}
+      />
     </a>
   )
 }
@@ -211,7 +214,7 @@ function FlowComparison() {
             </span>
           ))}
           <span className="diagram-center connected-center">
-            <span className="mini-brand-symbol">n.</span>
+            <BrandMark />
           </span>
         </div>
         <div className="diagram-caption">

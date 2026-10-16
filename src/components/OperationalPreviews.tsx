@@ -195,8 +195,8 @@ export function NexoEvolution() {
                   >
                     <defs>
                       <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="#5578f5" stopOpacity=".24" />
-                        <stop offset="100%" stopColor="#5578f5" stopOpacity="0" />
+                        <stop offset="0%" stopColor="#2d8cff" stopOpacity=".24" />
+                        <stop offset="100%" stopColor="#2d8cff" stopOpacity="0" />
                       </linearGradient>
                     </defs>
                     {[10, 45, 80, 115].map((y) => (
@@ -215,7 +215,7 @@ export function NexoEvolution() {
                       className="nexo-revenue-line"
                       points={data.points}
                       fill="none"
-                      stroke="#5276ed"
+                      stroke="#287ce1"
                       strokeWidth="2.5"
                       strokeLinejoin="round"
                       strokeLinecap="round"
@@ -224,7 +224,7 @@ export function NexoEvolution() {
                       cx="330"
                       cy={data.lastY}
                       r="4"
-                      fill="#5276ed"
+                      fill="#287ce1"
                       stroke="white"
                       strokeWidth="2"
                     />
