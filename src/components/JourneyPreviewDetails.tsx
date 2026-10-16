@@ -231,7 +231,7 @@ export function SystemWorkspace() {
                 <strong>
                   75<small>%</small>
                 </strong>
-                <small>da meta concluída</small>
+                <small>da meta</small>
               </span>
             </div>
             <p>

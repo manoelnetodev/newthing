@@ -319,8 +319,7 @@ export function SolutionsJourney({
             VISÃO, EXECUÇÃO E CONQUISTA
           </span>
           <h2>
-            O que você imagina merece acontecer.
-            <br />
+            O que você imagina merece acontecer. <br />
             <span>Vamos construir esse caminho juntos.</span>
           </h2>
           <p>

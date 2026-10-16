@@ -118,8 +118,7 @@ export function QuickFaq({ faqs, onBrief }: { faqs: Faq[]; onBrief: () => void }
               CLAREZA PARA COMEÇAR
             </span>
             <h2 id={`${id}-title`}>
-              Uma dúvida a menos.
-              <br />
+              Uma dúvida a menos. <br />
               <span>Uma ideia mais possível.</span>
             </h2>
             <p>

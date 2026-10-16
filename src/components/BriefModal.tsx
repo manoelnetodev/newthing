@@ -25,7 +25,10 @@ export function BriefModal({
   const summaryHeading = useRef<HTMLHeadingElement>(null)
   const plan = createBlueprint(values)
   const summary = formatBlueprint(values)
-  const whatsappLink = `https://wa.me/556293022434?text=${encodeURIComponent(summary)}`
+  const whatsappNumber =
+    (import.meta.env.VITE_WHATSAPP_NUMBER?.trim() || '556293022434').replace(/\D/g, '') ||
+    '556293022434'
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(summary)}`
   useEffect(() => {
     if (ready) {
       summaryHeading.current?.focus()

@@ -439,7 +439,7 @@ export function FluxoMonitor() {
             {[
               { icon: MessageSquare, title: 'Receber', text: 'Nova solicitação' },
               { icon: ShieldCheck, title: 'Validar', text: 'Conferir os dados' },
-              { icon: GitBranch, title: 'Direcionar', text: 'Definir responsável' },
+              { icon: GitBranch, title: 'Direcionar', text: 'Definir equipe' },
               { icon: CheckCircle2, title: 'Confirmar', text: 'Informar o cliente' },
             ].map(({ icon: Icon, title, text }, index) => (
               <div

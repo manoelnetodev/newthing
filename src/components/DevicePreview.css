@@ -113,7 +113,7 @@
   background: #192431;
 }
 .device-screen .demo-browser-bar > span:nth-child(2) {
-  font-size: clamp(7px, 1.3cqw, 10px);
+  font-size: clamp(10px, 1.3cqw, 10px);
 }
 .device-pc {
   width: 100%;
@@ -283,7 +283,7 @@
   justify-items: center;
   gap: 4px;
   color: #8097b0;
-  font-size: 8px;
+  font-size: 10px;
 }
 .device-app-nav svg {
   width: 17px;
@@ -643,7 +643,7 @@
   line-height: 1.2;
 }
 :is([data-device='ios'], [data-device='android']) .dash-heading > div > span {
-  font-size: 8px;
+  font-size: 10px;
 }
 :is([data-device='ios'], [data-device='android']) .dash-heading small {
   font-size: 10px;
@@ -651,7 +651,7 @@
   display: block;
 }
 :is([data-device='ios'], [data-device='android']) .dash-period {
-  font-size: 9px;
+  font-size: 10px;
 }
 :is([data-device='ios'], [data-device='android']) .dash-metrics {
   grid-template-columns: 1fr 1fr;
@@ -671,10 +671,10 @@
   margin-block: 10px;
 }
 :is([data-device='ios'], [data-device='android']) .dash-metric > span {
-  font-size: 9px;
+  font-size: 10px;
 }
 :is([data-device='ios'], [data-device='android']) .dash-metric small {
-  font-size: 8px;
+  font-size: 10px;
 }
 :is([data-device='ios'], [data-device='android']) .dash-metric small > span {
   display: none;
@@ -708,7 +708,7 @@
   height: auto;
   padding: 0 10px;
   gap: 6px;
-  font-size: 8px;
+  font-size: 10px;
 }
 :is([data-device='ios'], [data-device='android']) .orbit-subnav > span {
   min-width: 0;
@@ -737,13 +737,13 @@
   line-height: 1.2;
 }
 :is([data-device='ios'], [data-device='android']) .orbit-heading > div > span {
-  font-size: 7px;
+  font-size: 10px;
 }
 :is([data-device='ios'], [data-device='android']) .orbit-heading small {
   font-size: 10px;
 }
 :is([data-device='ios'], [data-device='android']) .orbit-new {
-  font-size: 9px;
+  font-size: 10px;
 }
 :is([data-device='ios'], [data-device='android']) .orbit-overview {
   gap: 5px;
@@ -753,7 +753,7 @@
   padding: 9px 7px;
 }
 :is([data-device='ios'], [data-device='android']) .orbit-overview > div > span {
-  font-size: 7px;
+  font-size: 10px;
 }
 :is([data-device='ios'], [data-device='android']) .orbit-overview strong {
   font-size: clamp(14px, 6.5cqw, 19px);
@@ -761,7 +761,15 @@
 :is([data-device='ios'], [data-device='android']) .orbit-overview strong small {
   display: block;
   margin: 5px 0 0;
-  font-size: 7px;
+  font-size: 10px;
+}
+@media (max-width: 380px) {
+  :is([data-device='ios'], [data-device='android']) .orbit-overview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  :is([data-device='ios'], [data-device='android']) .orbit-overview > div:last-child {
+    grid-column: 1 / -1;
+  }
 }
 :is([data-device='ios'], [data-device='android']) .orbit-flow-heading {
   padding: 13px 10px;
@@ -771,7 +779,7 @@
   font-size: 10px;
 }
 :is([data-device='ios'], [data-device='android']) .orbit-flow-heading small {
-  font-size: 8px;
+  font-size: 10px;
 }
 :is([data-device='ios'], [data-device='android']) .workflow-icon {
   display: none;
@@ -803,20 +811,20 @@
   font-size: 11px;
 }
 :is([data-device='ios'], [data-device='android']) .orbit-flow-node > small {
-  font-size: 9px;
+  font-size: 10px;
   margin-top: 0;
 }
 :is([data-device='ios'], [data-device='android']) .node-event {
   grid-column: 2;
   margin-top: 5px;
-  font-size: 6px;
+  font-size: 10px;
 }
 :is([data-device='ios'], [data-device='android']) .flow-connector-arrow {
   rotate: 90deg;
 }
 :is([data-device='ios'], [data-device='android']) .orbit-flow-footer {
   padding: 12px;
-  font-size: 8px;
+  font-size: 10px;
 }
 :is([data-device='ios'], [data-device='android']) .orbit-flow-footer > span:last-child {
   display: none;
@@ -837,7 +845,7 @@
   font-size: 27px;
 }
 :is([data-device='ios'], [data-device='android']) .forma-nav > div {
-  font-size: 9px;
+  font-size: 10px;
 }
 :is([data-device='ios'], [data-device='android']) .forma-hero {
   grid-template-columns: 1fr;
@@ -855,7 +863,7 @@
   display: none;
 }
 :is([data-device='ios'], [data-device='android']) .forma-eyebrow {
-  font-size: 7px;
+  font-size: 10px;
 }
 :is([data-device='ios'], [data-device='android']) .forma-cta {
   font-size: 10px;
@@ -867,7 +875,7 @@
   min-height: 270px;
 }
 :is([data-device='ios'], [data-device='android']) .forma-art-caption {
-  font-size: 7px;
+  font-size: 10px;
 }
 :is([data-device='ios'], [data-device='android']) .forma-work {
   grid-template-columns: 1fr 1fr;
@@ -954,7 +962,7 @@
     flex-wrap: wrap;
   }
   .device-illustration-note {
-    font-size: 9px;
+    font-size: 10px;
     line-height: 1.6;
   }
   .showroom-card .showroom-copy {

@@ -347,6 +347,15 @@ const faqs = [
   },
 ]
 
+const navigationLinks = [
+  ['#inicio', 'Início'],
+  ['#projetos', 'Projetos'],
+  ['#solucoes', 'Soluções'],
+  ['#processo', 'Como fazemos'],
+  ['#quem-somos', 'Quem somos'],
+  ['#duvidas', 'Dúvidas'],
+]
+
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const menuTrigger = useRef<HTMLButtonElement>(null)
@@ -427,7 +436,7 @@ export default function App() {
       </a>
       <div className="announcement">
         <span>Uma nova ideia merece um novo começo.</span>
-        <a href="#solucoes">
+        <a href="#projetos">
           Conheça as possibilidades <ArrowRight size={13} />
         </a>
       </div>
@@ -440,21 +449,11 @@ export default function App() {
             className={menuOpen ? 'main-nav nav-open' : 'main-nav'}
             aria-label="Navegação principal"
           >
-            <a href="#inicio" onClick={() => setMenuOpen(false)}>
-              Início
-            </a>
-            <a href="#solucoes" onClick={() => setMenuOpen(false)}>
-              Soluções
-            </a>
-            <a href="#processo" onClick={() => setMenuOpen(false)}>
-              Como fazemos
-            </a>
-            <a href="#projetos" onClick={() => setMenuOpen(false)}>
-              Projetos
-            </a>
-            <a href="#quem-somos" onClick={() => setMenuOpen(false)}>
-              Quem somos
-            </a>
+            {navigationLinks.map(([href, label]) => (
+              <a key={href} href={href} onClick={() => setMenuOpen(false)}>
+                {label}
+              </a>
+            ))}
             <button className="mobile-nav-cta" onClick={openBrief}>
               Começar meu projeto <ArrowUpRight size={15} />
             </button>
@@ -526,7 +525,7 @@ export default function App() {
                     Evolução planejada
                   </span>
                 </div>
-                <a className="hero-scroll-invitation" href="#solucoes">
+                <a className="hero-scroll-invitation" href="#projetos">
                   <span>
                     <ArrowRight size={12} style={{ transform: 'rotate(90deg)' }} />
                   </span>
@@ -576,8 +575,7 @@ export default function App() {
                 label="COMO TRABALHAMOS NA PRÁTICA"
                 title={
                   <>
-                    Você acompanha a construção.
-                    <br />
+                    Você acompanha a construção. <br />
                     <span>As decisões ficam claras.</span>
                   </>
                 }
@@ -613,8 +611,7 @@ export default function App() {
           <div className="container">
             <span className="eyebrow">VAMOS DAR O PRIMEIRO PASSO?</span>
             <h2>
-              O próximo grande projeto
-              <br />
+              O próximo grande projeto <br />
               pode começar <span>com uma conversa.</span>
             </h2>
             <p>Conte o que você imagina. Vamos organizar o caminho.</p>
@@ -634,17 +631,16 @@ export default function App() {
             <div>
               <Brand small />
               <p>
-                Novas ideias. Produtos com propósito.
-                <br />
+                Novas ideias. Produtos com propósito. <br />
                 Estratégia, design e tecnologia conectados.
               </p>
             </div>
             <div className="footer-links">
-              <a href="#solucoes">Soluções</a>
-              <a href="#processo">Como fazemos</a>
-              <a href="#projetos">Projetos</a>
-              <a href="#quem-somos">Quem somos</a>
-              <a href="#duvidas">Dúvidas</a>
+              {navigationLinks.map(([href, label]) => (
+                <a key={href} href={href}>
+                  {label}
+                </a>
+              ))}
             </div>
             <a className="back-top" href="#inicio">
               Voltar ao início <ArrowUpRight size={16} />

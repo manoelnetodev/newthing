@@ -74,10 +74,14 @@
   transition: border-color 0.3s;
 }
 .showroom-saas {
+  --showroom-aura: #087cff20;
+  --showroom-aura-position: 75% 25%;
   --showroom-accent: #a1cbf7;
   --showroom-border: #3a4d61;
 }
 .showroom-website {
+  --showroom-aura: #087cff14;
+  --showroom-aura-position: 20% 65%;
   --showroom-accent: #a4bdd8;
   --showroom-border: #3c434a;
 }
@@ -93,12 +97,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-.showroom-saas .showroom-visual {
-  background: radial-gradient(ellipse at 50% 40%, #2e4359, #17202a);
-}
-.showroom-website .showroom-visual {
-  background: radial-gradient(ellipse at 50% 50%, #363f48, #19212a);
 }
 .demo-window {
   container-type: inline-size;

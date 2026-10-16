@@ -4,23 +4,51 @@
   "photos": [
     {
       "id": "manoel",
-      "url": "https://pub-3a898b56bec94bd5baa3627d4f5c9ac5.r2.dev/team/manoel-neto-391201290e1a.webp",
-      "sha256": "391201290e1a2432979b46e079396562fbdb10ea9ed9ba6058e9271a25476020"
+      "width": 360,
+      "url": "https://pub-3a898b56bec94bd5baa3627d4f5c9ac5.r2.dev/team/manoel-neto-360-cfba450fc683.webp",
+      "sha256": "cfba450fc683975340c4ec24f16abc3da4e7738de978c1225b72aa64a94a12f5"
+    },
+    {
+      "id": "manoel",
+      "width": 720,
+      "url": "https://pub-3a898b56bec94bd5baa3627d4f5c9ac5.r2.dev/team/manoel-neto-720-4119a08ce2ec.webp",
+      "sha256": "4119a08ce2ec443de53c059329a1cbc101dea2dcfecdaf21b4b181eacd0fd7b0"
     },
     {
       "id": "ronan",
-      "url": "https://pub-3a898b56bec94bd5baa3627d4f5c9ac5.r2.dev/team/ronan-severo-029d58834522.webp",
-      "sha256": "029d5883452224c0b0db8271dccc389b23a8e1283ef0010a4978d8e6ea27b2e5"
+      "width": 360,
+      "url": "https://pub-3a898b56bec94bd5baa3627d4f5c9ac5.r2.dev/team/ronan-severo-360-13809930489b.webp",
+      "sha256": "13809930489b0faa5973c2ee8ca84b03fd159ff0ae0d52e5b910963b36697685"
+    },
+    {
+      "id": "ronan",
+      "width": 720,
+      "url": "https://pub-3a898b56bec94bd5baa3627d4f5c9ac5.r2.dev/team/ronan-severo-720-a4807cabb2b3.webp",
+      "sha256": "a4807cabb2b3509b062ce5e2aaddf6e89e9ace1d0b07bf6c3e9dd366183789c2"
     },
     {
       "id": "yuri",
-      "url": "https://pub-3a898b56bec94bd5baa3627d4f5c9ac5.r2.dev/team/yuri-gabriel-9fc709f2844c.webp",
-      "sha256": "9fc709f2844c2ac2ce1787730f2e94777903272203fc17fa6178054876ebbd73"
+      "width": 360,
+      "url": "https://pub-3a898b56bec94bd5baa3627d4f5c9ac5.r2.dev/team/yuri-gabriel-360-412f61aca781.webp",
+      "sha256": "412f61aca7810bae2759d6b3310ceb178516bf5c7c2548432ffc5b53b720ea93"
+    },
+    {
+      "id": "yuri",
+      "width": 720,
+      "url": "https://pub-3a898b56bec94bd5baa3627d4f5c9ac5.r2.dev/team/yuri-gabriel-720-d225812612f7.webp",
+      "sha256": "d225812612f72b25201e64c3301e6e0e8237c81070263d9fd65294984b00e4d9"
     },
     {
       "id": "maksuel",
-      "url": "https://pub-3a898b56bec94bd5baa3627d4f5c9ac5.r2.dev/team/maksuel-silva-00a3cfc08422.webp",
-      "sha256": "00a3cfc084224c3980b0826cde26433042577b83531c4970ae0f000266a6d7fa"
+      "width": 360,
+      "url": "https://pub-3a898b56bec94bd5baa3627d4f5c9ac5.r2.dev/team/maksuel-silva-360-e595b37bba04.webp",
+      "sha256": "e595b37bba04b5e12b0011e9c202d178281bd91b4581c9cfdd514bd3f7be0823"
+    },
+    {
+      "id": "maksuel",
+      "width": 720,
+      "url": "https://pub-3a898b56bec94bd5baa3627d4f5c9ac5.r2.dev/team/maksuel-silva-720-1ce1b3a46a68.webp",
+      "sha256": "1ce1b3a46a68ff97717f05a1cc478e02f57d75692ffc259216124c8700eb8976"
     }
   ]
 }

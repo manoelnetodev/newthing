@@ -127,29 +127,6 @@ a:focus-visible {
 .brand-period {
   color: #5cabff;
 }
-.brand-symbol {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  width: 27px;
-  height: 26px;
-  transform: skew(-18deg);
-}
-.brand-symbol span {
-  display: block;
-  width: 6px;
-  height: 21px;
-  background: #f5f6f7;
-  border-radius: 1px;
-}
-.brand-symbol span:first-child {
-  height: 15px;
-  align-self: flex-end;
-}
-.brand-symbol span:last-child {
-  height: 15px;
-  align-self: flex-start;
-}
 .main-nav {
   display: flex;
   gap: 26px;
@@ -666,145 +643,8 @@ h1 > span {
   color: #94b2d2;
   margin-top: 24px;
 }
-.about-section {
-  background: #101214;
-  border-block: 1px solid #1b1f23;
-}
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-}
-.about-grid .button {
-  margin-top: 26px;
-}
-.principles {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 26px;
-}
-.principle {
-  display: flex;
-  gap: 19px;
-}
-.principle > span {
-  color: #7cb1e9;
-  background: #1e262e;
-  border: 1px solid #293d53;
-  border-radius: 9px;
-  padding: 10px;
-  height: 42px;
-  width: 42px;
-  flex-shrink: 0;
-}
-.principle h3 {
-  font-size: 15px;
-  font-weight: 500;
-  margin: 0 0 10px;
-}
-.principle p {
-  font-size: 12px;
-  line-height: 1.8;
-  color: #858e98;
-  margin: 0;
-}
-.faq-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 70px;
-  align-items: start;
-}
 .faq-intro {
   min-width: 0;
-}
-.faq-support {
-  margin-top: 30px;
-  padding: 23px;
-  border: 1px solid #2a3a4b;
-  border-radius: 10px;
-  background: radial-gradient(ellipse at top left, #2e557e20, transparent 75%), #12171c;
-  max-width: 370px;
-}
-.faq-support-icon {
-  display: grid;
-  place-items: center;
-  width: 39px;
-  height: 39px;
-  color: #96c3f3;
-  background: #20385155;
-  border: 1px solid #354d66;
-  border-radius: 9px;
-  margin-bottom: 17px;
-}
-.faq-support h3 {
-  color: #e0e8f2;
-  font-size: 17px;
-  line-height: 1.5;
-  font-weight: 500;
-  letter-spacing: -0.35px;
-  margin: 0 0 10px;
-}
-.faq-support p {
-  font-size: 12px;
-  line-height: 1.85;
-  color: #95a9bf;
-  margin: 0 0 21px;
-}
-.faq-support .button {
-  font-size: 11px;
-  padding: 12px 15px;
-  gap: 12px;
-  background: #1b2e4355;
-  border-color: #3d5874;
-  color: #c1dbf7;
-}
-.faq-support > small {
-  display: block;
-  margin-top: 11px;
-  color: #8198b0;
-  font-size: 11px;
-  line-height: 1.6;
-}
-.faq-item {
-  border-bottom: 1px solid #262d35;
-  padding-inline: 18px;
-  transition:
-    background 0.2s,
-    border-color 0.2s;
-}
-.faq-item:first-child {
-  border-top: 1px solid #262d35;
-}
-.faq-item h3 {
-  margin: 0;
-}
-.faq-item button {
-  width: 100%;
-  padding: 20px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-  text-align: left;
-  background: none;
-  border: 0;
-  font-size: 12px;
-  font-weight: 450;
-  color: #a5afb9;
-}
-.faq-item button span {
-  color: #6b849e;
-  font-size: 18px;
-  flex-shrink: 0;
-}
-.faq-item button:focus-visible {
-  outline: 2px solid #8abbef;
-  outline-offset: 4px;
-  border-radius: 4px;
-}
-.faq-item button:hover {
-  color: #e6edf4;
 }
 .faq-open {
   border-radius: 9px;
@@ -814,42 +654,8 @@ h1 > span {
 .faq-open button {
   color: #dce6f0;
 }
-.faq-item p {
-  margin: 0 0 15px;
-  font-size: 12px;
-  line-height: 1.95;
-  color: #99abbe;
-}
 .faq-answer > p:first-child {
   color: #bac9da;
-}
-.faq-takeaway {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 15px;
-  margin: 19px 0 22px;
-  background: #26405c38;
-  border: 1px solid #3a58794d;
-  border-radius: 7px;
-}
-.faq-takeaway > svg {
-  flex-shrink: 0;
-  color: #90c1f5;
-  margin-top: 1px;
-}
-.faq-takeaway strong {
-  display: block;
-  color: #dbe5ef;
-  font-size: 11px;
-  font-weight: 500;
-  margin-bottom: 5px;
-}
-.faq-takeaway p {
-  margin: 0;
-  font-size: 11px;
-  line-height: 1.8;
-  color: #9fbad6;
 }
 .final-cta {
   position: relative;
@@ -1140,12 +946,6 @@ h1 > span {
   .capabilities-strip > div {
     gap: 32px;
   }
-  .about-grid {
-    gap: 50px;
-  }
-  .faq-grid {
-    gap: 45px;
-  }
 }
 @media (max-width: 800px) {
   .header-inner {
@@ -1263,13 +1063,6 @@ h1 > span {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 38px;
   }
-  .about-grid {
-    gap: 40px;
-  }
-  .faq-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
   .footer-top {
     flex-wrap: wrap;
   }
@@ -1299,10 +1092,6 @@ h1 > span {
   .brand {
     font-size: 23px;
     gap: 8px;
-  }
-  .brand-symbol {
-    transform: skew(-18deg) scale(0.9);
-    width: 24px;
   }
   .header-inner {
     height: 66px;
@@ -1464,37 +1253,6 @@ h1 > span {
   .step-deliverable svg {
     flex-shrink: 0;
   }
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 35px;
-  }
-  .principle h3 {
-    font-size: 14px;
-  }
-  .principle p {
-    font-size: 11px;
-  }
-  .faq-grid {
-    gap: 24px;
-  }
-  .faq-item button {
-    padding: 18px 0;
-    font-size: 11px;
-  }
-  .faq-item p {
-    font-size: 11px;
-  }
-  .faq-item {
-    padding-inline: 13px;
-  }
-  .faq-support {
-    max-width: none;
-    padding: 20px;
-    margin-top: 24px;
-  }
-  .faq-takeaway {
-    padding: 12px;
-  }
   .final-cta {
     padding: 60px 0;
   }
@@ -1551,15 +1309,9 @@ h1 > span {
     transition: none !important;
   }
   /* These two requested brand sequences have local pause controls; all other motion stays reduced. */
-  *:not(.comparison-grid[data-energy-motion] *):not(
-      .journey-cards[data-light-motion] *
-    ),
-  *:not(.comparison-grid[data-energy-motion] *):not(
-      .journey-cards[data-light-motion] *
-    )::before,
-  *:not(.comparison-grid[data-energy-motion] *):not(
-      .journey-cards[data-light-motion] *
-    )::after {
+  *:not(.comparison-grid[data-energy-motion] *):not(.journey-cards[data-light-motion] *),
+  *:not(.comparison-grid[data-energy-motion] *):not(.journey-cards[data-light-motion] *)::before,
+  *:not(.comparison-grid[data-energy-motion] *):not(.journey-cards[data-light-motion] *)::after {
     animation: none !important;
   }
 }

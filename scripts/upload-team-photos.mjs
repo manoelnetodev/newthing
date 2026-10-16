@@ -22,13 +22,16 @@ const report = JSON.parse(
 )
 const digest = (bytes) => createHash('sha256').update(bytes).digest('hex')
 const wrangler = path.join(root, 'node_modules/wrangler/bin/wrangler.js')
+const variants = report.photos.flatMap((photo) =>
+  photo.variants.map((variant) => ({ ...variant, id: photo.id })),
+)
 
 // Verify every local artifact before making remote changes.
-for (const photo of report.photos) {
-  assert.ok(photo.pixelsIdentical, 'Run photos:optimize first')
+for (const photo of variants) {
+  assert.ok(photo.pixelsIdenticalToResizedSource, 'Run photos:optimize first')
   assert.equal(digest(await fs.readFile(path.join(root, photo.localPath))), photo.sha256)
 }
-for (const photo of report.photos) {
+for (const photo of variants) {
   execFileSync(
     process.execPath,
     [
@@ -51,7 +54,7 @@ for (const photo of report.photos) {
 
 const manifest = {}
 const published = []
-for (const photo of report.photos) {
+for (const photo of variants) {
   const url = `${base.href.replace(/\/$/, '')}/${photo.objectKey}`
   const response = await fetch(url, { signal: AbortSignal.timeout(30000) })
   assert.ok(response.ok, `Public image unavailable: ${response.status} ${url}`)
@@ -64,15 +67,25 @@ for (const photo of report.photos) {
     photo.sha256,
     `Remote bytes differ: ${url}`,
   )
-  manifest[photo.id] = {
-    src: url,
-    fallback: photo.localPath.replace(/^public/, ''),
-    width: photo.width,
-    height: photo.height,
-  }
-  published.push({ id: photo.id, url, sha256: photo.sha256 })
+  published.push({ id: photo.id, width: photo.width, url, sha256: photo.sha256 })
 }
-// Switch the site only after all four public downloads match the verified files.
+for (const photo of report.photos) {
+  const full = photo.variants.at(-1)
+  const urlFor = (variant) => `${base.href.replace(/\/$/, '')}/${variant.objectKey}`
+  manifest[photo.id] = {
+    src: urlFor(full),
+    srcSet: photo.variants.map((variant) => `${urlFor(variant)} ${variant.width}w`).join(', '),
+    fallback: full.localPath.replace(/^public/, ''),
+    fallbackSrcSet: photo.variants
+      .map((variant) => `${variant.localPath.replace(/^public/, '')} ${variant.width}w`)
+      .join(', '),
+    sizes:
+      '(max-width: 560px) calc(100vw - 48px), (max-width: 800px) calc((100vw - 80px) / 2), 280px',
+    width: full.width,
+    height: full.height,
+  }
+}
+// Switch the site only after every public responsive image matches the verified local file.
 const source = `// Published to R2 with npm run photos:upload; remote bytes verified before switching.\nexport const teamPhotos = ${JSON.stringify(manifest, null, 2)} as const\n`
 await fs.writeFile(
   path.join(root, 'src/data/teamPhotos.ts'),
@@ -90,4 +103,6 @@ await fs.writeFile(
     2,
   ) + '\n',
 )
-console.log('All four R2 images verified. Site references updated; run checks before committing.')
+console.log(
+  'All responsive R2 images verified. Site references updated; run checks before committing.',
+)

@@ -495,13 +495,11 @@ function WebsitePreview() {
             ESTÚDIO INDEPENDENTE DE DESIGN
           </span>
           <strong>
-            Essência que
-            <br />
+            Essência que <br />
             ganha <em>forma.</em>
           </strong>
           <p>
-            Estratégia e design para marcas
-            <br />
+            Estratégia e design para marcas <br />
             que querem ser reconhecidas.
           </p>
           <span className="forma-cta">
@@ -514,8 +512,7 @@ function WebsitePreview() {
         </div>
         <div className="forma-art">
           <span className="forma-art-caption">
-            EXPLORAÇÃO Nº 003
-            <br />
+            EXPLORAÇÃO Nº 003 <br />
             <b>Equilíbrio em movimento.</b>
           </span>
           <div className="forma-architecture">
@@ -532,8 +529,7 @@ function WebsitePreview() {
         <div>
           <span>IDEIAS COM INTENÇÃO.</span>
           <strong>
-            Design para ser sentido.
-            <br />E lembrado.
+            Design para ser sentido. <br />E lembrado.
           </strong>
         </div>
         <div className="forma-project forma-project-one">
@@ -594,8 +590,7 @@ export function ProjectShowcase() {
             POSSIBILIDADES
           </span>
           <h2>
-            Ideias diferentes.
-            <br />
+            Ideias diferentes. <br />
             <span>O mesmo cuidado ao construir.</span>
           </h2>
           <p>

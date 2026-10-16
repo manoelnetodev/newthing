@@ -23,7 +23,13 @@
   background: radial-gradient(ellipse at 50% 60%, #087cff1c, transparent 65%), #0a0d12;
 }
 .showroom-card .showroom-visual {
-  background: radial-gradient(ellipse at 50% 45%, #087cff28, transparent 75%), #0b111a;
+  background:
+    radial-gradient(
+      ellipse at var(--showroom-aura-position, 50% 45%),
+      var(--showroom-aura, #087cff28),
+      transparent 75%
+    ),
+    #0b111a;
 }
 .showroom-card {
   border-color: #304966;

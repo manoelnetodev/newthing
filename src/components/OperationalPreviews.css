@@ -17,7 +17,7 @@
   outline-offset: 3px;
 }
 .ops-preview .ops-eyebrow {
-  font-size: 7px;
+  font-size: 10px;
   letter-spacing: 1.25px;
   font-weight: 600;
 }
@@ -26,7 +26,7 @@
   align-items: center;
   gap: 5px;
   white-space: nowrap;
-  font-size: 7px;
+  font-size: 10px;
   font-weight: 500;
 }
 .ops-live i {
@@ -42,7 +42,7 @@
   justify-content: center;
   padding: 4px 6px;
   border-radius: 4px;
-  font-size: 6px;
+  font-size: 10px;
   font-weight: 500;
   white-space: nowrap;
 }
@@ -94,7 +94,7 @@
   margin-left: -4px;
 }
 .nexo-sidebar > small {
-  font-size: 6px;
+  font-size: 10px;
   letter-spacing: 1.2px;
   padding: 0 7px 7px;
   color: #9eb2c7;
@@ -103,7 +103,7 @@
   display: flex;
   align-items: center;
   gap: 7px;
-  font-size: 8px;
+  font-size: 10px;
   padding: 9px 7px;
   border-radius: 5px;
 }
@@ -134,7 +134,7 @@
 .nexo-sidebar-note strong,
 .nexo-sidebar-note span {
   display: block;
-  font-size: 7px;
+  font-size: 10px;
   line-height: 1.6;
 }
 .nexo-sidebar-note strong {
@@ -142,7 +142,7 @@
   font-weight: 500;
 }
 .nexo-sidebar-note span {
-  font-size: 6px;
+  font-size: 10px;
 }
 .nexo-user {
   display: flex;
@@ -158,19 +158,19 @@
   place-items: center;
   width: 22px;
   height: 22px;
-  font-size: 7px;
+  font-size: 10px;
   border-radius: 50%;
   background: #344b63;
   color: #e4ebf3;
   font-weight: 500;
 }
 .nexo-user > span {
-  font-size: 7px;
+  font-size: 10px;
   color: #d8e3ee;
 }
 .nexo-user small {
   display: block;
-  font-size: 6px;
+  font-size: 10px;
   color: #8397ad;
   margin-top: 3px;
 }
@@ -185,7 +185,7 @@
   align-items: center;
   height: 45px;
   border-bottom: 1px solid #2b3d50;
-  font-size: 7px;
+  font-size: 10px;
   color: #8798aa;
 }
 .ops-toolbar > span {
@@ -219,7 +219,7 @@
   line-height: 1.2;
 }
 .nexo-heading p {
-  font-size: 8px;
+  font-size: 10px;
   color: #8394a7;
   margin: 0;
   line-height: 1.6;
@@ -237,7 +237,7 @@
   margin-bottom: 12px;
 }
 .nexo-controls > span {
-  font-size: 7px;
+  font-size: 10px;
   color: #9eb2c7;
   display: flex;
   align-items: center;
@@ -255,7 +255,7 @@
   border: 0;
   border-radius: 3px;
   color: #9eb2c7;
-  font-size: 7px;
+  font-size: 10px;
   background: transparent;
 }
 .nexo-controls button[aria-pressed='true'] {
@@ -281,7 +281,7 @@
   justify-content: space-between;
   gap: 4px;
   align-items: center;
-  font-size: 7px;
+  font-size: 10px;
   color: #7e90a4;
 }
 .nexo-kpis small svg {
@@ -299,7 +299,7 @@
   z-index: 1;
 }
 .nexo-kpis strong em {
-  font-size: 9px;
+  font-size: 10px;
   font-style: normal;
   color: #92a4b8;
   margin-left: 5px;
@@ -308,7 +308,7 @@
 }
 .nexo-kpis > div > span {
   position: relative;
-  font-size: 6px;
+  font-size: 10px;
   color: #8c9cae;
   z-index: 1;
 }
@@ -360,13 +360,13 @@
 .nexo-chart strong,
 .nexo-units header strong {
   display: block;
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 600;
 }
 .nexo-chart header small,
 .nexo-units header small {
   display: block;
-  font-size: 6px;
+  font-size: 10px;
   color: #97a7b8;
   margin-top: 4px;
 }
@@ -375,7 +375,7 @@
   align-items: center;
   gap: 4px;
   color: #8799ac;
-  font-size: 6px;
+  font-size: 10px;
 }
 .nexo-chart-key i {
   width: 5px;
@@ -389,14 +389,15 @@
   margin-top: 19px;
 }
 .nexo-axis {
-  width: 23px;
+  width: 34px;
   flex-shrink: 0;
   height: 105px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   color: #9baabb;
-  font-size: 6px;
+  font-size: 10px;
+  white-space: nowrap;
 }
 .nexo-plot > div:last-child {
   flex: 1;
@@ -415,7 +416,7 @@
 .nexo-ticks {
   display: flex;
   justify-content: space-between;
-  font-size: 5px;
+  font-size: 10px;
   color: #9aa9ba;
   padding-top: 7px;
 }
@@ -432,10 +433,10 @@
   align-items: center;
   gap: 3px;
   color: #9eb2c7;
-  font-size: 6px;
+  font-size: 10px;
 }
 .nexo-chart footer small {
-  font-size: 5px;
+  font-size: 10px;
   color: #a2b1c0;
 }
 .nexo-units {
@@ -473,14 +474,14 @@
   font-weight: 600;
 }
 .nexo-donut small {
-  font-size: 6px;
+  font-size: 10px;
   color: #99a8b7;
 }
 .nexo-unit-list > div {
   display: flex;
   gap: 4px;
   align-items: center;
-  font-size: 6px;
+  font-size: 10px;
   color: #8194a8;
   margin-top: 8px;
 }
@@ -515,14 +516,14 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 600;
 }
 .nexo-roadmap header svg {
   color: #7ba8d8;
 }
 .nexo-roadmap header > span {
-  font-size: 6px;
+  font-size: 10px;
   color: #98a8ba;
 }
 .nexo-roadmap > div {
@@ -548,12 +549,12 @@
 }
 .nexo-roadmap p strong {
   display: block;
-  font-size: 7px;
+  font-size: 10px;
   font-weight: 500;
 }
 .nexo-roadmap p small {
   display: block;
-  font-size: 6px;
+  font-size: 10px;
   color: #96a5b6;
   margin-top: 4px;
 }
@@ -562,7 +563,7 @@
   justify-content: space-between;
   gap: 8px;
   color: #9babbc;
-  font-size: 6px;
+  font-size: 10px;
   padding: 12px 0;
 }
 .nexo-footer > span:first-child {
@@ -597,13 +598,13 @@
   margin-left: -5px;
 }
 .fluxo-top > span {
-  font-size: 7px;
+  font-size: 10px;
   color: #8999aa;
 }
 .fluxo-top .ops-live {
   margin-left: auto;
   color: #b9b0cc;
-  font-size: 6px;
+  font-size: 10px;
 }
 .fluxo-content {
   padding: 23px;
@@ -626,7 +627,7 @@
   margin: 8px 0;
 }
 .fluxo-heading p {
-  font-size: 9px;
+  font-size: 10px;
   color: #9aa9b8;
   margin: 0;
   line-height: 1.6;
@@ -660,7 +661,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 7px;
+  font-size: 10px;
   color: #b2c2d4;
 }
 .fluxo-kpis > div > span:first-child svg {
@@ -676,7 +677,7 @@
 }
 .fluxo-kpis strong small {
   display: block;
-  font-size: 6px;
+  font-size: 10px;
   color: #92a2b3;
   letter-spacing: 0;
   font-weight: 400;
@@ -705,13 +706,13 @@
   border-radius: 2px 2px 0 0;
 }
 .fluxo-kpis .ops-badge {
-  font-size: 5px;
+  font-size: 10px;
   padding: 3px 5px;
 }
 .fluxo-kpi-note {
   display: flex;
   gap: 4px;
-  font-size: 6px;
+  font-size: 10px;
   color: #a2b8d0;
   align-items: center;
 }
@@ -729,12 +730,12 @@
   gap: 8px;
 }
 .fluxo-pipeline header strong {
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 500;
   color: #c5d7eb;
 }
 .fluxo-pipeline header > span {
-  font-size: 5px;
+  font-size: 10px;
   letter-spacing: 1px;
   color: #9eb2c7;
 }
@@ -775,13 +776,13 @@
 }
 .fluxo-pipeline strong {
   display: block;
-  font-size: 7px;
+  font-size: 10px;
   font-weight: 500;
   color: #b9cadc;
 }
 .fluxo-pipeline small {
   display: block;
-  font-size: 6px;
+  font-size: 10px;
   color: #8496a9;
   margin-top: 4px;
 }
@@ -846,12 +847,12 @@
   padding: 14px 12px 12px;
 }
 .fluxo-history header strong {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 500;
 }
 .fluxo-history header small {
   display: block;
-  font-size: 6px;
+  font-size: 10px;
   color: #8999ab;
   margin-top: 5px;
 }
@@ -869,7 +870,7 @@
   color: #83919f;
   border-radius: 3px;
   padding: 4px 6px;
-  font-size: 6px;
+  font-size: 10px;
 }
 .fluxo-filters button[aria-pressed='true'] {
   color: #dde7f1;
@@ -879,7 +880,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0 24px 8px 13px;
-  font-size: 5px;
+  font-size: 10px;
   letter-spacing: 0.8px;
   color: #9eb2c7;
 }
@@ -909,7 +910,7 @@
   height: 23px;
   display: grid;
   place-items: center;
-  font-size: 7px;
+  font-size: 10px;
   border-radius: 7px;
   background: #34414f;
   color: #b9d1eb;
@@ -921,14 +922,14 @@
 }
 .fluxo-run strong {
   display: block;
-  font-size: 7px;
+  font-size: 10px;
   font-weight: 500;
   color: #ccdae8;
 }
 .fluxo-run small {
   display: block;
   color: #9eb2c7;
-  font-size: 6px;
+  font-size: 10px;
   margin-top: 5px;
 }
 .fluxo-preview .ops-badge.green {
@@ -937,7 +938,7 @@
   border: 1px solid #6cad8d27;
 }
 .fluxo-run .ops-badge {
-  font-size: 5px;
+  font-size: 10px;
   padding: 4px;
 }
 .fluxo-history > footer {
@@ -946,7 +947,7 @@
   align-items: center;
   gap: 5px;
   color: #81909f;
-  font-size: 6px;
+  font-size: 10px;
   border-top: 1px solid #2b3d501a;
   line-height: 1.6;
 }
@@ -959,7 +960,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 5px;
-  font: 5px monospace;
+  font: 10px monospace;
   letter-spacing: 0.5px;
   color: #8499b0;
 }
@@ -984,7 +985,7 @@
 }
 .fluxo-run-detail p {
   color: #97a8ba;
-  font-size: 7px;
+  font-size: 10px;
   line-height: 1.8;
   margin: 0;
   min-height: 39px;
@@ -999,7 +1000,7 @@
   justify-content: space-between;
   gap: 6px;
   margin-top: 7px;
-  font-size: 6px;
+  font-size: 10px;
 }
 .fluxo-run-detail dt {
   color: #9eb2c7;
@@ -1018,7 +1019,7 @@
   border-top: 1px solid #91a9c320;
   margin-top: 14px;
   padding-top: 11px;
-  font-size: 6px;
+  font-size: 10px;
   line-height: 1.6;
   color: #9eb4cc;
 }
@@ -1055,13 +1056,13 @@
 }
 .fluxo-next strong {
   display: block;
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 500;
   color: #bccbdb;
 }
 .fluxo-next small {
   display: block;
-  font-size: 6px;
+  font-size: 10px;
   color: #8294a8;
   margin-top: 5px;
   line-height: 1.6;
@@ -1140,7 +1141,7 @@
     font-size: 21px;
   }
   .nexo-kpis small {
-    font-size: 6px;
+    font-size: 10px;
   }
   .nexo-kpis small svg {
     display: none;
@@ -1152,7 +1153,7 @@
     padding: 11px 8px;
   }
   .nexo-unit-list > div {
-    font-size: 5px;
+    font-size: 10px;
     gap: 3px;
   }
   .nexo-chart-key,
@@ -1179,7 +1180,7 @@
     padding: 11px 9px;
   }
   .fluxo-kpis > div > span:first-child {
-    font-size: 6px;
+    font-size: 10px;
     gap: 4px;
   }
   .fluxo-mini-bars {
@@ -1224,9 +1225,6 @@
     grid-template-columns: 1.5fr 1fr;
     gap: 7px;
   }
-  .nexo-axis {
-    width: 19px;
-  }
   .nexo-plot {
     gap: 4px;
   }
@@ -1244,7 +1242,7 @@
     padding: 13px 15px;
   }
   .fluxo-top > .ops-live {
-    font-size: 5px;
+    font-size: 10px;
   }
   .fluxo-heading h4 {
     font-size: 22px;
@@ -1253,24 +1251,24 @@
     display: none;
   }
   .fluxo-heading p {
-    font-size: 8px;
+    font-size: 10px;
   }
   .fluxo-kpis > div {
     padding: 11px 7px;
   }
   .fluxo-kpis strong small {
-    font-size: 5px;
+    font-size: 10px;
     line-height: 1.6;
   }
   .fluxo-kpis > div > span:first-child {
-    font-size: 5px;
+    font-size: 10px;
   }
   .fluxo-kpis > div > span:first-child svg {
     width: 11px;
   }
   .fluxo-kpis .ops-badge,
   .fluxo-kpi-note {
-    font-size: 5px;
+    font-size: 10px;
   }
   .fluxo-mini-bars {
     display: none;
@@ -1282,7 +1280,7 @@
     display: none;
   }
   .fluxo-pipeline small {
-    font-size: 5px;
+    font-size: 10px;
   }
   .fluxo-workspace {
     grid-template-columns: 1fr;
@@ -1297,20 +1295,20 @@
     padding: 11px;
   }
   .fluxo-run strong {
-    font-size: 8px;
+    font-size: 10px;
   }
   .fluxo-run .ops-badge {
-    font-size: 6px;
+    font-size: 10px;
   }
   .fluxo-run-detail {
     padding: 14px;
   }
   .fluxo-run-detail p {
-    font-size: 8px;
+    font-size: 10px;
     min-height: 0;
   }
   .fluxo-run-detail dl > div,
   .fluxo-detail-result {
-    font-size: 7px;
+    font-size: 10px;
   }
 }

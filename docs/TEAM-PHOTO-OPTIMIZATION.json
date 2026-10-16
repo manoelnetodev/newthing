@@ -1,63 +1,128 @@
 {
   "format": "WebP lossless",
-  "resized": false,
-  "verified": "Identical decoded RGBA bytes, including transparency",
+  "variantWidths": [360, 720],
+  "originalsPreserved": true,
+  "verified": "Decoded RGBA bytes match each resized reference, including transparency. Resizing is explicit; full-resolution originals are archived.",
   "photos": [
     {
       "id": "manoel",
-      "source": "public/team/manoel-neto-estudio-v2.png",
-      "localPath": "public/team/optimized/manoel-neto-391201290e1a.webp",
-      "objectKey": "team/manoel-neto-391201290e1a.webp",
-      "width": 1122,
-      "height": 1402,
+      "source": "assets-src/team/manoel-neto-estudio-v2.png",
       "sourceBytes": 1533080,
-      "optimizedBytes": 943838,
-      "savedPercent": 38.44,
-      "pixelsIdentical": true,
-      "sha256": "391201290e1a2432979b46e079396562fbdb10ea9ed9ba6058e9271a25476020",
-      "decodedPixelsSha256": "b6cdce89845230d8cf20541dae252559068b0135d852c622e995c9770791060c"
+      "sourceSha256": "14b7b5277626386d77350b8664a0682bb2bd5c627c8760af159ddc8148b6759e",
+      "originalWidth": 1122,
+      "originalHeight": 1402,
+      "variants": [
+        {
+          "localPath": "public/team/responsive/manoel-neto-360-cfba450fc683.webp",
+          "objectKey": "team/manoel-neto-360-cfba450fc683.webp",
+          "width": 360,
+          "height": 450,
+          "bytes": 97978,
+          "sha256": "cfba450fc683975340c4ec24f16abc3da4e7738de978c1225b72aa64a94a12f5",
+          "pixelsIdenticalToResizedSource": true,
+          "decodedPixelsSha256": "81c5c1759fc73caf6ad5a896ef4c20852c7bcda9b557dc2889f6edb03980d73b"
+        },
+        {
+          "localPath": "public/team/responsive/manoel-neto-720-4119a08ce2ec.webp",
+          "objectKey": "team/manoel-neto-720-4119a08ce2ec.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 399442,
+          "sha256": "4119a08ce2ec443de53c059329a1cbc101dea2dcfecdaf21b4b181eacd0fd7b0",
+          "pixelsIdenticalToResizedSource": true,
+          "decodedPixelsSha256": "7fa376999bb7fdfa4cc7025e7cd9732065c6ee286cca2a64c4991eead44c2c56"
+        }
+      ]
     },
     {
       "id": "ronan",
-      "source": "public/team/ronan-severo-estudio-v2.png",
-      "localPath": "public/team/optimized/ronan-severo-029d58834522.webp",
-      "objectKey": "team/ronan-severo-029d58834522.webp",
-      "width": 1122,
-      "height": 1402,
+      "source": "assets-src/team/ronan-severo-estudio-v2.png",
       "sourceBytes": 2013607,
-      "optimizedBytes": 1210210,
-      "savedPercent": 39.9,
-      "pixelsIdentical": true,
-      "sha256": "029d5883452224c0b0db8271dccc389b23a8e1283ef0010a4978d8e6ea27b2e5",
-      "decodedPixelsSha256": "e03b80cba1b6d47059d6d283fdb7bc07e2ca89a742fa94373d7c8be1dbea0cb4"
+      "sourceSha256": "eb1322677156f460ff9ac055b15906ae64f862ffa5649f931a5435e99ea1c5ab",
+      "originalWidth": 1122,
+      "originalHeight": 1402,
+      "variants": [
+        {
+          "localPath": "public/team/responsive/ronan-severo-360-13809930489b.webp",
+          "objectKey": "team/ronan-severo-360-13809930489b.webp",
+          "width": 360,
+          "height": 450,
+          "bytes": 122644,
+          "sha256": "13809930489b0faa5973c2ee8ca84b03fd159ff0ae0d52e5b910963b36697685",
+          "pixelsIdenticalToResizedSource": true,
+          "decodedPixelsSha256": "d8a88a681c2e6a5c15ce155e8cc47f3699592b44f514f8f5e16b3dc9f66f693d"
+        },
+        {
+          "localPath": "public/team/responsive/ronan-severo-720-a4807cabb2b3.webp",
+          "objectKey": "team/ronan-severo-720-a4807cabb2b3.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 507614,
+          "sha256": "a4807cabb2b3509b062ce5e2aaddf6e89e9ace1d0b07bf6c3e9dd366183789c2",
+          "pixelsIdenticalToResizedSource": true,
+          "decodedPixelsSha256": "57de532e736319b12c6d1040a9d18db21b1e8482ba8fa39a2f5724e9576507af"
+        }
+      ]
     },
     {
       "id": "yuri",
-      "source": "public/team/yuri-gabriel-estudio-v2.png",
-      "localPath": "public/team/optimized/yuri-gabriel-9fc709f2844c.webp",
-      "objectKey": "team/yuri-gabriel-9fc709f2844c.webp",
-      "width": 1122,
-      "height": 1402,
+      "source": "assets-src/team/yuri-gabriel-estudio-v2.png",
       "sourceBytes": 1617173,
-      "optimizedBytes": 949820,
-      "savedPercent": 41.27,
-      "pixelsIdentical": true,
-      "sha256": "9fc709f2844c2ac2ce1787730f2e94777903272203fc17fa6178054876ebbd73",
-      "decodedPixelsSha256": "d9cc1e19e4eb7de7bbd266d10291da39bca48911a16805e3b1283a66ec830105"
+      "sourceSha256": "a964e23099c725edd7531a8e825e96b76e59d755df1dcdde9bf5c9c62c6ce1c2",
+      "originalWidth": 1122,
+      "originalHeight": 1402,
+      "variants": [
+        {
+          "localPath": "public/team/responsive/yuri-gabriel-360-412f61aca781.webp",
+          "objectKey": "team/yuri-gabriel-360-412f61aca781.webp",
+          "width": 360,
+          "height": 450,
+          "bytes": 103076,
+          "sha256": "412f61aca7810bae2759d6b3310ceb178516bf5c7c2548432ffc5b53b720ea93",
+          "pixelsIdenticalToResizedSource": true,
+          "decodedPixelsSha256": "27398ac74b14e110d3d6cf990381d274fcd59f14db71cb98a2a2a7f178335663"
+        },
+        {
+          "localPath": "public/team/responsive/yuri-gabriel-720-d225812612f7.webp",
+          "objectKey": "team/yuri-gabriel-720-d225812612f7.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 405498,
+          "sha256": "d225812612f72b25201e64c3301e6e0e8237c81070263d9fd65294984b00e4d9",
+          "pixelsIdenticalToResizedSource": true,
+          "decodedPixelsSha256": "b6ec333190a3c6521621045eefdb828b05cabb9d29e790d1da0497e0a6ba92e5"
+        }
+      ]
     },
     {
       "id": "maksuel",
-      "source": "public/team/macsuel-silva-estudio-v2.png",
-      "localPath": "public/team/optimized/maksuel-silva-00a3cfc08422.webp",
-      "objectKey": "team/maksuel-silva-00a3cfc08422.webp",
-      "width": 1122,
-      "height": 1402,
+      "source": "assets-src/team/macsuel-silva-estudio-v2.png",
       "sourceBytes": 1894076,
-      "optimizedBytes": 1134384,
-      "savedPercent": 40.11,
-      "pixelsIdentical": true,
-      "sha256": "00a3cfc084224c3980b0826cde26433042577b83531c4970ae0f000266a6d7fa",
-      "decodedPixelsSha256": "08054f59dd189ad7735216894693e5f8d0f7c5876627f71cf43b565c6fae7c3a"
+      "sourceSha256": "6cfa546acb9193d98ca921bf993e1981f3a3061b893d0d6d300e4f2f94b3846e",
+      "originalWidth": 1122,
+      "originalHeight": 1402,
+      "variants": [
+        {
+          "localPath": "public/team/responsive/maksuel-silva-360-e595b37bba04.webp",
+          "objectKey": "team/maksuel-silva-360-e595b37bba04.webp",
+          "width": 360,
+          "height": 450,
+          "bytes": 121992,
+          "sha256": "e595b37bba04b5e12b0011e9c202d178281bd91b4581c9cfdd514bd3f7be0823",
+          "pixelsIdenticalToResizedSource": true,
+          "decodedPixelsSha256": "3ac78a3d3f5092908938afd08e239d503ddad65328b0cda309d96d3769085a9e"
+        },
+        {
+          "localPath": "public/team/responsive/maksuel-silva-720-1ce1b3a46a68.webp",
+          "objectKey": "team/maksuel-silva-720-1ce1b3a46a68.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 458618,
+          "sha256": "1ce1b3a46a68ff97717f05a1cc478e02f57d75692ffc259216124c8700eb8976",
+          "pixelsIdenticalToResizedSource": true,
+          "decodedPixelsSha256": "e9ed577bb9ec01bbb5e95949e1bd6a57936c539056b7d41d36c56b88e2b1ea2a"
+        }
+      ]
     }
   ]
 }

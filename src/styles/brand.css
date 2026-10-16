@@ -33,12 +33,12 @@ textarea:focus-visible {
   outline-color: var(--nt-focus);
 }
 .announcement {
-  background: #153e6a;
   border-bottom: 1px solid #477cb544;
+  background: #12325b;
 }
 .site-header {
-  background: #0e1115f2;
   border-bottom-color: var(--nt-border);
+  background: #0a0d12f5;
 }
 .main-nav > a {
   color: var(--nt-text-secondary);
@@ -48,7 +48,6 @@ textarea:focus-visible {
 }
 .button-primary,
 .mobile-nav-cta,
-.client-vision-cta,
 .journey-result > button {
   background: var(--nt-accent);
   color: #fff;
@@ -56,7 +55,6 @@ textarea:focus-visible {
   box-shadow: 0 5px 22px #087cff1c;
 }
 .button-primary:hover,
-.client-vision-cta:hover,
 .journey-result > button:hover {
   background: var(--nt-accent-hover);
 }
@@ -91,31 +89,24 @@ textarea:focus-visible {
 .identity-heading h2,
 .identity-team-intro h3,
 .team-area-intro h4,
-.team-profile-details h5,
-.pillars-heading h3 {
+.team-profile-details h5 {
   color: var(--nt-text);
 }
 .section-heading h2 > span,
 .identity-heading h2 > span,
-.identity-team-intro h3 > span,
-.pillars-heading h3 > span {
+.identity-team-intro h3 > span {
   color: var(--nt-text-muted);
 }
 .section-heading p,
 .identity-story > p,
 .identity-team-story > p,
 .team-area-intro > p,
-.team-description,
-.principle p {
+.team-description {
   color: var(--nt-text-secondary);
 }
 .process-section,
 .identity-section {
-  background: #14191f;
   border-block-color: var(--nt-border);
-}
-.about-section {
-  background: var(--nt-bg);
 }
 .faq-section {
   background: radial-gradient(ellipse at 5% 35%, #087cff09, transparent 55%), var(--nt-bg);
@@ -127,11 +118,10 @@ textarea:focus-visible {
 }
 .site-footer {
   border-top-color: var(--nt-border);
-  background: #0d1014;
+  background: #080b10;
 }
 .final-cta h2 > span,
 .process-step > svg,
-.principle > span,
 .identity-care li > svg,
 .identity-expertise-top {
   color: var(--nt-accent-soft);
@@ -140,8 +130,7 @@ textarea:focus-visible {
 .process-step p,
 .showroom-copy > p,
 .journey-detail-intro > p,
-.journey-deliverables p,
-.pillars-heading > p {
+.journey-deliverables p {
   color: var(--nt-text-secondary);
 }
 .flow-card {
@@ -182,22 +171,18 @@ textarea:focus-visible {
   color: var(--nt-accent-soft);
 }
 .journey-practice,
-.client-vision,
-.quick-faq-console,
-.pillar-panel {
+.quick-faq-console {
   border-color: var(--nt-border);
   background-color: var(--nt-surface);
 }
 .journey-examples button,
-.showroom-tabs,
-.client-vision-tabs button {
+.showroom-tabs {
   background: var(--nt-surface);
   border-color: var(--nt-border);
   color: var(--nt-text-secondary);
 }
 .journey-examples button[aria-selected='true'],
 .showroom-tabs button[aria-selected='true'],
-.client-vision-tabs button[aria-selected='true'],
 .quick-faq-tabs button[aria-selected='true'] {
   background: var(--nt-surface-active);
   border-color: var(--nt-border-active);
@@ -217,12 +202,7 @@ textarea:focus-visible {
 .team-profile-link:hover {
   color: #e2eaf2;
 }
-.pillar-example-result > svg,
-.client-vision-commitment > svg {
-  color: var(--nt-accent-soft);
-}
-.quick-faq-tabs > button[aria-selected='true'],
-.pillars-tabs > button[aria-selected='true'] {
+.quick-faq-tabs > button[aria-selected='true'] {
   border-color: var(--nt-border-active);
   background-color: var(--nt-surface-active);
 }
@@ -255,8 +235,7 @@ textarea:focus-visible {
 }
 .connected-center,
 .journey-path-hub > span,
-.quick-faq-brand strong,
-.client-vision-connection > div > strong {
+.quick-faq-brand strong {
   background: linear-gradient(145deg, #182330, #0c1118);
   border-color: #448bdf;
   padding-right: 0;
@@ -273,30 +252,8 @@ textarea:focus-visible {
   width: 29px;
   height: 36px;
 }
-.client-vision-connection .newthing-mark {
-  width: 25px;
-  height: 31px;
-}
-.site-header {
-  background: #0a0d12f5;
-}
-.process-section,
-.identity-section {
-  background: #0e141c;
-}
-.site-footer {
-  background: #080b10;
-}
-.announcement {
-  background: #12325b;
-}
 .journey-demo figcaption {
   font-size: 11px;
-}
-.team-editorial-area,
-.team-editorial-area.team-area-parcerias {
-  --team-accent: #9acbff;
-  --team-border: #365c87;
 }
 @media (max-width: 1100px) {
   .brand .brand-lockup {

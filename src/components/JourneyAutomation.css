@@ -25,7 +25,7 @@
   color: #86b8ed;
 }
 .journey-flow-brand > span {
-  font-size: 6px;
+  font-size: 10px;
   letter-spacing: 1px;
   color: #a0b5cc;
 }
@@ -36,7 +36,7 @@
   padding: 5px 7px;
   border: 1px solid #44596f;
   border-radius: 20px;
-  font-size: 7px;
+  font-size: 10px;
   color: #afc9e4;
 }
 .journey-flow-brand i,
@@ -50,7 +50,7 @@
   padding: 23px 0;
 }
 .journey-flow-intro > span {
-  font-size: 6px;
+  font-size: 10px;
   letter-spacing: 1.2px;
   color: #a0b9d3;
 }
@@ -69,7 +69,7 @@
 .journey-flow-intro p {
   margin: 0;
   color: #a2b2c3;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 1.7;
 }
 .journey-flow-workspace {
@@ -84,7 +84,7 @@
 .journey-flow-section-label {
   display: block;
   color: #99b0c8;
-  font-size: 6px;
+  font-size: 10px;
   letter-spacing: 1px;
   margin-bottom: 14px;
 }
@@ -111,7 +111,7 @@
   min-width: 0;
 }
 .journey-flow-step small {
-  font-size: 5px;
+  font-size: 10px;
   letter-spacing: 1px;
   color: #8dabcc;
   display: block;
@@ -124,7 +124,7 @@
   margin: 5px 0;
 }
 .journey-flow-step p {
-  font-size: 7px;
+  font-size: 10px;
   line-height: 1.5;
   color: #a3b5c9;
   margin: 0;
@@ -190,7 +190,7 @@
 .journey-flow-route > span {
   display: block;
   text-align: center;
-  font-size: 6px;
+  font-size: 10px;
   color: #9dbbdb;
   margin-bottom: 8px;
 }
@@ -207,12 +207,12 @@
   color: #b9d8f9;
 }
 .journey-flow-route strong {
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 500;
   color: #e4ebf3;
 }
 .journey-flow-route small {
-  font-size: 6px;
+  font-size: 10px;
   line-height: 1.5;
   color: #a2b9d1;
 }
@@ -235,7 +235,7 @@
   margin-top: 13px;
   padding: 9px 0 0;
   border-top: 1px solid #384451;
-  font-size: 7px;
+  font-size: 10px;
   line-height: 1.6;
   color: #a0b5cc;
 }
@@ -270,20 +270,20 @@
   border-radius: 50%;
   background: #324355;
   color: #afccea;
-  font-size: 8px;
+  font-size: 10px;
 }
 .journey-flow-contact > div {
   flex: 1;
 }
 .journey-flow-contact strong {
   display: block;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 500;
   color: #d7e2ee;
 }
 .journey-flow-contact small {
   display: block;
-  font-size: 6px;
+  font-size: 10px;
   color: #96a9bd;
   margin-top: 4px;
 }
@@ -298,12 +298,12 @@
   background: #232e39;
 }
 .journey-flow-message > small {
-  font-size: 5px;
+  font-size: 10px;
   letter-spacing: 0.8px;
   color: #94adc8;
 }
 .journey-flow-message p {
-  font-size: 9px;
+  font-size: 10px;
   line-height: 1.65;
   color: #b4c5d8;
   margin: 8px 0 0;
@@ -324,7 +324,7 @@
   align-items: center;
   gap: 4px;
   color: #a8c5e4;
-  font-size: 6px;
+  font-size: 10px;
   margin-top: 10px;
 }
 .journey-flow-assignment {
@@ -332,7 +332,7 @@
 }
 .journey-flow-assignment > span {
   display: block;
-  font-size: 5px;
+  font-size: 10px;
   letter-spacing: 1px;
   color: #8fa5bd;
 }
@@ -341,7 +341,7 @@
   align-items: center;
   gap: 5px;
   margin: 7px 0;
-  font-size: 8px;
+  font-size: 10px;
   color: #b3cfed;
   font-weight: 500;
 }
@@ -350,7 +350,7 @@
   align-items: center;
   gap: 5px;
   color: #95abc3;
-  font-size: 6px;
+  font-size: 10px;
 }
 .journey-flow-bottom {
   display: flex;
@@ -360,7 +360,7 @@
   gap: 9px;
   padding: 13px 0 17px;
   border-top: 1px solid #384451;
-  font-size: 6px;
+  font-size: 10px;
   color: #94aac2;
 }
 .journey-flow-bottom > span {
@@ -441,7 +441,7 @@
     font-size: 27px;
   }
   .journey-flow-intro > span {
-    font-size: 5px;
+    font-size: 10px;
   }
   .journey-flow-workspace {
     grid-template-columns: 1fr;
@@ -454,35 +454,35 @@
     font-size: 11px;
   }
   .journey-flow-contact small {
-    font-size: 8px;
+    font-size: 10px;
   }
   .journey-flow-message p {
     font-size: 11px;
   }
   .journey-flow-message > small {
-    font-size: 6px;
+    font-size: 10px;
   }
   .journey-flow-step strong {
     font-size: 11px;
   }
   .journey-flow-step p {
-    font-size: 8px;
+    font-size: 10px;
   }
   .journey-flow-route strong {
     font-size: 10px;
   }
   .journey-flow-route small,
   .journey-flow-route > span {
-    font-size: 7px;
+    font-size: 10px;
   }
   .journey-flow-assignment strong {
     font-size: 10px;
   }
   .journey-flow-assignment small {
-    font-size: 8px;
+    font-size: 10px;
   }
   .journey-flow-bottom {
-    font-size: 7px;
+    font-size: 10px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

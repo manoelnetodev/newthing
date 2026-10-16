@@ -132,6 +132,7 @@ export function SolutionFinder({
   const [goal, setGoal] = useState<Goal | null>(null)
   const [moment, setMoment] = useState<Moment | null>(null)
   const panel = useRef<HTMLDivElement>(null)
+  const previousStep = useRef(0)
   const goalInfo = goals.find((item) => item.id === goal)
   const momentInfo = moments.find((item) => item.id === moment)
   const direction = goal ? directions[goal] : null
@@ -155,7 +156,13 @@ export function SolutionFinder({
             : 'Quero construir um sistema'
 
   useEffect(() => {
-    panel.current?.focus()
+    if (step > 0) panel.current?.focus()
+    else if (previousStep.current > 0) {
+      const selected = panel.current?.querySelector<HTMLInputElement>('input:checked')
+      const first = panel.current?.querySelector<HTMLInputElement>('input')
+      ;(selected || first)?.focus()
+    }
+    previousStep.current = step
   }, [step])
 
   return (

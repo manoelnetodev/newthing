@@ -1,4 +1,30 @@
 /* Product previews share the same ink, surface and blue accent as the main brand. */
+.journey-demo .nexo-controls {
+  flex-wrap: wrap;
+}
+.journey-demo .nexo-controls > div {
+  margin-left: auto;
+}
+.journey-demo .nexo-controls button,
+.journey-demo .fluxo-filters button {
+  font-size: 12px;
+  min-height: 36px;
+}
+.journey-demo .ops-badge {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.5;
+}
+.journey-demo .nexo-heading {
+  flex-wrap: wrap;
+  margin-block: 24px 20px;
+}
+.nexo-user {
+  flex-wrap: wrap;
+}
+.preview-orders header > div {
+  min-width: 0;
+}
 .journey-demo .journey-mock-window {
   font-size: 10px;
   line-height: 1.5;
@@ -76,7 +102,7 @@
   display: block;
   color: #5e9fdf;
   font:
-    7px ui-monospace,
+    10px ui-monospace,
     monospace;
   margin-bottom: 10px;
 }
@@ -89,7 +115,7 @@
 .preview-plan-decisions p {
   margin: 5px 0 0;
   color: #91a8c0;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 1.7;
 }
 
@@ -125,7 +151,7 @@
   margin-left: -4px;
 }
 .workspace-preview-sidebar > small {
-  font-size: 6px;
+  font-size: 10px;
   color: #85a6ca;
   letter-spacing: 1.2px;
   padding: 0 7px 8px;
@@ -134,7 +160,7 @@
   display: flex;
   align-items: center;
   gap: 7px;
-  font-size: 8px;
+  font-size: 10px;
   color: #91aac6;
   padding: 11px 7px;
   border-radius: 5px;
@@ -145,7 +171,7 @@
   box-shadow: inset 2px 0 #4ba0ff;
 }
 .workspace-preview-sidebar > span > b {
-  font-size: 6px;
+  font-size: 10px;
   background: #24415f;
   padding: 2px 3px;
   border-radius: 3px;
@@ -166,13 +192,13 @@
   border-radius: 50%;
   width: 23px;
   height: 23px;
-  font-size: 6px;
+  font-size: 10px;
   margin-right: -5px;
 }
 .workspace-team small {
   width: 100%;
   margin-top: 9px;
-  font-size: 6px;
+  font-size: 10px;
   line-height: 1.5;
   color: #83a0bf;
 }
@@ -188,7 +214,7 @@
   align-items: center;
   border-bottom: 1px solid #243b55;
   height: 48px;
-  font-size: 7px;
+  font-size: 10px;
   color: #91b4d9;
 }
 .workspace-preview-toolbar > span {
@@ -204,7 +230,7 @@
   height: 24px;
   background: #1d3654;
   color: #b0d8ff;
-  font-size: 7px;
+  font-size: 10px;
   margin-left: 5px;
 }
 .workspace-preview-title {
@@ -215,7 +241,7 @@
   padding: 24px 0 21px;
 }
 .workspace-preview-title small {
-  font-size: 6px;
+  font-size: 10px;
   color: #7caad9;
   letter-spacing: 1px;
 }
@@ -231,7 +257,7 @@
 }
 .workspace-preview-title p {
   color: #98acc3;
-  font-size: 8px;
+  font-size: 10px;
   margin: 0;
   line-height: 1.7;
 }
@@ -240,7 +266,7 @@
   align-items: center;
   gap: 4px;
   color: #a3bbd6;
-  font-size: 7px;
+  font-size: 10px;
   white-space: nowrap;
   border: 1px solid #2b435e;
   border-radius: 5px;
@@ -267,7 +293,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 7px;
+  font-size: 10px;
   color: #abc4e0;
   gap: 5px;
   line-height: 1.5;
@@ -285,7 +311,7 @@
   color: #70b6ff;
 }
 .workspace-preview-metrics > div > span {
-  font-size: 6px;
+  font-size: 10px;
   color: #91afcf;
   position: relative;
   z-index: 1;
@@ -327,14 +353,14 @@
   gap: 6px;
 }
 .workspace-volume header strong {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 550;
 }
 .workspace-volume header > span {
   display: flex;
   align-items: center;
   gap: 3px;
-  font-size: 5px;
+  font-size: 10px;
   color: #8ba4bf;
 }
 .workspace-volume header i {
@@ -379,7 +405,7 @@
 .workspace-volume-bars span {
   display: block;
   color: #86a8ce;
-  font-size: 5px;
+  font-size: 10px;
   margin-top: 8px;
 }
 .workspace-volume footer {
@@ -387,13 +413,13 @@
   gap: 4px;
   align-items: center;
   color: #7abaff;
-  font-size: 6px;
+  font-size: 10px;
   border-top: 1px solid #253e59;
   padding-top: 10px;
   margin-top: 12px;
 }
 .workspace-delivery > small {
-  font-size: 6px;
+  font-size: 10px;
   letter-spacing: 0.7px;
   color: #9ab9dc;
 }
@@ -428,7 +454,7 @@
 }
 .workspace-progress-ring span > small {
   color: #90acce;
-  font-size: 6px;
+  font-size: 10px;
   margin-top: 4px;
 }
 .workspace-delivery p {
@@ -438,7 +464,7 @@
   gap: 3px;
   flex-wrap: wrap;
   color: #9ac8f5;
-  font-size: 6px;
+  font-size: 10px;
   margin: 0;
   line-height: 1.8;
 }
@@ -464,14 +490,14 @@
 }
 .preview-orders header strong {
   display: block;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 550;
   color: #e0eeff;
 }
 .preview-orders header small {
   display: block;
   color: #8da9c8;
-  font-size: 6px;
+  font-size: 10px;
   margin-top: 5px;
   line-height: 1.5;
 }
@@ -480,7 +506,7 @@
   align-items: center;
   gap: 4px;
   color: #79b7fa;
-  font-size: 6px;
+  font-size: 10px;
   white-space: nowrap;
 }
 .preview-order-labels,
@@ -494,7 +520,7 @@
 .preview-order-labels {
   color: #688caf;
   background: #132238;
-  font-size: 5px;
+  font-size: 10px;
   letter-spacing: 0.7px;
   padding-block: 8px;
 }
@@ -516,7 +542,7 @@
   background: #1f3b5c;
   border: 1px solid #315b87;
   color: #a4ceff;
-  font-size: 6px;
+  font-size: 10px;
   border-radius: 6px;
 }
 .preview-order-client > span {
@@ -524,14 +550,14 @@
 }
 .preview-order-client strong {
   display: block;
-  font-size: 7px;
+  font-size: 10px;
   font-weight: 500;
   color: #cfe3fa;
   line-height: 1.5;
 }
 .preview-order-client small {
   display: block;
-  font-size: 6px;
+  font-size: 10px;
   color: #7c9dbf;
   margin-top: 3px;
   line-height: 1.5;
@@ -541,7 +567,7 @@
   align-items: center;
   gap: 5px;
   color: #b7cfe9;
-  font-size: 7px;
+  font-size: 10px;
 }
 .preview-order-owner > i {
   width: 19px;
@@ -552,13 +578,13 @@
   display: grid;
   place-items: center;
   font-style: normal;
-  font-size: 6px;
+  font-size: 10px;
   flex-shrink: 0;
 }
 .preview-order-owner small {
   display: block;
   color: #7195b8;
-  font-size: 5px;
+  font-size: 10px;
   margin-top: 3px;
 }
 .preview-order-progress > span {
@@ -566,12 +592,12 @@
   justify-content: space-between;
   gap: 4px;
   color: #a9c8eb;
-  font-size: 6px;
+  font-size: 10px;
   line-height: 1.5;
 }
 .preview-order-progress small {
   color: #6889ab;
-  font-size: 5px;
+  font-size: 10px;
 }
 .preview-order-progress > i {
   display: block;
@@ -591,7 +617,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 6px;
+  font-size: 10px;
   line-height: 1.6;
   color: #7b9fc3;
   background: #102036;
@@ -607,7 +633,7 @@
 }
 .workspace-notice > span {
   flex: 1;
-  font-size: 6px;
+  font-size: 10px;
   line-height: 1.7;
   color: #8ba7c5;
 }
@@ -637,7 +663,7 @@
 }
 .preview-wire-copy {
   color: #88a5c4;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 1.8;
 }
 .journey-demo .journey-mock-wire-hero b {
@@ -734,12 +760,12 @@
 .journey-demo .journey-mock-site-hero p {
   color: #9ab3ce;
   max-width: 220px;
-  font-size: 9px;
+  font-size: 10px;
 }
 .journey-demo .journey-mock-site-hero b {
   background: #1c5a9a;
   border: 1px solid #3c8bda;
-  font-size: 8px;
+  font-size: 10px;
   color: #e0f0ff;
   padding: 12px;
 }
@@ -803,7 +829,7 @@
 }
 .aurora-art-caption > span {
   display: block;
-  font-size: 5px;
+  font-size: 10px;
   letter-spacing: 1px;
   margin-bottom: 7px;
   color: #98c3ec;
@@ -824,7 +850,7 @@
 }
 .journey-demo .journey-mock-site-services > strong {
   color: #bdd8f4;
-  font-size: 8px;
+  font-size: 10px;
 }
 .aurora-services {
   padding: 17px 0 22px;
@@ -838,13 +864,13 @@
   margin-bottom: 15px;
 }
 .aurora-services header > span {
-  font-size: 5px;
+  font-size: 10px;
   letter-spacing: 1px;
   color: #7ca3c9;
 }
 .aurora-services header > strong {
   font-weight: 500;
-  font-size: 9px;
+  font-size: 10px;
   color: #cbe2fa;
 }
 .aurora-services > div:not(.aurora-contact-path) {
@@ -866,7 +892,7 @@
 }
 .aurora-services article > div > span {
   font:
-    6px ui-monospace,
+    10px ui-monospace,
     monospace;
   color: #6081a3;
 }
@@ -878,7 +904,7 @@
   line-height: 1.4;
 }
 .aurora-services p {
-  font-size: 7px;
+  font-size: 10px;
   line-height: 1.8;
   color: #8aa8c8;
   margin: 0;
@@ -888,7 +914,7 @@
   align-items: center;
   gap: 4px;
   color: #80b7f1;
-  font-size: 6px;
+  font-size: 10px;
   margin-top: 14px;
 }
 .aurora-contact-path {
@@ -908,7 +934,7 @@
   align-items: center;
   gap: 5px;
   color: #a4caef;
-  font-size: 6px;
+  font-size: 10px;
   line-height: 1.6;
 }
 .journey-demo .journey-mock-site-evolve-title {
@@ -934,7 +960,7 @@
 .journey-demo .journey-mock-form-preview > small {
   display: block;
   color: #7dabd7;
-  font-size: 5px;
+  font-size: 10px;
   letter-spacing: 1px;
   margin-bottom: 10px;
 }
@@ -943,7 +969,7 @@
 }
 .journey-demo .journey-mock-form-preview > span {
   display: block;
-  font-size: 6px !important;
+  font-size: 10px !important;
   padding: 8px;
   border: 1px solid #2b4968;
   border-radius: 4px;
@@ -954,7 +980,7 @@
 .journey-demo .journey-mock-form-preview > span b {
   display: block;
   margin-top: 4px;
-  font-size: 8px;
+  font-size: 10px;
   color: #bfd9f6;
   font-weight: 400;
 }
@@ -969,7 +995,7 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: 5px;
+  font-size: 10px;
   color: #82a7cc;
   margin-bottom: 0;
   line-height: 1.6;
@@ -980,7 +1006,7 @@
   margin: 17px 0 22px;
 }
 .preview-integrations > span {
-  font-size: 6px;
+  font-size: 10px;
   letter-spacing: 1px;
   color: #7a9dbf;
   display: block;
@@ -1012,12 +1038,12 @@
   min-width: 0;
   flex: 1;
   color: #c6def8;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 500;
 }
 .preview-integrations small {
   display: block;
-  font-size: 6px;
+  font-size: 10px;
   color: #7d9fbf;
   margin-top: 3px;
   line-height: 1.5;
@@ -1092,13 +1118,13 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 500;
   color: #c0dfff;
 }
 .preview-trace header > span {
   font:
-    6px ui-monospace,
+    10px ui-monospace,
     monospace;
   color: #7da4cc;
 }
@@ -1111,7 +1137,7 @@
   align-items: center;
   gap: 7px;
   padding: 8px 0;
-  font-size: 7px;
+  font-size: 10px;
   color: #a4c5e9;
 }
 .preview-trace > div > div + div {
@@ -1120,7 +1146,7 @@
 .preview-trace > div > div > span {
   color: #648baf;
   font:
-    6px ui-monospace,
+    10px ui-monospace,
     monospace;
 }
 .preview-trace strong {
@@ -1128,7 +1154,7 @@
 }
 .preview-trace small {
   color: #7599bb;
-  font-size: 6px;
+  font-size: 10px;
   line-height: 1.5;
 }
 
@@ -1147,9 +1173,6 @@
 .journey-demo .nexo-heading h4 {
   font-size: clamp(20px, 3.8cqi, 27px);
   color: #edf5ff;
-}
-.journey-demo .nexo-heading {
-  margin-block: 24px 20px;
 }
 .journey-demo .nexo-heading .ops-eyebrow {
   color: #80b8ee;
@@ -1235,11 +1258,11 @@
 }
 .nexo-insight strong {
   color: #c5e1ff;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 500;
 }
 .nexo-insight p {
-  font-size: 7px;
+  font-size: 10px;
   color: #8daece;
   line-height: 1.7;
   margin: 4px 0 0;
@@ -1281,6 +1304,76 @@
 }
 
 @container (max-width: 540px) {
+  .workspace-spark {
+    display: none;
+  }
+  .journey-demo .journey-mock-module-map {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .journey-demo .journey-mock-module-map > div {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 4px 10px;
+    text-align: left;
+    padding: 14px;
+  }
+  .journey-demo .journey-mock-module-map > div > svg {
+    grid-row: 1 / 3;
+  }
+  .journey-demo .journey-mock-module-map strong {
+    margin: 0;
+  }
+  .journey-demo .journey-mock-module-map small {
+    grid-column: 2;
+  }
+  .journey-demo .journey-mock-module-map > div:not(:last-child)::after {
+    top: 100%;
+    left: 27px;
+    right: auto;
+    width: 1px;
+    height: 13px;
+  }
+  .workspace-preview-analytics {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .workspace-delivery {
+    display: grid;
+    grid-template-columns: 95px minmax(0, 1fr);
+    gap: 8px 12px;
+    align-items: center;
+    padding-inline: 7px;
+  }
+  .workspace-delivery > small {
+    grid-column: 1 / -1;
+    font-size: 10px;
+  }
+  .workspace-progress-ring {
+    margin: 10px auto;
+    width: 80px;
+    height: 80px;
+  }
+  .workspace-progress-ring span > small {
+    font-size: 10px;
+  }
+  .aurora-services > div:not(.aurora-contact-path) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .aurora-services h5 {
+    margin-block: 10px 7px;
+    font-size: 12px;
+  }
+  .preview-order-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .preview-order-client {
+    grid-column: 1 / -1;
+  }
+  .preview-order-client strong {
+    font-size: 12px;
+  }
+  .preview-order-labels {
+    display: none;
+  }
   .workspace-preview-sidebar {
     width: 85px;
     padding-inline: 7px;
@@ -1293,7 +1386,7 @@
     width: 18px;
   }
   .workspace-preview-sidebar > span {
-    font-size: 7px;
+    font-size: 10px;
     gap: 5px;
     padding-inline: 5px;
   }
@@ -1316,14 +1409,14 @@
     padding: 11px 8px;
   }
   .workspace-preview-metrics small {
-    font-size: 6px;
+    font-size: 10px;
     min-height: 18px;
   }
   .workspace-preview-metrics strong {
     font-size: 25px;
   }
   .workspace-preview-metrics > div > span {
-    font-size: 5px;
+    font-size: 10px;
   }
   .workspace-spark {
     opacity: 0.18;
@@ -1331,28 +1424,15 @@
   .workspace-volume header > span {
     display: none;
   }
-  .workspace-progress-ring {
-    width: 80px;
-    height: 80px;
-  }
   .workspace-progress-ring > span {
     width: 65px;
     height: 65px;
-  }
-  .workspace-progress-ring span > small {
-    font-size: 5px;
-  }
-  .workspace-delivery {
-    padding-inline: 7px;
-  }
-  .workspace-delivery > small {
-    font-size: 5px;
   }
   .preview-order-row,
   .preview-order-labels {
     gap: 7px;
     padding-inline: 10px;
-    grid-template-columns: minmax(0, 1.7fr) minmax(0, 0.7fr) minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .preview-order-owner > i {
     display: none;
@@ -1360,13 +1440,10 @@
   .preview-order-client > b {
     width: 21px;
     height: 24px;
-    font-size: 5px;
-  }
-  .preview-order-client strong {
-    font-size: 6px;
+    font-size: 10px;
   }
   .preview-order-client small {
-    font-size: 5px;
+    font-size: 10px;
   }
   .journey-demo .journey-mock-site-hero {
     gap: 16px;
@@ -1382,7 +1459,7 @@
     line-height: 1.7;
   }
   .aurora-services header > strong {
-    font-size: 8px;
+    font-size: 10px;
   }
   .preview-integrations > div > div {
     padding: 8px 6px;
@@ -1392,13 +1469,46 @@
     padding: 4px;
   }
   .preview-integrations strong {
-    font-size: 8px;
+    font-size: 10px;
   }
   .preview-integrations small {
-    font-size: 5px;
+    font-size: 10px;
   }
 }
 @container (max-width: 380px) {
+  .journey-demo .fluxo-kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .journey-demo .fluxo-kpis > div:first-child {
+    grid-column: 1 / -1;
+  }
+  .journey-demo .journey-mock-site-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    padding-block: 25px;
+  }
+  .journey-demo .journey-mock-architecture {
+    min-height: 320px;
+    border-bottom-right-radius: 35px;
+  }
+  .preview-integrations > div {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .preview-integrations > div > div {
+    flex-wrap: nowrap;
+    gap: 5px;
+    padding: 8px;
+  }
+  .preview-integrations strong {
+    flex-basis: auto;
+    order: 0;
+    font-size: 10px;
+  }
+  .preview-trace > div > div {
+    grid-template-columns: 10px 58px minmax(0, 1fr);
+    font-size: 10px;
+    gap: 5px;
+  }
   .journey-demo .journey-mock-wire-nav > span {
     display: none;
   }
@@ -1428,6 +1538,7 @@
     display: grid;
     grid-template-columns: 20px minmax(0, 1fr);
     align-items: baseline;
+    padding: 11px 8px;
   }
   .preview-plan-decisions > div + div {
     border-left: 0;
@@ -1439,6 +1550,7 @@
   }
   .preview-plan-decisions p {
     grid-column: 2;
+    font-size: 10px;
   }
   .journey-demo .nexo-kpis {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1459,23 +1571,18 @@
     grid-column: 1 / -1;
   }
   .journey-demo .nexo-unit-list > div {
-    font-size: 6px;
+    font-size: 10px;
   }
   .aurora-services p {
     overflow-wrap: anywhere;
+    font-size: 10px;
   }
   .journey-demo
     :is(.journey-mock-system-plan, .journey-mock-site-plan, .journey-mock-automation-plan) {
     padding: 19px 16px;
   }
-  .preview-plan-decisions > div {
-    padding: 11px 8px;
-  }
   .preview-plan-decisions strong {
-    font-size: 9px;
-  }
-  .preview-plan-decisions p {
-    font-size: 7px;
+    font-size: 10px;
   }
   .workspace-preview-sidebar {
     display: none;
@@ -1484,24 +1591,24 @@
     padding-inline: 12px;
   }
   .workspace-preview-toolbar {
-    font-size: 6px;
+    font-size: 10px;
   }
   .workspace-preview-toolbar > span:last-child {
     font-size: 0;
     gap: 3px;
   }
   .workspace-preview-title small {
-    font-size: 5px;
+    font-size: 10px;
   }
   .workspace-preview-analytics {
     gap: 7px;
-    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
   }
   .workspace-volume {
     padding-inline: 9px;
   }
   .workspace-volume header strong {
-    font-size: 8px;
+    font-size: 10px;
   }
   .workspace-volume-bars {
     gap: 6px;
@@ -1511,7 +1618,7 @@
     width: 7px;
   }
   .workspace-volume footer {
-    font-size: 5px;
+    font-size: 10px;
   }
   .workspace-progress-ring {
     width: 69px;
@@ -1526,14 +1633,14 @@
     font-size: 22px;
   }
   .workspace-progress-ring span > small {
-    font-size: 4px;
+    font-size: 10px;
   }
   .preview-order-labels {
-    font-size: 4px;
+    font-size: 10px;
     letter-spacing: 0.2px;
   }
   .preview-order-progress > span {
-    font-size: 5px;
+    font-size: 10px;
   }
   .preview-order-progress small {
     display: none;
@@ -1547,31 +1654,22 @@
   .journey-demo .journey-mock-website {
     padding-inline: 17px;
   }
-  .journey-demo .journey-mock-site-hero {
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-    gap: 12px;
-    padding-block: 25px;
-  }
   .journey-demo .journey-mock-site-hero h4 {
     font-size: clamp(25px, 8.4cqi, 31px);
     letter-spacing: -1.2px;
   }
   .journey-demo .journey-mock-site-hero p {
-    font-size: 7px;
+    font-size: 10px;
   }
   .journey-demo .journey-mock-site-hero b {
-    font-size: 6px;
+    font-size: 10px;
     padding: 9px 7px;
     gap: 4px;
-  }
-  .journey-demo .journey-mock-architecture {
-    min-height: 260px;
-    border-bottom-right-radius: 35px;
   }
   .journey-demo .journey-mock-architecture > small {
     top: 13px;
     left: 10px;
-    font-size: 5px;
+    font-size: 10px;
   }
   .journey-demo .journey-mock-arch-block.back {
     height: 135px;
@@ -1593,10 +1691,10 @@
     bottom: 15px;
   }
   .aurora-art-caption strong {
-    font-size: 8px;
+    font-size: 10px;
   }
   .aurora-art-caption > span {
-    font-size: 4px;
+    font-size: 10px;
     letter-spacing: 0.5px;
   }
   .aurora-art-caption svg {
@@ -1621,15 +1719,12 @@
     padding: 10px 7px;
   }
   .aurora-services h5 {
-    font-size: 8px;
+    font-size: 10px;
     margin-top: 12px;
     min-height: 23px;
   }
-  .aurora-services p {
-    font-size: 6px;
-  }
   .aurora-services article > span {
-    font-size: 5px;
+    font-size: 10px;
     gap: 2px;
   }
   .journey-demo .journey-mock-site-contact {
@@ -1646,39 +1741,24 @@
     gap: 3px;
   }
   .aurora-contact-path > span {
-    font-size: 5px;
+    font-size: 10px;
     gap: 3px;
   }
   .aurora-contact-path svg {
     flex-shrink: 0;
     width: 10px;
   }
-  .preview-integrations > div > div {
-    flex-wrap: wrap;
-    gap: 5px;
-    padding: 8px;
-  }
   .preview-integrations > div > div > svg {
     margin-left: auto;
     order: 1;
   }
-  .preview-integrations strong {
-    flex-basis: 100%;
-    order: 2;
-    font-size: 9px;
-  }
   .preview-integrations small {
-    font-size: 6px;
-  }
-  .preview-trace > div > div {
-    grid-template-columns: 10px 39px minmax(0, 1fr);
-    font-size: 6px;
-    gap: 5px;
+    font-size: 10px;
   }
   .preview-trace > div > div > small {
     grid-column: 3;
     margin-top: -2px;
-    font-size: 5px;
+    font-size: 10px;
   }
   .journey-demo .nexo-heading {
     margin-block: 20px 15px;
@@ -1691,7 +1771,7 @@
   }
   .journey-demo .nexo-chart strong,
   .journey-demo .nexo-units header strong {
-    font-size: 8px;
+    font-size: 10px;
   }
   .journey-demo .nexo-chart {
     padding-inline: 9px;
@@ -1700,9 +1780,9 @@
     padding: 8px;
   }
   .nexo-insight strong {
-    font-size: 8px;
+    font-size: 10px;
   }
   .nexo-insight p {
-    font-size: 6px;
+    font-size: 10px;
   }
 }

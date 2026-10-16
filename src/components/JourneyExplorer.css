@@ -48,7 +48,7 @@
 }
 .journey-launch-top > small {
   font:
-    9px ui-monospace,
+    11px ui-monospace,
     monospace;
   letter-spacing: 1px;
   color: #7296bb;
@@ -362,7 +362,7 @@ dialog.journey-preview-modal {
     min-height: 44px;
   }
   .journey-preview-modal .journey-phase-nav button > span {
-    font-size: 9px;
+    font-size: 11px;
   }
   .journey-preview-modal .journey-phase-nav button > svg {
     display: none;

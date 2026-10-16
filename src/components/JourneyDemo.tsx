@@ -241,8 +241,7 @@ function WebsiteBuild({ evolve = false }: { evolve?: boolean }) {
           <div className="journey-mock-site-evolve-title">
             <span>ESTRATÉGIA PARA O SEU MOMENTO</span>
             <h4>
-              Seu próximo passo
-              <br />
+              Seu próximo passo <br />
               <i>começa com clareza.</i>
             </h4>
             <p>Um diagnóstico para conectar o seu desafio a um caminho possível.</p>
@@ -251,8 +250,7 @@ function WebsiteBuild({ evolve = false }: { evolve?: boolean }) {
             <div>
               <small>UM CAMINHO MAIS DIRETO</small>
               <h5>
-                Do interesse
-                <br />à conversa certa.
+                Do interesse <br />à conversa certa.
               </h5>
               <p>Serviço → Diagnóstico → Atendimento</p>
               <span>
@@ -288,13 +286,10 @@ function WebsiteBuild({ evolve = false }: { evolve?: boolean }) {
             <div>
               <span>CONSULTORIA & ESTRATÉGIA</span>
               <h4>
-                Clareza para
-                <br />
-                decidir.
-                <br />
+                Clareza para <br />
+                decidir. <br />
                 <i>
-                  Direção para
-                  <br />
+                  Direção para <br />
                   crescer.
                 </i>
               </h4>
@@ -310,17 +305,14 @@ function WebsiteBuild({ evolve = false }: { evolve?: boolean }) {
               <span className="journey-mock-arch-block front" />
               <i />
               <small>
-                VISÃO.
-                <br />
-                DIREÇÃO.
-                <br />
+                VISÃO. <br />
+                DIREÇÃO. <br />
                 MOVIMENTO.
               </small>
               <div className="aurora-art-caption">
                 <span>ESTRATÉGIA EM MOVIMENTO</span>
                 <strong>
-                  Novas perspectivas.
-                  <br />
+                  Novas perspectivas. <br />
                   Possibilidades reais.
                 </strong>
                 <ArrowUpRight size={18} />
@@ -419,8 +411,7 @@ function AutomationBuild() {
       <header className="journey-flow-intro">
         <span>FERRAMENTAS CONECTADAS. PESSOAS NO CENTRO.</span>
         <h4>
-          Uma solicitação.
-          <br />
+          Uma solicitação. <br />
           <em>O caminho certo.</em>
         </h4>
         <p>Da primeira mensagem ao atendimento, cada etapa tem uma direção.</p>

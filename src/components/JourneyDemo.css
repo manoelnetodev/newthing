@@ -21,7 +21,7 @@
   background: #1a242e;
   border-bottom: 1px solid #354557;
   color: #a8bace;
-  font-size: 9px;
+  font-size: 10px;
 }
 .journey-demo .journey-mock-window-dots {
   display: flex;
@@ -40,7 +40,7 @@
   gap: 8px;
   margin-top: 12px;
   color: #8d9fb2;
-  font-size: 9px;
+  font-size: 10px;
   line-height: 1.5;
 }
 .journey-demo figcaption > span:first-child {
@@ -60,7 +60,7 @@
 }
 .journey-demo .journey-mock-planning-header > span {
   display: block;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 1.3px;
   color: #9eb2c7;
 }
@@ -102,7 +102,7 @@
 .journey-demo .journey-mock-plan-objective small {
   display: block;
   color: #9eb2c7;
-  font-size: 7px;
+  font-size: 10px;
   letter-spacing: 1px;
   margin-bottom: 6px;
 }
@@ -151,7 +151,7 @@
   font-weight: 600;
 }
 .journey-demo .journey-mock-module-map small {
-  font-size: 8px;
+  font-size: 10px;
   line-height: 1.5;
   color: #9eb2c7;
 }
@@ -161,7 +161,7 @@
   border-radius: 6px;
 }
 .journey-demo .journey-mock-scope > span {
-  font-size: 7px;
+  font-size: 10px;
   letter-spacing: 1.3px;
   color: #9eb2c7;
 }
@@ -170,7 +170,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 7px;
-  font-size: 8px;
+  font-size: 10px;
   color: #9eb2c7;
   margin: 9px 0 0;
 }
@@ -182,7 +182,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 10px;
-  font-size: 8px;
+  font-size: 10px;
   color: #9eb2c7;
   margin-top: 18px;
 }
@@ -230,7 +230,7 @@
   padding: 8px 5px;
 }
 .journey-demo .journey-mock-app-sidebar > span small {
-  font-size: 8px;
+  font-size: 10px;
 }
 .journey-demo .journey-mock-app-sidebar > span.active {
   color: #448ddc;
@@ -250,7 +250,7 @@
   align-items: center;
   gap: 12px;
   color: #8399b1;
-  font-size: 6px;
+  font-size: 10px;
   letter-spacing: 0.7px;
 }
 .journey-demo .journey-mock-app-toolbar > span {
@@ -264,7 +264,7 @@
   color: #5893d2;
   width: 21px;
   height: 21px;
-  font-size: 7px;
+  font-size: 10px;
   font-weight: 500;
 }
 .journey-demo .journey-mock-app-heading {
@@ -275,7 +275,7 @@
   gap: 10px;
 }
 .journey-demo .journey-mock-app-heading small {
-  font-size: 6px;
+  font-size: 10px;
   letter-spacing: 1px;
   color: #8197af;
 }
@@ -294,7 +294,7 @@
   background: #11171d;
   padding: 6px;
   border-radius: 4px;
-  font-size: 7px;
+  font-size: 10px;
   flex-shrink: 0;
 }
 .journey-demo .journey-mock-kpis {
@@ -310,7 +310,7 @@
 }
 .journey-demo .journey-mock-kpis small {
   display: block;
-  font-size: 7px;
+  font-size: 10px;
   line-height: 1.4;
   color: #8496aa;
   min-height: 20px;
@@ -340,12 +340,12 @@
   gap: 8px;
 }
 .journey-demo .journey-mock-app-chart strong {
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 500;
 }
 .journey-demo .journey-mock-app-chart small {
   color: #99a8b9;
-  font-size: 6px;
+  font-size: 10px;
 }
 .journey-demo .journey-mock-chart-bars {
   height: 82px;
@@ -370,7 +370,7 @@
   display: flex;
   justify-content: space-around;
   color: #91a3b7;
-  font-size: 6px;
+  font-size: 10px;
   padding-top: 9px;
 }
 .journey-demo .journey-mock-orders {
@@ -384,18 +384,18 @@
   gap: 10px;
 }
 .journey-demo .journey-mock-orders > div strong {
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 600;
 }
 .journey-demo .journey-mock-orders > div span {
-  font-size: 6px;
+  font-size: 10px;
   color: #8a9eb3;
 }
 .journey-demo .journey-mock-orders p {
   margin: 9px 0 0;
   padding-top: 9px;
   border-top: 1px solid #2b3d50;
-  font-size: 7px;
+  font-size: 10px;
   color: #9eb2c7;
 }
 .journey-demo .journey-mock-orders p > span {
@@ -414,7 +414,7 @@
   background: #1a232e;
   padding: 4px 6px;
   border-radius: 3px;
-  font-size: 6px;
+  font-size: 10px;
   font-style: normal;
   flex-shrink: 0;
 }
@@ -445,12 +445,12 @@
   gap: 16px;
   padding-bottom: 12px;
   border-bottom: 1px solid #2b3d50;
-  font-size: 7px;
+  font-size: 10px;
   color: #8b9789;
 }
 .journey-demo .journey-mock-wire-nav strong {
   margin-right: auto;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 1px;
   color: #9eb2c7;
 }
@@ -471,7 +471,7 @@
 }
 .journey-demo .journey-mock-wire-hero small {
   color: #86919d;
-  font-size: 6px;
+  font-size: 10px;
   letter-spacing: 1px;
 }
 .journey-demo .journey-mock-wire-hero h4 {
@@ -501,7 +501,7 @@
   border: 1px solid #a4b0bc;
   border-radius: 3px;
   color: #9eb2c7;
-  font-size: 7px;
+  font-size: 10px;
   font-weight: 400;
   margin-top: 10px;
 }
@@ -517,7 +517,7 @@
   background: repeating-linear-gradient(135deg, #19232d 0 6px, #1a242e 6px 7px);
 }
 .journey-demo .journey-mock-wire-image > span {
-  font-size: 6px;
+  font-size: 10px;
   letter-spacing: 1px;
 }
 .journey-demo .journey-mock-wire-sections {
@@ -534,13 +534,13 @@
   border: 1px solid #2b3d50;
   border-radius: 3px;
   color: #9eb2c7;
-  font-size: 7px;
+  font-size: 10px;
 }
 .journey-demo .journey-mock-site-plan-note {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 8px;
+  font-size: 10px;
   color: #9eb2c7;
   line-height: 1.6;
   margin-top: 15px;
@@ -557,7 +557,7 @@
   align-items: center;
   border-bottom: 1px solid #2b3d50;
   padding: 19px 0;
-  font-size: 7px;
+  font-size: 10px;
 }
 .journey-demo .journey-mock-site-nav > strong {
   font-size: 21px;
@@ -566,7 +566,7 @@
   font-weight: 600;
 }
 .journey-demo .journey-mock-site-nav strong > span {
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0;
   vertical-align: super;
   margin-left: 2px;
@@ -575,7 +575,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 7px;
+  font-size: 10px;
   font-weight: 500;
   border-bottom: 1px solid #83919f;
   padding: 4px 0;
@@ -587,7 +587,7 @@
   gap: 16px;
 }
 .journey-demo .journey-mock-site-hero > div:first-child > span {
-  font-size: 6px;
+  font-size: 10px;
   letter-spacing: 1.2px;
 }
 .journey-demo .journey-mock-site-hero h4 {
@@ -604,7 +604,7 @@
   color: #9eb2c7;
 }
 .journey-demo .journey-mock-site-hero p {
-  font-size: 8px;
+  font-size: 10px;
   line-height: 1.7;
   color: #9eb2c7;
   max-width: 180px;
@@ -618,7 +618,7 @@
   color: #e7ecf1;
   border-radius: 3px;
   padding: 10px;
-  font-size: 7px;
+  font-size: 10px;
   font-weight: 400;
   margin-top: 18px;
 }
@@ -668,7 +668,7 @@
 }
 .journey-demo .journey-mock-architecture small {
   position: absolute;
-  font-size: 6px;
+  font-size: 10px;
   letter-spacing: 1px;
   line-height: 1.5;
   color: #c9d3de;
@@ -685,7 +685,7 @@
   border-top: 1px solid #2b3d50;
 }
 .journey-demo .journey-mock-site-services > span {
-  font-size: 6px;
+  font-size: 10px;
   letter-spacing: 1px;
   color: #9eb2c7;
 }
@@ -693,7 +693,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 500;
 }
 .journey-demo .journey-mock-site-bottom {
@@ -702,14 +702,14 @@
   gap: 12px;
   padding: 12px 0 16px;
   border-top: 1px solid #2b3d50;
-  font-size: 6px;
+  font-size: 10px;
   color: #9eb2c7;
 }
 .journey-demo .journey-mock-site-evolve-title {
   padding: 25px 0 19px;
 }
 .journey-demo .journey-mock-site-evolve-title > span {
-  font-size: 6px;
+  font-size: 10px;
   letter-spacing: 1px;
 }
 .journey-demo .journey-mock-site-evolve-title h4 {
@@ -720,7 +720,7 @@
   margin: 13px 0;
 }
 .journey-demo .journey-mock-site-evolve-title > p {
-  font-size: 8px;
+  font-size: 10px;
   color: #9eb2c7;
   line-height: 1.6;
   margin: 0;
@@ -733,7 +733,7 @@
   padding: 17px 0 20px;
 }
 .journey-demo .journey-mock-site-contact small {
-  font-size: 6px;
+  font-size: 10px;
   letter-spacing: 1px;
   color: #9eb2c7;
 }
@@ -745,7 +745,7 @@
   margin: 14px 0;
 }
 .journey-demo .journey-mock-site-contact p {
-  font-size: 7px;
+  font-size: 10px;
   color: #9eb2c7;
   line-height: 1.6;
 }
@@ -753,7 +753,7 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: 7px;
+  font-size: 10px;
   color: #9eb2c7;
   line-height: 1.6;
   margin-top: 18px;
@@ -765,13 +765,13 @@
   background: #161e27;
 }
 .journey-demo .journey-mock-form-preview > strong {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 500;
   display: block;
   margin-bottom: 13px;
 }
 .journey-demo .journey-mock-form-preview > span {
-  font-size: 7px !important;
+  font-size: 10px !important;
   color: #8a929b !important;
   padding: 7px 0;
   border-bottom: 1px solid #2b3d50;
@@ -779,7 +779,7 @@
 }
 .journey-demo .journey-mock-form-preview > b {
   font-weight: 400;
-  font-size: 7px;
+  font-size: 10px;
   padding: 9px;
   display: flex;
   justify-content: space-between;
@@ -816,7 +816,7 @@
 }
 .journey-demo .journey-mock-manual-flow > span,
 .journey-demo .journey-mock-planned-flow > span {
-  font-size: 7px;
+  font-size: 10px;
   letter-spacing: 1px;
   color: #92a4b7;
 }
@@ -834,7 +834,7 @@
   border: 1px dashed #556473;
   padding: 10px;
   border-radius: 5px;
-  font-size: 8px;
+  font-size: 10px;
 }
 .journey-demo .journey-mock-manual-flow > div > svg {
   color: #9eb2c7;
@@ -844,7 +844,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 8px;
+  font-size: 10px;
   color: #8a9aab;
   margin: 0;
 }
@@ -873,7 +873,7 @@
 }
 .journey-demo .journey-mock-planned-flow p {
   margin: 0;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 1.6;
   color: #9bafc5;
 }
@@ -889,7 +889,7 @@
   align-items: center;
   gap: 5px;
   color: #94abc4;
-  font-size: 7px;
+  font-size: 10px;
 }
 .journey-demo .journey-mock-automation-monitor {
   min-height: 405px;
@@ -902,7 +902,7 @@
   gap: 12px;
   padding: 17px 21px;
   border-bottom: 1px solid #313c47;
-  font-size: 8px;
+  font-size: 10px;
 }
 .journey-demo .journey-mock-flow-heading > strong {
   display: flex;
@@ -918,7 +918,7 @@
   color: #8abff7;
 }
 .journey-demo .journey-mock-flow-heading > b {
-  font-size: 6px;
+  font-size: 10px;
   font-weight: 400;
   padding: 6px;
   border-radius: 4px;
@@ -940,7 +940,7 @@
 }
 .journey-demo .journey-mock-monitor-title > span {
   color: #8aa4bf;
-  font-size: 7px;
+  font-size: 10px;
   letter-spacing: 1px;
 }
 .journey-demo .journey-mock-monitor-title h4 {
@@ -951,7 +951,7 @@
   color: #ebf0f6;
 }
 .journey-demo .journey-mock-monitor-title p {
-  font-size: 9px;
+  font-size: 10px;
   color: #98a8b9;
   margin: 0;
 }
@@ -978,7 +978,7 @@
 }
 .journey-demo .journey-mock-monitor-stats small {
   grid-column: 1/-1;
-  font-size: 7px;
+  font-size: 10px;
   color: #97acc3;
   margin-top: 9px;
 }
@@ -996,12 +996,12 @@
   padding-bottom: 12px;
 }
 .journey-demo .journey-mock-run-history header strong {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 500;
   color: #c5d6e9;
 }
 .journey-demo .journey-mock-run-history header span {
-  font-size: 6px;
+  font-size: 10px;
   color: #9eb2c7;
 }
 .journey-demo .journey-mock-run-history > div {
@@ -1015,17 +1015,17 @@
   padding-bottom: 0;
 }
 .journey-demo .journey-mock-run-history > div > span {
-  font: 7px monospace;
+  font: 10px monospace;
   color: #9eb2c7;
 }
 .journey-demo .journey-mock-run-history > div strong {
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 400;
   flex: 1;
   color: #b1c4d8;
 }
 .journey-demo .journey-mock-run-history b {
-  font-size: 6px;
+  font-size: 10px;
   font-weight: 400;
   padding: 4px 6px;
   border-radius: 3px;
@@ -1047,12 +1047,12 @@
   flex: 1;
 }
 .journey-demo .journey-mock-next-flow strong {
-  font-size: 8px;
+  font-size: 10px;
   display: block;
   font-weight: 500;
 }
 .journey-demo .journey-mock-next-flow span {
-  font-size: 7px;
+  font-size: 10px;
   display: block;
   margin-top: 5px;
   color: #889db3;
@@ -1093,10 +1093,10 @@
 @media (max-width: 560px) {
   .journey-demo .journey-mock-window-bar {
     padding: 0 10px;
-    font-size: 8px;
+    font-size: 10px;
   }
   .journey-demo figcaption {
-    font-size: 8px;
+    font-size: 10px;
   }
   .journey-demo .journey-mock-system-plan,
   .journey-demo .journey-mock-site-plan,
@@ -1130,10 +1130,10 @@
     font-size: 10px;
   }
   .journey-demo .journey-mock-module-map small {
-    font-size: 7px;
+    font-size: 10px;
   }
   .journey-demo .journey-mock-scope p {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 1.6;
   }
   .journey-demo .journey-mock-system-app {
@@ -1173,7 +1173,7 @@
     font-size: 16px;
   }
   .journey-demo .journey-mock-app-heading > span {
-    font-size: 6px;
+    font-size: 10px;
     padding: 5px;
   }
   .journey-demo .journey-mock-kpis {
@@ -1183,7 +1183,7 @@
     padding: 9px 7px;
   }
   .journey-demo .journey-mock-kpis small {
-    font-size: 6px;
+    font-size: 10px;
     min-height: 23px;
   }
   .journey-demo .journey-mock-kpis strong {
@@ -1215,17 +1215,17 @@
     font-size: 16px;
   }
   .journey-demo .journey-mock-wire-hero small {
-    font-size: 5px;
+    font-size: 10px;
   }
   .journey-demo .journey-mock-wire-image > span {
-    font-size: 5px;
+    font-size: 10px;
   }
   .journey-demo .journey-mock-wire-sections {
     gap: 5px;
   }
   .journey-demo .journey-mock-wire-sections > span {
     padding: 10px 5px;
-    font-size: 6px;
+    font-size: 10px;
   }
   .journey-demo .journey-mock-website {
     padding: 0 17px;
@@ -1233,7 +1233,7 @@
   }
   .journey-demo .journey-mock-site-nav {
     gap: 10px;
-    font-size: 6px;
+    font-size: 10px;
   }
   .journey-demo .journey-mock-site-nav > strong {
     font-size: 19px;
@@ -1250,10 +1250,10 @@
     font-size: 29px;
   }
   .journey-demo .journey-mock-site-hero p {
-    font-size: 7px;
+    font-size: 10px;
   }
   .journey-demo .journey-mock-site-hero > div:first-child > span {
-    font-size: 5px;
+    font-size: 10px;
   }
   .journey-demo .journey-mock-architecture {
     min-height: 235px;
@@ -1279,12 +1279,12 @@
     width: 100%;
   }
   .journey-demo .journey-mock-site-hero b {
-    font-size: 6px;
+    font-size: 10px;
     gap: 4px;
     padding: 9px 7px;
   }
   .journey-demo .journey-mock-site-bottom {
-    font-size: 5px;
+    font-size: 10px;
   }
   .journey-demo .journey-mock-site-evolve-title h4 {
     font-size: 25px;
@@ -1296,16 +1296,16 @@
     font-size: 19px;
   }
   .journey-demo .journey-mock-site-contact > div > span {
-    font-size: 6px;
+    font-size: 10px;
   }
   .journey-demo .journey-mock-form-preview {
     padding: 10px;
   }
   .journey-demo .journey-mock-form-preview > strong {
-    font-size: 8px;
+    font-size: 10px;
   }
   .journey-demo .journey-mock-form-preview > b {
-    font-size: 6px;
+    font-size: 10px;
     padding: 8px 5px;
   }
   .journey-demo .journey-mock-manual-flow {
@@ -1317,7 +1317,7 @@
   .journey-demo .journey-mock-manual-flow > div > span {
     gap: 4px;
     padding: 8px 5px;
-    font-size: 7px;
+    font-size: 10px;
   }
   .journey-demo .journey-mock-manual-flow > div > span svg {
     width: 12px;
@@ -1346,10 +1346,10 @@
     gap: 8px;
   }
   .journey-demo .journey-mock-flow-heading > span {
-    font-size: 7px;
+    font-size: 10px;
   }
   .journey-demo .journey-mock-flow-heading > b {
-    font-size: 5px;
+    font-size: 10px;
   }
   .journey-demo .journey-mock-flow-heading > strong {
     font-size: 15px;
@@ -1370,7 +1370,7 @@
     font-size: 21px;
   }
   .journey-demo .journey-mock-monitor-stats small {
-    font-size: 6px;
+    font-size: 10px;
   }
   .journey-demo .journey-mock-run-history {
     padding: 10px;
@@ -1379,9 +1379,9 @@
     gap: 7px;
   }
   .journey-demo .journey-mock-run-history > div strong {
-    font-size: 7px;
+    font-size: 10px;
   }
   .journey-demo .journey-mock-run-history header span {
-    font-size: 5px;
+    font-size: 10px;
   }
 }

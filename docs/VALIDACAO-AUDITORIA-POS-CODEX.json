@@ -1,0 +1,1087 @@
+{
+  "journey": [
+    {
+      "active": "01Idealizar",
+      "fits": true,
+      "height": 568,
+      "issues": [],
+      "kind": "system",
+      "overflow": false,
+      "phase": 0,
+      "width": 320
+    },
+    {
+      "active": "02Construir",
+      "fits": true,
+      "height": 568,
+      "issues": [],
+      "kind": "system",
+      "overflow": false,
+      "phase": 1,
+      "width": 320
+    },
+    {
+      "active": "03Realizar",
+      "fits": true,
+      "height": 568,
+      "issues": [],
+      "kind": "system",
+      "overflow": false,
+      "phase": 2,
+      "width": 320
+    },
+    {
+      "active": "01Idealizar",
+      "fits": true,
+      "height": 568,
+      "issues": [],
+      "kind": "website",
+      "overflow": false,
+      "phase": 0,
+      "width": 320
+    },
+    {
+      "active": "02Construir",
+      "fits": true,
+      "height": 568,
+      "issues": [],
+      "kind": "website",
+      "overflow": false,
+      "phase": 1,
+      "width": 320
+    },
+    {
+      "active": "03Realizar",
+      "fits": true,
+      "height": 568,
+      "issues": [],
+      "kind": "website",
+      "overflow": false,
+      "phase": 2,
+      "width": 320
+    },
+    {
+      "active": "01Idealizar",
+      "fits": true,
+      "height": 568,
+      "issues": [],
+      "kind": "automation",
+      "overflow": false,
+      "phase": 0,
+      "width": 320
+    },
+    {
+      "active": "02Construir",
+      "fits": true,
+      "height": 568,
+      "issues": [],
+      "kind": "automation",
+      "overflow": false,
+      "phase": 1,
+      "width": 320
+    },
+    {
+      "active": "03Realizar",
+      "fits": true,
+      "height": 568,
+      "issues": [],
+      "kind": "automation",
+      "overflow": false,
+      "phase": 2,
+      "width": 320
+    },
+    {
+      "active": "01Idealizar",
+      "fits": true,
+      "height": 800,
+      "issues": [],
+      "kind": "system",
+      "overflow": false,
+      "phase": 0,
+      "width": 360
+    },
+    {
+      "active": "02Construir",
+      "fits": true,
+      "height": 800,
+      "issues": [],
+      "kind": "system",
+      "overflow": false,
+      "phase": 1,
+      "width": 360
+    },
+    {
+      "active": "03Realizar",
+      "fits": true,
+      "height": 800,
+      "issues": [],
+      "kind": "system",
+      "overflow": false,
+      "phase": 2,
+      "width": 360
+    },
+    {
+      "active": "01Idealizar",
+      "fits": true,
+      "height": 800,
+      "issues": [],
+      "kind": "website",
+      "overflow": false,
+      "phase": 0,
+      "width": 360
+    },
+    {
+      "active": "02Construir",
+      "fits": true,
+      "height": 800,
+      "issues": [],
+      "kind": "website",
+      "overflow": false,
+      "phase": 1,
+      "width": 360
+    },
+    {
+      "active": "03Realizar",
+      "fits": true,
+      "height": 800,
+      "issues": [],
+      "kind": "website",
+      "overflow": false,
+      "phase": 2,
+      "width": 360
+    },
+    {
+      "active": "01Idealizar",
+      "fits": true,
+      "height": 800,
+      "issues": [],
+      "kind": "automation",
+      "overflow": false,
+      "phase": 0,
+      "width": 360
+    },
+    {
+      "active": "02Construir",
+      "fits": true,
+      "height": 800,
+      "issues": [],
+      "kind": "automation",
+      "overflow": false,
+      "phase": 1,
+      "width": 360
+    },
+    {
+      "active": "03Realizar",
+      "fits": true,
+      "height": 800,
+      "issues": [],
+      "kind": "automation",
+      "overflow": false,
+      "phase": 2,
+      "width": 360
+    },
+    {
+      "active": "01Idealizar",
+      "fits": true,
+      "height": 844,
+      "issues": [],
+      "kind": "system",
+      "overflow": false,
+      "phase": 0,
+      "width": 390
+    },
+    {
+      "active": "02Construir",
+      "fits": true,
+      "height": 844,
+      "issues": [],
+      "kind": "system",
+      "overflow": false,
+      "phase": 1,
+      "width": 390
+    },
+    {
+      "active": "03Realizar",
+      "fits": true,
+      "height": 844,
+      "issues": [],
+      "kind": "system",
+      "overflow": false,
+      "phase": 2,
+      "width": 390
+    },
+    {
+      "active": "01Idealizar",
+      "fits": true,
+      "height": 844,
+      "issues": [],
+      "kind": "website",
+      "overflow": false,
+      "phase": 0,
+      "width": 390
+    },
+    {
+      "active": "02Construir",
+      "fits": true,
+      "height": 844,
+      "issues": [],
+      "kind": "website",
+      "overflow": false,
+      "phase": 1,
+      "width": 390
+    },
+    {
+      "active": "03Realizar",
+      "fits": true,
+      "height": 844,
+      "issues": [],
+      "kind": "website",
+      "overflow": false,
+      "phase": 2,
+      "width": 390
+    },
+    {
+      "active": "01Idealizar",
+      "fits": true,
+      "height": 844,
+      "issues": [],
+      "kind": "automation",
+      "overflow": false,
+      "phase": 0,
+      "width": 390
+    },
+    {
+      "active": "02Construir",
+      "fits": true,
+      "height": 844,
+      "issues": [],
+      "kind": "automation",
+      "overflow": false,
+      "phase": 1,
+      "width": 390
+    },
+    {
+      "active": "03Realizar",
+      "fits": true,
+      "height": 844,
+      "issues": [],
+      "kind": "automation",
+      "overflow": false,
+      "phase": 2,
+      "width": 390
+    },
+    {
+      "active": "01Idealizar",
+      "fits": true,
+      "height": 1024,
+      "issues": [],
+      "kind": "system",
+      "overflow": false,
+      "phase": 0,
+      "width": 768
+    },
+    {
+      "active": "02Construir",
+      "fits": true,
+      "height": 1024,
+      "issues": [],
+      "kind": "system",
+      "overflow": false,
+      "phase": 1,
+      "width": 768
+    },
+    {
+      "active": "03Realizar",
+      "fits": true,
+      "height": 1024,
+      "issues": [],
+      "kind": "system",
+      "overflow": false,
+      "phase": 2,
+      "width": 768
+    },
+    {
+      "active": "01Idealizar",
+      "fits": true,
+      "height": 1024,
+      "issues": [],
+      "kind": "website",
+      "overflow": false,
+      "phase": 0,
+      "width": 768
+    },
+    {
+      "active": "02Construir",
+      "fits": true,
+      "height": 1024,
+      "issues": [],
+      "kind": "website",
+      "overflow": false,
+      "phase": 1,
+      "width": 768
+    },
+    {
+      "active": "03Realizar",
+      "fits": true,
+      "height": 1024,
+      "issues": [],
+      "kind": "website",
+      "overflow": false,
+      "phase": 2,
+      "width": 768
+    },
+    {
+      "active": "01Idealizar",
+      "fits": true,
+      "height": 1024,
+      "issues": [],
+      "kind": "automation",
+      "overflow": false,
+      "phase": 0,
+      "width": 768
+    },
+    {
+      "active": "02Construir",
+      "fits": true,
+      "height": 1024,
+      "issues": [],
+      "kind": "automation",
+      "overflow": false,
+      "phase": 1,
+      "width": 768
+    },
+    {
+      "active": "03Realizar",
+      "fits": true,
+      "height": 1024,
+      "issues": [],
+      "kind": "automation",
+      "overflow": false,
+      "phase": 2,
+      "width": 768
+    },
+    {
+      "active": "01Idealizar",
+      "fits": true,
+      "height": 820,
+      "issues": [],
+      "kind": "system",
+      "overflow": false,
+      "phase": 0,
+      "width": 1180
+    },
+    {
+      "active": "02Construir",
+      "fits": true,
+      "height": 820,
+      "issues": [],
+      "kind": "system",
+      "overflow": false,
+      "phase": 1,
+      "width": 1180
+    },
+    {
+      "active": "03Realizar",
+      "fits": true,
+      "height": 820,
+      "issues": [],
+      "kind": "system",
+      "overflow": false,
+      "phase": 2,
+      "width": 1180
+    },
+    {
+      "active": "01Idealizar",
+      "fits": true,
+      "height": 820,
+      "issues": [],
+      "kind": "website",
+      "overflow": false,
+      "phase": 0,
+      "width": 1180
+    },
+    {
+      "active": "02Construir",
+      "fits": true,
+      "height": 820,
+      "issues": [],
+      "kind": "website",
+      "overflow": false,
+      "phase": 1,
+      "width": 1180
+    },
+    {
+      "active": "03Realizar",
+      "fits": true,
+      "height": 820,
+      "issues": [],
+      "kind": "website",
+      "overflow": false,
+      "phase": 2,
+      "width": 1180
+    },
+    {
+      "active": "01Idealizar",
+      "fits": true,
+      "height": 820,
+      "issues": [],
+      "kind": "automation",
+      "overflow": false,
+      "phase": 0,
+      "width": 1180
+    },
+    {
+      "active": "02Construir",
+      "fits": true,
+      "height": 820,
+      "issues": [],
+      "kind": "automation",
+      "overflow": false,
+      "phase": 1,
+      "width": 1180
+    },
+    {
+      "active": "03Realizar",
+      "fits": true,
+      "height": 820,
+      "issues": [],
+      "kind": "automation",
+      "overflow": false,
+      "phase": 2,
+      "width": 1180
+    },
+    {
+      "active": "01Idealizar",
+      "fits": true,
+      "height": 768,
+      "issues": [],
+      "kind": "system",
+      "overflow": false,
+      "phase": 0,
+      "width": 1366
+    },
+    {
+      "active": "02Construir",
+      "fits": true,
+      "height": 768,
+      "issues": [],
+      "kind": "system",
+      "overflow": false,
+      "phase": 1,
+      "width": 1366
+    },
+    {
+      "active": "03Realizar",
+      "fits": true,
+      "height": 768,
+      "issues": [],
+      "kind": "system",
+      "overflow": false,
+      "phase": 2,
+      "width": 1366
+    },
+    {
+      "active": "01Idealizar",
+      "fits": true,
+      "height": 768,
+      "issues": [],
+      "kind": "website",
+      "overflow": false,
+      "phase": 0,
+      "width": 1366
+    },
+    {
+      "active": "02Construir",
+      "fits": true,
+      "height": 768,
+      "issues": [],
+      "kind": "website",
+      "overflow": false,
+      "phase": 1,
+      "width": 1366
+    },
+    {
+      "active": "03Realizar",
+      "fits": true,
+      "height": 768,
+      "issues": [],
+      "kind": "website",
+      "overflow": false,
+      "phase": 2,
+      "width": 1366
+    },
+    {
+      "active": "01Idealizar",
+      "fits": true,
+      "height": 768,
+      "issues": [],
+      "kind": "automation",
+      "overflow": false,
+      "phase": 0,
+      "width": 1366
+    },
+    {
+      "active": "02Construir",
+      "fits": true,
+      "height": 768,
+      "issues": [],
+      "kind": "automation",
+      "overflow": false,
+      "phase": 1,
+      "width": 1366
+    },
+    {
+      "active": "03Realizar",
+      "fits": true,
+      "height": 768,
+      "issues": [],
+      "kind": "automation",
+      "overflow": false,
+      "phase": 2,
+      "width": 1366
+    },
+    {
+      "active": "01Idealizar",
+      "fits": true,
+      "height": 1080,
+      "issues": [],
+      "kind": "system",
+      "overflow": false,
+      "phase": 0,
+      "width": 1920
+    },
+    {
+      "active": "02Construir",
+      "fits": true,
+      "height": 1080,
+      "issues": [],
+      "kind": "system",
+      "overflow": false,
+      "phase": 1,
+      "width": 1920
+    },
+    {
+      "active": "03Realizar",
+      "fits": true,
+      "height": 1080,
+      "issues": [],
+      "kind": "system",
+      "overflow": false,
+      "phase": 2,
+      "width": 1920
+    },
+    {
+      "active": "01Idealizar",
+      "fits": true,
+      "height": 1080,
+      "issues": [],
+      "kind": "website",
+      "overflow": false,
+      "phase": 0,
+      "width": 1920
+    },
+    {
+      "active": "02Construir",
+      "fits": true,
+      "height": 1080,
+      "issues": [],
+      "kind": "website",
+      "overflow": false,
+      "phase": 1,
+      "width": 1920
+    },
+    {
+      "active": "03Realizar",
+      "fits": true,
+      "height": 1080,
+      "issues": [],
+      "kind": "website",
+      "overflow": false,
+      "phase": 2,
+      "width": 1920
+    },
+    {
+      "active": "01Idealizar",
+      "fits": true,
+      "height": 1080,
+      "issues": [],
+      "kind": "automation",
+      "overflow": false,
+      "phase": 0,
+      "width": 1920
+    },
+    {
+      "active": "02Construir",
+      "fits": true,
+      "height": 1080,
+      "issues": [],
+      "kind": "automation",
+      "overflow": false,
+      "phase": 1,
+      "width": 1920
+    },
+    {
+      "active": "03Realizar",
+      "fits": true,
+      "height": 1080,
+      "issues": [],
+      "kind": "automation",
+      "overflow": false,
+      "phase": 2,
+      "width": 1920
+    }
+  ],
+  "devices": [
+    {
+      "contentOverflow": false,
+      "device": "pc",
+      "issues": [],
+      "kind": "project-tab-dashboard",
+      "pageOverflow": false,
+      "rect": {
+        "height": 126.0999984741211,
+        "width": 223.6000061035156
+      },
+      "width": 320
+    },
+    {
+      "contentOverflow": false,
+      "device": "tablet",
+      "issues": [],
+      "kind": "project-tab-dashboard",
+      "pageOverflow": false,
+      "rect": {
+        "height": 127.2750015258789,
+        "width": 207.6000061035156
+      },
+      "width": 320
+    },
+    {
+      "contentOverflow": false,
+      "device": "android",
+      "issues": [],
+      "kind": "project-tab-dashboard",
+      "pageOverflow": false,
+      "rect": {
+        "height": 483.2000122070313,
+        "width": 217.6000061035156
+      },
+      "width": 320
+    },
+    {
+      "contentOverflow": false,
+      "device": "ios",
+      "issues": [],
+      "kind": "project-tab-dashboard",
+      "pageOverflow": false,
+      "rect": {
+        "height": 483.2000122070313,
+        "width": 217.6000061035156
+      },
+      "width": 320
+    },
+    {
+      "contentOverflow": false,
+      "device": "pc",
+      "issues": [],
+      "kind": "project-tab-saas",
+      "pageOverflow": false,
+      "rect": {
+        "height": 126.0999984741211,
+        "width": 223.6000061035156
+      },
+      "width": 320
+    },
+    {
+      "contentOverflow": false,
+      "device": "tablet",
+      "issues": [],
+      "kind": "project-tab-saas",
+      "pageOverflow": false,
+      "rect": {
+        "height": 127.2750015258789,
+        "width": 207.6000061035156
+      },
+      "width": 320
+    },
+    {
+      "contentOverflow": false,
+      "device": "android",
+      "issues": [],
+      "kind": "project-tab-saas",
+      "pageOverflow": false,
+      "width": 320
+    },
+    {
+      "contentOverflow": false,
+      "device": "ios",
+      "issues": [],
+      "kind": "project-tab-saas",
+      "pageOverflow": false,
+      "width": 320
+    },
+    {
+      "contentOverflow": false,
+      "device": "pc",
+      "issues": [],
+      "kind": "project-tab-website",
+      "pageOverflow": false,
+      "rect": {
+        "height": 126.0999984741211,
+        "width": 223.6000061035156
+      },
+      "width": 320
+    },
+    {
+      "contentOverflow": false,
+      "device": "tablet",
+      "issues": [],
+      "kind": "project-tab-website",
+      "pageOverflow": false,
+      "rect": {
+        "height": 127.2750015258789,
+        "width": 207.6000061035156
+      },
+      "width": 320
+    },
+    {
+      "contentOverflow": false,
+      "device": "android",
+      "issues": [],
+      "kind": "project-tab-website",
+      "pageOverflow": false,
+      "rect": {
+        "height": 502,
+        "width": 217.6000061035156
+      },
+      "width": 320
+    },
+    {
+      "contentOverflow": false,
+      "device": "ios",
+      "issues": [],
+      "kind": "project-tab-website",
+      "pageOverflow": false,
+      "rect": {
+        "height": 502,
+        "width": 217.6000061035156
+      },
+      "width": 320
+    },
+    {
+      "contentOverflow": false,
+      "device": "pc",
+      "issues": [],
+      "kind": "project-tab-dashboard",
+      "pageOverflow": false,
+      "rect": {
+        "height": 386.2000122070313,
+        "width": 629.6000366210938
+      },
+      "width": 768
+    },
+    {
+      "contentOverflow": false,
+      "device": "tablet",
+      "issues": [],
+      "kind": "project-tab-dashboard",
+      "pageOverflow": false,
+      "rect": {
+        "height": 406,
+        "width": 607.6000366210938
+      },
+      "width": 768
+    },
+    {
+      "contentOverflow": false,
+      "device": "android",
+      "issues": [],
+      "kind": "project-tab-dashboard",
+      "pageOverflow": false,
+      "rect": {
+        "height": 483.2000122070313,
+        "width": 292.3999938964844
+      },
+      "width": 768
+    },
+    {
+      "contentOverflow": false,
+      "device": "ios",
+      "issues": [],
+      "kind": "project-tab-dashboard",
+      "pageOverflow": false,
+      "rect": {
+        "height": 483.2000122070313,
+        "width": 292.3999938964844
+      },
+      "width": 768
+    },
+    {
+      "contentOverflow": false,
+      "device": "pc",
+      "issues": [],
+      "kind": "project-tab-saas",
+      "pageOverflow": false,
+      "rect": {
+        "height": 386.2000122070313,
+        "width": 629.6000366210938
+      },
+      "width": 768
+    },
+    {
+      "contentOverflow": false,
+      "device": "tablet",
+      "issues": [],
+      "kind": "project-tab-saas",
+      "pageOverflow": false,
+      "rect": {
+        "height": 406,
+        "width": 607.6000366210938
+      },
+      "width": 768
+    },
+    {
+      "contentOverflow": false,
+      "device": "android",
+      "issues": [],
+      "kind": "project-tab-saas",
+      "pageOverflow": false,
+      "rect": {
+        "height": 483.2000122070313,
+        "width": 292.3999938964844
+      },
+      "width": 768
+    },
+    {
+      "contentOverflow": false,
+      "device": "ios",
+      "issues": [],
+      "kind": "project-tab-saas",
+      "pageOverflow": false,
+      "rect": {
+        "height": 483.2000122070313,
+        "width": 292.3999938964844
+      },
+      "width": 768
+    },
+    {
+      "contentOverflow": false,
+      "device": "pc",
+      "issues": [],
+      "kind": "project-tab-website",
+      "pageOverflow": false,
+      "rect": {
+        "height": 386.2000122070313,
+        "width": 629.6000366210938
+      },
+      "width": 768
+    },
+    {
+      "contentOverflow": false,
+      "device": "tablet",
+      "issues": [],
+      "kind": "project-tab-website",
+      "pageOverflow": false,
+      "rect": {
+        "height": 406,
+        "width": 607.6000366210938
+      },
+      "width": 768
+    },
+    {
+      "contentOverflow": false,
+      "device": "android",
+      "issues": [],
+      "kind": "project-tab-website",
+      "pageOverflow": false,
+      "rect": {
+        "height": 502,
+        "width": 292.3999938964844
+      },
+      "width": 768
+    },
+    {
+      "contentOverflow": false,
+      "device": "ios",
+      "issues": [],
+      "kind": "project-tab-website",
+      "pageOverflow": false,
+      "rect": {
+        "height": 502,
+        "width": 292.3999938964844
+      },
+      "width": 768
+    },
+    {
+      "contentOverflow": false,
+      "device": "pc",
+      "issues": [],
+      "kind": "project-tab-dashboard",
+      "pageOverflow": false,
+      "rect": {
+        "height": 463.6499938964844,
+        "width": 752.7999877929688
+      },
+      "width": 1366
+    },
+    {
+      "contentOverflow": false,
+      "device": "tablet",
+      "issues": [],
+      "kind": "project-tab-dashboard",
+      "pageOverflow": false,
+      "rect": {
+        "height": 469.5249938964844,
+        "width": 698.4000244140625
+      },
+      "width": 1366
+    },
+    {
+      "contentOverflow": false,
+      "device": "android",
+      "issues": [],
+      "kind": "project-tab-dashboard",
+      "pageOverflow": false,
+      "rect": {
+        "height": 483.2000122070313,
+        "width": 292.3999938964844
+      },
+      "width": 1366
+    },
+    {
+      "contentOverflow": false,
+      "device": "ios",
+      "issues": [],
+      "kind": "project-tab-dashboard",
+      "pageOverflow": false,
+      "rect": {
+        "height": 483.2000122070313,
+        "width": 292.3999938964844
+      },
+      "width": 1366
+    },
+    {
+      "contentOverflow": false,
+      "device": "pc",
+      "issues": [],
+      "kind": "project-tab-saas",
+      "pageOverflow": false,
+      "rect": {
+        "height": 463.6499938964844,
+        "width": 752.7999877929688
+      },
+      "width": 1366
+    },
+    {
+      "contentOverflow": false,
+      "device": "tablet",
+      "issues": [],
+      "kind": "project-tab-saas",
+      "pageOverflow": false,
+      "rect": {
+        "height": 469.5249938964844,
+        "width": 698.4000244140625
+      },
+      "width": 1366
+    },
+    {
+      "contentOverflow": false,
+      "device": "android",
+      "issues": [],
+      "kind": "project-tab-saas",
+      "pageOverflow": false,
+      "rect": {
+        "height": 483.2000122070313,
+        "width": 292.3999938964844
+      },
+      "width": 1366
+    },
+    {
+      "contentOverflow": false,
+      "device": "ios",
+      "issues": [],
+      "kind": "project-tab-saas",
+      "pageOverflow": false,
+      "rect": {
+        "height": 483.2000122070313,
+        "width": 292.3999938964844
+      },
+      "width": 1366
+    },
+    {
+      "contentOverflow": false,
+      "device": "pc",
+      "issues": [],
+      "kind": "project-tab-website",
+      "pageOverflow": false,
+      "rect": {
+        "height": 463.6499938964844,
+        "width": 752.7999877929688
+      },
+      "width": 1366
+    },
+    {
+      "contentOverflow": false,
+      "device": "tablet",
+      "issues": [],
+      "kind": "project-tab-website",
+      "pageOverflow": false,
+      "rect": {
+        "height": 469.5249938964844,
+        "width": 698.4000244140625
+      },
+      "width": 1366
+    },
+    {
+      "contentOverflow": false,
+      "device": "android",
+      "issues": [],
+      "kind": "project-tab-website",
+      "pageOverflow": false,
+      "rect": {
+        "height": 502,
+        "width": 292.3999938964844
+      },
+      "width": 1366
+    },
+    {
+      "contentOverflow": false,
+      "device": "ios",
+      "issues": [],
+      "kind": "project-tab-website",
+      "pageOverflow": false,
+      "rect": {
+        "height": 502,
+        "width": 292.3999938964844
+      },
+      "width": 1366
+    }
+  ],
+  "header": [
+    {
+      "overflow": false,
+      "overlap": false,
+      "width": 802
+    },
+    {
+      "overflow": false,
+      "overlap": false,
+      "width": 820
+    },
+    {
+      "overflow": false,
+      "overlap": false,
+      "width": 880
+    },
+    {
+      "overflow": false,
+      "overlap": false,
+      "width": 900
+    },
+    {
+      "overflow": false,
+      "overlap": false,
+      "width": 1024
+    }
+  ]
+}

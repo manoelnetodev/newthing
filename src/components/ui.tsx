@@ -48,7 +48,11 @@ export function Modal({
     const element = dialog.current
     const opener = document.activeElement instanceof HTMLElement ? document.activeElement : null
     element?.showModal()
-    element?.querySelector<HTMLInputElement>('input')?.focus()
+    element
+      ?.querySelector<HTMLElement>(
+        'input:not([type="hidden"]):not(:disabled), [role="tab"][aria-selected="true"], select:not(:disabled), textarea:not(:disabled)',
+      )
+      ?.focus()
     return () => {
       element?.close()
       queueMicrotask(() => {

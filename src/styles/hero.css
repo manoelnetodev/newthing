@@ -141,6 +141,35 @@
   min-width: 36px;
   min-height: 36px;
 }
+@media (min-width: 801px) and (max-width: 1100px) {
+  .header-inner {
+    gap: 12px;
+  }
+  .main-nav {
+    gap: 12px;
+  }
+  .main-nav > a {
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  .header-cta {
+    padding-inline: 12px;
+    font-size: 13px;
+  }
+}
+@media (min-width: 801px) and (max-width: 880px) {
+  .main-nav {
+    gap: 9px;
+  }
+  .main-nav > a {
+    font-size: 12px;
+  }
+  .header-cta {
+    padding-inline: 10px;
+    font-size: 12px;
+    gap: 8px;
+  }
+}
 @media (max-width: 800px) {
   .hero-opening {
     padding-top: 42px;

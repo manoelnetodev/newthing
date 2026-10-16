@@ -9,7 +9,15 @@ type TeamMember = {
   roleCode: string
   fullRole: string
   responsibility: string
-  image: { src: string; fallback: string; width: number; height: number }
+  image: {
+    src: string
+    srcSet: string
+    fallback: string
+    fallbackSrcSet: string
+    sizes: string
+    width: number
+    height: number
+  }
   imageClassName: string
   description: string
   focus?: string[]
@@ -112,8 +120,7 @@ export function WhoWeAre({ onContact }: { onContact: () => void }) {
               QUEM SOMOS
             </span>
             <h2 id="identity-title">
-              Visão de negócio.
-              <br />
+              Visão de negócio. <br />
               <span>Engenharia para realizar.</span>
             </h2>
           </div>
@@ -158,6 +165,8 @@ export function WhoWeAre({ onContact }: { onContact: () => void }) {
                       <img
                         className={person.imageClassName}
                         src={person.image.src}
+                        srcSet={person.image.srcSet}
+                        sizes={person.image.sizes}
                         alt={`Retrato profissional de ${person.name}`}
                         width={person.image.width}
                         height={person.image.height}
@@ -166,6 +175,7 @@ export function WhoWeAre({ onContact }: { onContact: () => void }) {
                         onError={({ currentTarget }) => {
                           if (currentTarget.dataset.fallback !== 'true') {
                             currentTarget.dataset.fallback = 'true'
+                            currentTarget.srcset = person.image.fallbackSrcSet
                             currentTarget.src = person.image.fallback
                           }
                         }}

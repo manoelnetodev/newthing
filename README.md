@@ -42,21 +42,22 @@ Abra **http://127.0.0.1:5173/**. Salvar uma alteração nos arquivos atualiza a 
 
 ## Onde fazer alterações
 
-| Arquivo                               | Papel                                                              | Primeiro exercício                          |
-| ------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------- |
-| `src/App.tsx`                         | Monta a landing page e contém os textos e listas de conteúdo       | Trocar o título principal                   |
-| `src/components/BriefModal.tsx`       | Formulário, validação e download                                   | Adicionar uma pergunta ao briefing          |
-| `src/components/SolutionsJourney.tsx` | Jornada de soluções, exemplos práticos e contexto do briefing      | Personalizar os objetivos e as entregas     |
-| `src/components/ProjectShowcase.tsx`  | Abas e três interfaces conceituais distintas                       | Personalizar o exemplo de Website           |
-| `src/components/WhoWeAre.tsx`         | Apresentação da empresa e suas especialidades                      | Revisar a descrição dos serviços            |
-| `src/components/ClientVision.tsx`     | Intenções do visitante, abordagem da equipe e contexto do briefing | Personalizar a conversa sobre cada objetivo |
-| `src/components/ui.tsx`               | Peças reutilizáveis, como botão, campo e janela                    | Ajustar o visual de um botão                |
-| `src/index.css`                       | Cores, tamanhos e adaptação ao celular                             | Trocar a variável `--blue`                  |
-| `src/main.tsx`                        | Entrada do React e carregamento da fonte                           | Entender como o app começa                  |
-| `index.html`                          | Título, descrição e metadados da página                            | Atualizar a descrição da empresa            |
-| `public/favicon.svg`                  | Ícone da aba do navegador                                          | Personalizar o símbolo da marca             |
-| `vite.config.ts`                      | Configuração de Vite, React e Tailwind                             | Entender o endereço local                   |
-| `wrangler.jsonc`                      | Configuração futura de Cloudflare Pages                            | Escolher o nome do projeto ao publicar      |
+| Arquivo                               | Papel                                                         | Primeiro exercício                      |
+| ------------------------------------- | ------------------------------------------------------------- | --------------------------------------- |
+| `src/App.tsx`                         | Monta a landing page e contém os textos e listas de conteúdo  | Trocar o título principal               |
+| `src/components/BriefModal.tsx`       | Formulário, validação e download                              | Adicionar uma pergunta ao briefing      |
+| `src/components/SolutionsJourney.tsx` | Jornada de soluções, exemplos práticos e contexto do briefing | Personalizar os objetivos e as entregas |
+| `src/components/ProjectShowcase.tsx`  | Abas e três interfaces conceituais distintas                  | Personalizar o exemplo de Website       |
+| `src/components/WhoWeAre.tsx`         | Apresentação da empresa e suas especialidades                 | Revisar a descrição dos serviços        |
+| `src/components/SolutionFinder.tsx`   | Orientação em duas perguntas e indicação de exemplos          | Revisar os objetivos e os caminhos      |
+| `src/components/QuickFaq.tsx`         | Respostas objetivas e aprofundamento opcional                 | Esclarecer dúvidas antes do briefing    |
+| `src/components/ui.tsx`               | Peças reutilizáveis, como botão, campo e janela               | Ajustar o visual de um botão            |
+| `src/index.css`                       | Cores, tamanhos e adaptação ao celular                        | Trocar a variável `--blue`              |
+| `src/main.tsx`                        | Entrada do React e carregamento da fonte                      | Entender como o app começa              |
+| `index.html`                          | Título, descrição e metadados da página                       | Atualizar a descrição da empresa        |
+| `public/favicon.svg`                  | Ícone da aba do navegador                                     | Personalizar o símbolo da marca         |
+| `vite.config.ts`                      | Configuração de Vite, React e Tailwind                        | Entender o endereço local               |
+| `wrangler.jsonc`                      | Configuração futura de Cloudflare Pages                       | Escolher o nome do projeto ao publicar  |
 
 React funciona como peças de montar. Vite é a oficina que liga e empacota a página. TypeScript confere os formatos dos dados. Tailwind fornece utilitários visuais, junto do CSS específico da página. ESLint revisa padrões problemáticos.
 
@@ -83,11 +84,11 @@ Testes de uso: confira o menu em 390px, os links entre seções, todos os exempl
 
 ### Briefing e WhatsApp comercial
 
-O botão usa um link direto `wa.me` para o WhatsApp comercial informado, com o resumo do projeto preenchido. Funciona no site local e na versão publicada, sem variável de ambiente, API ou configuração na hospedagem. Para trocar o contato, altere o número no link em `src/components/BriefModal.tsx`.
+O botão usa um link direto `wa.me` para o WhatsApp comercial informado, com o resumo do projeto preenchido. Funciona sem configuração adicional, usando `556293022434` como contato padrão. Para trocar o número, defina opcionalmente `VITE_WHATSAPP_NUMBER` em `.env.local` ou no ambiente do build. A configuração aceita DDI/DDD e remove espaços e símbolos; se não restarem dígitos, usa o contato padrão. É necessário reconstruir o site para aplicar a alteração. Isso não exige API ou servidor.
 
 O cliente preenche o briefing, revisa um plano preliminar e escolhe copiar, baixar ou abrir o WhatsApp com o resumo preenchido. O envio é confirmado pelo próprio cliente no WhatsApp. Não há envio automático, análise de IA nem armazenamento em servidor. A equipe valida escopo, tecnologia, prazo e investimento na conversa.
 
-O Git guarda o histórico local. O GitHub guarda uma cópia online. A pasta está preparada com `.gitignore` para excluir dependências, build e arquivos secretos. Nenhum remoto foi criado ou configurado nesta entrega.
+O Git guarda o histórico local. O GitHub guarda uma cópia online. O repositório usa [manoelnetodev/newthing](https://github.com/manoelnetodev/newthing) como remoto. A pasta está preparada com `.gitignore` para excluir dependências, build e arquivos secretos.
 
 Se ainda não houver repositório:
 
@@ -118,6 +119,19 @@ Abra o endereço mostrado, normalmente **http://127.0.0.1:8788/**. Esse comando 
 
 Documentação: [React no Pages](https://developers.cloudflare.com/pages/framework-guides/deploy-a-react-site/), [desenvolvimento local](https://developers.cloudflare.com/pages/functions/local-development/), [Tailwind com Vite](https://tailwindcss.com/docs/installation/using-vite), [Vite](https://vite.dev/guide/).
 
+## Fotos da equipe e Cloudflare R2
+
+Os nove PNGs originais ficam em `assets-src/team/`; os quatro WebPs anteriores, em `assets-src/team/masters/`. Esses arquivos continuam preservados e não entram no diretório publicado. O site usa variantes WebP de 360 e 720 pixels com `srcSet`, carregamento sob demanda e cópias locais de reserva em `public/team/responsive/`.
+
+```powershell
+npm run photos:optimize
+npm run photos:upload -- newthing-media https://pub-3a898b56bec94bd5baa3627d4f5c9ac5.r2.dev
+```
+
+A otimização redimensiona explicitamente cada original para a largura da variante e comprime em WebP **sem perdas adicionais**. O script compara os pixels decodificados à referência redimensionada, incluindo transparência; os originais mantêm a resolução completa. Os resultados ficam em `docs/TEAM-PHOTO-OPTIMIZATION.json`.
+
+O upload requer uma sessão Wrangler já autorizada na conta do bucket. Ele publica as oito variantes, verifica os bytes baixados do R2 e só então troca o manifesto `src/data/teamPhotos.ts` para as URLs públicas. A publicação fica registrada em `docs/TEAM-PHOTO-PUBLICATION.json`. Executar somente a otimização volta o manifesto para as cópias locais; executar o upload restaura os endereços do R2 após a verificação. Nenhuma credencial deve ser versionada.
+
 ## Evoluir com as outras dicas do guia
 
-Veja [docs/PROXIMOS-PASSOS.md](docs/PROXIMOS-PASSOS.md). O próximo passo é personalizar a marca e definir um contato real; depois, se necessário, adicionar uma API com validação, proteção contra abuso e dados de teste.
+Veja [docs/PROXIMOS-PASSOS.md](docs/PROXIMOS-PASSOS.md). A marca e o contato comercial já estão configurados. Qualquer API futura deve ser avaliada conforme uma necessidade real do projeto. A análise e as correções da auditoria estão em [docs/RESPOSTA-ANALISE-CODEX.md](docs/RESPOSTA-ANALISE-CODEX.md).
