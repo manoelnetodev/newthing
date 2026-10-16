@@ -2,7 +2,7 @@
 
 Uma landing page em português, inspirada na direção visual da Harpia: fundo escuro, azul, tipografia grande, diagramas, serviços, processo e apresentação de projetos. Marca e textos próprios. Os exemplos de produtos são conceituais, com dados fictícios.
 
-Criada com a base sugerida no Guia do Desenvolvedor Júnior: **React + Vite + TypeScript + Tailwind CSS + ESLint**, preparada para **Cloudflare Pages**. Esta entrega roda localmente; não foi publicada.
+Criada com a base sugerida no Guia do Desenvolvedor Júnior: **React + Vite + TypeScript + Tailwind CSS + ESLint**, publicada no **Cloudflare Pages** em [newthing-bye.pages.dev](https://newthing-bye.pages.dev).
 
 ## Abrir no computador
 
@@ -57,7 +57,7 @@ Abra **http://127.0.0.1:5173/**. Salvar uma alteração nos arquivos atualiza a 
 | `index.html`                          | Título, descrição e metadados da página                       | Atualizar a descrição da empresa        |
 | `public/favicon.svg`                  | Ícone da aba do navegador                                     | Personalizar o símbolo da marca         |
 | `vite.config.ts`                      | Configuração de Vite, React e Tailwind                        | Entender o endereço local               |
-| `wrangler.jsonc`                      | Configuração futura de Cloudflare Pages                       | Escolher o nome do projeto ao publicar  |
+| `wrangler.jsonc`                      | Projeto e conta existentes no Cloudflare Pages                | Conferir o destino antes de publicar    |
 
 React funciona como peças de montar. Vite é a oficina que liga e empacota a página. TypeScript confere os formatos dos dados. Tailwind fornece utilitários visuais, junto do CSS específico da página. ESLint revisa padrões problemáticos.
 
@@ -104,13 +104,19 @@ git commit -m "feat: cria landing page Newthing"
 
 Confira `git status` e a seleção de arquivos antes do commit. Depois de criar seu repositório no GitHub, use o endereço fornecido por ele para configurar `origin` e fazer push. Não envie senhas, tokens ou informações de clientes.
 
-## Publicar depois no Cloudflare Pages
+## Publicação no Cloudflare Pages
 
-1. Crie seu repositório no GitHub e envie a versão conferida.
-2. No Cloudflare Pages, conecte esse repositório.
-3. Escolha sua branch principal, comando **`npm run build`** e saída **`dist`**.
-4. Configure uma versão de Node compatível com os requisitos do Vite instalado.
-5. Revise o preview antes de usar um domínio de produção.
+O projeto existente **`newthing`**, na conta parceira **`Multcaremanoel@gmail.com's Account`** (`8602cbfa9414d1deef975d65159cb5b7`), está conectado ao repositório `manoelnetodev/newthing`. O endereço de produção é **https://newthing-bye.pages.dev**. O identificador da conta está fixado em `wrangler.jsonc`; ele é público e não é uma credencial.
+
+O push na branch **`main`** dispara a publicação automática. Confira o check **Cloudflare Pages** do commit no GitHub e valide o site público após a conclusão. Não crie outro projeto para atualizar este site.
+
+O build usa **`npm run build`**, com saída **`dist`**, e requer uma versão de Node compatível com o Vite instalado. Se for necessário publicar manualmente, autentique o Wrangler com acesso à conta parceira e execute:
+
+```powershell
+npm run build
+$env:CLOUDFLARE_ACCOUNT_ID = '8602cbfa9414d1deef975d65159cb5b7'
+npx wrangler pages deploy dist --project-name newthing --branch main
+```
 
 Para conferir a build usando o ambiente local do Wrangler:
 
