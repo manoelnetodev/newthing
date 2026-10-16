@@ -23,7 +23,7 @@ html {
 }
 body {
   margin: 0;
-  min-width: 320px;
+  min-width: 0;
 }
 button,
 input,
@@ -1168,6 +1168,10 @@ h1 > span {
     display: none;
     position: absolute;
     top: 72px;
+    max-height: calc(100vh - var(--mobile-menu-top, 72px) - 8px);
+    max-height: calc(100dvh - var(--mobile-menu-top, 72px) - 8px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
     left: 0;
     width: 100%;
     padding: 24px;
@@ -1320,6 +1324,8 @@ h1 > span {
   }
   .main-nav {
     top: 66px;
+    max-height: calc(100vh - var(--mobile-menu-top, 66px) - 8px);
+    max-height: calc(100dvh - var(--mobile-menu-top, 66px) - 8px);
   }
   .hero-content {
     padding-top: 46px;

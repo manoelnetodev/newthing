@@ -290,8 +290,13 @@
     gap: 12px;
   }
   .journey-phase-nav button {
-    gap: 6px;
-    font-size: 13px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    min-width: 0;
+    min-height: 62px;
+    font-size: 12px;
+    text-align: center;
   }
   .journey-phase-nav button > svg {
     display: none;

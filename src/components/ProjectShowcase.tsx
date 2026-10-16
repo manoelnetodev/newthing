@@ -18,13 +18,15 @@ import {
   Plus,
   Search,
   Settings2,
-  ShieldCheck,
   Sparkles,
   Users,
   Workflow,
   Zap,
 } from 'lucide-react'
 import './ProjectShowcase.css'
+import { DevicePreview } from './DevicePreview'
+import { previewDevices } from './previewDevices'
+import type { PreviewDevice } from './previewDevices'
 
 const projects = [
   {
@@ -142,9 +144,9 @@ function DashboardPreview() {
         <div className="dash-page">
           <div className="dash-heading">
             <div>
-              <span>QUARTA-FEIRA, 14 DE OUTUBRO</span>
-              <strong>Uma visão mais clara do seu negócio.</strong>
-              <small>Os números certos para o seu próximo passo.</small>
+              <span>WORKSPACE / VISÃO EXECUTIVA</span>
+              <strong>Seu negócio. Uma visão completa.</strong>
+              <small>Resultados, clientes e entregas na mesma direção.</small>
             </div>
             <span className="dash-period">
               Este mês <ChevronDown />
@@ -229,6 +231,14 @@ function DashboardPreview() {
                     <span>OUT</span>
                   </div>
                 </div>
+              </div>
+              <div className="dash-chart-insight">
+                <span>
+                  <Sparkles />
+                  Leitura do período
+                </span>
+                <strong>Receita em alta, com crescimento consistente.</strong>
+                <small>Compare os meses para planejar o próximo passo.</small>
               </div>
             </div>
             <div className="dash-sources">
@@ -330,14 +340,34 @@ function SaasPreview() {
       <div className="orbit-page" aria-hidden="true">
         <div className="orbit-heading">
           <div>
-            <span>MENOS MANUAL. MAIS INTELIGENTE.</span>
-            <strong>Seu trabalho, em outro ritmo.</strong>
-            <small>Conecte as ferramentas. Deixe o fluxo acontecer.</small>
+            <span>ORBIT / CENTRAL DE AUTOMAÇÕES</span>
+            <strong>O fluxo avança. Você acompanha.</strong>
+            <small>Da entrada do contato ao próximo atendimento.</small>
           </div>
           <span className="orbit-new">
             <Plus />
             Nova automação
           </span>
+        </div>
+        <div className="orbit-overview">
+          <div>
+            <span>Fluxos ativos</span>
+            <strong>
+              08<small>conectados</small>
+            </strong>
+          </div>
+          <div>
+            <span>Execuções no mês</span>
+            <strong>
+              1.284<small>processadas</small>
+            </strong>
+          </div>
+          <div>
+            <span>Conclusão dos fluxos</span>
+            <strong>
+              98,6%<small>no período</small>
+            </strong>
+          </div>
         </div>
         <div className="orbit-flow">
           <div className="orbit-flow-heading">
@@ -470,9 +500,9 @@ function WebsitePreview() {
             ganha <em>forma.</em>
           </strong>
           <p>
-            Construímos identidades e experiências
+            Estratégia e design para marcas
             <br />
-            para marcas que querem deixar sua marca.
+            que querem ser reconhecidas.
           </p>
           <span className="forma-cta">
             Vamos criar algo novo <ArrowUpRight />
@@ -488,12 +518,12 @@ function WebsitePreview() {
             <br />
             <b>Equilíbrio em movimento.</b>
           </span>
-          <div className="forma-sculpture">
-            <span className="sculpture-shadow" />
-            <span className="sculpture-block sculpture-base" />
-            <span className="sculpture-block sculpture-middle" />
-            <span className="sculpture-block sculpture-top" />
-            <span className="sculpture-orb" />
+          <div className="forma-architecture">
+            <span className="forma-art-grid" />
+            <span className="forma-arch arch-back" />
+            <span className="forma-arch arch-front" />
+            <span className="forma-art-orb" />
+            <span className="forma-art-line" />
           </div>
           <span className="forma-art-index">F / 03</span>
         </div>
@@ -538,6 +568,7 @@ const previews = [DashboardPreview, SaasPreview, WebsitePreview]
 
 export function ProjectShowcase() {
   const [selected, setSelected] = useState(0)
+  const [device, setDevice] = useState<PreviewDevice>('ios')
   const tabs = useRef<(HTMLButtonElement | null)[]>([])
   const project = projects[selected]
   const Preview = previews[selected]
@@ -568,7 +599,8 @@ export function ProjectShowcase() {
             <span>O mesmo cuidado ao construir.</span>
           </h2>
           <p>
-            Três experiências, três propósitos. Explore o que podemos construir para o seu negócio.
+            Explore três possibilidades para o seu negócio. Troque a tela e veja como cada
+            experiência se adapta à sua rotina.
           </p>
         </div>
         <div className="showroom-toolbar">
@@ -596,7 +628,7 @@ export function ProjectShowcase() {
           </div>
           <span className="showroom-hint">
             <span />
-            Explore as experiências
+            Uma experiência em cada tela
           </span>
         </div>
         <div
@@ -606,32 +638,52 @@ export function ProjectShowcase() {
           aria-labelledby={`project-tab-${project.id}`}
           tabIndex={0}
         >
+          <div className="device-toolbar">
+            <div>
+              <span className="device-toolbar-label">ESCOLHA SUA TELA</span>
+              <span className="device-toolbar-help">Veja por dentro.</span>
+            </div>
+            <div className="device-options" role="group" aria-label="Dispositivo da prévia">
+              {previewDevices.map((item) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  aria-pressed={device === item.id}
+                  onClick={() => setDevice(item.id)}
+                >
+                  <item.icon size={16} aria-hidden="true" />
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          </div>
           <div key={project.id} className="showroom-scene">
             <div className="showroom-visual">
-              <div className="demo-window">
-                <div className="demo-browser-bar">
-                  <span className="demo-window-dots">
-                    <i />
-                    <i />
-                    <i />
-                  </span>
-                  <span>
-                    <ShieldCheck />
-                    {project.address}
-                  </span>
-                  <MoreHorizontal />
-                </div>
+              <DevicePreview
+                key={`${project.id}-${device}`}
+                device={device}
+                address={project.address}
+                label={project.label}
+              >
                 <Preview />
-              </div>
+              </DevicePreview>
               <div className="showroom-caption">
                 <span className="concept-indicator" />
-                Conceito de interface <span>·</span> Dados ilustrativos
+                {previewDevices.find((item) => item.id === device)?.label} <span>·</span> Role
+                dentro da tela para explorar
               </div>
+              <small className="device-illustration-note">
+                Interfaces conceituais · Dados e marcas ilustrativos
+              </small>
             </div>
             <div className="showroom-copy">
               <span className="showroom-category">{project.category}</span>
               <h3>{project.title}</h3>
               <p>{project.description}</p>
+              <div className="showroom-device-detail">
+                <span className="concept-indicator" />
+                {previewDevices.find((item) => item.id === device)?.detail}
+              </div>
               <ul>
                 {project.features.map((feature) => (
                   <li key={feature}>
@@ -654,7 +706,8 @@ export function ProjectShowcase() {
           </div>
         </div>
         <span className="showroom-announcement" role="status">
-          Exibindo {project.label}: {project.title}
+          Exibindo {project.label} em {previewDevices.find((item) => item.id === device)?.label}:{' '}
+          {project.title}
         </span>
       </div>
     </section>

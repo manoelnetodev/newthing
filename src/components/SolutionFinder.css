@@ -252,10 +252,13 @@
 }
 .finder-result-actions {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 10px;
   margin-top: 5px;
 }
 .finder-result-actions .button {
+  min-width: 0;
+  white-space: normal;
   justify-content: space-between;
   text-align: left;
   font-size: 11px;
@@ -314,6 +317,11 @@
     gap: 10px;
   }
   .finder-footer .button {
+    flex: 1;
+    min-width: 0;
+    min-height: 48px;
+    white-space: normal;
+    gap: 8px;
     font-size: 14px;
     padding-inline: 12px;
   }

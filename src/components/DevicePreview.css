@@ -1,0 +1,978 @@
+.showroom-card .showroom-scene {
+  grid-template-columns: minmax(0, 1fr) 310px;
+}
+.device-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 24px;
+  background: #0e1621;
+  border-bottom: 1px solid #2a3f58;
+}
+.device-toolbar > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.device-toolbar-label {
+  color: #89baff;
+  font-size: 10px;
+  letter-spacing: 1.6px;
+}
+.device-toolbar-help {
+  color: #d8e7f7;
+  font-size: 13px;
+}
+.device-options {
+  display: flex;
+  gap: 5px;
+}
+.device-options button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 42px;
+  padding: 9px 13px;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #a3b8cf;
+  font-size: 12px;
+  transition:
+    background 180ms,
+    border-color 180ms,
+    color 180ms;
+}
+.device-options button:hover {
+  background: #18304a;
+  color: #fff;
+}
+.device-options button[aria-pressed='true'] {
+  background: #087cff22;
+  border-color: #5eaeff;
+  color: #eef7ff;
+}
+.device-options button:focus-visible,
+.device-content:focus-visible {
+  outline: 2px solid #8cc6ff;
+  outline-offset: 3px;
+}
+.showroom-card .showroom-visual {
+  padding: 34px 26px 20px;
+  background: radial-gradient(ellipse at 50% 42%, #087cff26, transparent 70%), #0a111b;
+}
+.device-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  place-items: center;
+  min-width: 0;
+  min-height: 610px;
+  padding: 12px 0 65px;
+}
+.device-hardware {
+  position: relative;
+  min-width: 0;
+  background: #080b10;
+  border: 1px solid #5c6f85;
+  box-shadow:
+    0 30px 45px #0006,
+    0 0 45px #087cff13,
+    inset 0 0 0 2px #202b3a;
+}
+.device-screen {
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #0d1622;
+  isolation: isolate;
+}
+.device-content {
+  position: relative;
+  min-height: 0;
+  flex: 1;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #48627e #111c2a;
+  overscroll-behavior: contain;
+}
+.device-content:focus-visible {
+  outline-offset: -3px;
+}
+.device-screen .concept-canvas {
+  min-height: 100%;
+  aspect-ratio: auto;
+  overflow: visible;
+}
+.device-screen .demo-browser-bar {
+  flex-shrink: 0;
+  min-height: 28px;
+  height: 4.2cqw;
+  background: #192431;
+}
+.device-screen .demo-browser-bar > span:nth-child(2) {
+  font-size: clamp(7px, 1.3cqw, 10px);
+}
+.device-pc {
+  width: 100%;
+  max-width: 940px;
+  padding: 9px 9px 0;
+  border-radius: 13px;
+}
+.device-pc .device-screen {
+  aspect-ratio: 1.52;
+  border-radius: 5px;
+}
+.device-monitor-chin {
+  height: 25px;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.device-monitor-chin > span {
+  width: 24px;
+  height: 3px;
+  border-radius: 2px;
+  background: #34455a;
+}
+.device-monitor-chin > i {
+  width: 3px;
+  height: 3px;
+  background: #77baff;
+  position: absolute;
+  right: 9px;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #087cff;
+}
+.device-pc::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 42%;
+  width: 16%;
+  height: 45px;
+  background: linear-gradient(90deg, #141f2d, #344459 50%, #172233);
+  clip-path: polygon(15% 0, 85% 0, 100% 100%, 0 100%);
+}
+.device-pc::after {
+  content: '';
+  position: absolute;
+  top: calc(100% + 42px);
+  left: 30%;
+  width: 40%;
+  height: 7px;
+  border-radius: 50% 50% 3px 3px;
+  background: linear-gradient(#65778d, #172332);
+  box-shadow: 0 9px 15px #0007;
+}
+.device-tablet {
+  width: 100%;
+  max-width: 740px;
+  border-radius: 26px;
+  padding: 14px 20px;
+}
+.device-tablet .device-screen {
+  aspect-ratio: 1.4;
+  border-radius: 12px;
+}
+.device-tablet::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #283c54;
+  position: absolute;
+  left: 7px;
+  top: 50%;
+  box-shadow: inset 0 0 0 1px #112035;
+}
+.device-android,
+.device-ios {
+  width: 310px;
+  max-width: 100%;
+  padding: 8px;
+  border-radius: 42px;
+  border-color: #6d7b8b;
+}
+.device-android {
+  border-radius: 32px;
+  border-color: #4e6681;
+}
+.device-android::after,
+.device-ios::after {
+  content: '';
+  width: 3px;
+  height: 48px;
+  position: absolute;
+  right: -4px;
+  top: 115px;
+  background: #536278;
+  border-radius: 0 2px 2px 0;
+}
+.device-android .device-screen,
+.device-ios .device-screen {
+  height: 592px;
+  border-radius: 34px;
+}
+.device-android .device-screen {
+  border-radius: 24px;
+}
+.device-system-bar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  height: 39px;
+  padding: 0 16px;
+  color: #e8f1ff;
+  font-size: 11px;
+  font-weight: 600;
+}
+.device-system-bar > span:last-child {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.device-system-bar svg {
+  width: 13px;
+  height: 13px;
+}
+.device-camera {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  translate: -50% 0;
+  background: #010306;
+  height: 22px;
+  width: 78px;
+  border-radius: 18px;
+  box-shadow: inset 0 0 0 1px #19212d;
+}
+.device-android .device-camera {
+  width: 9px;
+  height: 9px;
+  top: 13px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px #172337;
+}
+.device-home-area {
+  display: grid;
+  place-items: center;
+  height: 20px;
+  flex-shrink: 0;
+}
+.device-home-area i {
+  height: 3px;
+  width: 35%;
+  border-radius: 4px;
+  background: #b6c5d6;
+}
+.device-app-nav {
+  display: flex;
+  justify-content: space-around;
+  flex-shrink: 0;
+  background: #101d2c;
+  border-top: 1px solid #2a3c50;
+  padding: 9px 0 4px;
+}
+.device-app-nav span {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  color: #8097b0;
+  font-size: 8px;
+}
+.device-app-nav svg {
+  width: 17px;
+  height: 17px;
+}
+.device-app-nav .active {
+  color: #8bc5ff;
+}
+.device-site-address {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px;
+  color: #9dbbdb;
+  background: #172438;
+  font-size: 10px;
+}
+.device-site-address svg {
+  width: 12px;
+  height: 12px;
+}
+.device-illustration-note {
+  text-align: center;
+  color: #819bb8;
+  font-size: 10px;
+  margin-top: 8px;
+}
+.showroom-device-detail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #8cc6ff;
+  font-size: 12px;
+  padding: 16px 0;
+  margin-top: 15px;
+  border-top: 1px solid #2a4059;
+  line-height: 1.6;
+}
+.showroom-device-detail .concept-indicator {
+  flex-shrink: 0;
+}
+.showroom-card .showroom-copy {
+  padding: 32px 26px;
+  border-left: 1px solid #263c54;
+}
+.showroom-card .showroom-copy h3 {
+  font-size: 30px;
+}
+.showroom-card .showroom-copy > p {
+  font-size: 13px;
+}
+.showroom-card .showroom-copy li {
+  font-size: 12px;
+}
+.showroom-card .showroom-copy ul {
+  margin: 8px 0 25px;
+}
+
+/* Workspace: hierarchy, useful context, and a restrained blue data palette. */
+.device-screen .concept-dashboard {
+  background: #0f1926;
+  color: #e8f1fb;
+}
+.device-screen .dash-sidebar {
+  background: linear-gradient(175deg, #14253a, #0d1929);
+  flex-basis: 20%;
+  border-right: 1px solid #24384e;
+}
+.device-screen .dash-menu.active {
+  background: #087cff26;
+  box-shadow: inset 2px 0 #49a2ff;
+}
+.device-screen .dash-topbar {
+  background: #101d2c;
+  border-bottom-color: #26394f;
+}
+.device-screen .dash-metric,
+.device-screen .dash-chart,
+.device-screen .dash-sources,
+.device-screen .dash-projects {
+  background: linear-gradient(145deg, #172538, #111e2e);
+  border-color: #30455e;
+  box-shadow: 0 5px 15px #00000012;
+}
+.device-screen .dash-metric > strong {
+  color: #f0f6ff;
+  font-size: 2.3em;
+  letter-spacing: -0.06em;
+}
+.device-screen .dash-metric:first-child {
+  background: radial-gradient(ellipse at 100% 0, #087cff28, transparent), #13243a;
+  border-color: #397bb5;
+}
+.device-screen .dash-metric small {
+  color: #8bc5ff;
+}
+.device-screen .dash-chart-plot {
+  background-image: linear-gradient(#799ac512 1px, transparent 1px);
+}
+.device-screen .source-ring {
+  background: conic-gradient(#53a6ff 0 64%, #284764 64% 100%);
+  box-shadow: 0 0 25px #087cff10;
+}
+.dash-chart-insight {
+  margin-top: 1em;
+  padding-top: 0.9em;
+  border-top: 1px solid #324b683d;
+}
+.dash-chart-insight > span {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  color: #8cc6ff;
+  font-size: 0.62em;
+}
+.dash-chart-insight strong {
+  display: block;
+  margin-top: 0.5em;
+  color: #c5d9ef;
+  font-size: 0.76em;
+}
+.dash-chart-insight > small {
+  display: block;
+  margin-top: 0.4em;
+  color: #8aa3bd;
+  font-size: 0.65em;
+}
+
+/* Orbit: an operating product, with a summary before the workflow. */
+.device-screen .concept-saas {
+  background: #0e1927;
+  color: #e4effb;
+}
+.device-screen .orbit-nav {
+  background: #122239;
+  border-bottom-color: #2d435d;
+}
+.device-screen .orbit-subnav {
+  background: #101c2b;
+  border-bottom-color: #2d435d;
+}
+.device-screen .orbit-heading strong {
+  color: #edf6ff;
+}
+.orbit-overview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1em;
+  margin: 0 0 1.5em;
+}
+.orbit-overview > div {
+  padding: 1.2em;
+  border: 1px solid #2d435c;
+  border-radius: 0.7em;
+  background: linear-gradient(130deg, #172b43, #111f30);
+}
+.orbit-overview > div > span {
+  color: #9db6d0;
+  font-size: 0.7em;
+}
+.orbit-overview strong {
+  display: block;
+  font-size: 2em;
+  letter-spacing: -0.05em;
+  margin-top: 0.4em;
+}
+.orbit-overview strong small {
+  color: #8cc6ff;
+  font-size: 0.3em;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin-left: 0.8em;
+}
+.device-screen .orbit-flow {
+  background: #122033;
+  border-color: #345578;
+}
+.device-screen .orbit-flow-canvas {
+  background-image: radial-gradient(#76b4fc26 0.7px, transparent 0.7px);
+  padding: 2.2em 1.6em;
+}
+.device-screen .orbit-flow-node {
+  background: #152a43;
+  border-color: #3d5c7e;
+}
+.device-screen .orbit-ai {
+  border-color: #5baeff;
+  box-shadow: 0 0 22px #087cff26;
+}
+.device-screen .orbit-live {
+  color: #9ccaff;
+  border-color: #458cce60;
+  background: #087cff18;
+}
+.device-screen .orbit-runs {
+  background: #122033;
+  border-color: #2e4764;
+}
+.device-screen .orbit-time {
+  background: linear-gradient(145deg, #123c67, #15263b);
+  border-color: #4685bb80;
+}
+
+/* Forma: art direction with dimensional objects and an editorial rhythm. */
+.device-screen .concept-website {
+  background: #0d1a2b;
+  color: #eef5ff;
+}
+.device-screen .forma-nav {
+  border-bottom: 1px solid #36547666;
+}
+.device-screen .forma-brand {
+  letter-spacing: -0.07em;
+}
+.device-screen .forma-copy > strong {
+  font-size: 4.3em;
+  line-height: 1.02;
+}
+.device-screen .forma-copy > strong em {
+  color: #8bc5ff;
+}
+.device-screen .forma-art {
+  overflow: hidden;
+  background: radial-gradient(ellipse at 60% 40%, #245d99, #122c4b 55%, #0d1c31);
+  border-radius: 45% 45% 2px 2px;
+  min-height: 26em;
+  border: 1px solid #67adff4d;
+}
+.device-screen .forma-art-caption {
+  color: #b7d8ff;
+  z-index: 2;
+  font-size: 0.5em;
+}
+.forma-architecture {
+  position: absolute;
+  inset: 14% 5% 2%;
+}
+.forma-art-grid {
+  position: absolute;
+  inset: 30% -50% -40%;
+  transform: perspective(300px) rotateX(65deg);
+  background-image:
+    linear-gradient(#88c7ff26 1px, transparent 1px),
+    linear-gradient(90deg, #88c7ff26 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+.forma-arch {
+  position: absolute;
+  width: 48%;
+  border-radius: 50% 50% 0 0;
+  border: 1px solid #b7deff9c;
+  box-shadow:
+    inset 4px 0 20px #c1e8ff21,
+    12px 22px 25px #020c1a60;
+  transform: skewY(-10deg);
+}
+.arch-back {
+  left: 11%;
+  top: 1%;
+  height: 76%;
+  background: linear-gradient(100deg, #225c96, #83b6dc 48%, #315f91 85%);
+}
+.arch-front {
+  right: 9%;
+  bottom: 12%;
+  height: 57%;
+  background: linear-gradient(110deg, #0c3b6e, #4d9de1 57%, #28629d);
+}
+.forma-art-orb {
+  position: absolute;
+  left: 12%;
+  bottom: 3%;
+  width: 24%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, #dbf1ff, #73b7f4 35%, #153a65 85%);
+  box-shadow: 12px 12px 20px #00102770;
+}
+.forma-art-line {
+  position: absolute;
+  left: 10%;
+  right: 0;
+  bottom: 20%;
+  height: 1px;
+  rotate: -10deg;
+  background: linear-gradient(90deg, transparent, #d2efff, transparent);
+  box-shadow: 0 0 12px #99d1ff;
+}
+.device-screen .forma-work {
+  border-top: 1px solid #36547666;
+}
+.device-screen .forma-project-one .forma-project-art {
+  background: linear-gradient(130deg, #16446c, #396b99);
+  color: #d7edff;
+}
+.device-screen .forma-project-two .forma-project-art {
+  background: radial-gradient(ellipse at 80% 0, #255b90, #14273d);
+}
+
+/* Layout follows the simulated screen, independently of the visitor's device. */
+[data-device='tablet'] .concept-canvas {
+  font-size: 1.65cqw;
+}
+[data-device='tablet'] .dash-sidebar {
+  flex-basis: 18%;
+  padding-inline: 0.7em;
+}
+[data-device='tablet'] .dash-menu-label {
+  display: none;
+}
+[data-device='tablet'] .dash-heading strong {
+  font-size: 1.5em;
+}
+[data-device='tablet'] .dash-page {
+  padding: 1.4em;
+}
+[data-device='tablet'] .forma-copy > strong {
+  font-size: 3.6em;
+}
+[data-device='tablet'] .forma-hero {
+  padding: 2.4em 2em;
+}
+
+[data-device='ios'] .concept-canvas,
+[data-device='android'] .concept-canvas {
+  font-size: 4cqw;
+}
+:is([data-device='ios'], [data-device='android']) .dash-sidebar {
+  display: none;
+}
+:is([data-device='ios'], [data-device='android']) .dash-topbar {
+  height: 45px;
+  padding: 0 15px;
+  font-size: 10px;
+}
+:is([data-device='ios'], [data-device='android']) .dash-topbar > span {
+  font-size: 0;
+}
+:is([data-device='ios'], [data-device='android']) .dash-topbar > span::before {
+  content: 'workspace.';
+  font-size: 17px;
+  color: #d7ebff;
+  font-weight: 650;
+  letter-spacing: -0.7px;
+}
+:is([data-device='ios'], [data-device='android']) .dash-page {
+  padding: 18px 14px;
+}
+:is([data-device='ios'], [data-device='android']) .dash-heading {
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+:is([data-device='ios'], [data-device='android']) .dash-heading strong {
+  font-size: clamp(17px, 7.2cqw, 21px);
+  margin-block: 9px;
+  line-height: 1.2;
+}
+:is([data-device='ios'], [data-device='android']) .dash-heading > div > span {
+  font-size: 8px;
+}
+:is([data-device='ios'], [data-device='android']) .dash-heading small {
+  font-size: 10px;
+  line-height: 1.6;
+  display: block;
+}
+:is([data-device='ios'], [data-device='android']) .dash-period {
+  font-size: 9px;
+}
+:is([data-device='ios'], [data-device='android']) .dash-metrics {
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+:is([data-device='ios'], [data-device='android']) .dash-metric {
+  padding: 12px;
+}
+:is([data-device='ios'], [data-device='android']) .dash-metric:first-child {
+  grid-column: 1 / -1;
+}
+:is([data-device='ios'], [data-device='android']) .dash-metric:first-child > strong {
+  font-size: 34px;
+}
+:is([data-device='ios'], [data-device='android']) .dash-metric > strong {
+  font-size: 25px;
+  margin-block: 10px;
+}
+:is([data-device='ios'], [data-device='android']) .dash-metric > span {
+  font-size: 9px;
+}
+:is([data-device='ios'], [data-device='android']) .dash-metric small {
+  font-size: 8px;
+}
+:is([data-device='ios'], [data-device='android']) .dash-metric small > span {
+  display: none;
+}
+:is([data-device='ios'], [data-device='android']) .dash-analytics {
+  grid-template-columns: 1fr;
+}
+:is([data-device='ios'], [data-device='android']) .dash-chart,
+:is([data-device='ios'], [data-device='android']) .dash-projects {
+  padding: 14px;
+}
+:is([data-device='ios'], [data-device='android']) .dash-chart-insight strong {
+  font-size: 10px;
+}
+:is([data-device='ios'], [data-device='android']) .dash-project-row {
+  flex-wrap: wrap;
+  row-gap: 10px;
+}
+:is([data-device='ios'], [data-device='android']) .dash-project-row .mini-progress {
+  display: none;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-nav {
+  padding: 12px 14px;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-workspace {
+  display: none;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-subnav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  height: auto;
+  padding: 0 10px;
+  gap: 6px;
+  font-size: 8px;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-subnav > span {
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 0;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-subnav > span > svg {
+  width: 14px;
+  height: 14px;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-usage {
+  display: none;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-page {
+  padding: 20px 14px;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-heading {
+  flex-wrap: wrap;
+  gap: 12px;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-heading strong {
+  font-size: clamp(18px, 7.8cqw, 23px);
+  line-height: 1.2;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-heading > div > span {
+  font-size: 7px;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-heading small {
+  font-size: 10px;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-new {
+  font-size: 9px;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-overview {
+  gap: 5px;
+  margin-top: 20px;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-overview > div {
+  padding: 9px 7px;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-overview > div > span {
+  font-size: 7px;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-overview strong {
+  font-size: clamp(14px, 6.5cqw, 19px);
+}
+:is([data-device='ios'], [data-device='android']) .orbit-overview strong small {
+  display: block;
+  margin: 5px 0 0;
+  font-size: 7px;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-flow-heading {
+  padding: 13px 10px;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-flow-heading > span:first-child {
+  gap: 7px;
+  font-size: 10px;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-flow-heading small {
+  font-size: 8px;
+}
+:is([data-device='ios'], [data-device='android']) .workflow-icon {
+  display: none;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-flow-canvas {
+  flex-direction: column;
+  gap: 9px;
+  padding: 20px 14px;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-flow-canvas > svg {
+  display: none;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-flow-node {
+  width: 100%;
+  flex: none;
+  display: grid;
+  grid-template-columns: 35px 1fr;
+  text-align: left;
+  gap: 2px 10px;
+  padding: 12px;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-node-icon {
+  grid-row: 1 / 4;
+  width: 34px;
+  height: 34px;
+  margin: 0;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-flow-node strong {
+  font-size: 11px;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-flow-node > small {
+  font-size: 9px;
+  margin-top: 0;
+}
+:is([data-device='ios'], [data-device='android']) .node-event {
+  grid-column: 2;
+  margin-top: 5px;
+  font-size: 6px;
+}
+:is([data-device='ios'], [data-device='android']) .flow-connector-arrow {
+  rotate: 90deg;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-flow-footer {
+  padding: 12px;
+  font-size: 8px;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-flow-footer > span:last-child {
+  display: none;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-bottom {
+  grid-template-columns: 1fr;
+}
+:is([data-device='ios'], [data-device='android']) .orbit-run {
+  gap: 5px;
+}
+:is([data-device='ios'], [data-device='android']) .forma-nav {
+  padding: 15px 16px;
+}
+:is([data-device='ios'], [data-device='android']) .forma-nav > div > span:not(:last-child) {
+  display: none;
+}
+:is([data-device='ios'], [data-device='android']) .forma-brand {
+  font-size: 27px;
+}
+:is([data-device='ios'], [data-device='android']) .forma-nav > div {
+  font-size: 9px;
+}
+:is([data-device='ios'], [data-device='android']) .forma-hero {
+  grid-template-columns: 1fr;
+  padding: 24px 18px;
+  gap: 28px;
+}
+:is([data-device='ios'], [data-device='android']) .forma-copy > strong {
+  font-size: clamp(28px, 14cqw, 42px);
+  margin-block: 18px;
+}
+:is([data-device='ios'], [data-device='android']) .forma-copy > p {
+  font-size: 11px;
+}
+:is([data-device='ios'], [data-device='android']) .forma-copy > p br {
+  display: none;
+}
+:is([data-device='ios'], [data-device='android']) .forma-eyebrow {
+  font-size: 7px;
+}
+:is([data-device='ios'], [data-device='android']) .forma-cta {
+  font-size: 10px;
+}
+:is([data-device='ios'], [data-device='android']) .forma-scroll {
+  display: none;
+}
+:is([data-device='ios'], [data-device='android']) .forma-art {
+  min-height: 270px;
+}
+:is([data-device='ios'], [data-device='android']) .forma-art-caption {
+  font-size: 7px;
+}
+:is([data-device='ios'], [data-device='android']) .forma-work {
+  grid-template-columns: 1fr 1fr;
+  padding: 20px 18px;
+  gap: 16px;
+}
+:is([data-device='ios'], [data-device='android']) .forma-work > div:first-child {
+  grid-column: 1 / -1;
+}
+:is([data-device='ios'], [data-device='android']) .forma-work > div:first-child > strong {
+  font-size: 20px;
+}
+
+@media (max-width: 1100px) {
+  .showroom-card .showroom-scene {
+    grid-template-columns: 1fr;
+  }
+  .showroom-card .showroom-copy {
+    border-left: 0;
+    border-top: 1px solid #263c54;
+  }
+  .device-stage {
+    min-height: 610px;
+  }
+  .device-stage-pc,
+  .device-stage-tablet {
+    min-height: 0;
+  }
+}
+@media (max-width: 650px) {
+  .device-toolbar {
+    padding: 15px 12px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .device-toolbar > div:first-child {
+    justify-content: space-between;
+  }
+  .device-options {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 3px;
+  }
+  .device-options button {
+    flex-direction: column;
+    gap: 6px;
+    padding: 8px 4px;
+    font-size: 10px;
+    min-width: 0;
+  }
+  .showroom-card .showroom-visual {
+    padding: 24px 14px 18px;
+  }
+  .device-stage {
+    min-height: 0;
+    padding: 10px 0 18px;
+  }
+  .device-stage-pc {
+    padding-bottom: 68px;
+  }
+  .device-stage-tablet {
+    padding-block: 25px;
+  }
+  .device-pc {
+    padding: 5px 5px 0;
+    border-radius: 8px;
+  }
+  .device-tablet {
+    padding: 9px 13px;
+    border-radius: 17px;
+  }
+  .device-tablet .device-screen {
+    border-radius: 7px;
+  }
+  .device-pc .device-monitor-chin {
+    height: 17px;
+  }
+  .device-screen .demo-browser-bar {
+    min-height: 21px;
+  }
+  .showroom-card .showroom-caption {
+    font-size: 10px;
+    flex-wrap: wrap;
+  }
+  .device-illustration-note {
+    font-size: 9px;
+    line-height: 1.6;
+  }
+  .showroom-card .showroom-copy {
+    padding: 25px 22px;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .device-hardware {
+    animation: device-appear 360ms ease-out both;
+  }
+}
+@keyframes device-appear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

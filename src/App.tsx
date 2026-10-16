@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import {
   ArrowRight,
   ArrowUpRight,
@@ -80,24 +80,32 @@ function FlowComparison() {
       pain: 'Planilhas soltas',
       icon: Compass,
       className: 'node-strategy',
+      path: 'M250 107 Q185 87 115 60',
+      brokenPath: 'M100 55 Q135 90 195 96',
     },
     {
       label: 'Experiência & design',
       pain: 'Retrabalho manual',
       icon: MousePointer2,
       className: 'node-design',
+      path: 'M250 107 Q315 87 385 60',
+      brokenPath: 'M395 65 Q355 105 300 98',
     },
     {
       label: 'Sistemas sob medida',
       pain: 'Sistemas desconectados',
       icon: Code2,
       className: 'node-code',
+      path: 'M250 107 Q185 137 125 165',
+      brokenPath: 'M130 165 Q155 125 199 119',
     },
     {
       label: 'Automação & IA',
       pain: 'Decisões no escuro',
       icon: Workflow,
       className: 'node-integrations',
+      path: 'M250 107 Q315 137 375 165',
+      brokenPath: 'M380 165 Q355 125 301 120',
     },
   ]
   return (
@@ -113,7 +121,7 @@ function FlowComparison() {
         <div
           className="flow-diagram scattered-diagram"
           role="img"
-          aria-label="Planilhas soltas, retrabalho manual, sistemas desconectados e decisões sem contexto"
+          aria-label="Sem uma direção, os sinais se perdem em conexões interrompidas. A ideia permanece sem projeto e sem caminho."
         >
           <svg
             className="flow-lines"
@@ -121,16 +129,15 @@ function FlowComparison() {
             preserveAspectRatio="none"
             aria-hidden="true"
           >
-            <path d="M100 55 Q220 170 395 65 M130 160 Q280 20 380 165 M100 55 L130 160 M395 65 L380 165" />
+            {nodes.map(({ className, brokenPath }) => (
+              <g className={`comparison-branch branch-${className}`} key={className}>
+                <path className="comparison-broken-line" d={brokenPath} />
+                <path className="comparison-noise-energy" pathLength={100} d={brokenPath} />
+              </g>
+            ))}
             <path
-              className="comparison-noise-energy"
-              pathLength={100}
-              d="M100 55 Q220 170 395 65"
-            />
-            <path
-              className="comparison-noise-energy alternate"
-              pathLength={100}
-              d="M130 160 Q280 20 380 165"
+              className="comparison-loose-line"
+              d="M100 55 L110 102 M120 133 L130 165 M395 65 L388 103 M383 135 L380 165"
             />
           </svg>
           {nodes.map(({ label, pain, icon: Icon, className }) => (
@@ -142,6 +149,7 @@ function FlowComparison() {
           <span className="diagram-center scattered-center">
             <Lightbulb size={22} />
             <small>Sua ideia</small>
+            <span className="comparison-idea-status">Sem um caminho</span>
           </span>
           <span className="small-cross cross-one">×</span>
           <span className="small-cross cross-two">×</span>
@@ -176,7 +184,7 @@ function FlowComparison() {
         <div
           className="flow-diagram connected-diagram"
           role="img"
-          aria-label="A Newthing conecta estratégia e finanças, experiência e design, sistemas sob medida e automação"
+          aria-label="A Newthing ilumina e conecta estratégia, design, sistemas e automação: sua ideia ganha um plano e um caminho para se realizar."
         >
           <svg
             className="flow-lines"
@@ -184,28 +192,16 @@ function FlowComparison() {
             preserveAspectRatio="none"
             aria-hidden="true"
           >
-            <path d="M115 60 L250 107 L385 60 M125 165 L250 107 L375 165" />
-            <circle cx="250" cy="107" r="70" />
-            <path
-              className="comparison-energy energy-strategy"
-              pathLength={100}
-              d="M115 60 L250 107"
-            />
-            <path
-              className="comparison-energy energy-design"
-              pathLength={100}
-              d="M250 107 L385 60"
-            />
-            <path
-              className="comparison-energy energy-code"
-              pathLength={100}
-              d="M125 165 L250 107"
-            />
-            <path
-              className="comparison-energy energy-integrations"
-              pathLength={100}
-              d="M250 107 L375 165"
-            />
+            <circle className="comparison-orbit" cx="250" cy="107" r="65" />
+            <circle className="comparison-radar" cx="250" cy="107" r="42" />
+            {nodes.map(({ className, path }) => (
+              <g className={`comparison-branch branch-${className}`} key={className}>
+                <path className="comparison-route" d={path} />
+                <path className="comparison-route-charge" d={path} />
+                <path className="comparison-energy-trail" pathLength={100} d={path} />
+                <path className="comparison-energy" pathLength={100} d={path} />
+              </g>
+            ))}
           </svg>
           {nodes.map(({ label, icon: Icon, className }) => (
             <span className={`diagram-node ${className}`} key={label}>
@@ -355,6 +351,39 @@ const faqs = [
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const menuTrigger = useRef<HTMLButtonElement>(null)
+  const mainNavigation = useRef<HTMLElement>(null)
+  useEffect(() => {
+    if (!menuOpen) return
+    const mobile = window.matchMedia('(max-width: 800px)')
+    const fitMenuToViewport = () => {
+      const nav = mainNavigation.current
+      if (!nav) return
+      nav.style.setProperty(
+        '--mobile-menu-top',
+        `${Math.max(0, nav.getBoundingClientRect().top)}px`,
+      )
+    }
+    const closeOnEscape = (event: globalThis.KeyboardEvent) => {
+      if (event.key !== 'Escape') return
+      setMenuOpen(false)
+      menuTrigger.current?.focus()
+    }
+    const closeOnDesktop = () => {
+      if (!mobile.matches) setMenuOpen(false)
+    }
+    window.addEventListener('keydown', closeOnEscape)
+    window.addEventListener('resize', fitMenuToViewport)
+    window.addEventListener('scroll', fitMenuToViewport, { passive: true })
+    mobile.addEventListener('change', closeOnDesktop)
+    fitMenuToViewport()
+    return () => {
+      window.removeEventListener('keydown', closeOnEscape)
+      window.removeEventListener('resize', fitMenuToViewport)
+      window.removeEventListener('scroll', fitMenuToViewport)
+      mobile.removeEventListener('change', closeOnDesktop)
+    }
+  }, [menuOpen])
   const [briefOpen, setBriefOpen] = useState(false)
   const [finderOpen, setFinderOpen] = useState(false)
   const [journeyRequest, setJourneyRequest] = useState({ exampleIndex: 0, phase: 0, id: 0 })
@@ -409,6 +438,8 @@ export default function App() {
         <div className="container header-inner">
           <Brand />
           <nav
+            id="main-navigation"
+            ref={mainNavigation}
             className={menuOpen ? 'main-nav nav-open' : 'main-nav'}
             aria-label="Navegação principal"
           >
@@ -436,8 +467,10 @@ export default function App() {
           </button>
           <button
             className="menu-button"
+            ref={menuTrigger}
             aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
             aria-expanded={menuOpen}
+            aria-controls="main-navigation"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}

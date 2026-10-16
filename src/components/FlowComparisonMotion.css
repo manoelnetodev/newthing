@@ -1,6 +1,7 @@
-/* Explicitly requested ambient energy. The local control pauses both diagrams, including when system motion is reduced. */
+/* The hub sends light, then each destination responds on the same circuit. */
 .comparison-grid {
   --comparison-motion: running;
+  --comparison-cycle: 8s;
 }
 .comparison-grid[data-energy-motion='paused'] {
   --comparison-motion: paused;
@@ -15,7 +16,7 @@
   place-items: center;
   padding: 4px;
   border: 1px solid #426fa04d;
-  border-radius: 4px;
+  border-radius: 6px;
   background: #087cff0d;
   color: #9cccff;
 }
@@ -27,99 +28,284 @@
   outline: 2px solid #9bcbff;
   outline-offset: 3px;
 }
-.comparison-grid .node-strategy {
+.comparison-grid .node-strategy,
+.comparison-grid .branch-node-strategy {
+  --energy-delay: -8s;
   --float-delay: -1s;
-  --energy-delay: 0s;
 }
-.comparison-grid .node-design {
-  --float-delay: -2.6s;
-  --energy-delay: 1.25s;
+.comparison-grid .node-design,
+.comparison-grid .branch-node-design {
+  --energy-delay: -6s;
+  --float-delay: -3s;
 }
-.comparison-grid .node-code {
-  --float-delay: -0.4s;
-  --energy-delay: 3.4s;
+.comparison-grid .node-code,
+.comparison-grid .branch-node-code {
+  --energy-delay: -4s;
+  --float-delay: -2s;
 }
-.comparison-grid .node-integrations {
+.comparison-grid .node-integrations,
+.comparison-grid .branch-node-integrations {
+  --energy-delay: -2s;
   --float-delay: -4s;
-  --energy-delay: 4.65s;
 }
-.comparison-grid .scattered-diagram .diagram-node {
-  animation: comparison-drift 7s ease-in-out var(--float-delay) infinite;
-  animation-play-state: var(--comparison-motion);
-  will-change: translate;
+.comparison-grid .connected-diagram {
+  background-image:
+    radial-gradient(ellipse at 50% 50%, #087cff1c, transparent 65%),
+    radial-gradient(#69b0ff24 0.7px, transparent 0.7px);
+  background-size:
+    100% 100%,
+    15px 15px;
+}
+.comparison-grid .connected-diagram .comparison-route {
+  stroke: #328fffb3;
+  stroke-width: 1.1;
+}
+.comparison-grid .connected-diagram .comparison-route-charge {
+  stroke: #69baff;
+  stroke-width: 2;
+  opacity: 0.12;
+  filter: drop-shadow(0 0 4px #087cff);
+  animation: comparison-route-light var(--comparison-cycle) ease-in-out var(--energy-delay) infinite;
+}
+.comparison-grid .connected-diagram .comparison-energy-trail,
+.comparison-grid .connected-diagram .comparison-energy {
+  stroke: #dff2ff;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-dasharray: 9 101;
+  opacity: 0;
+  filter: drop-shadow(0 0 3px #80c5ff) drop-shadow(0 0 7px #087cff);
+  animation: comparison-energy-travel var(--comparison-cycle) linear var(--energy-delay) infinite;
+}
+.comparison-grid .connected-diagram .comparison-energy-trail {
+  stroke: #087cff;
+  stroke-width: 6;
+  stroke-dasharray: 22 88;
+  filter: blur(3px);
 }
 .comparison-grid .connected-diagram .diagram-node {
   animation:
-    comparison-float 5.5s ease-in-out var(--float-delay) infinite,
-    comparison-node-energy 6.8s ease-in-out var(--energy-delay) infinite;
-  animation-play-state: var(--comparison-motion);
-  will-change: translate;
+    comparison-float 6s ease-in-out var(--float-delay) infinite,
+    comparison-node-light var(--comparison-cycle) ease-in-out var(--energy-delay) infinite;
 }
-.comparison-grid .scattered-diagram .flow-lines > path:first-child {
-  animation: comparison-dashed-lines 9s linear infinite;
-  animation-play-state: var(--comparison-motion);
+.comparison-grid .connected-diagram .diagram-node::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: -1px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, #80c5ff, transparent);
+  opacity: 0.15;
+  animation: comparison-destination-light var(--comparison-cycle) ease-in-out var(--energy-delay)
+    infinite;
 }
-.comparison-grid .scattered-diagram .flow-lines .comparison-noise-energy {
-  stroke: #a1a9b2;
-  stroke-width: 1.3;
-  stroke-dasharray: 4 96;
-  stroke-linecap: round;
-  opacity: 0;
-  animation: comparison-noise-travel 7s linear infinite;
-  animation-play-state: var(--comparison-motion);
+/* The symbol stays upright and optically centered; only its light moves. */
+.comparison-grid .connected-diagram .connected-center {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  padding: 7px;
+  gap: 0;
+  isolation: isolate;
+  background: radial-gradient(ellipse at 50% 30%, #17395c, #0a1524 80%);
+  border: 1px solid #5caeff;
+  border-radius: 18px;
+  box-shadow:
+    0 0 22px #087cff55,
+    inset 0 0 15px #087cff16;
+  animation: comparison-hub-light 2s ease-in-out infinite;
 }
-.comparison-grid .scattered-diagram .flow-lines .comparison-noise-energy.alternate {
-  animation-delay: 3.2s;
+.comparison-grid .connected-center > .newthing-mark {
+  width: 36px;
+  height: 45px;
+  translate: -1px 0;
+  filter: drop-shadow(0 0 5px #087cff70);
 }
-.comparison-grid .scattered-center {
-  animation: comparison-idea-breathe 5s ease-in-out infinite;
-  animation-play-state: var(--comparison-motion);
+.comparison-grid .connected-center .brand-mark-arrow {
+  animation: none;
+  transform: none;
 }
-.comparison-grid .small-cross {
-  animation: comparison-noise-breathe 4.5s ease-in-out infinite;
-  animation-play-state: var(--comparison-motion);
-}
-.comparison-grid .cross-two {
-  animation-delay: -2.2s;
-}
-.comparison-grid .connected-diagram .flow-lines .comparison-energy {
-  stroke: #ebf0f6;
-  stroke-width: 2;
-  stroke-dasharray: 9 91;
-  stroke-linecap: round;
-  filter: drop-shadow(0 0 3px #91c6ff) drop-shadow(0 0 6px #3898ff);
-  opacity: 0;
-  animation: comparison-energy-travel 6.8s linear var(--packet-delay, 0s) infinite;
-  animation-play-state: var(--comparison-motion);
-}
-.comparison-grid .energy-design {
-  --packet-delay: 1.25s;
-}
-.comparison-grid .energy-code {
-  --packet-delay: 3.4s;
-}
-.comparison-grid .energy-integrations {
-  --packet-delay: 4.65s;
-}
-.comparison-grid .connected-center {
-  animation: comparison-hub-charge 6.8s ease-in-out infinite;
-  animation-play-state: var(--comparison-motion);
-}
+.comparison-grid .connected-center::before,
 .comparison-grid .connected-center::after {
   content: '';
   position: absolute;
-  inset: -6px;
-  border: 1px solid #85c0ff;
-  border-radius: 21px;
-  opacity: 0;
+  inset: -7px;
+  border: 1px solid #68baff60;
+  border-radius: 24px;
   pointer-events: none;
-  animation: comparison-energy-ring 6.8s ease-out infinite;
+  z-index: -1;
+  animation: comparison-hub-wave 4s ease-out infinite;
+}
+.comparison-grid .connected-center::after {
+  animation-delay: -2s;
+}
+.comparison-grid .flow-lines .comparison-orbit {
+  stroke: #328fff38;
+  stroke-dasharray: 2 8;
+  transform-origin: 250px 107px;
+  animation: comparison-orbit 45s linear infinite;
+}
+.comparison-grid .flow-lines .comparison-radar {
+  stroke: #328fff40;
+  stroke-dasharray: none;
+  transform-origin: 250px 107px;
+  animation: comparison-radar 4s ease-out infinite;
+}
+.comparison-grid .scattered-diagram .diagram-node {
+  animation: comparison-drift 7s ease-in-out var(--float-delay) infinite;
+}
+.comparison-grid .scattered-diagram .comparison-broken-line,
+.comparison-grid .scattered-diagram .comparison-loose-line {
+  stroke: #68748570;
+  stroke-dasharray: 3 7;
+}
+.comparison-grid .scattered-diagram .comparison-noise-energy {
+  stroke: #a2b2c5;
+  stroke-width: 1.8;
+  stroke-dasharray: 5 105;
+  stroke-linecap: round;
+  opacity: 0;
+  animation: comparison-signal-lost var(--comparison-cycle) linear var(--energy-delay) infinite;
+}
+.comparison-grid .scattered-center {
+  gap: 4px;
+  animation: comparison-idea-flicker 4s ease-in-out infinite;
+}
+.comparison-idea-status {
+  color: #8c98a8;
+  font-size: 9px;
+  white-space: nowrap;
+}
+.comparison-grid .small-cross {
+  animation: comparison-lost-mark 4s ease-in-out infinite;
+}
+.comparison-grid .cross-two {
+  animation-delay: -2s;
+}
+/* The local control pauses every layer, including waves and SVG packets. */
+.comparison-grid[data-energy-motion] .flow-diagram *,
+.comparison-grid[data-energy-motion] .flow-diagram *::before,
+.comparison-grid[data-energy-motion] .flow-diagram *::after {
   animation-play-state: var(--comparison-motion);
 }
-.comparison-grid .connected-diagram .flow-lines circle {
-  transform-origin: 250px 107px;
-  animation: comparison-orbit 32s linear infinite;
-  animation-play-state: var(--comparison-motion);
+@keyframes comparison-energy-travel {
+  0% {
+    stroke-dashoffset: 10;
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  19% {
+    stroke-dashoffset: -100;
+    opacity: 1;
+  }
+  23%,
+  100% {
+    stroke-dashoffset: -100;
+    opacity: 0;
+  }
+}
+@keyframes comparison-route-light {
+  0%,
+  45%,
+  100% {
+    opacity: 0.12;
+  }
+  12%,
+  24% {
+    opacity: 0.75;
+  }
+}
+@keyframes comparison-node-light {
+  0%,
+  7%,
+  48%,
+  100% {
+    color: #b9cee4;
+    border-color: #328fff45;
+    box-shadow: 0 3px 10px #0003;
+    background: #152333;
+  }
+  20%,
+  32% {
+    color: #f0f7ff;
+    border-color: #80c5ff;
+    box-shadow:
+      0 0 23px #087cff38,
+      inset 0 0 18px #087cff18;
+    background: #19344e;
+  }
+}
+@keyframes comparison-destination-light {
+  0%,
+  7%,
+  48%,
+  100% {
+    opacity: 0.15;
+  }
+  20%,
+  32% {
+    opacity: 1;
+  }
+}
+@keyframes comparison-hub-light {
+  0%,
+  100% {
+    box-shadow:
+      0 0 22px #087cff55,
+      inset 0 0 15px #087cff16;
+  }
+  35%,
+  55% {
+    box-shadow:
+      0 0 34px #2496ff90,
+      0 0 65px #087cff25,
+      inset 0 0 15px #087cff30;
+  }
+}
+@keyframes comparison-hub-wave {
+  0% {
+    scale: 0.95;
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.65;
+  }
+  100% {
+    scale: 1.65;
+    opacity: 0;
+  }
+}
+@keyframes comparison-radar {
+  0% {
+    scale: 0.8;
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  100% {
+    scale: 1.8;
+    opacity: 0;
+  }
+}
+@keyframes comparison-orbit {
+  to {
+    rotate: 360deg;
+  }
+}
+@keyframes comparison-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -2px;
+  }
 }
 @keyframes comparison-drift {
   0%,
@@ -130,135 +316,50 @@
     translate: 2px -3px;
   }
   70% {
-    translate: -1px 2px;
+    translate: -2px 2px;
   }
 }
-@keyframes comparison-float {
-  0%,
-  100% {
-    translate: 0 0;
-  }
-  50% {
-    translate: 0 -3px;
-  }
-}
-@keyframes comparison-dashed-lines {
-  to {
-    stroke-dashoffset: -40;
-  }
-}
-@keyframes comparison-noise-travel {
-  0%,
-  8% {
-    stroke-dashoffset: 100;
+@keyframes comparison-signal-lost {
+  0% {
+    stroke-dashoffset: 10;
     opacity: 0;
   }
-  14% {
-    opacity: 0.5;
+  5% {
+    opacity: 0.7;
   }
-  48% {
-    stroke-dashoffset: 35;
-    opacity: 0.35;
+  19% {
+    stroke-dashoffset: -50;
+    opacity: 0.3;
   }
-  55%,
+  25%,
   100% {
-    stroke-dashoffset: 20;
+    stroke-dashoffset: -62;
     opacity: 0;
   }
 }
-@keyframes comparison-idea-breathe {
+@keyframes comparison-idea-flicker {
   0%,
   100% {
-    color: #7d818c;
+    color: #7d899a;
     filter: none;
   }
+  30%,
   50% {
-    color: #b5bcc3;
-    filter: drop-shadow(0 0 5px #9aabbe25);
+    color: #aebbc9;
+    filter: drop-shadow(0 0 4px #9cb9dd30);
+  }
+  42% {
+    color: #738093;
+    filter: none;
   }
 }
-@keyframes comparison-noise-breathe {
+@keyframes comparison-lost-mark {
   0%,
   100% {
-    opacity: 0.45;
+    opacity: 0.4;
   }
-  50% {
-    opacity: 0.9;
-  }
-}
-@keyframes comparison-energy-travel {
-  0% {
-    stroke-dashoffset: 100;
-    opacity: 0;
-  }
-  2% {
-    opacity: 1;
-  }
-  20% {
-    stroke-dashoffset: -9;
-    opacity: 1;
-  }
-  22%,
-  100% {
-    stroke-dashoffset: -9;
-    opacity: 0;
-  }
-}
-@keyframes comparison-node-energy {
-  0%,
-  35%,
-  100% {
-    border-color: #087cff32;
-    box-shadow: 0 3px 10px #0003;
-  }
-  16%,
-  25% {
-    border-color: #77b9ff;
-    box-shadow:
-      0 0 15px #4ca3ff35,
-      inset 0 0 12px #3e9bff0d;
-  }
-}
-@keyframes comparison-hub-charge {
-  0%,
   40%,
-  90%,
-  100% {
-    box-shadow: 0 0 25px #087cff40;
-    filter: brightness(1);
-  }
-  18%,
-  26%,
-  68%,
-  76% {
-    box-shadow:
-      0 0 28px #64afff99,
-      0 0 48px #087cff40;
-    filter: brightness(1.22);
-  }
-}
-@keyframes comparison-energy-ring {
-  0%,
-  15%,
-  50%,
-  65% {
-    opacity: 0;
-    scale: 0.95;
-  }
-  20%,
-  70% {
-    opacity: 0.65;
-    scale: 1;
-  }
-  37%,
-  87%,
-  100% {
-    opacity: 0;
-    scale: 1.55;
-  }
-}
-@keyframes comparison-orbit {
-  to {
-    rotate: 360deg;
+  55% {
+    opacity: 0.85;
   }
 }
