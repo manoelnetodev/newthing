@@ -1,7 +1,7 @@
 /* The hub sends light, then each destination responds on the same circuit. */
 .comparison-grid {
   --comparison-motion: running;
-  --comparison-cycle: 8s;
+  --comparison-cycle: 6.4s;
 }
 .comparison-grid[data-energy-motion='paused'] {
   --comparison-motion: paused;
@@ -30,22 +30,22 @@
 }
 .comparison-grid .node-strategy,
 .comparison-grid .branch-node-strategy {
-  --energy-delay: -8s;
+  --energy-delay: -6.4s;
   --float-delay: -1s;
 }
 .comparison-grid .node-design,
 .comparison-grid .branch-node-design {
-  --energy-delay: -6s;
+  --energy-delay: -4.8s;
   --float-delay: -3s;
 }
 .comparison-grid .node-code,
 .comparison-grid .branch-node-code {
-  --energy-delay: -4s;
+  --energy-delay: -3.2s;
   --float-delay: -2s;
 }
 .comparison-grid .node-integrations,
 .comparison-grid .branch-node-integrations {
-  --energy-delay: -2s;
+  --energy-delay: -1.6s;
   --float-delay: -4s;
 }
 .comparison-grid .connected-diagram {

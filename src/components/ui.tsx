@@ -33,11 +33,13 @@ export function Modal({
   description,
   children,
   onClose,
+  className = '',
 }: {
   title: string
   description?: string
   children: ReactNode
   onClose: () => void
+  className?: string
 }) {
   const dialog = useRef<HTMLDialogElement>(null)
   const titleId = useId()
@@ -57,9 +59,31 @@ export function Modal({
   return (
     <dialog
       ref={dialog}
-      className="modal"
+      className={`modal ${className}`}
       aria-labelledby={titleId}
       aria-describedby={description ? descriptionId : undefined}
+      onKeyDown={(event) => {
+        if (event.key !== 'Tab' || event.ctrlKey || event.altKey || event.metaKey) return
+        const focusable = Array.from(
+          event.currentTarget.querySelectorAll<HTMLElement>(
+            'a[href], button, input:not([type="hidden"]), select, textarea, summary, [tabindex]',
+          ),
+        ).filter(
+          (element) =>
+            element.tabIndex >= 0 &&
+            !element.matches(':disabled') &&
+            element.getClientRects().length > 0,
+        )
+        const first = focusable[0]
+        const last = focusable[focusable.length - 1]
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault()
+          last?.focus()
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault()
+          first?.focus()
+        }
+      }}
       onCancel={(event) => {
         event.preventDefault()
         onClose()

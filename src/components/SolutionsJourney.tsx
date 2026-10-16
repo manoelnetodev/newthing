@@ -1,6 +1,5 @@
 import { useRef, useState } from 'react'
 import {
-  ArrowDown,
   ArrowRight,
   ArrowUpRight,
   Check,
@@ -17,7 +16,9 @@ import {
 import { BriefModal } from './BriefModal'
 import { JourneyDemo } from './JourneyDemo'
 import { JourneyPath } from './JourneyPath'
+import { Modal } from './ui'
 import './SolutionsJourney.css'
+import './JourneyExplorer.css'
 
 const phases = [
   {
@@ -80,6 +81,8 @@ const examples = [
   {
     kind: 'system' as const,
     label: 'Sistema de gestão',
+    summary: 'Pedidos, equipes e indicadores conectados.',
+    name: 'NEXO',
     icon: Code2,
     dream: 'Quero ter mais controle da minha empresa.',
     stories: [
@@ -139,6 +142,8 @@ const examples = [
   {
     kind: 'website' as const,
     label: 'Site e presença digital',
+    summary: 'Sua marca com presença e um caminho até o contato.',
+    name: 'AURORA',
     icon: Globe,
     dream: 'Quero apresentar meu negócio e abrir novas oportunidades.',
     stories: [
@@ -195,6 +200,8 @@ const examples = [
   {
     kind: 'automation' as const,
     label: 'Automação de processos',
+    summary: 'Ferramentas conectadas. Pessoas no controle.',
+    name: 'FLUXO',
     icon: Workflow,
     dream: 'Quero que minha equipe tenha tempo para o que importa.',
     stories: [
@@ -256,30 +263,51 @@ const examples = [
 export function SolutionsJourney({
   initialExample = 0,
   initialPhase = 0,
+  initialOpen = false,
 }: {
   initialExample?: number
   initialPhase?: number
+  initialOpen?: boolean
 }) {
   const [selected, setSelected] = useState(initialPhase)
   const [exampleIndex, setExampleIndex] = useState(initialExample)
+  const [previewOpen, setPreviewOpen] = useState(initialOpen)
   const [briefOpen, setBriefOpen] = useState(false)
-  const [lightsPlaying, setLightsPlaying] = useState(
-    () => !window.matchMedia('(prefers-reduced-motion: reduce)').matches,
-  )
-  const practiceRef = useRef<HTMLDivElement>(null)
+  const [lightsPlaying, setLightsPlaying] = useState(true)
+  const previewOpener = useRef<HTMLElement | null>(null)
+  const previewScroll = useRef<HTMLDivElement>(null)
   const phase = phases[selected]
   const example = examples[exampleIndex]
   const story = example.stories[selected]
   const steps = selected === 0 ? example.steps : selected === 1 ? example.build : example.grow
 
-  function selectPhase(index: number) {
-    setSelected(index)
-    practiceRef.current?.scrollIntoView({
-      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
-        ? 'instant'
-        : 'smooth',
-      block: 'start',
+  function openPreview(index: number, phaseIndex: number) {
+    previewOpener.current =
+      document.activeElement instanceof HTMLElement ? document.activeElement : null
+    setExampleIndex(index)
+    setSelected(phaseIndex)
+    setPreviewOpen(true)
+  }
+
+  function restorePreviewFocus() {
+    requestAnimationFrame(() => {
+      const opener = previewOpener.current
+      const target = opener?.isConnected
+        ? opener
+        : document.getElementById(`journey-launch-${example.kind}`)
+      target?.focus({ preventScroll: true })
     })
+  }
+
+  function closePreview() {
+    setPreviewOpen(false)
+    restorePreviewFocus()
+  }
+
+  function changePreview(index: number, phaseIndex: number) {
+    setExampleIndex(index)
+    setSelected(phaseIndex)
+    previewScroll.current?.scrollTo({ top: 0, behavior: 'instant' })
   }
 
   return (
@@ -343,7 +371,7 @@ export function SolutionsJourney({
               <JourneyPath
                 phase={index}
                 active={selected === index}
-                onExplore={() => selectPhase(index)}
+                onExplore={() => openPreview(exampleIndex, index)}
               />
               <ul>
                 {items.map((item) => (
@@ -355,135 +383,186 @@ export function SolutionsJourney({
               </ul>
               <button
                 type="button"
-                aria-pressed={selected === index}
-                aria-controls="journey-practice"
+                aria-haspopup="dialog"
                 aria-label={action}
-                onClick={() => selectPhase(index)}
+                onClick={() => openPreview(exampleIndex, index)}
               >
-                {selected === index ? 'Etapa em foco' : action}
-                <ArrowDown size={16} />
+                {action}
+                <ArrowUpRight size={16} />
               </button>
             </article>
           ))}
         </div>
 
-        <div id="journey-practice" className="journey-practice" ref={practiceRef}>
+        <div id="journey-practice" className="journey-practice journey-launcher">
           <div className="journey-example-heading">
             <span className="journey-label">VEJA COMO ACONTECE NA PRÁTICA</span>
-            <span>Explore o planejamento, a construção e a conquista na prática.</span>
+            <span>Escolha uma possibilidade para explorar.</span>
           </div>
-          <div className="journey-examples" role="tablist" aria-label="Exemplo de projeto">
-            {examples.map(({ kind, label, icon: Icon }, index) => (
+          <div className="journey-launch-grid">
+            {examples.map(({ kind, label, icon: Icon, summary, name }, index) => (
               <button
                 type="button"
-                key={label}
-                role="tab"
-                id={`journey-example-${kind}-${index}`}
-                aria-selected={exampleIndex === index}
-                aria-controls="journey-detail-content"
-                tabIndex={exampleIndex === index ? 0 : -1}
-                onKeyDown={(event) => {
-                  const nextIndex =
-                    event.key === 'ArrowRight'
-                      ? (index + 1) % examples.length
-                      : event.key === 'ArrowLeft'
-                        ? (index + examples.length - 1) % examples.length
-                        : event.key === 'Home'
-                          ? 0
-                          : event.key === 'End'
-                            ? examples.length - 1
-                            : null
-                  if (nextIndex === null) return
-                  event.preventDefault()
-                  setExampleIndex(nextIndex)
-                  const tabs =
-                    event.currentTarget.parentElement?.querySelectorAll<HTMLButtonElement>(
-                      '[role="tab"]',
-                    )
-                  tabs?.[nextIndex]?.focus()
-                }}
-                onClick={() => setExampleIndex(index)}
+                id={`journey-launch-${kind}`}
+                className="journey-launch-card"
+                key={kind}
+                aria-haspopup="dialog"
+                onClick={() => openPreview(index, 1)}
               >
-                <Icon size={15} />
-                {label}
-              </button>
-            ))}
-          </div>
-          <div className="journey-phase-nav" role="group" aria-label="Etapa do exemplo">
-            {['Idealizar', 'Construir', 'Realizar'].map((label, index) => (
-              <button
-                type="button"
-                key={label}
-                aria-pressed={selected === index}
-                aria-controls="journey-detail-content"
-                onClick={() => setSelected(index)}
-              >
-                <span>0{index + 1}</span>
-                {label}
-                <ArrowRight size={13} aria-hidden="true" />
-              </button>
-            ))}
-          </div>
-          <div
-            id="journey-detail-content"
-            className="journey-detail"
-            role="tabpanel"
-            aria-labelledby={`journey-example-${example.kind}-${exampleIndex}`}
-            tabIndex={0}
-          >
-            <div className="journey-demo-reveal" key={`demo-${selected}-${exampleIndex}`}>
-              <JourneyDemo kind={example.kind} phase={selected} />
-            </div>
-            <div className="journey-detail-copy" key={`copy-${selected}-${exampleIndex}`}>
-              <div className="journey-detail-intro">
-                <span className="journey-detail-stage">
-                  0{selected + 1} <span>/ {phase.label}</span>
+                <span className="journey-launch-top">
+                  <span className="journey-launch-icon">
+                    <Icon size={19} />
+                  </span>
+                  <small>
+                    {name} / 0{index + 1}
+                  </small>
                 </span>
-                <h3>{story.title}</h3>
-                <p>{story.text}</p>
-                <div className="journey-dream">
-                  <Target size={18} />
-                  <div>
-                    <span>O OBJETIVO DO CLIENTE</span>
-                    <p>“{example.dream}”</p>
+                <span className="journey-launch-copy">
+                  <strong>{label}</strong>
+                  <span>{summary}</span>
+                </span>
+                <span className="journey-launch-action">
+                  Explorar exemplo <ArrowUpRight size={16} />
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+        {previewOpen && (
+          <Modal
+            title={example.label}
+            description="Explore a solução e as etapas de construção."
+            className="journey-preview-modal"
+            onClose={closePreview}
+          >
+            <div className="journey-preview-controls">
+              <div className="journey-examples" role="tablist" aria-label="Exemplo de projeto">
+                {examples.map(({ kind, label, icon: Icon }, index) => (
+                  <button
+                    type="button"
+                    key={label}
+                    role="tab"
+                    aria-label={label}
+                    id={`journey-example-${kind}-${index}`}
+                    aria-selected={exampleIndex === index}
+                    aria-controls="journey-detail-content"
+                    tabIndex={exampleIndex === index ? 0 : -1}
+                    onKeyDown={(event) => {
+                      const nextIndex =
+                        event.key === 'ArrowRight'
+                          ? (index + 1) % examples.length
+                          : event.key === 'ArrowLeft'
+                            ? (index + examples.length - 1) % examples.length
+                            : event.key === 'Home'
+                              ? 0
+                              : event.key === 'End'
+                                ? examples.length - 1
+                                : null
+                      if (nextIndex === null) return
+                      event.preventDefault()
+                      changePreview(nextIndex, selected)
+                      const tabs =
+                        event.currentTarget.parentElement?.querySelectorAll<HTMLButtonElement>(
+                          '[role="tab"]',
+                        )
+                      tabs?.[nextIndex]?.focus()
+                    }}
+                    onClick={() => changePreview(index, selected)}
+                  >
+                    <Icon size={15} />
+                    <span className="journey-tab-label">{label}</span>
+                    <span className="journey-tab-short" aria-hidden="true">
+                      {['Gestão', 'Website', 'Automação'][index]}
+                    </span>
+                  </button>
+                ))}
+              </div>
+              <div className="journey-phase-nav" role="group" aria-label="Etapa do exemplo">
+                {['Idealizar', 'Construir', 'Realizar'].map((label, index) => (
+                  <button
+                    type="button"
+                    key={label}
+                    aria-pressed={selected === index}
+                    aria-controls="journey-detail-content"
+                    onClick={() => changePreview(exampleIndex, index)}
+                  >
+                    <span>0{index + 1}</span>
+                    {label}
+                    <ArrowRight size={13} aria-hidden="true" />
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="journey-preview-scroll" ref={previewScroll}>
+              <div
+                id="journey-detail-content"
+                className="journey-detail"
+                role="tabpanel"
+                aria-labelledby={`journey-example-${example.kind}-${exampleIndex}`}
+                tabIndex={0}
+              >
+                <div className="journey-demo-reveal" key={`demo-${selected}-${exampleIndex}`}>
+                  <JourneyDemo kind={example.kind} phase={selected} />
+                </div>
+                <div className="journey-detail-copy" key={`copy-${selected}-${exampleIndex}`}>
+                  <div className="journey-detail-intro">
+                    <span className="journey-detail-stage">
+                      0{selected + 1} <span>/ {phase.label}</span>
+                    </span>
+                    <h3>{story.title}</h3>
+                    <p>{story.text}</p>
+                    <div className="journey-dream">
+                      <Target size={18} />
+                      <div>
+                        <span>O OBJETIVO DO CLIENTE</span>
+                        <p>“{example.dream}”</p>
+                      </div>
+                    </div>
+                  </div>
+                  <ol className="journey-deliverables">
+                    {steps.map(([title, text], index) => (
+                      <li key={title}>
+                        <span className="journey-step-number">{index + 1}</span>
+                        <div>
+                          <h4>{title}</h4>
+                          <p>{text}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                  <p className="journey-benefit">
+                    <Sparkles size={15} />
+                    <span>{story.benefit}</span>
+                  </p>
+                  <div className="journey-preview-delivery">
+                    <Check size={15} />
+                    <p>
+                      <strong>O que você leva desta etapa</strong>
+                      {story.delivery}
+                    </p>
                   </div>
                 </div>
               </div>
-              <ol className="journey-deliverables">
-                {steps.map(([title, text], index) => (
-                  <li key={title}>
-                    <span className="journey-step-number">{index + 1}</span>
-                    <div>
-                      <h4>{title}</h4>
-                      <p>{text}</p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-              <p className="journey-benefit">
-                <Sparkles size={15} />
-                <span>{story.benefit}</span>
-              </p>
             </div>
-          </div>
-          <div className="journey-result">
-            <p>
-              <Check size={17} />
-              <span>
-                <strong>O que você leva desta etapa</strong>
-                {story.delivery}
-              </span>
+            <div className="journey-preview-footer">
+              <span>Uma ideia parecida com a sua?</span>
+              <button
+                type="button"
+                onClick={() => {
+                  setPreviewOpen(false)
+                  setBriefOpen(true)
+                }}
+              >
+                {phase.cta}
+                <ArrowUpRight size={17} />
+              </button>
+            </div>
+            <p className="journey-announcement" role="status">
+              Exibindo {example.label}:{' '}
+              {['idealização e plano', 'solução em uso', 'realização e continuidade'][selected]}.
             </p>
-            <button type="button" onClick={() => setBriefOpen(true)}>
-              {phase.cta}
-              <ArrowUpRight size={17} />
-            </button>
-          </div>
-        </div>
-        <p className="journey-announcement" role="status">
-          Exibindo {example.label}:{' '}
-          {['idealização e plano', 'solução em uso', 'realização e continuidade'][selected]}.
-        </p>
+          </Modal>
+        )}
         <p className="journey-footnote">
           <span className="journey-footnote-dot" />
           Uma visão compartilhada. Um plano possível. Evolução com propósito.
@@ -492,7 +571,10 @@ export function SolutionsJourney({
       </div>
       {briefOpen && (
         <BriefModal
-          onClose={() => setBriefOpen(false)}
+          onClose={() => {
+            setBriefOpen(false)
+            restorePreviewFocus()
+          }}
           initialStage={
             selected === 1 && exampleIndex === 1
               ? 'Preciso de um site ou landing page'

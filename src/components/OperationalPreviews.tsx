@@ -24,6 +24,7 @@ import {
   Zap,
 } from 'lucide-react'
 import './OperationalPreviews.css'
+import { AutomationConnections, OperationTable } from './JourneyPreviewDetails'
 
 const periods = {
   month: {
@@ -206,7 +207,7 @@ export function NexoEvolution() {
                         x2="330"
                         y1={y}
                         y2={y}
-                        stroke="#e9edf5"
+                        stroke="#29425e"
                         strokeDasharray="3 4"
                       />
                     ))}
@@ -266,6 +267,19 @@ export function NexoEvolution() {
               </div>
             </section>
           </div>
+          <div className="nexo-insight">
+            <Sparkles size={15} />
+            <div>
+              <strong>Uma leitura que ajuda a decidir.</strong>
+              <p>
+                {period === 'month'
+                  ? 'A unidade Centro reúne 45% da receita. Compare as unidades e acompanhe a distribuição das entregas.'
+                  : 'A receita cresceu 18,6% no trimestre. Acompanhe a operação junto com os resultados de cada unidade.'}
+              </p>
+            </div>
+            <ArrowUpRight size={14} />
+          </div>
+          <OperationTable />
           <section className="nexo-roadmap ops-card">
             <header>
               <strong>
@@ -376,6 +390,7 @@ export function FluxoMonitor() {
             <Activity size={23} />
           </span>
         </div>
+        <AutomationConnections />
         <div className="fluxo-kpis">
           <div>
             <span>

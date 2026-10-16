@@ -1550,15 +1550,15 @@ h1 > span {
   *:after {
     transition: none !important;
   }
-  /* Only explicitly playing energy diagrams may move after the visitor opts in. */
-  *:not(.comparison-grid[data-energy-motion='running'] *):not(
-      .journey-cards[data-light-motion='running'] *
+  /* These two requested brand sequences have local pause controls; all other motion stays reduced. */
+  *:not(.comparison-grid[data-energy-motion] *):not(
+      .journey-cards[data-light-motion] *
     ),
-  *:not(.comparison-grid[data-energy-motion='running'] *):not(
-      .journey-cards[data-light-motion='running'] *
+  *:not(.comparison-grid[data-energy-motion] *):not(
+      .journey-cards[data-light-motion] *
     )::before,
-  *:not(.comparison-grid[data-energy-motion='running'] *):not(
-      .journey-cards[data-light-motion='running'] *
+  *:not(.comparison-grid[data-energy-motion] *):not(
+      .journey-cards[data-light-motion] *
     )::after {
     animation: none !important;
   }

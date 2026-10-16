@@ -62,7 +62,7 @@ export function JourneyPath({
   return (
     <div
       className={`journey-path journey-path-phase-${phase} ${active ? 'is-active' : ''}`}
-      style={{ '--journey-delay': `${phase * 4.2}s` } as CSSProperties}
+      style={{ '--journey-delay': `${phase * -2.6}s` } as CSSProperties}
     >
       <span className="journey-path-context">
         <Sparkles size={10} />
@@ -112,6 +112,7 @@ export function JourneyPath({
           type="button"
           className="journey-path-hub"
           aria-label={path.action}
+          aria-haspopup="dialog"
           onClick={onExplore}
         >
           <span>

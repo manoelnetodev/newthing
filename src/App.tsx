@@ -71,9 +71,7 @@ function SectionHeading({
 }
 
 function FlowComparison() {
-  const [energyPlaying, setEnergyPlaying] = useState(
-    () => !window.matchMedia('(prefers-reduced-motion: reduce)').matches,
-  )
+  const [energyPlaying, setEnergyPlaying] = useState(true)
   const nodes = [
     {
       label: 'Estratégia & finanças',
@@ -414,7 +412,6 @@ export default function App() {
     setJourneyRequest((previous) => ({ exampleIndex, phase, id: previous.id + 1 }))
     window.history.pushState(null, '', '#solucoes')
     requestAnimationFrame(() => {
-      document.getElementById('journey-detail-content')?.focus({ preventScroll: true })
       document.getElementById('journey-practice')?.scrollIntoView({
         behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
           ? 'instant'
@@ -570,6 +567,7 @@ export default function App() {
           key={journeyRequest.id}
           initialExample={journeyRequest.exampleIndex}
           initialPhase={journeyRequest.phase}
+          initialOpen={journeyRequest.id > 0}
         />
         <section id="processo" className="section process-section">
           <div className="container">

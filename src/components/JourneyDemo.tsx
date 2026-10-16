@@ -4,22 +4,17 @@ import {
   ArrowRight,
   ArrowUpRight,
   BarChart3,
-  Bell,
   Check,
   CheckCircle2,
-  ChevronDown,
   CircleDot,
   Clock3,
   FileText,
   Globe,
-  Layers,
-  LayoutDashboard,
   Mail,
   MessageSquare,
   MousePointer2,
   Package,
   Search,
-  Settings2,
   ShieldCheck,
   ShoppingBag,
   Target,
@@ -27,8 +22,16 @@ import {
   Workflow,
 } from 'lucide-react'
 import { FluxoMonitor, NexoEvolution } from './OperationalPreviews'
+import {
+  AutomationConnections,
+  AutomationTrace,
+  PlanDecisions,
+  SystemWorkspace,
+  WebsiteServices,
+} from './JourneyPreviewDetails'
 import './JourneyDemo.css'
 import './JourneyAutomation.css'
+import './JourneyPreviewDetails.css'
 
 export type JourneyDemoKind = 'system' | 'website' | 'automation'
 
@@ -142,6 +145,7 @@ function SystemPlan() {
           Painel da operação
         </p>
       </div>
+      <PlanDecisions kind="system" />
       <div className="journey-mock-plan-footer">
         <span>
           <MousePointer2 size={12} />
@@ -151,117 +155,6 @@ function SystemPlan() {
           Escopo definido
           <CheckCircle2 size={12} />
         </span>
-      </div>
-    </div>
-  )
-}
-
-function SystemBuild({ evolve = false }: { evolve?: boolean }) {
-  return (
-    <div className="journey-mock-system-app">
-      <aside className="journey-mock-app-sidebar">
-        <strong>
-          <Layers size={18} />
-          nexo<span>.</span>
-        </strong>
-        {[
-          { icon: LayoutDashboard, text: evolve ? 'Inteligência' : 'Visão geral' },
-          { icon: ShoppingBag, text: 'Pedidos' },
-          { icon: Users, text: 'Clientes' },
-          { icon: Package, text: 'Estoque' },
-        ].map(({ icon: Icon, text }, index) => (
-          <span className={index === 0 ? 'active' : ''} key={text}>
-            <Icon size={13} />
-            <small>{text}</small>
-          </span>
-        ))}
-        <span className="journey-mock-sidebar-bottom">
-          <Settings2 size={13} />
-          <small>Configurações</small>
-        </span>
-      </aside>
-      <div className="journey-mock-app-main">
-        <div className="journey-mock-app-toolbar">
-          <span>EMPRESA / {evolve ? 'INTELIGÊNCIA' : 'VISÃO GERAL'}</span>
-          <Search size={12} />
-          <Bell size={12} />
-          <b>AC</b>
-        </div>
-        <div className="journey-mock-app-heading">
-          <div>
-            <small>{evolve ? 'DECISÕES COM CONTEXTO' : 'SUA OPERAÇÃO, ORGANIZADA'}</small>
-            <h4>{evolve ? 'Uma visão que acompanha o crescimento.' : 'Bom dia, Ana.'}</h4>
-          </div>
-          <span>
-            {evolve ? 'Todas as unidades' : 'Este mês'}
-            <ChevronDown size={10} />
-          </span>
-        </div>
-        <div className="journey-mock-kpis">
-          {(evolve
-            ? [
-                ['3', 'Unidades conectadas'],
-                ['4', 'Perfis de acesso'],
-                ['12', 'Relatórios disponíveis'],
-              ]
-            : [
-                ['24', 'Pedidos em andamento'],
-                ['18', 'Entregas concluídas'],
-                ['06', 'Aguardando aprovação'],
-              ]
-          ).map(([value, label]) => (
-            <div key={label}>
-              <small>{label}</small>
-              <strong>
-                {value}
-                <ArrowUpRight size={12} />
-              </strong>
-            </div>
-          ))}
-        </div>
-        <div className="journey-mock-app-chart">
-          <div>
-            <strong>{evolve ? 'Comparativo entre unidades' : 'Movimentação de pedidos'}</strong>
-            <small>Exemplo de visualização</small>
-          </div>
-          <div className={`journey-mock-chart-bars ${evolve ? 'is-comparison' : ''}`}>
-            {[35, 57, 46, 72, 62, 88, 70, 94, 80, 99, 86, 110].map((height, index) => (
-              <i key={index} style={{ height: `${height * 0.65}px` }} />
-            ))}
-          </div>
-          <footer>
-            {(evolve
-              ? ['Centro', 'Zona Sul', 'Online']
-              : ['SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SÁB']
-            ).map((label) => (
-              <span key={label}>{label}</span>
-            ))}
-          </footer>
-        </div>
-        <div className="journey-mock-orders">
-          <div>
-            <strong>{evolve ? 'Próximas melhorias priorizadas' : 'Acompanhe os pedidos'}</strong>
-            <span>{evolve ? 'Plano de evolução' : 'Status atualizado'}</span>
-          </div>
-          {(evolve
-            ? [
-                ['Permissões por equipe', 'Planejado'],
-                ['Integração com estoque', 'Em validação'],
-              ]
-            : [
-                ['#1042 · Estúdio Horizonte', 'Em produção'],
-                ['#1041 · Casa Oliveira', 'Concluído'],
-              ]
-          ).map(([title, status]) => (
-            <p key={title}>
-              <span>
-                <i />
-                {title}
-              </span>
-              <em>{status}</em>
-            </p>
-          ))}
-        </div>
       </div>
     </div>
   )
@@ -277,7 +170,7 @@ function WebsitePlan() {
       />
       <div className="journey-mock-wireframe">
         <div className="journey-mock-wire-nav">
-          <strong>MARCA</strong>
+          <strong>aurora®</strong>
           <span>Serviços</span>
           <span>Sobre</span>
           <b>
@@ -289,16 +182,26 @@ function WebsitePlan() {
           <div>
             <small>01 / PROPOSTA DE VALOR</small>
             <h4>A razão para escolher a sua empresa.</h4>
-            <span className="journey-mock-wire-line" />
-            <span className="journey-mock-wire-line short" />
+            <p className="preview-wire-copy">
+              Uma apresentação que conecta sua especialidade ao que o cliente procura.
+            </p>
             <b>
               Iniciar uma conversa
               <ArrowRight size={10} />
             </b>
           </div>
           <div className="journey-mock-wire-image">
-            <Globe size={30} strokeWidth={1} />
-            <span>IDENTIDADE VISUAL</span>
+            <div className="preview-direction-orbit">
+              <Globe size={30} strokeWidth={1} />
+              <i />
+              <i />
+            </div>
+            <span>IDENTIDADE + EXPERIÊNCIA</span>
+            <div className="preview-brand-swatches">
+              <i />
+              <i />
+              <i />
+            </div>
           </div>
         </div>
         <div className="journey-mock-wire-sections">
@@ -310,6 +213,7 @@ function WebsitePlan() {
           ))}
         </div>
       </div>
+      <PlanDecisions kind="website" />
       <div className="journey-mock-site-plan-note">
         <CheckCircle2 size={13} />
         Conteúdo, estrutura e navegação antes do desenvolvimento.
@@ -357,14 +261,24 @@ function WebsiteBuild({ evolve = false }: { evolve?: boolean }) {
               </span>
             </div>
             <div className="journey-mock-form-preview">
+              <small>01 / PRIMEIRO CONTATO</small>
               <strong>Vamos conhecer seu negócio.</strong>
-              <span>Seu nome</span>
-              <span>E-mail profissional</span>
-              <span>Qual é o seu desafio?</span>
+              <span>
+                Nome <b>Ana Oliveira</b>
+              </span>
+              <span>
+                E-mail profissional <b>ana@exemplo.com</b>
+              </span>
+              <span>
+                Seu principal desafio <b>Organizar minha operação</b>
+              </span>
               <b>
                 Solicitar diagnóstico
                 <ArrowUpRight size={11} />
               </b>
+              <p className="preview-form-note">
+                <ShieldCheck size={10} /> Prévia ilustrativa · nenhum dado é enviado
+              </p>
             </div>
           </div>
         </>
@@ -391,6 +305,7 @@ function WebsiteBuild({ evolve = false }: { evolve?: boolean }) {
               </b>
             </div>
             <div className="journey-mock-architecture" aria-hidden="true">
+              <div className="aurora-art-grid" />
               <span className="journey-mock-arch-block back" />
               <span className="journey-mock-arch-block front" />
               <i />
@@ -401,21 +316,20 @@ function WebsiteBuild({ evolve = false }: { evolve?: boolean }) {
                 <br />
                 MOVIMENTO.
               </small>
+              <div className="aurora-art-caption">
+                <span>ESTRATÉGIA EM MOVIMENTO</span>
+                <strong>
+                  Novas perspectivas.
+                  <br />
+                  Possibilidades reais.
+                </strong>
+                <ArrowUpRight size={18} />
+              </div>
             </div>
-          </div>
-          <div className="journey-mock-site-services">
-            <span>ESTRATÉGIA QUE SAI DO PAPEL</span>
-            <strong>
-              Planejamento
-              <ArrowUpRight size={12} />
-            </strong>
-            <strong>
-              Gestão & processos
-              <ArrowUpRight size={12} />
-            </strong>
           </div>
         </>
       )}
+      <WebsiteServices evolve={evolve} />
       <div className="journey-mock-site-bottom">
         <span>
           {evolve
@@ -482,6 +396,8 @@ function AutomationPlan() {
           Histórico de ações
         </span>
       </div>
+      <PlanDecisions kind="automation" />
+      <AutomationConnections />
     </div>
   )
 }
@@ -509,6 +425,7 @@ function AutomationBuild() {
         </h4>
         <p>Da primeira mensagem ao atendimento, cada etapa tem uma direção.</p>
       </header>
+      <AutomationConnections />
       <div className="journey-flow-workspace">
         <div className="journey-flow-diagram">
           <span className="journey-flow-section-label">O FLUXO DO ATENDIMENTO</span>
@@ -599,6 +516,7 @@ function AutomationBuild() {
           </div>
         </div>
       </div>
+      <AutomationTrace />
       <div className="journey-flow-bottom">
         <span>
           <ShieldCheck size={12} />
@@ -621,7 +539,7 @@ export function JourneyDemo({ kind, phase }: { kind: JourneyDemoKind; phase: num
         ) : phase === 2 ? (
           <NexoEvolution />
         ) : (
-          <SystemBuild />
+          <SystemWorkspace />
         )
       ) : kind === 'website' ? (
         phase === 0 ? (
