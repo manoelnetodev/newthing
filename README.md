@@ -106,9 +106,9 @@ Confira `git status` e a seleção de arquivos antes do commit. Depois de criar 
 
 ## Publicação no Cloudflare Pages
 
-O projeto existente **`newthing`**, na conta parceira **`Multcaremanoel@gmail.com's Account`** (`8602cbfa9414d1deef975d65159cb5b7`), está conectado ao repositório `manoelnetodev/newthing`. O endereço de produção é **https://newthing-bye.pages.dev**. O identificador da conta está fixado em `wrangler.jsonc`; ele é público e não é uma credencial.
+O projeto existente **`newthing`**, na conta parceira **`Multcaremanoel@gmail.com's Account`** (`8602cbfa9414d1deef975d65159cb5b7`), está conectado ao repositório `manoelnetodev/newthing`. O endereço de produção é **https://newthing-bye.pages.dev**. Para publicação manual, defina a conta explicitamente pela variável `CLOUDFLARE_ACCOUNT_ID`; Pages não aceita `account_id` no arquivo de configuração.
 
-O push na branch **`main`** dispara a publicação automática. Confira o check **Cloudflare Pages** do commit no GitHub e valide o site público após a conclusão. Não crie outro projeto para atualizar este site.
+O push na branch **`main`** dispara a publicação automática. Envie alterações para uma branch de revisão e aguarde a autorização do Manoel antes de integrar na `main` e publicar. Confira o check **Cloudflare Pages** do commit no GitHub e valide o site público após a conclusão. Não crie outro projeto para atualizar este site.
 
 O build usa **`npm run build`**, com saída **`dist`**, e requer uma versão de Node compatível com o Vite instalado. Se for necessário publicar manualmente, autentique o Wrangler com acesso à conta parceira e execute:
 
