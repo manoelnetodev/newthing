@@ -1,0 +1,63 @@
+{
+  "format": "WebP lossless",
+  "resized": false,
+  "verified": "Identical decoded RGBA bytes, including transparency",
+  "photos": [
+    {
+      "id": "manoel",
+      "source": "public/team/manoel-neto-estudio-v2.png",
+      "localPath": "public/team/optimized/manoel-neto-391201290e1a.webp",
+      "objectKey": "team/manoel-neto-391201290e1a.webp",
+      "width": 1122,
+      "height": 1402,
+      "sourceBytes": 1533080,
+      "optimizedBytes": 943838,
+      "savedPercent": 38.44,
+      "pixelsIdentical": true,
+      "sha256": "391201290e1a2432979b46e079396562fbdb10ea9ed9ba6058e9271a25476020",
+      "decodedPixelsSha256": "b6cdce89845230d8cf20541dae252559068b0135d852c622e995c9770791060c"
+    },
+    {
+      "id": "ronan",
+      "source": "public/team/ronan-severo-estudio-v2.png",
+      "localPath": "public/team/optimized/ronan-severo-029d58834522.webp",
+      "objectKey": "team/ronan-severo-029d58834522.webp",
+      "width": 1122,
+      "height": 1402,
+      "sourceBytes": 2013607,
+      "optimizedBytes": 1210210,
+      "savedPercent": 39.9,
+      "pixelsIdentical": true,
+      "sha256": "029d5883452224c0b0db8271dccc389b23a8e1283ef0010a4978d8e6ea27b2e5",
+      "decodedPixelsSha256": "e03b80cba1b6d47059d6d283fdb7bc07e2ca89a742fa94373d7c8be1dbea0cb4"
+    },
+    {
+      "id": "yuri",
+      "source": "public/team/yuri-gabriel-estudio-v2.png",
+      "localPath": "public/team/optimized/yuri-gabriel-9fc709f2844c.webp",
+      "objectKey": "team/yuri-gabriel-9fc709f2844c.webp",
+      "width": 1122,
+      "height": 1402,
+      "sourceBytes": 1617173,
+      "optimizedBytes": 949820,
+      "savedPercent": 41.27,
+      "pixelsIdentical": true,
+      "sha256": "9fc709f2844c2ac2ce1787730f2e94777903272203fc17fa6178054876ebbd73",
+      "decodedPixelsSha256": "d9cc1e19e4eb7de7bbd266d10291da39bca48911a16805e3b1283a66ec830105"
+    },
+    {
+      "id": "maksuel",
+      "source": "public/team/macsuel-silva-estudio-v2.png",
+      "localPath": "public/team/optimized/maksuel-silva-00a3cfc08422.webp",
+      "objectKey": "team/maksuel-silva-00a3cfc08422.webp",
+      "width": 1122,
+      "height": 1402,
+      "sourceBytes": 1894076,
+      "optimizedBytes": 1134384,
+      "savedPercent": 40.11,
+      "pixelsIdentical": true,
+      "sha256": "00a3cfc084224c3980b0826cde26433042577b83531c4970ae0f000266a6d7fa",
+      "decodedPixelsSha256": "08054f59dd189ad7735216894693e5f8d0f7c5876627f71cf43b565c6fae7c3a"
+    }
+  ]
+}

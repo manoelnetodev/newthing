@@ -1,0 +1,26 @@
+{
+  "bucket": "newthing-media",
+  "verified": "SHA-256 of every public R2 download matches the local lossless image",
+  "photos": [
+    {
+      "id": "manoel",
+      "url": "https://pub-3a898b56bec94bd5baa3627d4f5c9ac5.r2.dev/team/manoel-neto-391201290e1a.webp",
+      "sha256": "391201290e1a2432979b46e079396562fbdb10ea9ed9ba6058e9271a25476020"
+    },
+    {
+      "id": "ronan",
+      "url": "https://pub-3a898b56bec94bd5baa3627d4f5c9ac5.r2.dev/team/ronan-severo-029d58834522.webp",
+      "sha256": "029d5883452224c0b0db8271dccc389b23a8e1283ef0010a4978d8e6ea27b2e5"
+    },
+    {
+      "id": "yuri",
+      "url": "https://pub-3a898b56bec94bd5baa3627d4f5c9ac5.r2.dev/team/yuri-gabriel-9fc709f2844c.webp",
+      "sha256": "9fc709f2844c2ac2ce1787730f2e94777903272203fc17fa6178054876ebbd73"
+    },
+    {
+      "id": "maksuel",
+      "url": "https://pub-3a898b56bec94bd5baa3627d4f5c9ac5.r2.dev/team/maksuel-silva-00a3cfc08422.webp",
+      "sha256": "00a3cfc084224c3980b0826cde26433042577b83531c4970ae0f000266a6d7fa"
+    }
+  ]
+}

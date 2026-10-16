@@ -1,6 +1,7 @@
 import { ArrowUpRight, ChartNoAxesCombined, Code2, Globe } from 'lucide-react'
 import './WhoWeAre.css'
 import './TeamEditorial.css'
+import { teamPhotos } from '../data/teamPhotos'
 
 type TeamMember = {
   name: string
@@ -8,7 +9,7 @@ type TeamMember = {
   roleCode: string
   fullRole: string
   responsibility: string
-  image: string
+  image: { src: string; fallback: string; width: number; height: number }
   imageClassName: string
   description: string
   focus?: string[]
@@ -22,7 +23,7 @@ const developmentTeam: TeamMember[] = [
     roleCode: 'CTO',
     fullRole: 'Chief Technology Officer',
     responsibility: 'Direção de tecnologia e arquitetura de sistemas',
-    image: '/team/manoel-neto-estudio-v2.png',
+    image: teamPhotos.manoel,
     imageClassName: 'team-photo-manoel',
     description:
       'Conecta desenvolvimento de sistemas, infraestrutura e automações para criar soluções integradas, com atenção à operação da empresa e à evolução de cada projeto.',
@@ -35,7 +36,7 @@ const developmentTeam: TeamMember[] = [
     roleCode: 'SDE',
     fullRole: 'Software Development Engineer',
     responsibility: 'Desenvolvimento de software e integrações',
-    image: '/team/ronan-severo-estudio-v2.png',
+    image: teamPhotos.ronan,
     imageClassName: 'team-photo-ronan',
     description:
       'Transforma o planejamento em software: desenvolve funcionalidades, conecta processos e integra sistemas para apoiar a rotina de cada cliente.',
@@ -50,7 +51,7 @@ const partnershipTeam: TeamMember[] = [
     roleCode: 'CEO',
     fullRole: 'Chief Executive Officer',
     responsibility: 'Direção estratégica e visão de negócio',
-    image: '/team/yuri-gabriel-estudio-v2.png',
+    image: teamPhotos.yuri,
     imageClassName: 'team-photo-yuri',
     description:
       'Conecta a visão do cliente à estratégia do projeto. Sua experiência em contabilidade e gestão financeira contribui para alinhar objetivos, prioridades e decisões de negócio.',
@@ -63,7 +64,7 @@ const partnershipTeam: TeamMember[] = [
     roleCode: 'COO',
     fullRole: 'Chief Operating Officer',
     responsibility: 'Operações, parcerias e relacionamento',
-    image: '/team/macsuel-silva-estudio-v2.png',
+    image: teamPhotos.maksuel,
     imageClassName: 'team-photo-macsuel',
     description:
       'Aproxima pessoas, parcerias e operação. Contribui para organizar o relacionamento com as empresas e alinhar as necessidades do cliente ao andamento do projeto.',
@@ -156,12 +157,18 @@ export function WhoWeAre({ onContact }: { onContact: () => void }) {
                     <div className="team-portrait">
                       <img
                         className={person.imageClassName}
-                        src={person.image}
+                        src={person.image.src}
                         alt={`Retrato profissional de ${person.name}`}
-                        width={800}
-                        height={1000}
+                        width={person.image.width}
+                        height={person.image.height}
                         loading="lazy"
                         decoding="async"
+                        onError={({ currentTarget }) => {
+                          if (currentTarget.dataset.fallback !== 'true') {
+                            currentTarget.dataset.fallback = 'true'
+                            currentTarget.src = person.image.fallback
+                          }
+                        }}
                       />
                     </div>
                     <div className="team-profile-details">
