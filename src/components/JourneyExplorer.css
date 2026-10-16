@@ -87,10 +87,6 @@
 }
 
 /* The full experience is mounted only after an explicit request. */
-html:has(.journey-preview-modal[open]) {
-  overflow: hidden;
-  scrollbar-gutter: stable;
-}
 dialog.journey-preview-modal {
   width: min(1220px, calc(100% - 48px));
   max-width: none;
@@ -391,8 +387,16 @@ dialog.journey-preview-modal {
   }
 }
 @media (max-height: 500px) {
+  .journey-preview-modal[open] {
+    display: block;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
   .journey-preview-modal .modal-head {
     padding-block: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
   }
   .journey-preview-modal .modal-head p {
     display: none;
@@ -403,8 +407,11 @@ dialog.journey-preview-modal {
   .journey-preview-footer {
     padding-block: 7px;
   }
+  .journey-preview-scroll {
+    overflow: visible;
+  }
 }
-@media (min-width: 700px) and (max-height: 500px) {
+@media (min-width: 480px) and (max-height: 500px) {
   .journey-preview-controls {
     display: grid;
     grid-template-columns: 1.15fr 1fr;

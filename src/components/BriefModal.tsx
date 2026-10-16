@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useId, useLayoutEffect, useRef, useState } from 'react'
 import type { FormEvent } from 'react'
 import { ArrowRight, CheckCircle2, Copy, Download, MessageCircle, RotateCcw } from 'lucide-react'
 import { Button, ErrorMessage, Field, Modal } from './ui'
@@ -23,22 +23,33 @@ export function BriefModal({
   const [error, setError] = useState<string | null>(null)
   const [copyStatus, setCopyStatus] = useState('')
   const summaryHeading = useRef<HTMLHeadingElement>(null)
+  const nameInput = useRef<HTMLInputElement>(null)
+  const projectInput = useRef<HTMLTextAreaElement>(null)
+  const errorId = useId()
   const plan = createBlueprint(values)
   const summary = formatBlueprint(values)
   const whatsappNumber =
     (import.meta.env.VITE_WHATSAPP_NUMBER?.trim() || '556293022434').replace(/\D/g, '') ||
     '556293022434'
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(summary)}`
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (ready) {
       summaryHeading.current?.focus()
       summaryHeading.current?.closest('dialog')?.scrollTo(0, 0)
+    } else {
+      nameInput.current?.focus()
+      nameInput.current?.closest('dialog')?.scrollTo(0, 0)
     }
   }, [ready])
   function submit(event: FormEvent) {
     event.preventDefault()
     if (values.name.trim().length < 2 || values.project.trim().length < 15) {
       setError('Informe seu nome e descreva a ideia com pelo menos 15 caracteres.')
+      requestAnimationFrame(() => {
+        const field = values.name.trim().length < 2 ? nameInput.current : projectInput.current
+        field?.focus()
+        field?.parentElement?.scrollIntoView({ block: 'nearest' })
+      })
       return
     }
     setError(null)
@@ -159,10 +170,15 @@ export function BriefModal({
         </div>
       ) : (
         <form className="form-stack" onSubmit={submit}>
-          {error && <ErrorMessage>{error}</ErrorMessage>}
+          {error && <ErrorMessage id={errorId}>{error}</ErrorMessage>}
           <Field label="Seu nome" id="brief-name">
             <input
               id="brief-name"
+              ref={nameInput}
+              aria-invalid={error && values.name.trim().length < 2 ? true : undefined}
+              aria-describedby={
+                error && values.name.trim().length < 2 ? `${errorId}-name` : undefined
+              }
               required
               minLength={2}
               maxLength={100}
@@ -171,6 +187,11 @@ export function BriefModal({
               onChange={(event) => setValues({ ...values, name: event.target.value })}
               placeholder="Como podemos chamar você?"
             />
+            {error && values.name.trim().length < 2 && (
+              <p className="brief-field-error" id={`${errorId}-name`}>
+                Informe seu nome com pelo menos 2 caracteres.
+              </p>
+            )}
           </Field>
           <Field label="Seu e-mail" id="brief-email">
             <input
@@ -191,15 +212,20 @@ export function BriefModal({
               onChange={(event) => setValues({ ...values, stage: event.target.value })}
             >
               <option>Tenho uma ideia</option>
-              <option>Preciso de um site ou landing page</option>
-              <option>Quero construir um sistema</option>
-              <option>Quero automatizar processos</option>
-              <option>Quero evoluir um produto</option>
+              <option value="Preciso de um site ou landing page">Site ou landing page</option>
+              <option value="Quero construir um sistema">Sistema de gestão</option>
+              <option value="Quero automatizar processos">Automação</option>
+              <option value="Quero evoluir um produto">Evoluir um produto</option>
             </select>
           </Field>
           <Field label="Conte um pouco sobre a sua ideia" id="brief-project">
             <textarea
               id="brief-project"
+              ref={projectInput}
+              aria-invalid={error && values.project.trim().length < 15 ? true : undefined}
+              aria-describedby={
+                error && values.project.trim().length < 15 ? `${errorId}-project` : undefined
+              }
               required
               minLength={15}
               maxLength={2000}
@@ -208,6 +234,11 @@ export function BriefModal({
               onChange={(event) => setValues({ ...values, project: event.target.value })}
               placeholder="Qual problema você quer resolver? O que gostaria de construir?"
             />
+            {error && values.project.trim().length < 15 && (
+              <p className="brief-field-error" id={`${errorId}-project`}>
+                Descreva sua ideia com pelo menos 15 caracteres.
+              </p>
+            )}
           </Field>
           <p className="local-note">
             Você revisa o plano inicial antes de copiar, baixar ou compartilhar no WhatsApp. Nada é

@@ -457,7 +457,7 @@ export function FluxoMonitor() {
                   {selected.review && index > 0
                     ? index === 1
                       ? 'Revisão necessária'
-                      : 'Aguardando validação'
+                      : 'Em espera'
                     : text}
                 </small>
                 {index < 3 && (

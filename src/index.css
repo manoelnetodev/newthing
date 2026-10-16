@@ -790,6 +790,10 @@ h1 > span {
   padding: 5px;
   flex-shrink: 0;
 }
+html:has(dialog[open]) {
+  overflow: hidden;
+  scrollbar-gutter: stable;
+}
 .form-stack {
   display: flex;
   flex-direction: column;
@@ -830,7 +834,7 @@ h1 > span {
 }
 .field input::placeholder,
 .field textarea::placeholder {
-  color: #536578;
+  color: var(--nt-text-muted, #8596a7);
 }
 .field input:focus,
 .field textarea:focus,
@@ -916,6 +920,9 @@ h1 > span {
   }
 }
 @media (max-width: 1024px) {
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .main-nav {
     gap: 17px;
   }
@@ -1060,7 +1067,6 @@ h1 > span {
   }
   .process-grid {
     gap: 20px;
-    grid-template-columns: repeat(2, 1fr);
     row-gap: 38px;
   }
   .footer-top {
@@ -1235,6 +1241,7 @@ h1 > span {
     display: none;
   }
   .process-grid {
+    grid-template-columns: minmax(0, 1fr);
     gap: 18px;
     row-gap: 32px;
     margin-top: 32px;

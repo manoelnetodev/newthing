@@ -26,6 +26,7 @@ import { WhoWeAre } from './components/WhoWeAre'
 import { SolutionFinder } from './components/SolutionFinder'
 import { QuickFaq } from './components/QuickFaq'
 import { BrandMark } from './components/BrandMark'
+import { restoreFocus } from './lib/focus'
 import './components/FlowComparisonMotion.css'
 
 function Brand({ small = false }: { small?: boolean }) {
@@ -384,6 +385,9 @@ export default function App() {
     window.addEventListener('scroll', fitMenuToViewport, { passive: true })
     mobile.addEventListener('change', closeOnDesktop)
     fitMenuToViewport()
+    mainNavigation.current?.querySelector<HTMLAnchorElement>('a[href]')?.focus({
+      preventScroll: true,
+    })
     return () => {
       window.removeEventListener('keydown', closeOnEscape)
       window.removeEventListener('resize', fitMenuToViewport)
@@ -395,25 +399,26 @@ export default function App() {
   const [finderOpen, setFinderOpen] = useState(false)
   const [journeyRequest, setJourneyRequest] = useState({ exampleIndex: 0, phase: 0, id: 0 })
   const finderTrigger = useRef<HTMLButtonElement>(null)
-  const returnBriefToFinder = useRef(false)
+  const briefFallbackFocus = useRef<HTMLElement | null>(null)
   const [briefContext, setBriefContext] = useState<{ stage?: string; project?: string }>({})
   const openBrief = () => {
-    returnBriefToFinder.current = false
+    briefFallbackFocus.current = menuOpen ? menuTrigger.current : null
     setMenuOpen(false)
     setBriefContext({})
     setBriefOpen(true)
   }
   const openBriefForGoal = (goal: string, stage: string) => {
-    returnBriefToFinder.current = finderOpen
+    briefFallbackFocus.current = finderOpen ? finderTrigger.current : null
     setFinderOpen(false)
     setMenuOpen(false)
     setBriefContext({ stage, project: `Meu objetivo: ${goal}\n\nHoje, meu maior desafio é: ` })
     setBriefOpen(true)
   }
   const closeBrief = () => {
+    const fallback = briefFallbackFocus.current
     setBriefOpen(false)
-    if (returnBriefToFinder.current) {
-      requestAnimationFrame(() => finderTrigger.current?.focus({ preventScroll: true }))
+    if (fallback) {
+      requestAnimationFrame(() => restoreFocus(fallback))
     }
   }
   const viewRecommendedExample = (exampleIndex: number, phase: number) => {
@@ -473,7 +478,7 @@ export default function App() {
           </button>
         </div>
       </header>
-      <main id="conteudo">
+      <main id="conteudo" tabIndex={-1}>
         <section id="inicio" className="hero">
           <div className="hero-glow" />
           <div className="container">
@@ -484,8 +489,7 @@ export default function App() {
                   SITES, SISTEMAS E AUTOMAÇÕES.
                 </div>
                 <h1>
-                  Sua ideia merece
-                  <span>acontecer de verdade.</span>
+                  Sua ideia merece <span>acontecer de verdade.</span>
                 </h1>
                 <p>
                   Menos planilhas espalhadas, atendimento sem contexto e ferramentas desconectadas.

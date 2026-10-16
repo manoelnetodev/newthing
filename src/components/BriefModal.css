@@ -4,6 +4,15 @@
 .brief-summary {
   overflow-wrap: anywhere;
 }
+.brief-field-error {
+  margin: 0;
+  color: #ffadb8;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.form-stack .field :is(input, textarea)[aria-invalid='true'] {
+  border-color: #d18092;
+}
 .brief-summary h3:focus-visible {
   outline: 2px solid var(--nt-focus);
   outline-offset: 5px;
@@ -114,6 +123,20 @@
   margin: 10px 0 0;
 }
 @media (max-width: 560px) {
+  .form-stack .field :is(input, select, textarea) {
+    font-size: 16px;
+  }
+  .form-stack .modal-footer {
+    flex-wrap: wrap;
+  }
+  .form-stack .modal-footer .button {
+    flex: 1 1 160px;
+    white-space: normal;
+    min-width: 0;
+  }
+  .form-stack .modal-footer .button:first-child {
+    flex: 0 1 auto;
+  }
   .blueprint-team {
     grid-template-columns: 1fr;
   }

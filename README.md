@@ -66,11 +66,12 @@ React funciona como peças de montar. Vite é a oficina que liga e empacota a p�
 ```powershell
 npm run lint
 npm run typecheck
+npm run test:unit
 npm run build
 npm run preview
 ```
 
-`lint` revisa o código; `typecheck` confere tipos; `build` prepara a pasta `dist`; `preview` mostra essa versão pronta localmente. Build não publica o site. O endereço do preview aparece no terminal.
+`lint` revisa o código; `typecheck` confere tipos; `test:unit` verifica as regras dos planos e do resumo usando o executor nativo do Node; `build` prepara a pasta `dist`; `preview` mostra essa versão pronta localmente. Build não publica o site. O endereço do preview aparece no terminal.
 
 Para padronizar a formatação:
 
@@ -79,6 +80,8 @@ npm run format
 ```
 
 Testes de uso: confira o menu em 390px, os links entre seções, todos os exemplos de projeto e perguntas frequentes. Abra o briefing, teste campos inválidos, prepare um exemplo, edite novamente e baixe o arquivo. Confira Escape e navegação por teclado.
+
+A revisão completa de interface, incluindo os tamanhos testados, correções e evidências visuais, está em [docs/REVISAO-COMPLETA-INTERFACE.md](docs/REVISAO-COMPLETA-INTERFACE.md). No celular, confira especialmente o retorno do menu, os erros do briefing, os botões em 320 pixels e a pausa das luzes da jornada.
 
 ## Salvar no Git e GitHub
 

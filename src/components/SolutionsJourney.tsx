@@ -17,6 +17,7 @@ import { BriefModal } from './BriefModal'
 import { JourneyDemo } from './JourneyDemo'
 import { JourneyPath } from './JourneyPath'
 import { Modal } from './ui'
+import { restoreFocus } from '../lib/focus'
 import './SolutionsJourney.css'
 import './JourneyExplorer.css'
 
@@ -295,7 +296,7 @@ export function SolutionsJourney({
       const target = opener?.isConnected
         ? opener
         : document.getElementById(`journey-launch-${example.kind}`)
-      target?.focus({ preventScroll: true })
+      restoreFocus(target)
     })
   }
 
@@ -308,6 +309,7 @@ export function SolutionsJourney({
     setExampleIndex(index)
     setSelected(phaseIndex)
     previewScroll.current?.scrollTo({ top: 0, behavior: 'instant' })
+    previewScroll.current?.closest('dialog')?.scrollTo({ top: 0, behavior: 'instant' })
   }
 
   return (

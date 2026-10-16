@@ -9,6 +9,7 @@
     "lint": "eslint . --max-warnings 0",
     "preview": "vite preview",
     "typecheck": "tsc -b --noEmit",
+    "test:unit": "node --experimental-strip-types --test scripts/project-blueprint.test.mjs",
     "format": "prettier --write .",
     "cf:preview": "npm run build && wrangler pages dev",
     "photos:optimize": "node scripts/optimize-team-photos.mjs",

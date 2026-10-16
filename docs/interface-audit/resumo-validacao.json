@@ -1,0 +1,143 @@
+{
+  "date": "2026-10-16",
+  "method": "Viewport emulation, keyboard, pointer, DOM geometry and screenshots in Codex in-app browser. Not physical-device or cross-browser certification.",
+  "profiles": [
+    {
+      "width": 320,
+      "height": 568
+    },
+    {
+      "width": 360,
+      "height": 640
+    },
+    {
+      "width": 375,
+      "height": 667
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 412,
+      "height": 915
+    },
+    {
+      "width": 430,
+      "height": 932
+    },
+    {
+      "width": 560,
+      "height": 800
+    },
+    {
+      "width": 562,
+      "height": 800
+    },
+    {
+      "width": 568,
+      "height": 320
+    },
+    {
+      "width": 667,
+      "height": 375
+    },
+    {
+      "width": 844,
+      "height": 390
+    },
+    {
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "width": 800,
+      "height": 600
+    },
+    {
+      "width": 802,
+      "height": 600
+    },
+    {
+      "width": 820,
+      "height": 1180
+    },
+    {
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "width": 1100,
+      "height": 800
+    },
+    {
+      "width": 1102,
+      "height": 800
+    },
+    {
+      "width": 1180,
+      "height": 820
+    },
+    {
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "width": 1366,
+      "height": 768
+    },
+    {
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "width": 2560,
+      "height": 1440
+    }
+  ],
+  "checks": {
+    "reflow": true,
+    "projects": true,
+    "journeys": true,
+    "faqs": true,
+    "finder": true,
+    "briefing": true,
+    "navigation": true,
+    "motion": true,
+    "filters": true,
+    "keyboard": true,
+    "scrolling": true,
+    "ctas": true,
+    "launchActions": true,
+    "pointer": true,
+    "validation": true,
+    "production": true
+  },
+  "counts": {
+    "finalMain": 24,
+    "projects": 288,
+    "journeys": 216,
+    "faqs": 192,
+    "finder": 288,
+    "brief": 120,
+    "navigation": 156,
+    "motion": 24,
+    "filters": 24,
+    "keyboard": 24,
+    "scrolling": 24,
+    "ctas": 125,
+    "launchActions": 18,
+    "pointer": 3,
+    "validation": 24,
+    "production": 5
+  },
+  "unitTests": 10,
+  "technicalChecks": ["lint", "typecheck", "test:unit", "build", "git diff --check"],
+  "copyAndDownloadVerified": true,
+  "whatsappTarget": "https://wa.me/556293022434",
+  "messagesSent": 0
+}

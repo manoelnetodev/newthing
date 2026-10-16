@@ -325,6 +325,8 @@
   }
 }
 .journey-cards[data-light-motion='paused'] .journey-path *,
+.journey-cards[data-light-motion='paused'] .journey-path .start > svg:first-child,
+.journey-cards[data-light-motion='paused'] .journey-path .end > svg:first-child,
 .journey-cards[data-light-motion='paused'] .journey-path::before,
 .journey-cards[data-light-motion='paused'] .journey-path-hub > span::after {
   animation-play-state: paused;

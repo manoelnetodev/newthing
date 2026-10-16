@@ -1,6 +1,7 @@
 import { useEffect, useId, useRef } from 'react'
 import type { ButtonHTMLAttributes, ReactNode } from 'react'
 import { AlertCircle, X } from 'lucide-react'
+import { restoreFocus } from '../lib/focus'
 
 export function Button({
   variant = 'primary',
@@ -19,9 +20,9 @@ export function Field({ label, id, children }: { label: string; id: string; chil
   )
 }
 
-export function ErrorMessage({ children }: { children: ReactNode }) {
+export function ErrorMessage({ children, id }: { children: ReactNode; id?: string }) {
   return (
-    <div className="error-message" role="alert">
+    <div className="error-message" role="alert" id={id}>
       <AlertCircle size={18} />
       <span>{children}</span>
     </div>
@@ -55,9 +56,7 @@ export function Modal({
       ?.focus()
     return () => {
       element?.close()
-      queueMicrotask(() => {
-        if (opener?.isConnected && !document.querySelector('dialog[open]')) opener.focus()
-      })
+      queueMicrotask(() => restoreFocus(opener))
     }
   }, [])
   return (
