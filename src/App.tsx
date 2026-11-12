@@ -13,7 +13,6 @@ import {
   MousePointer2,
   Pause,
   Play,
-  Rocket,
   Sparkles,
   Workflow,
   X,
@@ -25,6 +24,7 @@ import { ProjectShowcase } from './components/ProjectShowcase'
 import { WhoWeAre } from './components/WhoWeAre'
 import { SolutionFinder } from './components/SolutionFinder'
 import { QuickFaq } from './components/QuickFaq'
+import { ProcessPresentation } from './components/ProcessPresentation'
 import { BrandMark } from './components/BrandMark'
 import { restoreFocus } from './lib/focus'
 import './components/FlowComparisonMotion.css'
@@ -47,27 +47,6 @@ function Brand({ small = false }: { small?: boolean }) {
         height={70}
       />
     </a>
-  )
-}
-
-function SectionHeading({
-  label,
-  title,
-  text,
-}: {
-  label: string
-  title: React.ReactNode
-  text: string
-}) {
-  return (
-    <div className="section-heading">
-      <span className="eyebrow">
-        <span />
-        {label}
-      </span>
-      <h2>{title}</h2>
-      <p>{text}</p>
-    </div>
   )
 }
 
@@ -231,40 +210,6 @@ function FlowComparison() {
   )
 }
 
-const steps = [
-  {
-    id: '01',
-    title: 'Escopo antes da execução',
-    description:
-      'Objetivo, funcionalidades, integrações e critérios de entrega são alinhados antes de começar. Você entende o que será construído e o que precisa fornecer.',
-    icon: Compass,
-    deliverable: 'Entregas e prioridades definidas',
-  },
-  {
-    id: '02',
-    title: 'Entregas para você validar',
-    description:
-      'Protótipos e demonstrações tornam a construção visível. Os pontos de acompanhamento são combinados conforme o projeto, com espaço para seu retorno.',
-    icon: Layers,
-    deliverable: 'Validação nas etapas combinadas',
-  },
-  {
-    id: '03',
-    title: 'Decisões com contexto',
-    description:
-      'Explicamos alternativas e registramos prioridades. Quando surge uma nova demanda, alinhamos seu impacto no escopo, no prazo e no investimento antes de avançar.',
-    icon: Code2,
-    deliverable: 'Mudanças avaliadas em conjunto',
-  },
-  {
-    id: '04',
-    title: 'Continuidade definida',
-    description:
-      'A entrega inclui o que foi combinado para começar a usar a solução. Suporte, manutenção e novas funcionalidades têm responsabilidades e condições alinhadas.',
-    icon: Rocket,
-    deliverable: 'Orientações e próximos passos claros',
-  },
-]
 const faqs = [
   {
     question: 'Tenho apenas uma ideia. Por onde começo?',
@@ -572,42 +517,7 @@ export default function App() {
           initialPhase={journeyRequest.phase}
           initialOpen={journeyRequest.id > 0}
         />
-        <section id="processo" className="section process-section">
-          <div className="container">
-            <div className="split-heading">
-              <SectionHeading
-                label="COMO TRABALHAMOS NA PRÁTICA"
-                title={
-                  <>
-                    Você acompanha a construção. <br />
-                    <span>As decisões ficam claras.</span>
-                  </>
-                }
-                text="Quatro compromissos que organizam o trabalho e tornam a parceria mais previsível, da definição do escopo à continuidade."
-              />
-              <span className="process-stamp">
-                <span className="stamp-dot" />
-                CLAREZA + RESPONSABILIDADE
-              </span>
-            </div>
-            <div className="process-grid">
-              {steps.map(({ id, title, description, icon: Icon, deliverable }) => (
-                <article className="process-step" key={id}>
-                  <div className="step-top">
-                    <span>{id}</span>
-                    <Icon size={22} strokeWidth={1.5} />
-                  </div>
-                  <h3>{title}</h3>
-                  <p>{description}</p>
-                  <div className="step-deliverable">
-                    <CheckCircle2 size={13} />
-                    {deliverable}
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ProcessPresentation />
         <WhoWeAre onContact={openBrief} />
         <QuickFaq faqs={faqs} onBrief={openBrief} />
         <section className="final-cta">

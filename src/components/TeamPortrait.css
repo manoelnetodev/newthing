@@ -1,99 +1,486 @@
-/* The cutout is the foreground plane. Light and a floor shadow sit behind it. */
-.team-portrait {
-  --portrait-rx: 0deg;
-  --portrait-ry: 0deg;
-  --portrait-x: 0px;
-  --portrait-y: 0px;
-  --portrait-light-x: 50%;
-  --portrait-light-y: 40%;
-  perspective: 1000px;
-  perspective-origin: 50% 42%;
-  isolation: isolate;
+/* Arquitetura 3D pura via GPU (translate3d / rotateX / rotateY / opacity) — zero blur/drop-shadow pesado */
+
+.nt-monolith-slot {
+  --accent-rgb: 98, 174, 255;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 248px;
+  height: 364px;
+  margin-left: -124px;
+  transform-style: preserve-3d;
+  transition: transform 680ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+  user-select: none;
+  outline: none;
 }
-.team-portrait .team-portrait-scene {
+
+.nt-monolith-slot.nt-area-parcerias {
+  --accent-rgb: 140, 192, 255;
+}
+
+.nt-monolith-slot.nt-area-desenvolvimento {
+  --accent-rgb: 56, 156, 255;
+}
+
+/* Formação orbital 3D assimétrica: os 4 especialistas ficam visíveis simultaneamente sem sobrepor rostos */
+.nt-monolith-slot[data-slot='0'] {
+  z-index: 4;
+  transform: translate3d(-17%, 0px, 46px) rotateY(0deg) scale(1);
+  cursor: grab;
+}
+
+.nt-monolith-slot[data-slot='0']:active {
+  cursor: grabbing;
+}
+
+.nt-monolith-slot[data-slot='-1'] {
+  z-index: 2;
+  transform: translate3d(-78%, 14px, -115px) rotateY(24deg) scale(0.81);
+  cursor: pointer;
+}
+
+.nt-monolith-slot[data-slot='1'] {
+  z-index: 3;
+  transform: translate3d(43%, 10px, -95px) rotateY(-21deg) scale(0.83);
+  cursor: pointer;
+}
+
+.nt-monolith-slot[data-slot='2'] {
+  z-index: 1;
+  transform: translate3d(86%, 22px, -185px) rotateY(-30deg) scale(0.71);
+  cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nt-monolith-slot[data-slot='-1']:hover {
+    transform: translate3d(-78%, 7px, -92px) rotateY(20deg) scale(0.83);
+  }
+  .nt-monolith-slot[data-slot='1']:hover {
+    transform: translate3d(43%, 3px, -74px) rotateY(-17deg) scale(0.85);
+  }
+  .nt-monolith-slot[data-slot='2']:hover {
+    transform: translate3d(86%, 15px, -160px) rotateY(-26deg) scale(0.73);
+  }
+}
+
+.nt-monolith-slot:focus-visible .nt-chamber-frame {
+  border-color: #9ed0ff;
+  box-shadow: 0 0 0 2px #9ed0ff66;
+}
+
+/* Rig interno: aplica inclinação suave 3D ao cursor somente no especialista em foco */
+.nt-monolith-rig {
   position: relative;
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  transform: rotateX(var(--portrait-rx)) rotateY(var(--portrait-ry));
-  transition: transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
 }
-.team-portrait .team-portrait-aura {
+
+.nt-monolith-slot[data-slot='0'] .nt-monolith-rig {
+  transform: rotateX(var(--stage-rx, 0deg)) rotateY(var(--stage-ry, 0deg));
+}
+
+.nt-stage-viewport[data-tracking='true'] .nt-monolith-slot[data-slot='0'] .nt-monolith-rig {
+  transition-duration: 130ms;
+}
+
+/* CAMADA Z -26px: Câmara arquitetônica com grade de engenharia e iluminação radial */
+.nt-chamber-backplate {
   position: absolute;
-  inset: 6% -14% 2%;
+  top: 44px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(165deg, #111b27 0%, #0b1119 56%, #070b11 100%);
+  transform: translateZ(-26px);
+  pointer-events: none;
+}
+
+.nt-chamber-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(var(--accent-rgb), 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(var(--accent-rgb), 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(ellipse at 50% 38%, #000 25%, transparent 82%);
+  opacity: 0.85;
+}
+
+.nt-chamber-keylight {
+  position: absolute;
+  inset: -18%;
   background:
     radial-gradient(
-      ellipse at var(--portrait-light-x) var(--portrait-light-y),
-      #b7d7ff18,
-      transparent 55%
+      circle at var(--stage-lx, 50%) var(--stage-ly, 34%),
+      rgba(var(--accent-rgb), 0.28) 0%,
+      rgba(8, 124, 255, 0.1) 42%,
+      transparent 70%
     ),
-    radial-gradient(ellipse at 75% 65%, #087cff15, transparent 60%);
-  border-radius: 50%;
-  filter: blur(18px);
-  transform: translateZ(-45px);
-  opacity: 0.8;
-  pointer-events: none;
-  transition: opacity 500ms;
+    radial-gradient(ellipse at 50% 95%, rgba(8, 124, 255, 0.16), transparent 58%);
+  transition: opacity 420ms ease;
 }
-.team-portrait .team-portrait-ground {
+
+.nt-monolith-slot:not([data-slot='0']) .nt-chamber-keylight {
+  opacity: 0.35;
+}
+
+.nt-chamber-orbit {
   position: absolute;
-  width: 76%;
-  height: 12%;
-  left: 12%;
-  bottom: 1%;
-  background: radial-gradient(ellipse, #000c 10%, #0007 45%, transparent 72%);
-  filter: blur(8px);
-  transform: translateZ(-20px) translateX(calc(var(--portrait-x) * -0.6));
-  pointer-events: none;
-  transition: transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
-}
-.team-portrait .team-portrait-image {
-  position: relative;
-  display: block;
-  transform: translate3d(var(--portrait-x), var(--portrait-y), 48px) scale(1.1);
-  transform-origin: 50% 85%;
-  filter: drop-shadow(9px 12px 10px #0008) drop-shadow(-1px -1px 1px #c0ddff22);
-  mask-image: linear-gradient(to bottom, #000 0%, #000 76%, #000c 88%, transparent 100%);
+  top: 10px;
+  left: 50%;
+  width: 214px;
+  height: 214px;
+  margin-left: -107px;
+  color: rgb(var(--accent-rgb));
+  transform: translate3d(
+    calc(var(--stage-px, 0px) * -0.45),
+    calc(var(--stage-py, 0px) * -0.45),
+    0
+  );
   transition:
-    transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1),
-    filter 500ms;
+    transform 260ms ease-out,
+    opacity 420ms ease;
 }
-.team-portrait .team-portrait-index {
-  top: 6px;
+
+.nt-monolith-slot:not([data-slot='0']) .nt-chamber-orbit {
+  opacity: 0.28;
+  transform: none;
+}
+
+.nt-chamber-corner {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-color: rgba(var(--accent-rgb), 0.45);
+  border-style: solid;
+}
+
+.nt-corner-tl {
+  top: 10px;
+  left: 10px;
+  border-width: 1px 0 0 1px;
+}
+
+.nt-corner-tr {
+  top: 10px;
+  right: 10px;
+  border-width: 1px 1px 0 0;
+}
+
+.nt-corner-bl {
+  bottom: 10px;
+  left: 10px;
+  border-width: 0 0 1px 1px;
+}
+
+.nt-corner-br {
+  bottom: 10px;
+  right: 10px;
+  border-width: 0 1px 1px 0;
+}
+
+/* CAMADA Z 0px: Moldura biselada de vidro escuro */
+.nt-chamber-frame {
+  position: absolute;
+  top: 44px;
+  right: 0;
+  bottom: 0;
   left: 0;
-  color: #7e93a9;
-  transform: translateZ(12px);
+  border-radius: 16px;
+  border: 1px solid rgba(var(--accent-rgb), 0.38);
+  box-shadow:
+    inset 0 1px 0 rgba(205, 230, 255, 0.2),
+    0 22px 44px -18px rgba(0, 0, 0, 0.85);
+  transform: translateZ(0px);
+  pointer-events: none;
+  transition: border-color 420ms ease;
+}
+
+.nt-monolith-slot:not([data-slot='0']) .nt-chamber-frame {
+  border-color: rgba(120, 155, 192, 0.2);
+}
+
+.nt-chamber-topbar {
+  position: absolute;
+  top: 11px;
+  left: 13px;
+  right: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nt-chamber-coord {
+  font: 10px/1 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: 0.12em;
+  color: rgba(196, 222, 248, 0.72);
+}
+
+.nt-chamber-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgb(var(--accent-rgb));
+  box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.8);
+}
+
+.nt-monolith-slot:not([data-slot='0']) .nt-chamber-dot {
+  opacity: 0.35;
+  box-shadow: none;
+}
+
+.nt-chamber-rim {
+  position: absolute;
+  top: -1px;
+  left: 18%;
+  right: 18%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--accent-rgb), 0.85),
+    transparent
+  );
+  opacity: 0.9;
+}
+
+.nt-monolith-slot:not([data-slot='0']) .nt-chamber-rim {
+  opacity: 0.2;
+}
+
+/* CAMADA Z +26px: Portal com pop-out 3D real no topo e recorte milimétrico nas laterais/base */
+.nt-portrait-portal {
+  position: absolute;
+  top: 44px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  clip-path: inset(-64px 0px 0px 0px round 0 0 16px 16px);
+  transform: translateZ(26px);
   pointer-events: none;
 }
-@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  .team-portrait[data-tracking='true'] .team-portrait-scene,
-  .team-portrait[data-tracking='true'] .team-portrait-image,
-  .team-portrait[data-tracking='true'] .team-portrait-ground {
-    transition-duration: 170ms;
+
+.nt-portrait-img {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  display: block;
+  transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Calibração óptica individual: iguala proporção de rosto/busto entre os 4 retratos de estúdio */
+.nt-portrait-img.nt-person-yuri {
+  top: -36px;
+  transform-origin: 49% 4%;
+  transform: translateX(1.5%) scale(1.36);
+}
+
+.nt-portrait-img.nt-person-maksuel {
+  top: -34px;
+  transform-origin: 50% 4%;
+  transform: scale(1.15);
+}
+
+.nt-portrait-img.nt-person-manoel {
+  top: -31px;
+  transform-origin: 50% 2.5%;
+  transform: scale(1.37);
+}
+
+.nt-portrait-img.nt-person-ronan {
+  top: -29px;
+  transform-origin: 50% 3%;
+  transform: scale(1.02);
+}
+
+.nt-portrait-vignette {
+  position: absolute;
+  inset: 44% 0 0;
+  background: linear-gradient(
+    to top,
+    #070b12 0%,
+    rgba(8, 13, 21, 0.86) 24%,
+    rgba(8, 13, 21, 0.28) 58%,
+    transparent 100%
+  );
+}
+
+.nt-portrait-dimmer {
+  position: absolute;
+  top: -64px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #070b12;
+  opacity: 0;
+  transition: opacity 480ms ease;
+}
+
+.nt-monolith-slot[data-slot='-1'] .nt-portrait-dimmer,
+.nt-monolith-slot[data-slot='1'] .nt-portrait-dimmer {
+  opacity: 0.42;
+}
+
+.nt-monolith-slot[data-slot='2'] .nt-portrait-dimmer {
+  opacity: 0.6;
+}
+
+.nt-monolith-slot:not([data-slot='0']):hover .nt-portrait-dimmer {
+  opacity: 0.2;
+}
+
+/* CAMADA Z +54px: Placa HUD de telemetria flutuando à frente do retrato */
+.nt-hud-pill {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  padding: 10px 12px;
+  border-radius: 11px;
+  background: linear-gradient(145deg, rgba(14, 23, 35, 0.92), rgba(8, 13, 21, 0.95));
+  border: 1px solid rgba(var(--accent-rgb), 0.34);
+  box-shadow: 0 12px 26px -10px rgba(0, 0, 0, 0.85);
+  transform: translate3d(
+    calc(var(--stage-px, 0px) * 0.55),
+    calc(var(--stage-py, 0px) * 0.45),
+    54px
+  );
+  pointer-events: none;
+  transition:
+    transform 260ms ease-out,
+    border-color 420ms ease;
+}
+
+.nt-monolith-slot:not([data-slot='0']) .nt-hud-pill {
+  transform: translateZ(32px);
+  border-color: rgba(120, 152, 186, 0.2);
+  padding: 8px 10px;
+}
+
+.nt-hud-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 3px;
+}
+
+.nt-hud-live {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgb(var(--accent-rgb));
+}
+
+.nt-monolith-slot:not([data-slot='0']) .nt-hud-live {
+  opacity: 0.45;
+}
+
+.nt-hud-code {
+  font: 9.5px/1 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: 0.12em;
+  color: rgba(164, 206, 250, 0.9);
+}
+
+.nt-hud-name {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #f2f6fb;
+  line-height: 1.25;
+}
+
+.nt-hud-tag {
+  display: block;
+  margin-top: 2px;
+  font: 9px/1.3 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: 0.08em;
+  color: #89a3be;
+}
+
+.nt-monolith-slot:not([data-slot='0']) .nt-hud-tag {
+  display: none;
+}
+
+@media (max-width: 1080px) {
+  .nt-monolith-slot {
+    width: 224px;
+    height: 334px;
+    margin-left: -112px;
   }
-  .team-portrait[data-tracking='true'] .team-portrait-aura {
-    opacity: 1;
+
+  .nt-monolith-slot[data-slot='-1'] {
+    transform: translate3d(-74%, 14px, -120px) rotateY(25deg) scale(0.8);
   }
-  .team-portrait[data-tracking='true'] .team-portrait-image {
-    filter: drop-shadow(14px 20px 14px #0009) drop-shadow(-1px -1px 2px #c0ddff35);
+
+  .nt-monolith-slot[data-slot='1'] {
+    transform: translate3d(40%, 10px, -100px) rotateY(-22deg) scale(0.82);
+  }
+
+  .nt-monolith-slot[data-slot='2'] {
+    transform: translate3d(80%, 22px, -190px) rotateY(-30deg) scale(0.69);
   }
 }
-@media (hover: none), (pointer: coarse) {
-  .team-portrait .team-portrait-scene {
-    transform: none;
+
+@media (max-width: 640px) {
+  .nt-monolith-slot {
+    width: 206px;
+    height: 308px;
+    margin-left: -103px;
   }
-  .team-portrait .team-portrait-image {
-    transform: translateZ(30px) scale(1.02);
+
+  .nt-monolith-slot[data-slot='0'] {
+    transform: translate3d(0%, 0px, 34px) rotateY(0deg) scale(1);
+  }
+
+  .nt-monolith-slot[data-slot='-1'] {
+    transform: translate3d(-64%, 14px, -125px) rotateY(26deg) scale(0.76);
+  }
+
+  .nt-monolith-slot[data-slot='1'] {
+    transform: translate3d(64%, 14px, -125px) rotateY(-26deg) scale(0.76);
+  }
+
+  .nt-monolith-slot[data-slot='2'] {
+    transform: translate3d(0%, 24px, -230px) rotateY(0deg) scale(0.62);
+    pointer-events: none;
+  }
+
+  .nt-portrait-img.nt-person-yuri {
+    top: -30px;
+  }
+
+  .nt-portrait-img.nt-person-maksuel {
+    top: -28px;
+  }
+
+  .nt-portrait-img.nt-person-manoel {
+    top: -25px;
+  }
+
+  .nt-portrait-img.nt-person-ronan {
+    top: -24px;
   }
 }
+
 @media (prefers-reduced-motion: reduce) {
-  .team-portrait .team-portrait-scene,
-  .team-portrait .team-portrait-image,
-  .team-portrait .team-portrait-ground {
-    transform: none;
+  .nt-monolith-slot,
+  .nt-monolith-rig,
+  .nt-portrait-img,
+  .nt-chamber-orbit,
+  .nt-hud-pill,
+  .nt-portrait-dimmer {
     transition: none;
   }
-  .team-portrait .team-portrait-aura {
-    transition: none;
+
+  .nt-monolith-slot[data-slot='0'] .nt-monolith-rig {
+    transform: none;
   }
 }

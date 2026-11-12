@@ -1,8 +1,7 @@
-import { useEffect, useRef } from 'react'
-import type { PointerEvent } from 'react'
+import type { MouseEvent } from 'react'
 import './TeamPortrait.css'
 
-type PortraitImage = {
+export type PortraitImage = {
   src: string
   srcSet: string
   fallback: string
@@ -12,106 +11,137 @@ type PortraitImage = {
   height: number
 }
 
+export type OrbitalSlot = -1 | 0 | 1 | 2
+
 export function TeamPortrait({
+  id,
   image,
   name,
-  imageClassName,
-  index,
+  roleCode,
+  indexNumber,
+  telemetryTag,
+  areaId,
+  slot,
+  onSelect,
 }: {
+  id: 'yuri' | 'maksuel' | 'manoel' | 'ronan'
   image: PortraitImage
   name: string
-  imageClassName: string
-  index: string
+  roleCode: string
+  indexNumber: string
+  telemetryTag: string
+  areaId: 'parcerias' | 'desenvolvimento'
+  slot: OrbitalSlot
+  onSelect: () => void
 }) {
-  const portrait = useRef<HTMLDivElement>(null)
-  const frame = useRef<number | null>(null)
-  const motionAllowed = useRef(false)
-  const position = useRef({ x: 0, y: 0 })
+  const isActive = slot === 0
+  const shortName = name.split(' ')[0]
 
-  useEffect(() => {
-    const media = window.matchMedia(
-      '(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)',
-    )
-    const element = portrait.current
-    const updatePreference = () => {
-      motionAllowed.current = media.matches
-      if (!media.matches) {
-        if (frame.current !== null) cancelAnimationFrame(frame.current)
-        frame.current = null
-        element?.removeAttribute('data-tracking')
-        element?.removeAttribute('style')
-      }
+  function handleClick(event: MouseEvent<HTMLDivElement>) {
+    if (!isActive) {
+      event.preventDefault()
+      onSelect()
     }
-    updatePreference()
-    media.addEventListener('change', updatePreference)
-    return () => {
-      media.removeEventListener('change', updatePreference)
-      if (frame.current !== null) cancelAnimationFrame(frame.current)
-    }
-  }, [])
-
-  function followPointer(event: PointerEvent<HTMLDivElement>) {
-    if (!motionAllowed.current || event.pointerType !== 'mouse') return
-    const bounds = event.currentTarget.getBoundingClientRect()
-    position.current = {
-      x: Math.max(-1, Math.min(1, ((event.clientX - bounds.left) / bounds.width - 0.5) * 2)),
-      y: Math.max(-1, Math.min(1, ((event.clientY - bounds.top) / bounds.height - 0.5) * 2)),
-    }
-    if (frame.current !== null) return
-    frame.current = requestAnimationFrame(() => {
-      frame.current = null
-      const element = portrait.current
-      if (!element) return
-      const { x, y } = position.current
-      element.dataset.tracking = 'true'
-      element.style.setProperty('--portrait-rx', `${-y * 4}deg`)
-      element.style.setProperty('--portrait-ry', `${x * 7}deg`)
-      element.style.setProperty('--portrait-x', `${x * 7}px`)
-      element.style.setProperty('--portrait-y', `${y * 4}px`)
-      element.style.setProperty('--portrait-light-x', `${50 + x * 22}%`)
-      element.style.setProperty('--portrait-light-y', `${40 + y * 15}%`)
-    })
-  }
-
-  function releasePointer() {
-    if (frame.current !== null) cancelAnimationFrame(frame.current)
-    frame.current = null
-    portrait.current?.removeAttribute('data-tracking')
-    portrait.current?.removeAttribute('style')
   }
 
   return (
     <div
-      className="team-portrait"
-      ref={portrait}
-      onPointerMove={followPointer}
-      onPointerLeave={releasePointer}
-      onPointerCancel={releasePointer}
+      className={`nt-monolith-slot nt-area-${areaId}`}
+      data-slot={slot}
+      data-active={isActive ? 'true' : 'false'}
+      onClick={handleClick}
+      role={isActive ? undefined : 'button'}
+      tabIndex={isActive ? -1 : 0}
+      aria-label={isActive ? undefined : `Focar especialista ${name} (${roleCode}) no palco 3D`}
+      onKeyDown={(event) => {
+        if (!isActive && (event.key === 'Enter' || event.key === ' ')) {
+          event.preventDefault()
+          onSelect()
+        }
+      }}
     >
-      <div className="team-portrait-scene">
-        <span className="team-portrait-aura" aria-hidden="true" />
-        <span className="team-portrait-ground" aria-hidden="true" />
-        <span className="team-portrait-index" aria-hidden="true">
-          {index}
-        </span>
-        <img
-          className={`team-portrait-image ${imageClassName}`}
-          src={image.src}
-          srcSet={image.srcSet}
-          sizes={image.sizes}
-          alt={`Retrato profissional de ${name}`}
-          width={image.width}
-          height={image.height}
-          loading="lazy"
-          decoding="async"
-          onError={({ currentTarget }) => {
-            if (currentTarget.dataset.fallback !== 'true') {
-              currentTarget.dataset.fallback = 'true'
-              currentTarget.srcset = image.fallbackSrcSet
-              currentTarget.src = image.fallback
-            }
-          }}
-        />
+      <div className="nt-monolith-rig">
+        {/* Camada Z -28px: Câmara arquitetônica + grade técnica + arco orbital */}
+        <div className="nt-chamber-backplate" aria-hidden="true">
+          <span className="nt-chamber-grid" />
+          <span className="nt-chamber-keylight" />
+          <svg
+            className="nt-chamber-orbit"
+            viewBox="0 0 240 240"
+            fill="none"
+            aria-hidden="true"
+          >
+            <circle
+              cx="120"
+              cy="118"
+              r="86"
+              stroke="currentColor"
+              strokeOpacity="0.18"
+              strokeWidth="1"
+              strokeDasharray="3 6"
+            />
+            <path
+              d="M 48 96 A 76 76 0 0 1 192 96"
+              stroke="currentColor"
+              strokeOpacity="0.42"
+              strokeWidth="1.2"
+            />
+            <circle cx="48" cy="96" r="2.2" fill="currentColor" fillOpacity="0.65" />
+            <circle cx="192" cy="96" r="2.2" fill="currentColor" fillOpacity="0.65" />
+          </svg>
+          <span className="nt-chamber-corner nt-corner-tl" />
+          <span className="nt-chamber-corner nt-corner-tr" />
+          <span className="nt-chamber-corner nt-corner-bl" />
+          <span className="nt-chamber-corner nt-corner-br" />
+        </div>
+
+        {/* Camada Z 0px: Moldura biselada e telemetria superior */}
+        <div className="nt-chamber-frame" aria-hidden="true">
+          <div className="nt-chamber-topbar">
+            <span className="nt-chamber-coord">
+              {indexNumber} // {roleCode}
+            </span>
+            <span className="nt-chamber-dot" />
+          </div>
+          <span className="nt-chamber-rim" />
+        </div>
+
+        {/* Camada Z +26px: Retrato calibrado com pop-out 3D acima da borda superior */}
+        <div className="nt-portrait-portal">
+          <img
+            className={`nt-portrait-img nt-person-${id}`}
+            src={image.src}
+            srcSet={image.srcSet}
+            sizes={image.sizes}
+            alt={`Retrato de ${name}, ${roleCode} na Newthing`}
+            width={image.width}
+            height={image.height}
+            loading="lazy"
+            decoding="async"
+            draggable={false}
+            onError={({ currentTarget }) => {
+              if (currentTarget.dataset.fallback !== 'true') {
+                currentTarget.dataset.fallback = 'true'
+                currentTarget.srcset = image.fallbackSrcSet
+                currentTarget.src = image.fallback
+              }
+            }}
+          />
+          <span className="nt-portrait-vignette" aria-hidden="true" />
+          <span className="nt-portrait-dimmer" aria-hidden="true" />
+        </div>
+
+        {/* Camada Z +54px: Placa flutuante de telemetria em primeiro plano */}
+        <div className="nt-hud-pill" aria-hidden="true">
+          <div className="nt-hud-meta">
+            <span className="nt-hud-live" />
+            <span className="nt-hud-code">
+              {roleCode} · {indexNumber}
+            </span>
+          </div>
+          <strong className="nt-hud-name">{isActive ? name : shortName}</strong>
+          <span className="nt-hud-tag">{telemetryTag}</span>
+        </div>
       </div>
     </div>
   )

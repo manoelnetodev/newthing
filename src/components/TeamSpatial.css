@@ -1,0 +1,647 @@
+/* Seção Quem Somos — Arquitetura Espacial 3D & Circuito Conectado Newthing */
+
+.nt-team-spatial {
+  position: relative;
+  overflow-x: clip;
+}
+
+.nt-team-anchor {
+  position: absolute;
+  top: 0;
+  scroll-margin-top: 110px;
+}
+
+.nt-spatial-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+  gap: 64px;
+  align-items: end;
+  margin-bottom: 42px;
+}
+
+.nt-spatial-intro .section-heading h2 {
+  margin-bottom: 0;
+}
+
+.nt-spatial-intro-copy > p {
+  color: #9ba9b9;
+  font-size: 15px;
+  line-height: 1.78;
+  margin: 0 0 12px;
+}
+
+.nt-spatial-intro-copy > p:last-child {
+  margin-bottom: 0;
+}
+
+/* Barra superior: Circuito Operacional Conectado (Estratégia <-> Hub Newthing <-> Engenharia) */
+.nt-circuit {
+  scroll-margin-top: 110px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: stretch;
+  gap: 14px;
+  padding: 14px 0 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.nt-circuit-domain {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.nt-circuit-domain-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-inline: 2px;
+}
+
+.nt-circuit-domain-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font: 10px/1.3 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: 0.11em;
+  color: #7f95ad;
+  text-transform: uppercase;
+}
+
+.nt-circuit-domain.is-domain-active .nt-circuit-domain-label {
+  color: #a8d1ff;
+}
+
+.nt-circuit-domain-num {
+  font: 10px/1 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  color: #5f768f;
+}
+
+.nt-circuit-nodes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.nt-circuit-node {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 52px;
+  padding: 10px 13px;
+  border-radius: 10px;
+  border: 1px solid rgba(116, 152, 190, 0.2);
+  background: linear-gradient(145deg, rgba(17, 25, 36, 0.72), rgba(11, 16, 24, 0.72));
+  color: #b7c6d7;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 220ms ease,
+    background-color 220ms ease,
+    color 220ms ease,
+    transform 220ms ease;
+}
+
+.nt-circuit-node:hover {
+  border-color: rgba(132, 184, 240, 0.45);
+  color: #eff5fc;
+  transform: translateY(-1px);
+}
+
+.nt-circuit-node[aria-selected='true'] {
+  border-color: #62adff;
+  background: linear-gradient(145deg, rgba(20, 44, 72, 0.78), rgba(12, 22, 35, 0.92));
+  color: #f4f8fc;
+  box-shadow: inset 0 1px 0 rgba(180, 218, 255, 0.22);
+}
+
+.nt-circuit-node-main {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.nt-circuit-node-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: #4e657d;
+  transition:
+    background-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.nt-circuit-node[aria-selected='true'] .nt-circuit-node-dot {
+  background: #6db6ff;
+  box-shadow: 0 0 9px rgba(88, 172, 255, 0.85);
+}
+
+.nt-circuit-node-text {
+  min-width: 0;
+}
+
+.nt-circuit-node-text strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nt-circuit-node-text span {
+  display: block;
+  margin-top: 2px;
+  font-size: 10.5px;
+  color: #8299b2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nt-circuit-node[aria-selected='true'] .nt-circuit-node-text span {
+  color: #a7ccf2;
+}
+
+.nt-circuit-node-code {
+  flex-shrink: 0;
+  padding: 3px 6px;
+  border-radius: 5px;
+  border: 1px solid rgba(130, 168, 208, 0.24);
+  font: 9.5px/1 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: 0.08em;
+  color: #8fb4da;
+}
+
+.nt-circuit-node[aria-selected='true'] .nt-circuit-node-code {
+  border-color: rgba(136, 194, 255, 0.52);
+  background: rgba(8, 124, 255, 0.16);
+  color: #d6ebff;
+}
+
+/* Hub central conector Newthing */
+.nt-circuit-bridge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-inline: 6px;
+  padding-bottom: 5px;
+  gap: 5px;
+}
+
+.nt-circuit-hub {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nt-circuit-beam {
+  width: 22px;
+  height: 1px;
+  background: rgba(124, 166, 210, 0.26);
+  transition: background 280ms ease;
+}
+
+.nt-circuit-hub[data-side='left'] .nt-circuit-beam-left,
+.nt-circuit-hub[data-side='right'] .nt-circuit-beam-right {
+  background: linear-gradient(90deg, rgba(98, 174, 255, 0.2), #7ec0ff, rgba(98, 174, 255, 0.2));
+}
+
+.nt-circuit-emblem {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  border: 1px solid rgba(98, 170, 255, 0.42);
+  background: linear-gradient(145deg, #162536, #0b1119);
+}
+
+.nt-circuit-emblem .newthing-mark {
+  width: 20px;
+  height: 25px;
+}
+
+.nt-circuit-bridge > small {
+  font: 8.5px/1 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: 0.16em;
+  color: #6f88a3;
+}
+
+/* Palco Principal: Esquerda (Cena Orbital 3D) + Direita (Ficha de Engenharia) */
+.nt-spatial-core {
+  display: grid;
+  grid-template-columns: minmax(0, 1.14fr) minmax(0, 0.86fr);
+  gap: 48px;
+  align-items: center;
+  padding-top: 28px;
+}
+
+.nt-stage-column {
+  min-width: 0;
+}
+
+.nt-stage-viewport {
+  --stage-rx: 0deg;
+  --stage-ry: 0deg;
+  --stage-px: 0px;
+  --stage-py: 0px;
+  --stage-lx: 50%;
+  --stage-ly: 34%;
+  position: relative;
+  width: 100%;
+  height: 406px;
+  perspective: 1300px;
+  perspective-origin: 46% 44%;
+  touch-action: pan-y;
+}
+
+/* Anel elíptico arquitetônico de piso sob os monólitos 3D */
+.nt-stage-pedestal {
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  bottom: 4px;
+  height: 76px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.nt-stage-pedestal svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Barra de controle espacial sob o palco 3D */
+.nt-stage-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.nt-stage-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nt-stage-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid rgba(124, 162, 202, 0.26);
+  background: rgba(15, 23, 33, 0.72);
+  color: #c7d8ea;
+  cursor: pointer;
+  transition:
+    border-color 200ms ease,
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+.nt-stage-arrow:hover {
+  border-color: #6bb2ff;
+  background: rgba(20, 42, 68, 0.75);
+  color: #ffffff;
+}
+
+.nt-stage-dots {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-inline: 6px;
+}
+
+.nt-stage-dot {
+  width: 18px;
+  height: 4px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(132, 164, 198, 0.26);
+  cursor: pointer;
+  transition:
+    width 240ms ease,
+    background-color 240ms ease;
+}
+
+.nt-stage-dot[aria-current='true'] {
+  width: 30px;
+  background: #6eb6ff;
+}
+
+.nt-stage-hint {
+  font: 10px/1.4 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: 0.07em;
+  color: #738aa3;
+}
+
+/* Coluna direita: Ficha Técnica Arquitetônica do Especialista em Foco */
+.nt-dossier-column {
+  min-width: 0;
+}
+
+@keyframes ntDossierReveal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.nt-dossier-card {
+  animation: ntDossierReveal 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nt-dossier-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.nt-dossier-domain {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 10.5px/1.3 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: 0.1em;
+  color: #8cc2fa;
+  text-transform: uppercase;
+}
+
+.nt-dossier-node {
+  font: 11px/1 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  color: #738ca6;
+}
+
+.nt-dossier-name {
+  margin: 18px 0 8px;
+  font-size: clamp(28px, 2.8vw, 38px);
+  font-weight: 450;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  color: #f4f7fb;
+}
+
+.nt-dossier-roleline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.nt-dossier-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 9px;
+  border-radius: 5px;
+  border: 1px solid rgba(102, 171, 245, 0.4);
+  background: rgba(14, 48, 86, 0.38);
+  font: 11px/1.2 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  color: #a9d3ff;
+}
+
+.nt-dossier-fullrole {
+  font-size: 12.5px;
+  color: #869db6;
+}
+
+.nt-dossier-mandate {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 460;
+  line-height: 1.5;
+  color: #dce7f3;
+}
+
+.nt-dossier-bio {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #9aa9ba;
+}
+
+.nt-dossier-specs {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.11);
+  display: grid;
+  gap: 14px;
+}
+
+.nt-spec-block-label {
+  display: block;
+  margin-bottom: 8px;
+  font: 9.5px/1 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: 0.13em;
+  color: #738ba5;
+  text-transform: uppercase;
+}
+
+.nt-spec-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nt-spec-chips li {
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(114, 156, 200, 0.26);
+  background: rgba(17, 29, 43, 0.56);
+  font-size: 11.5px;
+  color: #bdd7f2;
+}
+
+.nt-spec-synergy {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 11px 13px;
+  border-radius: 9px;
+  border: 1px solid rgba(98, 164, 234, 0.2);
+  background: linear-gradient(135deg, rgba(16, 32, 50, 0.5), rgba(11, 17, 26, 0.5));
+}
+
+.nt-spec-synergy > svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #7cbaff;
+}
+
+.nt-spec-synergy p {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.62;
+  color: #b7c9dc;
+}
+
+.nt-dossier-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nt-dossier-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #9fc9f5;
+  font-size: 12.5px;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.nt-dossier-social:hover {
+  color: #f0f6fc;
+}
+
+.nt-dossier-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-left: auto;
+  padding: 6px 0;
+  border: 0;
+  background: transparent;
+  color: #8ca5bf;
+  font-size: 12px;
+  cursor: pointer;
+  transition: color 180ms ease;
+}
+
+.nt-dossier-next:hover {
+  color: #e6f0fa;
+}
+
+/* Rodapé de parceria da seção */
+.nt-spatial-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 42px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.nt-spatial-footer > p {
+  margin: 0;
+  font-size: 15px;
+  color: #b5cbe2;
+  line-height: 1.6;
+}
+
+.nt-spatial-footer .button-secondary {
+  border: 0;
+  border-bottom: 1px solid #7798ba;
+  border-radius: 0;
+  padding-inline: 0;
+  background: transparent;
+}
+
+/* Responsividade Tablet e Mobile */
+@media (max-width: 980px) {
+  .nt-spatial-intro {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  .nt-circuit {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .nt-circuit-bridge {
+    display: none;
+  }
+
+  .nt-spatial-core {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .nt-stage-viewport {
+    max-width: 560px;
+    margin-inline: auto;
+    height: 376px;
+  }
+}
+
+@media (max-width: 640px) {
+  .nt-circuit-nodes {
+    gap: 8px;
+  }
+
+  .nt-circuit-node {
+    padding: 9px 10px;
+    min-height: 48px;
+  }
+
+  .nt-circuit-node-text span {
+    display: none;
+  }
+
+  .nt-stage-viewport {
+    height: 346px;
+    perspective: 1050px;
+    perspective-origin: 50% 44%;
+  }
+
+  .nt-stage-hint {
+    display: none;
+  }
+
+  .nt-stage-controls {
+    justify-content: center;
+  }
+
+  .nt-spatial-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nt-dossier-card {
+    animation: none;
+  }
+  .nt-circuit-node {
+    transition: none;
+  }
+}
