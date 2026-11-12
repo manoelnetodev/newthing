@@ -2,13 +2,10 @@
   position: relative;
   margin-top: 23px;
   padding: 12px 8px 11px;
-  border: 1px solid #31465c70;
-  border-radius: 9px;
-  background:
-    radial-gradient(ellipse at 50% 45%, #348eef12, transparent 70%),
-    radial-gradient(#6895c51c 0.6px, transparent 0.6px) 0 0/12px 12px,
-    #14191f;
-  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  overflow: visible;
   transition:
     border-color 0.3s,
     background-color 0.3s;
@@ -151,7 +148,7 @@
 .journey-path:focus-within,
 .journey-path.is-active {
   border-color: #4a78aa;
-  background-color: #192028;
+  background-color: transparent;
 }
 .journey-card:hover .journey-path-hub > span,
 .journey-path-hub:focus-visible > span {

@@ -1,0 +1,99 @@
+/* The cutout is the foreground plane. Light and a floor shadow sit behind it. */
+.team-portrait {
+  --portrait-rx: 0deg;
+  --portrait-ry: 0deg;
+  --portrait-x: 0px;
+  --portrait-y: 0px;
+  --portrait-light-x: 50%;
+  --portrait-light-y: 40%;
+  perspective: 1000px;
+  perspective-origin: 50% 42%;
+  isolation: isolate;
+}
+.team-portrait .team-portrait-scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--portrait-rx)) rotateY(var(--portrait-ry));
+  transition: transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.team-portrait .team-portrait-aura {
+  position: absolute;
+  inset: 6% -14% 2%;
+  background:
+    radial-gradient(
+      ellipse at var(--portrait-light-x) var(--portrait-light-y),
+      #b7d7ff18,
+      transparent 55%
+    ),
+    radial-gradient(ellipse at 75% 65%, #087cff15, transparent 60%);
+  border-radius: 50%;
+  filter: blur(18px);
+  transform: translateZ(-45px);
+  opacity: 0.8;
+  pointer-events: none;
+  transition: opacity 500ms;
+}
+.team-portrait .team-portrait-ground {
+  position: absolute;
+  width: 76%;
+  height: 12%;
+  left: 12%;
+  bottom: 1%;
+  background: radial-gradient(ellipse, #000c 10%, #0007 45%, transparent 72%);
+  filter: blur(8px);
+  transform: translateZ(-20px) translateX(calc(var(--portrait-x) * -0.6));
+  pointer-events: none;
+  transition: transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.team-portrait .team-portrait-image {
+  position: relative;
+  display: block;
+  transform: translate3d(var(--portrait-x), var(--portrait-y), 48px) scale(1.1);
+  transform-origin: 50% 85%;
+  filter: drop-shadow(9px 12px 10px #0008) drop-shadow(-1px -1px 1px #c0ddff22);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 76%, #000c 88%, transparent 100%);
+  transition:
+    transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 500ms;
+}
+.team-portrait .team-portrait-index {
+  top: 6px;
+  left: 0;
+  color: #7e93a9;
+  transform: translateZ(12px);
+  pointer-events: none;
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .team-portrait[data-tracking='true'] .team-portrait-scene,
+  .team-portrait[data-tracking='true'] .team-portrait-image,
+  .team-portrait[data-tracking='true'] .team-portrait-ground {
+    transition-duration: 170ms;
+  }
+  .team-portrait[data-tracking='true'] .team-portrait-aura {
+    opacity: 1;
+  }
+  .team-portrait[data-tracking='true'] .team-portrait-image {
+    filter: drop-shadow(14px 20px 14px #0009) drop-shadow(-1px -1px 2px #c0ddff35);
+  }
+}
+@media (hover: none), (pointer: coarse) {
+  .team-portrait .team-portrait-scene {
+    transform: none;
+  }
+  .team-portrait .team-portrait-image {
+    transform: translateZ(30px) scale(1.02);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .team-portrait .team-portrait-scene,
+  .team-portrait .team-portrait-image,
+  .team-portrait .team-portrait-ground {
+    transform: none;
+    transition: none;
+  }
+  .team-portrait .team-portrait-aura {
+    transition: none;
+  }
+}

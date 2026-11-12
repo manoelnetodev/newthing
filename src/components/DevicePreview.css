@@ -276,14 +276,32 @@
   flex-shrink: 0;
   background: #101d2c;
   border-top: 1px solid #2a3c50;
-  padding: 9px 0 4px;
+  padding: 4px 3px;
 }
-.device-app-nav span {
+.device-app-nav button {
   display: grid;
   justify-items: center;
+  align-content: center;
+  flex: 1;
+  min-width: 0;
+  min-height: 46px;
+  padding: 5px 2px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
   gap: 4px;
   color: #8097b0;
   font-size: 10px;
+  line-height: 1.4;
+  user-select: none;
+}
+.device-app-nav button:hover {
+  color: #d7eaff;
+  background: #087cff10;
+}
+.device-app-nav button:focus-visible {
+  outline: 2px solid #8cc6ff;
+  outline-offset: -2px;
 }
 .device-app-nav svg {
   width: 17px;
@@ -291,6 +309,7 @@
 }
 .device-app-nav .active {
   color: #8bc5ff;
+  background: #087cff18;
 }
 .device-site-address {
   display: flex;

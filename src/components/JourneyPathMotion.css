@@ -14,15 +14,6 @@
   --result-light: #b8daff;
   --result-glow: #6ba2dd;
 }
-.journey-path::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(ellipse at 50% 48%, #47a0ff35, transparent 72%);
-  opacity: 0;
-  animation: journey-light-atmosphere var(--journey-cycle) linear var(--journey-delay) infinite both;
-}
 .journey-path-track {
   stroke: #47698d;
   stroke-width: 1.1;

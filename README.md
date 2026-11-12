@@ -20,6 +20,11 @@ Abra **http://127.0.0.1:5173/**. Salvar uma alteração nos arquivos atualiza a 
 
 ## O que está funcionando
 
+- Vitrine compacta com escolha de PC, tablet ou celular; a demonstração ampliada abre por clique, com troca de dispositivo dentro da janela.
+- Dashboard demonstrativo com menus, busca, filtros de projetos e recebimentos, período dos indicadores e gráficos animados. No celular, Visão geral, Fluxos e Equipe têm navegação funcional; a seção escolhida acompanha a troca de dispositivo.
+- SaaS demonstrativo com biblioteca de modelos, criação local de automações, detalhes das etapas, pausa, simulação de execução e histórico. As integrações alteram somente o estado ilustrativo da prévia.
+- Website demonstrativo com navegação interna, detalhes dos projetos e formulário ilustrativo de contato. O formulário não envia mensagens; o preenchimento fica apenas na memória da prévia.
+- Composição editorial nas seções, dúvidas em lista expansível e equipe com recortes transparentes, iluminação e perspectiva que acompanha o cursor. O efeito dos retratos respeita a preferência de movimento reduzido e não altera os rostos.
 - Menu com navegação para as seções e versão para celular.
 - Botão Descobrir meu caminho: orientação em duas perguntas, com 12 combinações, acesso ao exemplo e à etapa correspondentes e preenchimento inicial do briefing.
 - Jornada interativa de idealização, construção e evolução, com exemplos de sistemas, sites e automações.

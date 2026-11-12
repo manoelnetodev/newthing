@@ -1,7 +1,8 @@
-import { ArrowUpRight, ChartNoAxesCombined, Code2, Globe } from 'lucide-react'
+import { ArrowUpRight, ChartNoAxesCombined, Code2, Globe, Plus } from 'lucide-react'
 import './WhoWeAre.css'
 import './TeamEditorial.css'
 import { teamPhotos } from '../data/teamPhotos'
+import { TeamPortrait } from './TeamPortrait'
 
 type TeamMember = {
   name: string
@@ -120,8 +121,8 @@ export function WhoWeAre({ onContact }: { onContact: () => void }) {
               QUEM SOMOS
             </span>
             <h2 id="identity-title">
-              Visão de negócio. <br />
-              <span>Engenharia para realizar.</span>
+              Quem pensa junto. <br />
+              <span>Quem faz acontecer.</span>
             </h2>
           </div>
           <div>
@@ -161,43 +162,35 @@ export function WhoWeAre({ onContact }: { onContact: () => void }) {
                     key={person.name}
                     aria-labelledby={`team-person-${area.id}-${index}`}
                   >
-                    <div className="team-portrait">
-                      <img
-                        className={person.imageClassName}
-                        src={person.image.src}
-                        srcSet={person.image.srcSet}
-                        sizes={person.image.sizes}
-                        alt={`Retrato profissional de ${person.name}`}
-                        width={person.image.width}
-                        height={person.image.height}
-                        loading="lazy"
-                        decoding="async"
-                        onError={({ currentTarget }) => {
-                          if (currentTarget.dataset.fallback !== 'true') {
-                            currentTarget.dataset.fallback = 'true'
-                            currentTarget.srcset = person.image.fallbackSrcSet
-                            currentTarget.src = person.image.fallback
-                          }
-                        }}
-                      />
-                    </div>
+                    <TeamPortrait
+                      image={person.image}
+                      name={person.name}
+                      imageClassName={person.imageClassName}
+                      index={`${person.roleCode} / 0${area.id === 'parcerias' ? index + 1 : index + 3}`}
+                    />
                     <div className="team-profile-details">
                       <h4 id={`team-person-${area.id}-${index}`}>{person.name}</h4>
                       <div className="team-role">
                         <span>{person.role}</span>
-                        <small>{person.fullRole}</small>
                       </div>
-                      <p className="team-description">{person.description}</p>
-                      {person.focus && (
-                        <ul
-                          className="team-focus"
-                          aria-label={`Áreas de atuação de ${person.name}`}
-                        >
-                          {person.focus.map((item) => (
-                            <li key={item}>{item}</li>
-                          ))}
-                        </ul>
-                      )}
+                      <p className="team-responsibility">{person.responsibility}</p>
+                      <details className="team-bio">
+                        <summary>
+                          Conheça {person.name.split(' ')[0]} <Plus size={14} />
+                        </summary>
+                        <p className="team-full-role">{person.fullRole}</p>
+                        <p className="team-description">{person.description}</p>
+                        {person.focus && (
+                          <ul
+                            className="team-focus"
+                            aria-label={`Áreas de atuação de ${person.name}`}
+                          >
+                            {person.focus.map((item) => (
+                              <li key={item}>{item}</li>
+                            ))}
+                          </ul>
+                        )}
+                      </details>
                       {person.instagram && (
                         <a
                           className="team-profile-link"

@@ -1,0 +1,139 @@
+.dash-sidebar button.dash-menu {
+  width: 100%;
+  border: 0;
+  text-align: left;
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+  line-height: 1.4;
+  transition:
+    background 160ms,
+    color 160ms;
+}
+.dash-sidebar button.dash-menu:hover {
+  background: #24446380;
+  color: #eff6ff;
+}
+.dash-sidebar button.dash-menu.active {
+  background: #087cff26;
+  color: #eff6ff;
+  box-shadow: inset 2px 0 #49a2ff;
+}
+.dash-topbar > div > button {
+  display: grid;
+  place-items: center;
+  min-width: 24px;
+  min-height: 26px;
+  border: 0;
+  background: transparent;
+  color: #8eafcf;
+  padding: 3px;
+  border-radius: 4px;
+}
+.dash-topbar > div > button:hover {
+  background: #2b4664;
+  color: #dceeff;
+}
+.dash-main {
+  position: relative;
+}
+.dash-notifications {
+  position: absolute;
+  z-index: 3;
+  right: 1.4em;
+  top: 3.6em;
+  max-width: calc(100% - 2.8em);
+  background: #172d44;
+  border: 1px solid #496a8b;
+  box-shadow: 0 8px 25px #0007;
+  border-radius: 6px;
+  padding: 1.2em;
+  font-size: 0.9em;
+}
+.dash-notifications p {
+  color: #a9c3df;
+  font-size: 0.85em;
+  margin: 0.7em 0 0;
+}
+.dash-period {
+  font-family: inherit;
+  cursor: pointer;
+  max-width: 100%;
+}
+.dash-period:focus-visible,
+.concept-dashboard button:focus-visible {
+  outline: 2px solid #9bcaff;
+  outline-offset: 2px;
+}
+button.dash-metric {
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  min-width: 0;
+  transition:
+    transform 180ms,
+    border-color 180ms,
+    box-shadow 180ms;
+}
+.device-screen button.dash-metric:hover {
+  border-color: #82baff;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px #087cff20;
+}
+.dash-projects .mock-card-title button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  border: 0;
+  background: transparent;
+  color: #91c2f7;
+  font: inherit;
+  padding: 3px;
+}
+.dash-projects .mock-card-title button:hover {
+  color: #dceeff;
+}
+.dash-trend-line {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 0;
+  animation: dashboard-line-draw 1.2s ease-out;
+}
+.dash-metric .metric-spark i {
+  transform-origin: center bottom;
+  animation: dashboard-bar-rise 0.85s ease-out both;
+}
+.dash-metric .metric-spark i:nth-child(2n) {
+  animation-delay: 0.08s;
+}
+.dash-metric .metric-spark i:nth-child(3n) {
+  animation-delay: 0.16s;
+}
+@keyframes dashboard-line-draw {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes dashboard-bar-rise {
+  from {
+    transform: scaleY(0.1);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dash-trend-line,
+  .dash-metric .metric-spark i {
+    animation: none;
+  }
+  .dash-sidebar button.dash-menu,
+  button.dash-metric {
+    transition: none;
+  }
+  .device-screen button.dash-metric:hover {
+    transform: none;
+  }
+}
