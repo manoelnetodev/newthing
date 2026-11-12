@@ -14,7 +14,9 @@
 .comparison-motion-toggle {
   display: grid;
   place-items: center;
-  padding: 4px;
+  min-width: 36px;
+  min-height: 36px;
+  padding: 6px;
   border: 1px solid #426fa04d;
   border-radius: 6px;
   background: #087cff0d;
@@ -64,24 +66,21 @@
   stroke: #69baff;
   stroke-width: 2;
   opacity: 0.12;
-  filter: drop-shadow(0 0 4px #087cff);
   animation: comparison-route-light var(--comparison-cycle) ease-in-out var(--energy-delay) infinite;
 }
 .comparison-grid .connected-diagram .comparison-energy-trail,
 .comparison-grid .connected-diagram .comparison-energy {
-  stroke: #dff2ff;
-  stroke-width: 2.2;
+  stroke: #e3f3ff;
+  stroke-width: 2.3;
   stroke-linecap: round;
   stroke-dasharray: 9 101;
   opacity: 0;
-  filter: drop-shadow(0 0 3px #80c5ff) drop-shadow(0 0 7px #087cff);
   animation: comparison-energy-travel var(--comparison-cycle) linear var(--energy-delay) infinite;
 }
 .comparison-grid .connected-diagram .comparison-energy-trail {
-  stroke: #087cff;
-  stroke-width: 6;
+  stroke: #1b8cff52;
+  stroke-width: 6.5;
   stroke-dasharray: 22 88;
-  filter: blur(3px);
 }
 .comparison-grid .connected-diagram .diagram-node {
   animation:
@@ -341,16 +340,13 @@
   0%,
   100% {
     color: #7d899a;
-    filter: none;
   }
   30%,
   50% {
     color: #aebbc9;
-    filter: drop-shadow(0 0 4px #9cb9dd30);
   }
   42% {
     color: #738093;
-    filter: none;
   }
 }
 @keyframes comparison-lost-mark {
@@ -361,5 +357,12 @@
   40%,
   55% {
     opacity: 0.85;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .comparison-grid .flow-diagram *,
+  .comparison-grid .flow-diagram *::before,
+  .comparison-grid .flow-diagram *::after {
+    animation: none !important;
   }
 }

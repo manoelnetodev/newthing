@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { lazy, Suspense, useRef, useState } from 'react'
 import {
   ArrowRight,
   ArrowUpRight,
@@ -13,13 +13,19 @@ import {
   Target,
   Workflow,
 } from 'lucide-react'
-import { BriefModal } from './BriefModal'
-import { JourneyDemo } from './JourneyDemo'
 import { JourneyPath } from './JourneyPath'
 import { Modal } from './ui'
 import { restoreFocus } from '../lib/focus'
+import { useInView } from '../lib/useInView'
 import './SolutionsJourney.css'
 import './JourneyExplorer.css'
+
+const JourneyDemo = lazy(() =>
+  import('./JourneyDemo').then((module) => ({ default: module.JourneyDemo })),
+)
+const BriefModal = lazy(() =>
+  import('./BriefModal').then((module) => ({ default: module.BriefModal })),
+)
 
 const phases = [
   {
@@ -275,6 +281,8 @@ export function SolutionsJourney({
   const [previewOpen, setPreviewOpen] = useState(initialOpen)
   const [briefOpen, setBriefOpen] = useState(false)
   const [lightsPlaying, setLightsPlaying] = useState(true)
+  const cardsRef = useRef<HTMLDivElement>(null)
+  const cardsInView = useInView(cardsRef)
   const previewOpener = useRef<HTMLElement | null>(null)
   const previewScroll = useRef<HTMLDivElement>(null)
   const phase = phases[selected]
@@ -348,9 +356,10 @@ export function SolutionsJourney({
           </button>
         </div>
         <div
+          ref={cardsRef}
           className="journey-cards"
           aria-label="Etapas do seu projeto"
-          data-light-motion={lightsPlaying ? 'running' : 'paused'}
+          data-light-motion={lightsPlaying && cardsInView ? 'running' : 'paused'}
         >
           {phases.map(({ label, title, text, icon: Icon, items, action }, index) => (
             <article
@@ -503,7 +512,15 @@ export function SolutionsJourney({
                 tabIndex={0}
               >
                 <div className="journey-demo-reveal" key={`demo-${selected}-${exampleIndex}`}>
-                  <JourneyDemo kind={example.kind} phase={selected} />
+                  <Suspense
+                    fallback={
+                      <div className="nt-lazy-loader" role="status">
+                        Carregando demonstração interativa…
+                      </div>
+                    }
+                  >
+                    <JourneyDemo kind={example.kind} phase={selected} />
+                  </Suspense>
                 </div>
                 <div className="journey-detail-copy" key={`copy-${selected}-${exampleIndex}`}>
                   <div className="journey-detail-intro">
@@ -571,20 +588,22 @@ export function SolutionsJourney({
         </p>
       </div>
       {briefOpen && (
-        <BriefModal
-          onClose={() => {
-            setBriefOpen(false)
-            restorePreviewFocus()
-          }}
-          initialStage={
-            selected === 1 && exampleIndex === 1
-              ? 'Preciso de um site ou landing page'
-              : selected === 1 && exampleIndex === 2
-                ? 'Quero automatizar processos'
-                : phase.stage
-          }
-          initialProject={`Meu objetivo: ${example.dream}\nProjeto: ${example.label}.\nEtapa que quero explorar: ${phase.label.toLowerCase()}.\n\nSobre o meu negócio: `}
-        />
+        <Suspense fallback={null}>
+          <BriefModal
+            onClose={() => {
+              setBriefOpen(false)
+              restorePreviewFocus()
+            }}
+            initialStage={
+              selected === 1 && exampleIndex === 1
+                ? 'Preciso de um site ou landing page'
+                : selected === 1 && exampleIndex === 2
+                  ? 'Quero automatizar processos'
+                  : phase.stage
+            }
+            initialProject={`Meu objetivo: ${example.dream}\nProjeto: ${example.label}.\nEtapa que quero explorar: ${phase.label.toLowerCase()}.\n\nSobre o meu negócio: `}
+          />
+        </Suspense>
       )}
     </section>
   )

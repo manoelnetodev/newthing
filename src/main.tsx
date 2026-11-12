@@ -8,6 +8,7 @@ import './styles/hero.css'
 import './styles/atmosphere.css'
 import './styles/brand-motion.css'
 import './styles/editorial.css'
+import './styles/performance.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

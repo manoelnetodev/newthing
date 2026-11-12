@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { Suspense, lazy, useEffect, useRef, useState } from 'react'
 import {
   ArrowRight,
   ArrowUpRight,
@@ -19,15 +19,27 @@ import {
   Zap,
 } from 'lucide-react'
 import { SolutionsJourney } from './components/SolutionsJourney'
-import { BriefModal } from './components/BriefModal'
 import { ProjectShowcase } from './components/ProjectShowcase'
 import { WhoWeAre } from './components/WhoWeAre'
-import { SolutionFinder } from './components/SolutionFinder'
 import { QuickFaq } from './components/QuickFaq'
 import { ProcessPresentation } from './components/ProcessPresentation'
+import {
+  InstagramGlyph,
+  InstagramPresence,
+  NEWTHING_INSTAGRAM_URL,
+} from './components/InstagramPresence'
 import { BrandMark } from './components/BrandMark'
 import { restoreFocus } from './lib/focus'
+import { useInView } from './lib/useInView'
 import './components/FlowComparisonMotion.css'
+
+const loadBriefModal = () =>
+  import('./components/BriefModal').then((module) => ({ default: module.BriefModal }))
+const loadSolutionFinder = () =>
+  import('./components/SolutionFinder').then((module) => ({ default: module.SolutionFinder }))
+
+const BriefModal = lazy(loadBriefModal)
+const SolutionFinder = lazy(loadSolutionFinder)
 
 function Brand({ small = false }: { small?: boolean }) {
   return (
@@ -52,6 +64,8 @@ function Brand({ small = false }: { small?: boolean }) {
 
 function FlowComparison() {
   const [energyPlaying, setEnergyPlaying] = useState(true)
+  const comparisonRef = useRef<HTMLDivElement>(null)
+  const inView = useInView(comparisonRef)
   const nodes = [
     {
       label: 'Estratégia & finanças',
@@ -87,7 +101,11 @@ function FlowComparison() {
     },
   ]
   return (
-    <div className="comparison-grid" data-energy-motion={energyPlaying ? 'running' : 'paused'}>
+    <div
+      ref={comparisonRef}
+      className="comparison-grid"
+      data-energy-motion={energyPlaying && inView ? 'running' : 'paused'}
+    >
       <div className="flow-card scattered-card">
         <div className="flow-card-top">
           <span>Quando a operação fica fragmentada</span>
@@ -404,11 +422,33 @@ export default function App() {
                 {label}
               </a>
             ))}
-            <button className="mobile-nav-cta" onClick={openBrief}>
+            <a
+              className="mobile-nav-social"
+              href={NEWTHING_INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMenuOpen(false)}
+              aria-label="Instagram oficial da Newthing (@newthing.apps) — abre em nova aba"
+            >
+              <InstagramGlyph size={15} />
+              @newthing.apps
+              <ArrowUpRight size={14} />
+            </a>
+            <button
+              className="mobile-nav-cta"
+              onPointerEnter={() => void loadBriefModal()}
+              onFocus={() => void loadBriefModal()}
+              onClick={openBrief}
+            >
               Começar meu projeto <ArrowUpRight size={15} />
             </button>
           </nav>
-          <button className="button button-primary header-cta" onClick={openBrief}>
+          <button
+            className="button button-primary header-cta"
+            onPointerEnter={() => void loadBriefModal()}
+            onFocus={() => void loadBriefModal()}
+            onClick={openBrief}
+          >
             Vamos conversar <ArrowUpRight size={15} />
           </button>
           <button
@@ -442,13 +482,20 @@ export default function App() {
                   você quer realizar.
                 </p>
                 <div className="hero-buttons">
-                  <button className="button button-primary" onClick={openBrief}>
+                  <button
+                    className="button button-primary"
+                    onPointerEnter={() => void loadBriefModal()}
+                    onFocus={() => void loadBriefModal()}
+                    onClick={openBrief}
+                  >
                     Começar meu projeto <ArrowUpRight size={17} />
                   </button>
                   <button
                     type="button"
                     className="button button-secondary hero-finder"
                     ref={finderTrigger}
+                    onPointerEnter={() => void loadSolutionFinder()}
+                    onFocus={() => void loadSolutionFinder()}
                     onClick={() => setFinderOpen(true)}
                     aria-haspopup="dialog"
                   >
@@ -519,6 +566,7 @@ export default function App() {
         />
         <ProcessPresentation />
         <WhoWeAre onContact={openBrief} />
+        <InstagramPresence />
         <QuickFaq faqs={faqs} onBrief={openBrief} />
         <section className="final-cta">
           <div className="cta-glow" />
@@ -529,7 +577,12 @@ export default function App() {
               pode começar <span>com uma conversa.</span>
             </h2>
             <p>Conte o que você imagina. Vamos organizar o caminho.</p>
-            <button className="button button-primary" onClick={openBrief}>
+            <button
+              className="button button-primary"
+              onPointerEnter={() => void loadBriefModal()}
+              onFocus={() => void loadBriefModal()}
+              onClick={openBrief}
+            >
               Começar meu projeto <ArrowUpRight size={18} />
             </button>
             <span className="cta-note">
@@ -548,6 +601,17 @@ export default function App() {
                 Novas ideias. Produtos com propósito. <br />
                 Estratégia, design e tecnologia conectados.
               </p>
+              <a
+                className="footer-social-link"
+                href={NEWTHING_INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Acompanhar a Newthing no Instagram (@newthing.apps) — abre em nova aba"
+              >
+                <InstagramGlyph size={15} />
+                <span>@newthing.apps</span>
+                <ArrowUpRight size={13} />
+              </a>
             </div>
             <div className="footer-links">
               {navigationLinks.map(([href, label]) => (
@@ -555,6 +619,7 @@ export default function App() {
                   {label}
                 </a>
               ))}
+              <a href="#instagram">Instagram</a>
             </div>
             <a className="back-top" href="#inicio">
               Voltar ao início <ArrowUpRight size={16} />
@@ -569,18 +634,34 @@ export default function App() {
         </div>
       </footer>
       {finderOpen && (
-        <SolutionFinder
-          onClose={() => setFinderOpen(false)}
-          onViewExample={viewRecommendedExample}
-          onStartProject={openBriefForGoal}
-        />
+        <Suspense
+          fallback={
+            <div className="nt-lazy-loader" role="status" aria-live="polite">
+              Carregando guia de diagnóstico...
+            </div>
+          }
+        >
+          <SolutionFinder
+            onClose={() => setFinderOpen(false)}
+            onViewExample={viewRecommendedExample}
+            onStartProject={openBriefForGoal}
+          />
+        </Suspense>
       )}
       {briefOpen && (
-        <BriefModal
-          onClose={closeBrief}
-          initialStage={briefContext.stage}
-          initialProject={briefContext.project}
-        />
+        <Suspense
+          fallback={
+            <div className="nt-lazy-loader" role="status" aria-live="polite">
+              Preparando briefing...
+            </div>
+          }
+        >
+          <BriefModal
+            onClose={closeBrief}
+            initialStage={briefContext.stage}
+            initialProject={briefContext.project}
+          />
+        </Suspense>
       )}
     </>
   )

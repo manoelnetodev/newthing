@@ -6,11 +6,11 @@ import {
   ArrowUpRight,
   ChartNoAxesCombined,
   Code2,
-  Globe,
   Workflow,
 } from 'lucide-react'
 import { teamPhotos } from '../data/teamPhotos'
 import { BrandMark } from './BrandMark'
+import { InstagramGlyph } from './InstagramPresence'
 import { TeamPortrait } from './TeamPortrait'
 import type { OrbitalSlot, PortraitImage } from './TeamPortrait'
 import './TeamSpatial.css'
@@ -66,8 +66,7 @@ const teamMembers: TeamMember[] = [
     responsibility: 'Operações, parcerias e relacionamento',
     description:
       'Aproxima pessoas, parcerias e operação. Contribui para organizar o relacionamento com as empresas e alinhar as necessidades do cliente ao andamento do projeto.',
-    synergy:
-      'Mantém a rotina real da sua empresa sincronizada com cada entrega da engenharia.',
+    synergy: 'Mantém a rotina real da sua empresa sincronizada com cada entrega da engenharia.',
     focus: ['Operações', 'Parcerias', 'Visão empreendedora'],
     image: teamPhotos.maksuel,
     instagram: 'https://www.instagram.com/maksueel/',
@@ -85,8 +84,7 @@ const teamMembers: TeamMember[] = [
     responsibility: 'Direção de tecnologia e arquitetura de sistemas',
     description:
       'Conecta desenvolvimento de sistemas, infraestrutura e automações para criar soluções integradas, com atenção à operação da empresa e à evolução de cada projeto.',
-    synergy:
-      'Desenha a base técnica, infraestrutura e automações que dão sustentação ao projeto.',
+    synergy: 'Desenha a base técnica, infraestrutura e automações que dão sustentação ao projeto.',
     focus: ['Arquitetura de sistemas', 'Sistemas sob medida', 'Automações'],
     image: teamPhotos.manoel,
     instagram: 'https://www.instagram.com/manoel_io/',
@@ -510,8 +508,8 @@ export function WhoWeAre({ onContact }: { onContact: () => void }) {
                     rel="noopener noreferrer"
                     aria-label={`Ver perfil profissional de ${activePerson.name} no Instagram (abre em nova aba)`}
                   >
-                    <Globe size={14} />
-                    <span>Perfil profissional</span>
+                    <InstagramGlyph size={14} />
+                    <span>Instagram profissional</span>
                     <ArrowUpRight size={14} />
                   </a>
                 )}
